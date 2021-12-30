@@ -44,9 +44,15 @@ sync_moode() {
         #get images 
         if [ "$IMAGE" = "local" ]
         then
-            wget -q "${MOODE_IMAGES}${NAME}.jpg" \
+            if wget -q "${MOODE_IMAGES}${NAME}.jpg" \
                 -O "${MOODE_PICS_DIR}/${PLIST}.jpg"
-            IMAGE="${PLIST}.jpg"
+            then
+                convert "${MOODE_PICS_DIR}/${PLIST}.jpg" "${MOODE_PICS_DIR}/${PLIST}.webp"
+                rm "${MOODE_PICS_DIR}/${PLIST}.jpg"
+                IMAGE="${PLIST}.webp"
+            else
+                IMAGE=""
+            fi
         fi
 
         # write ext m3u with custom myMPD fields
@@ -103,13 +109,8 @@ create() {
     mkdir "$PICS_DIR"
 
     echo "Copy moode webradios"
+    cp "${MOODE_PICS_DIR}"/* "${PICS_DIR}"
     cp "${MOODE_PLS_DIR}"/* "${PLS_DIR}"
-    #convert jpg to webp for smaller filesize
-    for F in "${MOODE_PICS_DIR}"/*.jpg
-    do
-        NEW_NAME=$(basename $F .jpg)
-        convert "$F" "${PICS_DIR}/${NEW_NAME}.webp"
-    done
 
     echo "Copy myMPD webradios"
     cp "${MYMPD_PICS_DIR}"/* "${PICS_DIR}"
