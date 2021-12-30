@@ -8,8 +8,8 @@ At the moment there are two sources for webradio files:
 
 ## Adding new webradios
 
-1. Fork this repository - create a new entry and a pull request
-2. Open an issue with all needed data
+1. Fork this repository - add new entries and create a pull request
+2. Open an issue with all needed data, use the "New webradio" template
 
 ## Usage in myMPD
 
