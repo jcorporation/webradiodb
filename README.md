@@ -1,4 +1,4 @@
-# myMPD radio db
+# myMPD Radio Database
 
 This is my attempt to create a curated webradio list for [myMPD](https://github.com/jcorporation/myMPD).
 
