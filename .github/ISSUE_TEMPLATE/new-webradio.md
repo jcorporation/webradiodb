@@ -1,6 +1,6 @@
 ---
 name: New webradio
-about: Add a new webradioa
+about: Add a new webradio
 title: ''
 labels: ''
 assignees: ''
