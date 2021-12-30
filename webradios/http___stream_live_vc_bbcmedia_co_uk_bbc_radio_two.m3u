@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,BBC Radio 2
+#EXTGENRE:Pop, Contemporary
+#PLAYLIST:BBC Radio 2
+#EXTIMG:http___stream_live_vc_bbcmedia_co_uk_bbc_radio_two.jpg
+#HOMEPAGE:
+#COUNTRY:United Kingdom
+#LANGUAGE:English
+http://stream.live.vc.bbcmedia.co.uk/bbc_radio_two
+

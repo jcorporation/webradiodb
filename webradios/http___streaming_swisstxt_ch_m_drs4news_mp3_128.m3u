@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,Radio SRF 4 News
+#EXTGENRE:News
+#PLAYLIST:Radio SRF 4 News
+#EXTIMG:http___streaming_swisstxt_ch_m_drs4news_mp3_128.jpg
+#HOMEPAGE:
+#COUNTRY:Switzerland
+#LANGUAGE:German
+http://streaming.swisstxt.ch/m/drs4news/mp3_128
+

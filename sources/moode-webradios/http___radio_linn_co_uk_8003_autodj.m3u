@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,Linn Radio
+#EXTGENRE:Eclectic
+#PLAYLIST:Linn Radio
+#EXTIMG:http___radio_linn_co_uk_8003_autodj.jpg
+#HOMEPAGE:
+#COUNTRY:United Kingdom
+#LANGUAGE:English
+http://radio.linn.co.uk:8003/autodj
+

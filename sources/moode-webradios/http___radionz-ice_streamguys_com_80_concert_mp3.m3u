@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,Radio New Zealand - Concert
+#EXTGENRE:Classical
+#PLAYLIST:Radio New Zealand - Concert
+#EXTIMG:http___radionz-ice_streamguys_com_80_concert_mp3.jpg
+#HOMEPAGE:
+#COUNTRY:New Zealand
+#LANGUAGE:English
+http://radionz-ice.streamguys.com:80/concert.mp3
+

@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,Hi On Line - Jazz
+#EXTGENRE:Jazz
+#PLAYLIST:Hi On Line - Jazz
+#EXTIMG:http___mediaserv38_live-streams_nl_8006_live.jpg
+#HOMEPAGE:
+#COUNTRY:Netherlands
+#LANGUAGE:English
+http://mediaserv38.live-streams.nl:8006/live
+

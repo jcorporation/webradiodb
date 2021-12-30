@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,France Inter Paris (FIP)
+#EXTGENRE:Classical, Jazz, Rock, World Music
+#PLAYLIST:France Inter Paris (FIP)
+#EXTIMG:http___direct_fipradio_fr_live_fip-midfi_mp3.jpg
+#HOMEPAGE:
+#COUNTRY:France
+#LANGUAGE:French
+http://direct.fipradio.fr/live/fip-midfi.mp3
+

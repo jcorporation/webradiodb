@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,Naim Radio
+#EXTGENRE:Eclectic
+#PLAYLIST:Naim Radio
+#EXTIMG:http___mscp3_live-streams_nl_8360_high_aac.jpg
+#HOMEPAGE:
+#COUNTRY:United Kingdom
+#LANGUAGE:English
+http://mscp3.live-streams.nl:8360/high.aac
+

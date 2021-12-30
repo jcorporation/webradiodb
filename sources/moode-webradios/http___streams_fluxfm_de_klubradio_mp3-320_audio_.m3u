@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,FluxFM - Klubradio
+#EXTGENRE:Electronica
+#PLAYLIST:FluxFM - Klubradio
+#EXTIMG:http___streams_fluxfm_de_klubradio_mp3-320_audio_.jpg
+#HOMEPAGE:
+#COUNTRY:Germany
+#LANGUAGE:German
+http://streams.fluxfm.de/klubradio/mp3-320/audio/
+

@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,WKCR 89.9 FM
+#EXTGENRE:Jazz, Classical
+#PLAYLIST:WKCR 89.9 FM
+#EXTIMG:http___wkcr_streamguys1_com_80_live.jpg
+#HOMEPAGE:
+#COUNTRY:United States
+#LANGUAGE:English
+http://wkcr.streamguys1.com:80/live
+

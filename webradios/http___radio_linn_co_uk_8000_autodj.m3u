@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,Linn Jazz
+#EXTGENRE:Jazz
+#PLAYLIST:Linn Jazz
+#EXTIMG:http___radio_linn_co_uk_8000_autodj.jpg
+#HOMEPAGE:
+#COUNTRY:United Kingdom
+#LANGUAGE:English
+http://radio.linn.co.uk:8000/autodj
+

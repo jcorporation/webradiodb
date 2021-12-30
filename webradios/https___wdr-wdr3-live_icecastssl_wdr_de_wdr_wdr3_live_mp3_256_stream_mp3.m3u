@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,WDR 3
+#EXTGENRE:Classical, Jazz
+#PLAYLIST:WDR 3
+#EXTIMG:https___wdr-wdr3-live_icecastssl_wdr_de_wdr_wdr3_live_mp3_256_stream_mp3.jpg
+#HOMEPAGE:
+#COUNTRY:Germany
+#LANGUAGE:German
+https://wdr-wdr3-live.icecastssl.wdr.de/wdr/wdr3/live/mp3/256/stream.mp3
+

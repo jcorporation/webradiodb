@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,Hi On Line - Classical
+#EXTGENRE:Classical
+#PLAYLIST:Hi On Line - Classical
+#EXTIMG:http___mediaserv30_live-streams_nl_8088_live.jpg
+#HOMEPAGE:
+#COUNTRY:Netherlands
+#LANGUAGE:English
+http://mediaserv30.live-streams.nl:8088/live
+

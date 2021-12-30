@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,Linn Classical
+#EXTGENRE:Classical
+#PLAYLIST:Linn Classical
+#EXTIMG:http___radio_linn_co_uk_8004_autodj.jpg
+#HOMEPAGE:
+#COUNTRY:United Kingdom
+#LANGUAGE:English
+http://radio.linn.co.uk:8004/autodj
+

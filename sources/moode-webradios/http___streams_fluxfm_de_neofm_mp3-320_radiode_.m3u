@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,FluxFM - neoFM
+#EXTGENRE:Classical, Contemporary
+#PLAYLIST:FluxFM - neoFM
+#EXTIMG:http___streams_fluxfm_de_neofm_mp3-320_radiode_.jpg
+#HOMEPAGE:
+#COUNTRY:Germany
+#LANGUAGE:German
+http://streams.fluxfm.de/neofm/mp3-320/radiode/
+

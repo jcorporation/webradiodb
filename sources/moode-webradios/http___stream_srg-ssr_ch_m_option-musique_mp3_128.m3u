@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,RTS - option musique
+#EXTGENRE:Alternative, Indie
+#PLAYLIST:RTS - option musique
+#EXTIMG:http___stream_srg-ssr_ch_m_option-musique_mp3_128.jpg
+#HOMEPAGE:
+#COUNTRY:Switzerland
+#LANGUAGE:French
+http://stream.srg-ssr.ch/m/option-musique/mp3_128
+

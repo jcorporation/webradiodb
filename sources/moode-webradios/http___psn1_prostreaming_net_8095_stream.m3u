@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,Mad Music Asylum
+#EXTGENRE:Rock, Eclectic
+#PLAYLIST:Mad Music Asylum
+#EXTIMG:http___psn1_prostreaming_net_8095_stream.jpg
+#HOMEPAGE:
+#COUNTRY:United States
+#LANGUAGE:English
+http://psn1.prostreaming.net:8095/stream
+

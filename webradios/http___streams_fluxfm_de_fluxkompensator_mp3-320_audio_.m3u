@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,FluxFM - FluxKompensator
+#EXTGENRE:Various Genres
+#PLAYLIST:FluxFM - FluxKompensator
+#EXTIMG:http___streams_fluxfm_de_fluxkompensator_mp3-320_audio_.jpg
+#HOMEPAGE:
+#COUNTRY:Germany
+#LANGUAGE:German
+http://streams.fluxfm.de/fluxkompensator/mp3-320/audio/
+
