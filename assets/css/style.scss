@@ -9,11 +9,12 @@
 }
 
 img.stationImage {
-    float:left;
-    display:block;
-    width:5rem;
-    height:auto;
-    margin-right:2rem;
+    float: left;
+    display: block;
+    width: 5rem;
+    height: auto;
+    max-height: 5rem;
+    margin-right: 2rem;
 }
 
 div.searchResult {
@@ -21,4 +22,9 @@ div.searchResult {
     clear: both;
     margin-bottom: 1rem;
     border-bottom: 1px solid #dddddd;
+    min-height: 5rem;
+}
+
+div.searchResult p {
+    text-indent: 1rem;
 }
