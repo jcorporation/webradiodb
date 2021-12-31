@@ -2,7 +2,7 @@
 #
 #SPDX-License-Identifier: GPL-3.0-or-later
 #myMPD (c) 2021 Juergen Mang <mail@jcgames.de>
-#https://github.com/jcorporation/mympd
+#https://github.com/jcorporation/radiodb
 
 PICS_DIR="pics"
 PLS_DIR="webradios"
@@ -83,13 +83,13 @@ add_radio() {
     # write ext m3u with custom myMPD fields
         cat > "${MYMPD_PLS_DIR}/${PLIST}.m3u" << EOL
 #EXTM3U
-#EXTINF:-1,webradio name
-#EXTGENRE:webradio genre
-#PLAYLIST:webradio name
+#EXTINF:-1,<name>
+#EXTGENRE:<genre>
+#PLAYLIST:<name>
 #EXTIMG:${PLIST}.webp
-#HOMEPAGE:homepage
-#COUNTRY:country
-#LANGUAGE:language
+#HOMEPAGE:<homepage>
+#COUNTRY:<country>
+#LANGUAGE:<language>
 $URI
 
 EOL
@@ -131,9 +131,10 @@ case "$1" in
         echo "Usage: $0 <action>"
         echo ""
         echo "Actions:"
-        echo "  add_radio:  interactively adds an webradio to sources"
-        echo "  create:     copies pls and images from sources dir"
-        echo "  sync_moode: syncs the moode audio webradios to sources/moode-webradios"
+        echo "  add_radio:  interactively adds an webradio to sources/mympd-webradios"
+        echo "  create:     copies pls and images from sources dir and creates an unified index"
+        echo "  sync_moode: syncs the moode audio webradios to sources/moode-webradios, downloads"
+        echo "              and converts the images to webp"
         echo ""
         ;;
 esac
