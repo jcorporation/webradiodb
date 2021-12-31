@@ -6,7 +6,7 @@ At the moment there are two sources for webradio files:
 - Webradios from moode audio (sources/moode-*)
 - Manually added files (sources/mympd-*)
 
-Webradios are saved as plain extended m3u files with some custom fields. Coverimages an be specified as file in the pics direcotry or an url.
+Webradios are saved as plain extended m3u files with some custom fields. Coverimages an be specified as file in the pics directory or an url.
 
 ```
 #EXTM3U
@@ -22,6 +22,8 @@ Webradios are saved as plain extended m3u files with some custom fields. Coverim
 
 The filename of the playlist and the coverimage are derived from the streamuri by replacing `<>/.:?$!#\|` characters with `_`. This is the same behaviour as in myMPD and makes this playlists compatible with the myMPD webradio feature.
 
+You can find the playlists in the `publish/webradios` directory and the station images in the `publish/pics` directory. There is also a json index file in the `publish/index` directory.
+
 ## Adding new webradios
 
 1. Fork this repository - add/modify entries and create a pull request
@@ -29,13 +31,13 @@ The filename of the playlist and the coverimage are derived from the streamuri b
 
 ## Usage in myMPD
 
-1. Copy the m3u files from the `webradios` directory to `/var/lib/mympd/webradios`
-2. Copy the webp files from the `pics` directory to `/var/lib/mympd/pics`
+1. Copy the m3u files from the `publish/webradios` directory to `/var/lib/mympd/webradios`
+2. Copy the webp files from the `publish/pics` directory to `/var/lib/mympd/pics`
 3. myMPD should show the webradios in the webradio favorites view
 
 ## Script usage
 
-Dependencies: csvkit, wget, convert
+Dependencies: csvkit, jq, wget, convert
 
 - `./build.sh add_radio`: interactively adds an webradio to sources/mympd-webradios
 - `./build.sh create`: copies pls and images from sources dir and creates an unified index

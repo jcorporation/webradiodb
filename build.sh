@@ -4,12 +4,17 @@
 #myMPD (c) 2021 Juergen Mang <mail@jcgames.de>
 #https://github.com/jcorporation/radiodb
 
-PICS_DIR="pics"
-PLS_DIR="webradios"
-MOODE_PICS_DIR="sources/moode-pics"
-MOODE_PLS_DIR="sources/moode-webradios"
-MYMPD_PICS_DIR="sources/mympd-pics"
-MYMPD_PLS_DIR="sources/mympd-webradios"
+PUBLISH_DIR="publish"
+SOURCES_DIR="sources"
+
+PICS_DIR="${PUBLISH_DIR}/pics"
+PLS_DIR="${PUBLISH_DIR}/webradios"
+INDEXFILE="${PUBLISH_DIR}/index/webradios.min.json"
+INDEXFILE_FORMATED="${PUBLISH_DIR}/index/webradios.min.json"
+MOODE_PICS_DIR="${SOURCES_DIR}/moode-pics"
+MOODE_PLS_DIR="${SOURCES_DIR}/moode-webradios"
+MYMPD_PICS_DIR="${SOURCES_DIR}/mympd-pics"
+MYMPD_PLS_DIR="${SOURCES_DIR}/mympd-webradios"
 
 sync_moode() {
     echo "Syncing moode audio webradios"
@@ -18,21 +23,23 @@ sync_moode() {
     MOODE_DB="https://raw.githubusercontent.com/moode-player/moode/master/var/local/www/db/moode-sqlite3.db.sql"
     MOODE_IMAGES="https://raw.githubusercontent.com/moode-player/moode/master/var/local/www/imagesw/radio-logos/"
 
-    #start with clean output dirs
+    # start with clean output dirs
     rm -fr "$MOODE_PLS_DIR" 
     mkdir "$MOODE_PLS_DIR"
     rm -fr "$MOODE_PICS_DIR"
     mkdir "$MOODE_PICS_DIR"
 
+    # fetch the sql file and grep the webradio stations and convert it to csv
+    I=0
     while read -r LINE
     do
-        # LINE is: station, name, genre, language, country, homepage
+        # LINE is a csv: station, name, genre, language, country, homepage
 
-        #create the same plist name as myMPD
+        # create the same plist name as myMPD
         PLIST=$(csvcut -c 1 <<< "$LINE" | \
             sed -E -e 's/[<>/.:?$!#\\|]/_/g')
 
-        #extract fields
+        # extract fields
         STATION=$(csvcut -c 1 <<< "$LINE" | sed -e s/\"//g)
         NAME=$(csvcut -c 2 <<< "$LINE" | sed -e s/\"//g)
         IMAGE=$(csvcut -c 3 <<< "$LINE" | sed -e s/\"//g)
@@ -41,7 +48,7 @@ sync_moode() {
         COUNTRY=$(csvcut -c 6 <<< "$LINE" | sed -e s/\"//g)
         HOMEPAGE=$(csvcut -c 7 <<< "$LINE" | sed -e s/\"//g)
 
-        #get images 
+        # get images 
         if [ "$IMAGE" = "local" ]
         then
             if wget -q "${MOODE_IMAGES}${NAME}.jpg" \
@@ -66,19 +73,22 @@ sync_moode() {
 #COUNTRY:$COUNTRY
 #LANGUAGE:$LANGUAGE
 $STATION
-
 EOL
-
+    printf "."
+    ((i++))
     done < <(wget -q "$MOODE_DB" -O - | \
         grep "INSERT INTO cfg_radio" | \
         awk -F "VALUES " '{print $2}' | \
         sed -e 's/^(//' -e 's/);//' -e "s/', /',/g" -e "s/, '/,'/g"  | \
         csvcut -q \' -c 2,3,5,6,8,9,14 |
         grep -v -E "(OFFLINE|zx reserved 499)")
+    echo "$I webradios synced"
 }
 
 add_radio() {
+    # get the uri and write out a skeletion file
     read -p "URI: " URI
+    # create the same plist name as myMPD
     PLIST=$(sed -E -e 's/[<>/.:?$!#\\|]/_/g' <<< "$URI")
     # write ext m3u with custom myMPD fields
         cat > "${MYMPD_PLS_DIR}/${PLIST}.m3u" << EOL
@@ -91,7 +101,6 @@ add_radio() {
 #COUNTRY:<country>
 #LANGUAGE:<language>
 $URI
-
 EOL
     echo ""
     echo "Playlist file ${MYMPD_PLS_DIR}/$PLIST.m3u created."
@@ -101,9 +110,25 @@ EOL
     echo ""
 }
 
+parse_m3u() {
+    LINE="$1"
+    if [ "${LINE:0:1}" = "#" ]
+    then
+        INFO="${LINE:1}"
+        KEY=$(sed -E 's/([^:]+):.*/\1/' <<< "$INFO")
+        VALUE=$(sed -E 's/[^:]+:(.*)/\1/' <<< "$INFO")
+        KEY=$(jq -n --arg key "$KEY" '$key')
+        VALUE=$(jq -n --arg value "$VALUE" '$value')
+        printf "%s:%s" "$KEY" "$VALUE"
+    else
+        VALUE=$(jq -n --arg value "$LINE" '$value')
+        printf "\"streamUri\":%s" "$VALUE"
+    fi
+}
+
 create() {
     echo "Cleaning up"
-    rm -fr "$PLS_DIR" 
+    rm -fr "$PLS_DIR"
     mkdir "$PLS_DIR"
     rm -fr "$PICS_DIR"
     mkdir "$PICS_DIR"
@@ -115,6 +140,31 @@ create() {
     echo "Copy myMPD webradios"
     cp "${MYMPD_PICS_DIR}"/* "${PICS_DIR}"
     cp "${MYMPD_PLS_DIR}"/* "${PLS_DIR}"
+
+    echo "Creating json index"
+    printf "{" > "$INDEXFILE"
+    I=0
+    for F in "$PLS_DIR"/*.m3u
+    do
+        FILENAME=$(basename "$F")
+        [ "$I" -gt 0 ] && printf "," >> "$INDEXFILE"
+        printf "\"%s\": {" "$FILENAME" >> "$INDEXFILE"
+        J=0
+        while read -r LINE
+        do
+            [ "$LINE" = "#EXTM3U" ] && continue
+            [ "$LINE" = "" ] && continue
+            [ "$J" -gt 0 ] && printf "," >> "$INDEXFILE"
+            parse_m3u "$LINE" >> "$INDEXFILE"
+            ((J++))
+        done < $F
+        printf "}" >> "$INDEXFILE"
+        ((I++))
+        printf "."
+    done
+    printf "}" >> "$INDEXFILE"
+    jq < "$INDEXFILE" > "$INDEXFILE_FORMATED"
+    echo "$I webradios in index"
 }
 
 case "$1" in
