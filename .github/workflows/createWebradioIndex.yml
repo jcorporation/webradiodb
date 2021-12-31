@@ -27,9 +27,10 @@ jobs:
 
       - name: Create the webradio publish files
         run: ./build.sh create
-      
-      - name: Push result
-        uses: ad-m/github-push-action@v0.6.0
+
+      - name: Add, commit and push
+        uses: EndBug/add-and-commit@v7.5.0
         with:
-          github_token: $\{{ secrets.GITHUB_TOKEN }}
-      
+          add: publish
+          pull: NO-PULL
+          push: true
