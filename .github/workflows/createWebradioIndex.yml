@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: apt-get install -y --no-install-recommends jq
+        run: sudo apt-get install -y --no-install-recommends jq
 
       - name: Run a multi-line script
         run: ./build.sh create
@@ -31,5 +31,5 @@ jobs:
       - name: Push result
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: $\{{ secrets.GITHUB_TOKEN }}
+          github_token: $\{{ secrets.PUBLISH_TOKEN }}
       
