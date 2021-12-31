@@ -19,15 +19,15 @@ document.getElementById('searchstr').addEventListener('keyup', function(event) {
             webradios[key].EXTIMG.indexOf('https:') === 0 ?
                 webradios[key].EXTIMG : 'publish/pics/' + webradios[key].EXTIMG;
         div.innerHTML =
-          '<img src="' + pic + '" class="stationImage"/>' +
           '<div>' + 
-            '<h3>' + webradios[key].PLAYLIST + '</h3>' +
+            '<h3></h3>' +
             '<table>' +
+              '<caption>' + webradios[key].PLAYLIST + '</caption>' +
               '<tbody>' +
-                '<tr><th>Genre</th><td>' + webradios[key].EXTGENRE + '</td></tr>' +
-                '<tr><th>Country</th><td>' + webradios[key].COUNTRY + '/' + webradios[key].LANGUAGE + '</td></tr>' +
-                '<tr><th>Homepage</th><td><a target="_blank" href="' + webradios[key].HOMEPAGE + '">' + webradios[key].HOMEPAGE + '</a></td></tr>' +
-                '<tr><th>Playlist</th><td><a target="_blank" href="publish/webradios/' + key + '">Get playlist</a></td></tr>' +
+                '<tr><td rowspan="4"><img src="' + pic + '" class="stationImage"/></td><td>Genre</td><td>' + webradios[key].EXTGENRE + '</td></tr>' +
+                '<tr><td>Country</td><td>' + webradios[key].COUNTRY + '/' + webradios[key].LANGUAGE + '</td></tr>' +
+                '<tr><td>Homepage</td><td><a target="_blank" href="' + webradios[key].HOMEPAGE + '">' + webradios[key].HOMEPAGE + '</a></td></tr>' +
+                '<tr><td>Playlist</td><td><a target="_blank" href="publish/webradios/' + key + '">Get playlist</a></td></tr>' +
               '</tbody>' +
             '</table>' +
           '</div>';
