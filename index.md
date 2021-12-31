@@ -34,7 +34,7 @@ This is my attempt to create a curated webradio list for [myMPD](https://github.
           div.innerHTML =
             '<img src="' + pic + '" style="float:left;display:block;width:5rem;height:auto;margin-right:2rem;"/>' +
             '<div>' + 
-              '<h5>' + webradios[key].PLAYLIST + '</h5>' +
+              '<h3>' + webradios[key].PLAYLIST + '</h3>' +
               '<p><a target="_blank" href="publish/webradios/' + key + '">Get playlist</a></p>' +
             '</div>';
           resultEl.appendChild(div);
