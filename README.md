@@ -24,6 +24,12 @@ The filename of the playlist and the coverimage are derived from the streamuri b
 
 You can find the playlists in the `publish/webradios` directory and the station images in the `publish/pics` directory. There is also a json index file in the `publish/index` directory.
 
+The publish directory is refreshed on each pull request through GitHub actions.
+
+This repository is also published through [GitHub Pages](https://jcorporation.github.io/radiodb/).
+
+You must not download all the images, instead you can prepend `https://jcorporation.github.io/radiodb/publish/pics/` to the image name, e.g. [https://jcorporation.github.io/radiodb/publish/pics/http___119_15_96_188_stream2_mp3.webp](https://jcorporation.github.io/radiodb/publish/pics/).
+
 ## Adding new webradios
 
 1. Fork this repository - add/modify entries and create a pull request
