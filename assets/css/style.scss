@@ -13,12 +13,22 @@ img.stationImage {
     height: auto;
 }
 
+caption {
+    text-align: left;
+    text-indent: 0.5rem;
+    font-weight: bold;
+    font-size: large;
+}
+
+table {
+    margin-bottom: 2rem;
+}
+
 td {
     text-align: left;
     text-indent: 0.5rem;
 }
 
-caption {
-    text-align: left;
-    font-weight: bold;
+td:first-child {
+    width: 6rem;
 }
