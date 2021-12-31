@@ -9,7 +9,8 @@ SOURCES_DIR="sources"
 PICS_DIR="${PUBLISH_DIR}/pics"
 PLS_DIR="${PUBLISH_DIR}/webradios"
 INDEXFILE="${PUBLISH_DIR}/index/webradios.min.json"
-INDEXFILE_FORMATED="${PUBLISH_DIR}/index/webradios.min.json"
+INDEXFILE_FORMATED="${PUBLISH_DIR}/index/webradios.json"
+INDEXFILE_JS="${PUBLISH_DIR}/index/webradios.min.js"
 MOODE_PICS_DIR="${SOURCES_DIR}/moode-pics"
 MOODE_PLS_DIR="${SOURCES_DIR}/moode-webradios"
 MYMPD_PICS_DIR="${SOURCES_DIR}/mympd-pics"
@@ -147,7 +148,7 @@ create() {
     do
         FILENAME=$(basename "$F")
         [ "$I" -gt 0 ] && printf "," >> "$INDEXFILE"
-        printf "\"%s\": {" "$FILENAME" >> "$INDEXFILE"
+        printf "\"%s\":{" "$FILENAME" >> "$INDEXFILE"
         J=0
         while read -r LINE
         do
@@ -162,7 +163,13 @@ create() {
         printf "."
     done
     printf "}" >> "$INDEXFILE"
+    #create formated json file
     jq < "$INDEXFILE" > "$INDEXFILE_FORMATED"
+    #create javascript file
+    printf "const webradios=" > "$INDEXFILE_JS"
+    cat "$INDEXFILE" | tr -d '\n' >> "$INDEXFILE_JS"
+    printf ";"  >> "$INDEXFILE_JS"
+
     echo "$I webradios in index"
 }
 
