@@ -11,18 +11,14 @@
 img.stationImage {
     width: 5rem;
     height: auto;
-    max-height: 5rem;
-    margin-right: 1rem;
 }
 
-div.searchResult {
-    width: 100%;
-    clear: both;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #dddddd;
-    min-height: 5rem;
+td {
+    text-align: left;
+    text-indent: 0.5rem;
 }
 
-div.searchResult p {
-    text-indent: 1rem;
+caption {
+    text-align: left;
+    font-weight: bold;
 }
