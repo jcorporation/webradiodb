@@ -1,0 +1,18 @@
+#main-content h3::before {
+    content: "" !important;
+}
+
+img.stationImage {
+    float:left;
+    display:block;
+    width:5rem;
+    height:auto;
+    margin-right:2rem;
+}
+
+div.searchResult {
+    width: 100%;
+    clear: both;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #dddddd;
+}

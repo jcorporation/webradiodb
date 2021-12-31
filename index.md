@@ -6,7 +6,7 @@ This is my attempt to create a curated webradio list for [myMPD](https://github.
 
 ## Simple station search
 
-<input type="search" value="" id="searchstr"/>
+<input type="search" value="" id="searchstr" placeholder="Search by station name"/>
 <hr/>
 <div id="result">Type search string and press enter.</div>
 
@@ -18,7 +18,7 @@ This is my attempt to create a curated webradio list for [myMPD](https://github.
       const searchstr = event.target.value.toLowerCase();
       resultEl.textContent = '';
       if (searchstr.length < 3) {
-        resultEl.innerText = 'Searchstring to short.';
+        resultEl.innerText = 'Searchstring is too short.';
         return;
       }
       let i = 0;
@@ -26,13 +26,14 @@ This is my attempt to create a curated webradio list for [myMPD](https://github.
         if (webradios[key].PLAYLIST.toLowerCase().indexOf(searchstr) > -1) {
           i++;
           const div = document.createElement('div');
+          div.classList.add('searchResult');
           div.style.width = "100%";
           div.style.minHeight = "5rem";
           const pic = webradios[key].EXTIMG.indexOf('http:') === 0 ||
               webradios[key].EXTIMG.indexOf('https:') === 0 ?
                   webradios[key].EXTIMG : 'publish/pics/' + webradios[key].EXTIMG;
           div.innerHTML =
-            '<img src="' + pic + '" style="float:left;display:block;width:5rem;height:auto;margin-right:2rem;"/>' +
+            '<img src="' + pic + '" class="stationImage"/>' +
             '<div>' + 
               '<h3>' + webradios[key].PLAYLIST + '</h3>' +
               '<p><a target="_blank" href="publish/webradios/' + key + '">Get playlist</a></p>' +
