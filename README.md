@@ -28,7 +28,7 @@ The publish directory is refreshed on each pull request through GitHub actions.
 
 This repository is also published through [GitHub Pages](https://jcorporation.github.io/radiodb/).
 
-You must not download all the images, instead you can prepend `https://jcorporation.github.io/radiodb/publish/pics/` to the image name, e.g. [https://jcorporation.github.io/radiodb/publish/pics/http___119_15_96_188_stream2_mp3.webp](https://jcorporation.github.io/radiodb/publish/pics/).
+You must not download all the images, instead you can prepend `https://jcorporation.github.io/radiodb/publish/pics/` to the image name, e.g. https://jcorporation.github.io/radiodb/publish/pics/http___119_15_96_188_stream2_mp3.webp.
 
 ## Adding new webradios
 
