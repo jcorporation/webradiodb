@@ -179,6 +179,16 @@
     "LANGUAGE": "French",
     "streamUri": "http://direct.franceculture.fr/live/franceculture-midfi.mp3"
   },
+  "http___direct_francemusique_fr_live_francemusique-midfi_mp3.m3u": {
+    "EXTINF": "-1,France Musique Live",
+    "EXTGENRE": "Classical, Jazz",
+    "PLAYLIST": "France Musique Live",
+    "EXTIMG": "http___direct_francemusique_fr_live_francemusique-midfi_mp3.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "France",
+    "LANGUAGE": "French",
+    "streamUri": "http://direct.francemusique.fr/live/francemusique-midfi.mp3"
+  },
   "http___direct_francemusique_fr_live_francemusiqueclassiqueplus-hifi_mp3.m3u": {
     "EXTINF": "-1,France Musique Classique Plus",
     "EXTGENRE": "Classical",
@@ -209,16 +219,6 @@
     "LANGUAGE": "French",
     "streamUri": "http://direct.francemusique.fr/live/francemusiquelajazz-hifi.mp3"
   },
-  "http___direct_francemusique_fr_live_francemusique-midfi_mp3.m3u": {
-    "EXTINF": "-1,France Musique Live",
-    "EXTGENRE": "Classical, Jazz",
-    "PLAYLIST": "France Musique Live",
-    "EXTIMG": "http___direct_francemusique_fr_live_francemusique-midfi_mp3.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "France",
-    "LANGUAGE": "French",
-    "streamUri": "http://direct.francemusique.fr/live/francemusique-midfi.mp3"
-  },
   "http___eno_emit_com_8000_2bob_live_64_mp3.m3u": {
     "EXTINF": "-1,2BOB Radio 104.7 FM",
     "EXTGENRE": "Alternative",
@@ -238,6 +238,16 @@
     "COUNTRY": "France",
     "LANGUAGE": "French",
     "streamUri": "http://hd.stream.frequence3.net/frequence3.flac"
+  },
+  "http___ice-1_streamhoster_com_lv_wqed--893.m3u": {
+    "EXTINF": "-1,WQED Pittsburgh 89.3 - Classical",
+    "EXTGENRE": "Classical",
+    "PLAYLIST": "WQED Pittsburgh 89.3 - Classical",
+    "EXTIMG": "http___ice-1_streamhoster_com_lv_wqed--893.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United States",
+    "LANGUAGE": "English",
+    "streamUri": "http://ice-1.streamhoster.com/lv_wqed--893"
   },
   "http___ice1_somafm_com_7soul-128-aac.m3u": {
     "EXTINF": "-1,Soma FM - Seven Inch Soul",
@@ -549,16 +559,6 @@
     "LANGUAGE": "English",
     "streamUri": "http://ice1.somafm.com/u80s-128-aac"
   },
-  "http___ice-1_streamhoster_com_lv_wqed--893.m3u": {
-    "EXTINF": "-1,WQED Pittsburgh 89.3 - Classical",
-    "EXTGENRE": "Classical",
-    "PLAYLIST": "WQED Pittsburgh 89.3 - Classical",
-    "EXTIMG": "http___ice-1_streamhoster_com_lv_wqed--893.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United States",
-    "LANGUAGE": "English",
-    "streamUri": "http://ice-1.streamhoster.com/lv_wqed--893"
-  },
   "http___ice2_somafm_com_gsclassic-128-aac.m3u": {
     "EXTINF": "-1,Soma FM - Groove Salad Classic",
     "EXTGENRE": "Electronica, Ambient, Down-Tempo, Early 2000's",
@@ -639,16 +639,6 @@
     "LANGUAGE": "Dutch",
     "streamUri": "http://icecast.omroep.nl/radio4-bb-aac"
   },
-  "http___icecast_vrtcdn_be_klaracontinuo-high_mp3.m3u": {
-    "EXTINF": "-1,VRT - Klara Continuo",
-    "EXTGENRE": "Classical",
-    "PLAYLIST": "VRT - Klara Continuo",
-    "EXTIMG": "http___icecast_vrtcdn_be_klaracontinuo-high_mp3.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Belgium",
-    "LANGUAGE": "Dutch",
-    "streamUri": "http://icecast.vrtcdn.be/klaracontinuo-high.mp3"
-  },
   "http___icecast_vrtcdn_be_klara-high_mp3.m3u": {
     "EXTINF": "-1,VRT - Klara",
     "EXTGENRE": "Classical, Jazz",
@@ -658,6 +648,16 @@
     "COUNTRY": "Belgium",
     "LANGUAGE": "Dutch",
     "streamUri": "http://icecast.vrtcdn.be/klara-high.mp3"
+  },
+  "http___icecast_vrtcdn_be_klaracontinuo-high_mp3.m3u": {
+    "EXTINF": "-1,VRT - Klara Continuo",
+    "EXTGENRE": "Classical",
+    "PLAYLIST": "VRT - Klara Continuo",
+    "EXTIMG": "http___icecast_vrtcdn_be_klaracontinuo-high_mp3.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "Dutch",
+    "streamUri": "http://icecast.vrtcdn.be/klaracontinuo-high.mp3"
   },
   "http___icecast_vrtcdn_be_mnm-high_mp3.m3u": {
     "EXTINF": "-1,VRT - MNM",
@@ -739,16 +739,6 @@
     "LANGUAGE": "English",
     "streamUri": "http://kuvo-ice.streamguys.org/kuvohd2-aac-128"
   },
-  "http___listen_jazz88_org_ksds_mp3.m3u": {
-    "EXTINF": "-1,San Diego Jazz 88.3",
-    "EXTGENRE": "Jazz",
-    "PLAYLIST": "San Diego Jazz 88.3",
-    "EXTIMG": "http___listen_jazz88_org_ksds_mp3.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United States",
-    "LANGUAGE": "English",
-    "streamUri": "http://listen.jazz88.org/ksds.mp3"
-  },
   "http___listen-nme_sharp-stream_com_nme1high_mp3.m3u": {
     "EXTINF": "-1,NME 1 - Classic & New Indie Alt",
     "EXTGENRE": "Indie",
@@ -768,6 +758,16 @@
     "COUNTRY": "United Kingdom",
     "LANGUAGE": "English",
     "streamUri": "http://listen-nme.sharp-stream.com/nme2high.mp3"
+  },
+  "http___listen_jazz88_org_ksds_mp3.m3u": {
+    "EXTINF": "-1,San Diego Jazz 88.3",
+    "EXTGENRE": "Jazz",
+    "PLAYLIST": "San Diego Jazz 88.3",
+    "EXTIMG": "http___listen_jazz88_org_ksds_mp3.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United States",
+    "LANGUAGE": "English",
+    "streamUri": "http://listen.jazz88.org/ksds.mp3"
   },
   "http___live-aacplus-64_kexp_org_kexp64_aac.m3u": {
     "EXTINF": "-1,KEXP 90.3 FM Seattle",
@@ -839,16 +839,6 @@
     "LANGUAGE": "English",
     "streamUri": "http://live-radio01.mediahubaustralia.com/UNEW/mp3/"
   },
-  "http___livestream_zeelandnet_nl_8000_omroepzeeland_radio.m3u": {
-    "EXTINF": "-1,Omroep Zeeland",
-    "EXTGENRE": "Pop",
-    "PLAYLIST": "Omroep Zeeland",
-    "EXTIMG": "http___livestream_zeelandnet_nl_8000_omroepzeeland_radio.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Netherlands",
-    "LANGUAGE": "Dutch",
-    "streamUri": "http://livestream.zeelandnet.nl:8000/omroepzeeland_radio"
-  },
   "http___live_wostreaming_net_direct_ppm-jazz24aac256-ibc1.m3u": {
     "EXTINF": "-1,Jazz24",
     "EXTGENRE": "Jazz",
@@ -858,6 +848,16 @@
     "COUNTRY": "United States",
     "LANGUAGE": "English",
     "streamUri": "http://live.wostreaming.net/direct/ppm-jazz24aac256-ibc1"
+  },
+  "http___livestream_zeelandnet_nl_8000_omroepzeeland_radio.m3u": {
+    "EXTINF": "-1,Omroep Zeeland",
+    "EXTGENRE": "Pop",
+    "PLAYLIST": "Omroep Zeeland",
+    "EXTIMG": "http___livestream_zeelandnet_nl_8000_omroepzeeland_radio.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Netherlands",
+    "LANGUAGE": "Dutch",
+    "streamUri": "http://livestream.zeelandnet.nl:8000/omroepzeeland_radio"
   },
   "http___mdr-284350-0_cast_mdr_de_mdr_284350_0_aac_high_stream_aac.m3u": {
     "EXTINF": "-1,MDR Klassik",
@@ -1009,26 +1009,6 @@
     "LANGUAGE": "English",
     "streamUri": "http://msmn7.co:8018/stream"
   },
-  "http___playerservices_streamtheworld_com_api_livestream-redirect_WRTI_CLASSICAL_mp3.m3u": {
-    "EXTINF": "-1,WRTI Philadelphia 90.1 - Classical",
-    "EXTGENRE": "Classical",
-    "PLAYLIST": "WRTI Philadelphia 90.1 - Classical",
-    "EXTIMG": "http___playerservices_streamtheworld_com_api_livestream-redirect_WRTI_CLASSICAL_mp3.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United States",
-    "LANGUAGE": "English",
-    "streamUri": "http://playerservices.streamtheworld.com/api/livestream-redirect/WRTI_CLASSICAL.mp3"
-  },
-  "http___playerservices_streamtheworld_com_api_livestream-redirect_WRTI_JAZZ_mp3.m3u": {
-    "EXTINF": "-1,WRTI Philadelphia 90.1 - Jazz",
-    "EXTGENRE": "Jazz",
-    "PLAYLIST": "WRTI Philadelphia 90.1 - Jazz",
-    "EXTIMG": "http___playerservices_streamtheworld_com_api_livestream-redirect_WRTI_JAZZ_mp3.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United States",
-    "LANGUAGE": "English",
-    "streamUri": "http://playerservices.streamtheworld.com/api/livestream-redirect/WRTI_JAZZ.mp3"
-  },
   "http___play_organlive_com_8002_320.m3u": {
     "EXTINF": "-1,OrganLive.com",
     "EXTGENRE": "Classical",
@@ -1058,6 +1038,26 @@
     "COUNTRY": "United States",
     "LANGUAGE": "English",
     "streamUri": "http://play.organlive.com:8002/320pb"
+  },
+  "http___playerservices_streamtheworld_com_api_livestream-redirect_WRTI_CLASSICAL_mp3.m3u": {
+    "EXTINF": "-1,WRTI Philadelphia 90.1 - Classical",
+    "EXTGENRE": "Classical",
+    "PLAYLIST": "WRTI Philadelphia 90.1 - Classical",
+    "EXTIMG": "http___playerservices_streamtheworld_com_api_livestream-redirect_WRTI_CLASSICAL_mp3.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United States",
+    "LANGUAGE": "English",
+    "streamUri": "http://playerservices.streamtheworld.com/api/livestream-redirect/WRTI_CLASSICAL.mp3"
+  },
+  "http___playerservices_streamtheworld_com_api_livestream-redirect_WRTI_JAZZ_mp3.m3u": {
+    "EXTINF": "-1,WRTI Philadelphia 90.1 - Jazz",
+    "EXTGENRE": "Jazz",
+    "PLAYLIST": "WRTI Philadelphia 90.1 - Jazz",
+    "EXTIMG": "http___playerservices_streamtheworld_com_api_livestream-redirect_WRTI_JAZZ_mp3.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United States",
+    "LANGUAGE": "English",
+    "streamUri": "http://playerservices.streamtheworld.com/api/livestream-redirect/WRTI_JAZZ.mp3"
   },
   "http___psn1_prostreaming_net_8095_stream.m3u": {
     "EXTINF": "-1,Mad Music Asylum",
@@ -1109,26 +1109,6 @@
     "LANGUAGE": "English",
     "streamUri": "http://radio.linn.co.uk:8004/autodj"
   },
-  "http___radionz-ice_streamguys_com_80_concert_mp3.m3u": {
-    "EXTINF": "-1,Radio New Zealand - Concert",
-    "EXTGENRE": "Classical",
-    "PLAYLIST": "Radio New Zealand - Concert",
-    "EXTIMG": "http___radionz-ice_streamguys_com_80_concert_mp3.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "New Zealand",
-    "LANGUAGE": "English",
-    "streamUri": "http://radionz-ice.streamguys.com:80/concert.mp3"
-  },
-  "http___radionz-ice_streamguys_com_80_national_mp3.m3u": {
-    "EXTINF": "-1,Radio New Zealand - National",
-    "EXTGENRE": "Eclectic, Music, Current Affairs",
-    "PLAYLIST": "Radio New Zealand - National",
-    "EXTIMG": "http___radionz-ice_streamguys_com_80_national_mp3.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "New Zealand",
-    "LANGUAGE": "English",
-    "streamUri": "http://radionz-ice.streamguys.com:80/national.mp3"
-  },
   "http___radio_stereoscenic_com_ama-h.m3u": {
     "EXTINF": "-1,A.M. Ambient",
     "EXTGENRE": "Electronica, Ambient",
@@ -1149,6 +1129,26 @@
     "LANGUAGE": "English",
     "streamUri": "http://radio.stereoscenic.com/asp-h"
   },
+  "http___radionz-ice_streamguys_com_80_concert_mp3.m3u": {
+    "EXTINF": "-1,Radio New Zealand - Concert",
+    "EXTGENRE": "Classical",
+    "PLAYLIST": "Radio New Zealand - Concert",
+    "EXTIMG": "http___radionz-ice_streamguys_com_80_concert_mp3.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "New Zealand",
+    "LANGUAGE": "English",
+    "streamUri": "http://radionz-ice.streamguys.com:80/concert.mp3"
+  },
+  "http___radionz-ice_streamguys_com_80_national_mp3.m3u": {
+    "EXTINF": "-1,Radio New Zealand - National",
+    "EXTGENRE": "Eclectic, Music, Current Affairs",
+    "PLAYLIST": "Radio New Zealand - National",
+    "EXTIMG": "http___radionz-ice_streamguys_com_80_national_mp3.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "New Zealand",
+    "LANGUAGE": "English",
+    "streamUri": "http://radionz-ice.streamguys.com:80/national.mp3"
+  },
   "http___rootslegacy_fr_8080_;listen_mp3.m3u": {
     "EXTINF": "-1,Roots Legacy Radio - Dub UK & Roots Reggae",
     "EXTGENRE": "Dub, Dub UK, Roots Reggae",
@@ -1158,26 +1158,6 @@
     "COUNTRY": "France",
     "LANGUAGE": "English",
     "streamUri": "http://rootslegacy.fr:8080/;listen.mp3"
-  },
-  "https___22653_live_streamtheworld_com_TOPZEN_mp3.m3u": {
-    "EXTINF": "-1,Zen FM",
-    "EXTGENRE": "Lounge",
-    "PLAYLIST": "Zen FM",
-    "EXTIMG": "https___22653_live_streamtheworld_com_TOPZEN_mp3.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Belgium",
-    "LANGUAGE": "Dutch",
-    "streamUri": "https://22653.live.streamtheworld.com/TOPZEN.mp3"
-  },
-  "https___bytefm-ice-edge-1106-fra-eco-cdn_cast_addradio_de_bytefm_main_high_stream_mp3.m3u": {
-    "EXTINF": "-1,ByteFM",
-    "EXTGENRE": "Eclectic",
-    "PLAYLIST": "ByteFM",
-    "EXTIMG": "https___bytefm-ice-edge-1106-fra-eco-cdn_cast_addradio_de_bytefm_main_high_stream_mp3.webp",
-    "HOMEPAGE": "https://www.byte.fm/",
-    "COUNTRY": "Germany",
-    "LANGUAGE": "German",
-    "streamUri": "https://bytefm-ice-edge-1106-fra-eco-cdn.cast.addradio.de/bytefm/main/high/stream.mp3"
   },
   "http___sc3_radiocaroline_net_8030.m3u": {
     "EXTINF": "-1,Radio Caroline",
@@ -1189,26 +1169,6 @@
     "LANGUAGE": "English",
     "streamUri": "http://sc3.radiocaroline.net:8030"
   },
-  "https___dispatcher_rndfnk_com_br_br2_sued_mp3_mid.m3u": {
-    "EXTINF": "-1,Bayern 2",
-    "EXTGENRE": "Eclectic",
-    "PLAYLIST": "Bayern 2",
-    "EXTIMG": "https___dispatcher_rndfnk_com_br_br2_sued_mp3_mid.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Germany",
-    "LANGUAGE": "German",
-    "streamUri": "https://dispatcher.rndfnk.com/br/br2/sued/mp3/mid"
-  },
-  "https___dispatcher_rndfnk_com_br_brklassik_live_mp3_high.m3u": {
-    "EXTINF": "-1,BR-Klassik",
-    "EXTGENRE": "Classical",
-    "PLAYLIST": "BR-Klassik",
-    "EXTIMG": "https___dispatcher_rndfnk_com_br_brklassik_live_mp3_high.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Germany",
-    "LANGUAGE": "German",
-    "streamUri": "https://dispatcher.rndfnk.com/br/brklassik/live/mp3/high"
-  },
   "http___shoutcastunlimited_com_8512.m3u": {
     "EXTINF": "-1,PRM - Prog Rock & Metal",
     "EXTGENRE": "Progressive Rock, Metal",
@@ -1219,235 +1179,25 @@
     "LANGUAGE": "English",
     "streamUri": "http://shoutcastunlimited.com:8512"
   },
-  "https___http-live_sr_se_p2musik-aac-320.m3u": {
-    "EXTINF": "-1,P2",
-    "EXTGENRE": "Classical, Jazz",
-    "PLAYLIST": "P2",
-    "EXTIMG": "https___http-live_sr_se_p2musik-aac-320.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Sweden",
-    "LANGUAGE": "Swedish",
-    "streamUri": "https://http-live.sr.se/p2musik-aac-320"
-  },
-  "https___ice_cr1_streamzilla_xlcdn_com_8000_sz=RCOLiveWebradio=mp3-192.m3u": {
-    "EXTINF": "-1,RCO Live",
-    "EXTGENRE": "Classical",
-    "PLAYLIST": "RCO Live",
-    "EXTIMG": "https___ice_cr1_streamzilla_xlcdn_com_8000_sz=RCOLiveWebradio=mp3-192.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Netherlands",
-    "LANGUAGE": "Dutch",
-    "streamUri": "https://ice.cr1.streamzilla.xlcdn.com:8000/sz=RCOLiveWebradio=mp3-192"
-  },
-  "https___iheart_4zzz_org_au_4zzz.m3u": {
-    "EXTINF": "-1,4ZZZ FM 102.1 - Alternative",
-    "EXTGENRE": "Alternative",
-    "PLAYLIST": "4ZZZ FM 102.1 - Alternative",
-    "EXTIMG": "https___iheart_4zzz_org_au_4zzz.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Australia",
-    "LANGUAGE": "English",
-    "streamUri": "https://iheart.4zzz.org.au/4zzz"
-  },
-  "https___live-cdn_sr_se_pool2_p2musik_p2musik_isml_p2musik-audio=192000_m3u8.m3u": {
-    "EXTINF": "-1,Swedish Classic Radio",
-    "EXTGENRE": "Classical, Contemporary, Jazz, Folk",
-    "PLAYLIST": "Swedish Classic Radio",
-    "EXTIMG": "https___live-cdn_sr_se_pool2_p2musik_p2musik_isml_p2musik-audio=192000_m3u8.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Netherlands",
-    "LANGUAGE": "Dutch",
-    "streamUri": "https://live-cdn.sr.se/pool2/p2musik/p2musik.isml/p2musik-audio=192000.m3u8"
-  },
-  "https___liveradio_swr_de_sw331ch_swr1bw_play_mp3.m3u": {
-    "EXTINF": "-1,SWR1 BW",
-    "EXTGENRE": "Pop, Rock",
-    "PLAYLIST": "SWR1 BW",
-    "EXTIMG": "https___liveradio_swr_de_sw331ch_swr1bw_play_mp3.webp",
-    "HOMEPAGE": "https://www.swr.de/swr1/",
-    "COUNTRY": "Germany",
-    "LANGUAGE": "German",
-    "streamUri": "https://liveradio.swr.de/sw331ch/swr1bw/play.mp3"
-  },
-  "https___maggie_torontocast_com_8076_mp3.m3u": {
-    "EXTINF": "-1,JB Radio2 (320K)",
-    "EXTGENRE": "Alternative, Rock, Eclectic",
-    "PLAYLIST": "JB Radio2 (320K)",
-    "EXTIMG": "https___maggie_torontocast_com_8076_mp3.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Canada",
-    "LANGUAGE": "English",
-    "streamUri": "https://maggie.torontocast.com:8076/mp3"
-  },
-  "https___mediaserv73_live-streams_nl_18058_stream.m3u": {
-    "EXTINF": "-1,Ancient FM - Mediaeval and Renaissance Music",
-    "EXTGENRE": "Classical, Mediaeval, Renaissance",
-    "PLAYLIST": "Ancient FM - Mediaeval and Renaissance Music",
-    "EXTIMG": "https___mediaserv73_live-streams_nl_18058_stream.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Canada",
-    "LANGUAGE": "English",
-    "streamUri": "https://mediaserv73.live-streams.nl:18058/stream"
-  },
-  "https___orf-live_ors-shoutcast_at_fm4-q2a.m3u": {
-    "EXTINF": "-1,Radio FM4",
-    "EXTGENRE": "Alternative, Alt Rock, Electronic",
-    "PLAYLIST": "Radio FM4",
-    "EXTIMG": "https___orf-live_ors-shoutcast_at_fm4-q2a.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Austria",
-    "LANGUAGE": "English",
-    "streamUri": "https://orf-live.ors-shoutcast.at/fm4-q2a"
-  },
-  "https___playerservices_streamtheworld_com_api_livestream-redirect_WEMUFM_mp3.m3u": {
-    "EXTINF": "-1,WEMU Ypsilanti FM 89.1 - Jazz",
-    "EXTGENRE": "Jazz",
-    "PLAYLIST": "WEMU Ypsilanti FM 89.1 - Jazz",
-    "EXTIMG": "https___playerservices_streamtheworld_com_api_livestream-redirect_WEMUFM_mp3.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United States",
-    "LANGUAGE": "English",
-    "streamUri": "https://playerservices.streamtheworld.com/api/livestream-redirect/WEMUFM.mp3"
-  },
-  "https___radios_rtbf_be_musiq3-128_aac.m3u": {
-    "EXTINF": "-1,Musiq 3",
-    "EXTGENRE": "Classical",
-    "PLAYLIST": "Musiq 3",
-    "EXTIMG": "https___radios_rtbf_be_musiq3-128_aac.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Belgium",
-    "LANGUAGE": "French",
-    "streamUri": "https://radios.rtbf.be/musiq3-128.aac"
-  },
-  "https___smoothjazz_cdnstream1_com_2585_320_mp3.m3u": {
-    "EXTINF": "-1,SmoothJazz Global",
-    "EXTGENRE": "Jazz, Smooth Jazz",
-    "PLAYLIST": "SmoothJazz Global",
-    "EXTIMG": "https___smoothjazz_cdnstream1_com_2585_320_mp3.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United States",
-    "LANGUAGE": "English",
-    "streamUri": "https://smoothjazz.cdnstream1.com/2585_320.mp3"
-  },
-  "https___smoothjazz_cdnstream1_com_2586_320_mp3.m3u": {
-    "EXTINF": "-1,SmoothLounge Global",
-    "EXTGENRE": "Lounge, Smooth Lounge",
-    "PLAYLIST": "SmoothLounge Global",
-    "EXTIMG": "https___smoothjazz_cdnstream1_com_2586_320_mp3.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United States",
-    "LANGUAGE": "English",
-    "streamUri": "https://smoothjazz.cdnstream1.com/2586_320.mp3"
-  },
-  "https___sohoradiomusic_doughunt_co_uk_8010_320mp3.m3u": {
-    "EXTINF": "-1,Soho Radio London",
-    "EXTGENRE": "Eclectic, Music, Culture",
-    "PLAYLIST": "Soho Radio London",
-    "EXTIMG": "https___sohoradiomusic_doughunt_co_uk_8010_320mp3.webp",
+  "http___stream-relay-geo_ntslive_net_stream.m3u": {
+    "EXTINF": "-1,NTS Live London - Don't Assume",
+    "EXTGENRE": "Alternative, Underground, Club, Live",
+    "PLAYLIST": "NTS Live London - Don't Assume",
+    "EXTIMG": "http___stream-relay-geo_ntslive_net_stream.webp",
     "HOMEPAGE": "",
     "COUNTRY": "United Kingdom",
     "LANGUAGE": "English",
-    "streamUri": "https://sohoradiomusic.doughunt.co.uk:8010/320mp3"
+    "streamUri": "http://stream-relay-geo.ntslive.net/stream"
   },
-  "https___stream-al_planetradio_co_uk_jazzhigh_aac.m3u": {
-    "EXTINF": "-1,Jazz FM",
-    "EXTGENRE": "Jazz, Blues. Soul",
-    "PLAYLIST": "Jazz FM",
-    "EXTIMG": "https___stream-al_planetradio_co_uk_jazzhigh_aac.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United Kingdom",
-    "LANGUAGE": "English",
-    "streamUri": "https://stream-al.planetradio.co.uk/jazzhigh.aac"
-  },
-  "https___stream-mz_planetradio_co_uk_scalahigh_aac.m3u": {
-    "EXTINF": "-1,Scala Radio",
-    "EXTGENRE": "Classical, News, Classical, Requests",
-    "PLAYLIST": "Scala Radio",
-    "EXTIMG": "https___stream-mz_planetradio_co_uk_scalahigh_aac.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United Kingdom",
-    "LANGUAGE": "English",
-    "streamUri": "https://stream-mz.planetradio.co.uk/scalahigh.aac"
-  },
-  "https___stream_nowyswiat_online_mp3.m3u": {
-    "EXTINF": "-1,Radio Nowy Swiat",
-    "EXTGENRE": "Rock, Alternative, Jazz",
-    "PLAYLIST": "Radio Nowy Swiat",
-    "EXTIMG": "https___stream_nowyswiat_online_mp3.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Poland",
-    "LANGUAGE": "Polish",
-    "streamUri": "https://stream.nowyswiat.online/mp3"
-  },
-  "https___stream_radioparadise_com_aac-320.m3u": {
-    "EXTINF": "-1,Radio Paradise - Main Mix",
-    "EXTGENRE": "Eclectic",
-    "PLAYLIST": "Radio Paradise - Main Mix",
-    "EXTIMG": "https___stream_radioparadise_com_aac-320.webp",
+  "http___stream-relay-geo_ntslive_net_stream2.m3u": {
+    "EXTINF": "-1,NTS Live International",
+    "EXTGENRE": "Alternative, Underground, Club, Live",
+    "PLAYLIST": "NTS Live International",
+    "EXTIMG": "http___stream-relay-geo_ntslive_net_stream2.webp",
     "HOMEPAGE": "",
     "COUNTRY": "United States",
     "LANGUAGE": "English",
-    "streamUri": "https://stream.radioparadise.com/aac-320"
-  },
-  "https___stream_radioparadise_com_mellow-320.m3u": {
-    "EXTINF": "-1,Radio Paradise - Mellow",
-    "EXTGENRE": "Rock, Mellow Rock",
-    "PLAYLIST": "Radio Paradise - Mellow",
-    "EXTIMG": "https___stream_radioparadise_com_mellow-320.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United States",
-    "LANGUAGE": "English",
-    "streamUri": "https://stream.radioparadise.com/mellow-320"
-  },
-  "https___stream_radioparadise_com_rock-320.m3u": {
-    "EXTINF": "-1,Radio Paradise - Rock",
-    "EXTGENRE": "Rock",
-    "PLAYLIST": "Radio Paradise - Rock",
-    "EXTIMG": "https___stream_radioparadise_com_rock-320.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United States",
-    "LANGUAGE": "English",
-    "streamUri": "https://stream.radioparadise.com/rock-320"
-  },
-  "https___stream_radioparadise_com_world-etc-320.m3u": {
-    "EXTINF": "-1,Radio Paradise - World",
-    "EXTGENRE": "World Music",
-    "PLAYLIST": "Radio Paradise - World",
-    "EXTIMG": "https___stream_radioparadise_com_world-etc-320.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United States",
-    "LANGUAGE": "English",
-    "streamUri": "https://stream.radioparadise.com/world-etc-320"
-  },
-  "https___stream_rcs_revma_com_an1ugyygzk8uv.m3u": {
-    "EXTINF": "-1,Radio 357",
-    "EXTGENRE": "Rock, Alternative, Jazz",
-    "PLAYLIST": "Radio 357",
-    "EXTIMG": "https___stream_rcs_revma_com_an1ugyygzk8uv.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Poland",
-    "LANGUAGE": "Polish",
-    "streamUri": "https://stream.rcs.revma.com/an1ugyygzk8uv"
-  },
-  "https___sverigesradio_se_topsy_direkt_132-hi-aac.m3u": {
-    "EXTINF": "-1,P1",
-    "EXTGENRE": "News, Culture",
-    "PLAYLIST": "P1",
-    "EXTIMG": "https___sverigesradio_se_topsy_direkt_132-hi-aac.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Sweden",
-    "LANGUAGE": "Swedish",
-    "streamUri": "https://sverigesradio.se/topsy/direkt/132-hi-aac"
-  },
-  "https___sverigesradio_se_topsy_direkt_164-hi-aac.m3u": {
-    "EXTINF": "-1,P3",
-    "EXTGENRE": "Pop, Culture",
-    "PLAYLIST": "P3",
-    "EXTIMG": "https___sverigesradio_se_topsy_direkt_164-hi-aac.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Sweden",
-    "LANGUAGE": "Swedish",
-    "streamUri": "https://sverigesradio.se/topsy/direkt/164-hi-aac"
+    "streamUri": "http://stream-relay-geo.ntslive.net/stream2"
   },
   "http___stream0_wfmu_org_freeform-best-available.m3u": {
     "EXTINF": "-1,WFMU 91.1 FM",
@@ -1518,66 +1268,6 @@
     "COUNTRY": "France",
     "LANGUAGE": "English",
     "streamUri": "http://stream.fr.morow.com:8080/morow_hi.aacp"
-  },
-  "http___streaming_swisstxt_ch_m_drs1_mp3_128.m3u": {
-    "EXTINF": "-1,Radio SRF 1",
-    "EXTGENRE": "News, Entertainment, News",
-    "PLAYLIST": "Radio SRF 1",
-    "EXTIMG": "http___streaming_swisstxt_ch_m_drs1_mp3_128.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "German",
-    "streamUri": "http://streaming.swisstxt.ch/m/drs1/mp3_128"
-  },
-  "http___streaming_swisstxt_ch_m_drs2_mp3_128.m3u": {
-    "EXTINF": "-1,Radio SRF 2 Kultur",
-    "EXTGENRE": "Classical, Jazz",
-    "PLAYLIST": "Radio SRF 2 Kultur",
-    "EXTIMG": "http___streaming_swisstxt_ch_m_drs2_mp3_128.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "German",
-    "streamUri": "http://streaming.swisstxt.ch/m/drs2/mp3_128"
-  },
-  "http___streaming_swisstxt_ch_m_drs3_mp3_128.m3u": {
-    "EXTINF": "-1,Radio SRF 3",
-    "EXTGENRE": "Eclectic",
-    "PLAYLIST": "Radio SRF 3",
-    "EXTIMG": "http___streaming_swisstxt_ch_m_drs3_mp3_128.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "German",
-    "streamUri": "http://streaming.swisstxt.ch/m/drs3/mp3_128"
-  },
-  "http___streaming_swisstxt_ch_m_drs4news_mp3_128.m3u": {
-    "EXTINF": "-1,Radio SRF 4 News",
-    "EXTGENRE": "News",
-    "PLAYLIST": "Radio SRF 4 News",
-    "EXTIMG": "http___streaming_swisstxt_ch_m_drs4news_mp3_128.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "German",
-    "streamUri": "http://streaming.swisstxt.ch/m/drs4news/mp3_128"
-  },
-  "http___streaming_swisstxt_ch_m_drsmw_mp3_128.m3u": {
-    "EXTINF": "-1,Radio SRF Musikwelle",
-    "EXTGENRE": "Pop, Schlager",
-    "PLAYLIST": "Radio SRF Musikwelle",
-    "EXTIMG": "http___streaming_swisstxt_ch_m_drsmw_mp3_128.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "German",
-    "streamUri": "http://streaming.swisstxt.ch/m/drsmw/mp3_128"
-  },
-  "http___streaming_swisstxt_ch_m_drsvirus_mp3_128.m3u": {
-    "EXTINF": "-1,Radio SRF Virus",
-    "EXTGENRE": "Alternative",
-    "PLAYLIST": "Radio SRF Virus",
-    "EXTIMG": "http___streaming_swisstxt_ch_m_drsvirus_mp3_128.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "German",
-    "streamUri": "http://streaming.swisstxt.ch/m/drsvirus/mp3_128"
   },
   "http___stream_kanalk_ch_80.m3u": {
     "EXTINF": "-1,Kanal K",
@@ -1669,26 +1359,6 @@
     "LANGUAGE": "English",
     "streamUri": "http://stream.live.vc.bbcmedia.co.uk/bbc_radio_two"
   },
-  "http___stream-relay-geo_ntslive_net_stream2.m3u": {
-    "EXTINF": "-1,NTS Live International",
-    "EXTGENRE": "Alternative, Underground, Club, Live",
-    "PLAYLIST": "NTS Live International",
-    "EXTIMG": "http___stream-relay-geo_ntslive_net_stream2.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United States",
-    "LANGUAGE": "English",
-    "streamUri": "http://stream-relay-geo.ntslive.net/stream2"
-  },
-  "http___stream-relay-geo_ntslive_net_stream.m3u": {
-    "EXTINF": "-1,NTS Live London - Don't Assume",
-    "EXTGENRE": "Alternative, Underground, Club, Live",
-    "PLAYLIST": "NTS Live London - Don't Assume",
-    "EXTIMG": "http___stream-relay-geo_ntslive_net_stream.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United Kingdom",
-    "LANGUAGE": "English",
-    "streamUri": "http://stream-relay-geo.ntslive.net/stream"
-  },
   "http___stream_resonance_fm_resonance.m3u": {
     "EXTINF": "-1,Resonance Radio 104.4 FM",
     "EXTGENRE": "Eclectic",
@@ -1698,6 +1368,196 @@
     "COUNTRY": "United Kingdom",
     "LANGUAGE": "English",
     "streamUri": "http://stream.resonance.fm/resonance"
+  },
+  "http___stream_srg-ssr_ch_m_couleur3_mp3_128.m3u": {
+    "EXTINF": "-1,RTS - Couleur 3",
+    "EXTGENRE": "Eclectic",
+    "PLAYLIST": "RTS - Couleur 3",
+    "EXTIMG": "http___stream_srg-ssr_ch_m_couleur3_mp3_128.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "French",
+    "streamUri": "http://stream.srg-ssr.ch/m/couleur3/mp3_128"
+  },
+  "http___stream_srg-ssr_ch_m_espace-2_mp3_128.m3u": {
+    "EXTINF": "-1,RTS - Espace 2",
+    "EXTGENRE": "Classical",
+    "PLAYLIST": "RTS - Espace 2",
+    "EXTIMG": "http___stream_srg-ssr_ch_m_espace-2_mp3_128.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "French",
+    "streamUri": "http://stream.srg-ssr.ch/m/espace-2/mp3_128"
+  },
+  "http___stream_srg-ssr_ch_m_la-1ere_mp3_128.m3u": {
+    "EXTINF": "-1,RTS - La Premiere",
+    "EXTGENRE": "Pop",
+    "PLAYLIST": "RTS - La Premiere",
+    "EXTIMG": "http___stream_srg-ssr_ch_m_la-1ere_mp3_128.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "French",
+    "streamUri": "http://stream.srg-ssr.ch/m/la-1ere/mp3_128"
+  },
+  "http___stream_srg-ssr_ch_m_option-musique_mp3_128.m3u": {
+    "EXTINF": "-1,RTS - option musique",
+    "EXTGENRE": "Alternative, Indie",
+    "PLAYLIST": "RTS - option musique",
+    "EXTIMG": "http___stream_srg-ssr_ch_m_option-musique_mp3_128.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "French",
+    "streamUri": "http://stream.srg-ssr.ch/m/option-musique/mp3_128"
+  },
+  "http___stream_srg-ssr_ch_m_retedue_mp3_128.m3u": {
+    "EXTINF": "-1,RSI - Rete Due",
+    "EXTGENRE": "Classical, Music, Culture",
+    "PLAYLIST": "RSI - Rete Due",
+    "EXTIMG": "http___stream_srg-ssr_ch_m_retedue_mp3_128.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "Italian",
+    "streamUri": "http://stream.srg-ssr.ch/m/retedue/mp3_128"
+  },
+  "http___stream_srg-ssr_ch_m_retetre_mp3_128.m3u": {
+    "EXTINF": "-1,RSI - Rete Tre",
+    "EXTGENRE": "Alternative, Pop",
+    "PLAYLIST": "RSI - Rete Tre",
+    "EXTIMG": "http___stream_srg-ssr_ch_m_retetre_mp3_128.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "Italian",
+    "streamUri": "http://stream.srg-ssr.ch/m/retetre/mp3_128"
+  },
+  "http___stream_srg-ssr_ch_m_reteuno_mp3_128.m3u": {
+    "EXTINF": "-1,RSI - Rete Uno",
+    "EXTGENRE": "News, Entertainment, News",
+    "PLAYLIST": "RSI - Rete Uno",
+    "EXTIMG": "http___stream_srg-ssr_ch_m_reteuno_mp3_128.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "Italian",
+    "streamUri": "http://stream.srg-ssr.ch/m/reteuno/mp3_128"
+  },
+  "http___stream_srg-ssr_ch_m_rr_mp3_128.m3u": {
+    "EXTINF": "-1,RTR Radio",
+    "EXTGENRE": "Pop",
+    "PLAYLIST": "RTR Radio",
+    "EXTIMG": "http___stream_srg-ssr_ch_m_rr_mp3_128.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "Romansh",
+    "streamUri": "http://stream.srg-ssr.ch/m/rr/mp3_128"
+  },
+  "http___stream_srg-ssr_ch_m_rsc_de_aacp_96.m3u": {
+    "EXTINF": "-1,Radio Swiss Classic",
+    "EXTGENRE": "Classical",
+    "PLAYLIST": "Radio Swiss Classic",
+    "EXTIMG": "http___stream_srg-ssr_ch_m_rsc_de_aacp_96.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "German",
+    "streamUri": "http://stream.srg-ssr.ch/m/rsc_de/aacp_96"
+  },
+  "http___stream_srg-ssr_ch_m_rsj_aacp_96.m3u": {
+    "EXTINF": "-1,Radio Swiss Jazz",
+    "EXTGENRE": "Jazz",
+    "PLAYLIST": "Radio Swiss Jazz",
+    "EXTIMG": "http___stream_srg-ssr_ch_m_rsj_aacp_96.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "German",
+    "streamUri": "http://stream.srg-ssr.ch/m/rsj/aacp_96"
+  },
+  "http___stream_srg-ssr_ch_m_rsp_aacp_96.m3u": {
+    "EXTINF": "-1,Radio Swiss Pop",
+    "EXTGENRE": "Pop",
+    "PLAYLIST": "Radio Swiss Pop",
+    "EXTIMG": "http___stream_srg-ssr_ch_m_rsp_aacp_96.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "German",
+    "streamUri": "http://stream.srg-ssr.ch/m/rsp/aacp_96"
+  },
+  "http___stream_wfmt_com_main.m3u": {
+    "EXTINF": "-1,WFMT Chicago 98.7 - Classical",
+    "EXTGENRE": "Classical",
+    "PLAYLIST": "WFMT Chicago 98.7 - Classical",
+    "EXTIMG": "http___stream_wfmt_com_main.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United States",
+    "LANGUAGE": "English",
+    "streamUri": "http://stream.wfmt.com/main"
+  },
+  "http___stream_wqxr_org_wqxr.m3u": {
+    "EXTINF": "-1,WQXR New York - Classical Music",
+    "EXTGENRE": "Classical",
+    "PLAYLIST": "WQXR New York - Classical Music",
+    "EXTIMG": "http___stream_wqxr_org_wqxr.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United States",
+    "LANGUAGE": "English",
+    "streamUri": "http://stream.wqxr.org/wqxr"
+  },
+  "http___streaming_swisstxt_ch_m_drs1_mp3_128.m3u": {
+    "EXTINF": "-1,Radio SRF 1",
+    "EXTGENRE": "News, Entertainment, News",
+    "PLAYLIST": "Radio SRF 1",
+    "EXTIMG": "http___streaming_swisstxt_ch_m_drs1_mp3_128.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "German",
+    "streamUri": "http://streaming.swisstxt.ch/m/drs1/mp3_128"
+  },
+  "http___streaming_swisstxt_ch_m_drs2_mp3_128.m3u": {
+    "EXTINF": "-1,Radio SRF 2 Kultur",
+    "EXTGENRE": "Classical, Jazz",
+    "PLAYLIST": "Radio SRF 2 Kultur",
+    "EXTIMG": "http___streaming_swisstxt_ch_m_drs2_mp3_128.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "German",
+    "streamUri": "http://streaming.swisstxt.ch/m/drs2/mp3_128"
+  },
+  "http___streaming_swisstxt_ch_m_drs3_mp3_128.m3u": {
+    "EXTINF": "-1,Radio SRF 3",
+    "EXTGENRE": "Eclectic",
+    "PLAYLIST": "Radio SRF 3",
+    "EXTIMG": "http___streaming_swisstxt_ch_m_drs3_mp3_128.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "German",
+    "streamUri": "http://streaming.swisstxt.ch/m/drs3/mp3_128"
+  },
+  "http___streaming_swisstxt_ch_m_drs4news_mp3_128.m3u": {
+    "EXTINF": "-1,Radio SRF 4 News",
+    "EXTGENRE": "News",
+    "PLAYLIST": "Radio SRF 4 News",
+    "EXTIMG": "http___streaming_swisstxt_ch_m_drs4news_mp3_128.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "German",
+    "streamUri": "http://streaming.swisstxt.ch/m/drs4news/mp3_128"
+  },
+  "http___streaming_swisstxt_ch_m_drsmw_mp3_128.m3u": {
+    "EXTINF": "-1,Radio SRF Musikwelle",
+    "EXTGENRE": "Pop, Schlager",
+    "PLAYLIST": "Radio SRF Musikwelle",
+    "EXTIMG": "http___streaming_swisstxt_ch_m_drsmw_mp3_128.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "German",
+    "streamUri": "http://streaming.swisstxt.ch/m/drsmw/mp3_128"
+  },
+  "http___streaming_swisstxt_ch_m_drsvirus_mp3_128.m3u": {
+    "EXTINF": "-1,Radio SRF Virus",
+    "EXTGENRE": "Alternative",
+    "PLAYLIST": "Radio SRF Virus",
+    "EXTIMG": "http___streaming_swisstxt_ch_m_drsvirus_mp3_128.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Switzerland",
+    "LANGUAGE": "German",
+    "streamUri": "http://streaming.swisstxt.ch/m/drsvirus/mp3_128"
   },
   "http___streams_fluxfm_de_60er_mp3-320_streams_fluxfm_de_.m3u": {
     "EXTINF": "-1,FluxFM - 60s",
@@ -1739,6 +1599,16 @@
     "LANGUAGE": "German",
     "streamUri": "http://streams.fluxfm.de/90er/mp3-320/audio/"
   },
+  "http___streams_fluxfm_de_Chillhop_mp3-320_streams_fluxfm_de_.m3u": {
+    "EXTINF": "-1,FluxFM - ChillHop",
+    "EXTGENRE": "Chill Out, Laidback",
+    "PLAYLIST": "FluxFM - ChillHop",
+    "EXTIMG": "http___streams_fluxfm_de_Chillhop_mp3-320_streams_fluxfm_de_.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Germany",
+    "LANGUAGE": "German",
+    "streamUri": "http://streams.fluxfm.de/Chillhop/mp3-320/streams.fluxfm.de/"
+  },
   "http___streams_fluxfm_de_bbeachhouse_mp3-320_audio_.m3u": {
     "EXTINF": "-1,FluxFM - Berlin Beach House Radio",
     "EXTGENRE": "Electronica",
@@ -1748,16 +1618,6 @@
     "COUNTRY": "Germany",
     "LANGUAGE": "German",
     "streamUri": "http://streams.fluxfm.de/bbeachhouse/mp3-320/audio/"
-  },
-  "http___streams_fluxfm_de_boomfmclassics_mp3-320_audio_.m3u": {
-    "EXTINF": "-1,FluxFM - BoomFM Classics",
-    "EXTGENRE": "HipHop, Oldschool",
-    "PLAYLIST": "FluxFM - BoomFM Classics",
-    "EXTIMG": "http___streams_fluxfm_de_boomfmclassics_mp3-320_audio_.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Germany",
-    "LANGUAGE": "German",
-    "streamUri": "http://streams.fluxfm.de/boomfmclassics/mp3-320/audio/"
   },
   "http___streams_fluxfm_de_boomfm_mp3-320_audio_.m3u": {
     "EXTINF": "-1,FluxFM - BoomFM",
@@ -1769,15 +1629,15 @@
     "LANGUAGE": "German",
     "streamUri": "http://streams.fluxfm.de/boomfm/mp3-320/audio/"
   },
-  "http___streams_fluxfm_de_Chillhop_mp3-320_streams_fluxfm_de_.m3u": {
-    "EXTINF": "-1,FluxFM - ChillHop",
-    "EXTGENRE": "Chill Out, Laidback",
-    "PLAYLIST": "FluxFM - ChillHop",
-    "EXTIMG": "http___streams_fluxfm_de_Chillhop_mp3-320_streams_fluxfm_de_.webp",
+  "http___streams_fluxfm_de_boomfmclassics_mp3-320_audio_.m3u": {
+    "EXTINF": "-1,FluxFM - BoomFM Classics",
+    "EXTGENRE": "HipHop, Oldschool",
+    "PLAYLIST": "FluxFM - BoomFM Classics",
+    "EXTIMG": "http___streams_fluxfm_de_boomfmclassics_mp3-320_audio_.webp",
     "HOMEPAGE": "",
     "COUNTRY": "Germany",
     "LANGUAGE": "German",
-    "streamUri": "http://streams.fluxfm.de/Chillhop/mp3-320/streams.fluxfm.de/"
+    "streamUri": "http://streams.fluxfm.de/boomfmclassics/mp3-320/audio/"
   },
   "http___streams_fluxfm_de_clubsandwich_mp3-320_audio_.m3u": {
     "EXTINF": "-1,FluxFM - Clubsandwich",
@@ -2039,136 +1899,6 @@
     "LANGUAGE": "English",
     "streamUri": "http://streams.norbert.de:8000/zappa.aac"
   },
-  "http___stream_srg-ssr_ch_m_couleur3_mp3_128.m3u": {
-    "EXTINF": "-1,RTS - Couleur 3",
-    "EXTGENRE": "Eclectic",
-    "PLAYLIST": "RTS - Couleur 3",
-    "EXTIMG": "http___stream_srg-ssr_ch_m_couleur3_mp3_128.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "French",
-    "streamUri": "http://stream.srg-ssr.ch/m/couleur3/mp3_128"
-  },
-  "http___stream_srg-ssr_ch_m_espace-2_mp3_128.m3u": {
-    "EXTINF": "-1,RTS - Espace 2",
-    "EXTGENRE": "Classical",
-    "PLAYLIST": "RTS - Espace 2",
-    "EXTIMG": "http___stream_srg-ssr_ch_m_espace-2_mp3_128.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "French",
-    "streamUri": "http://stream.srg-ssr.ch/m/espace-2/mp3_128"
-  },
-  "http___stream_srg-ssr_ch_m_la-1ere_mp3_128.m3u": {
-    "EXTINF": "-1,RTS - La Premiere",
-    "EXTGENRE": "Pop",
-    "PLAYLIST": "RTS - La Premiere",
-    "EXTIMG": "http___stream_srg-ssr_ch_m_la-1ere_mp3_128.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "French",
-    "streamUri": "http://stream.srg-ssr.ch/m/la-1ere/mp3_128"
-  },
-  "http___stream_srg-ssr_ch_m_option-musique_mp3_128.m3u": {
-    "EXTINF": "-1,RTS - option musique",
-    "EXTGENRE": "Alternative, Indie",
-    "PLAYLIST": "RTS - option musique",
-    "EXTIMG": "http___stream_srg-ssr_ch_m_option-musique_mp3_128.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "French",
-    "streamUri": "http://stream.srg-ssr.ch/m/option-musique/mp3_128"
-  },
-  "http___stream_srg-ssr_ch_m_retedue_mp3_128.m3u": {
-    "EXTINF": "-1,RSI - Rete Due",
-    "EXTGENRE": "Classical, Music, Culture",
-    "PLAYLIST": "RSI - Rete Due",
-    "EXTIMG": "http___stream_srg-ssr_ch_m_retedue_mp3_128.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "Italian",
-    "streamUri": "http://stream.srg-ssr.ch/m/retedue/mp3_128"
-  },
-  "http___stream_srg-ssr_ch_m_retetre_mp3_128.m3u": {
-    "EXTINF": "-1,RSI - Rete Tre",
-    "EXTGENRE": "Alternative, Pop",
-    "PLAYLIST": "RSI - Rete Tre",
-    "EXTIMG": "http___stream_srg-ssr_ch_m_retetre_mp3_128.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "Italian",
-    "streamUri": "http://stream.srg-ssr.ch/m/retetre/mp3_128"
-  },
-  "http___stream_srg-ssr_ch_m_reteuno_mp3_128.m3u": {
-    "EXTINF": "-1,RSI - Rete Uno",
-    "EXTGENRE": "News, Entertainment, News",
-    "PLAYLIST": "RSI - Rete Uno",
-    "EXTIMG": "http___stream_srg-ssr_ch_m_reteuno_mp3_128.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "Italian",
-    "streamUri": "http://stream.srg-ssr.ch/m/reteuno/mp3_128"
-  },
-  "http___stream_srg-ssr_ch_m_rr_mp3_128.m3u": {
-    "EXTINF": "-1,RTR Radio",
-    "EXTGENRE": "Pop",
-    "PLAYLIST": "RTR Radio",
-    "EXTIMG": "http___stream_srg-ssr_ch_m_rr_mp3_128.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "Romansh",
-    "streamUri": "http://stream.srg-ssr.ch/m/rr/mp3_128"
-  },
-  "http___stream_srg-ssr_ch_m_rsc_de_aacp_96.m3u": {
-    "EXTINF": "-1,Radio Swiss Classic",
-    "EXTGENRE": "Classical",
-    "PLAYLIST": "Radio Swiss Classic",
-    "EXTIMG": "http___stream_srg-ssr_ch_m_rsc_de_aacp_96.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "German",
-    "streamUri": "http://stream.srg-ssr.ch/m/rsc_de/aacp_96"
-  },
-  "http___stream_srg-ssr_ch_m_rsj_aacp_96.m3u": {
-    "EXTINF": "-1,Radio Swiss Jazz",
-    "EXTGENRE": "Jazz",
-    "PLAYLIST": "Radio Swiss Jazz",
-    "EXTIMG": "http___stream_srg-ssr_ch_m_rsj_aacp_96.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "German",
-    "streamUri": "http://stream.srg-ssr.ch/m/rsj/aacp_96"
-  },
-  "http___stream_srg-ssr_ch_m_rsp_aacp_96.m3u": {
-    "EXTINF": "-1,Radio Swiss Pop",
-    "EXTGENRE": "Pop",
-    "PLAYLIST": "Radio Swiss Pop",
-    "EXTIMG": "http___stream_srg-ssr_ch_m_rsp_aacp_96.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Switzerland",
-    "LANGUAGE": "German",
-    "streamUri": "http://stream.srg-ssr.ch/m/rsp/aacp_96"
-  },
-  "http___stream_wfmt_com_main.m3u": {
-    "EXTINF": "-1,WFMT Chicago 98.7 - Classical",
-    "EXTGENRE": "Classical",
-    "PLAYLIST": "WFMT Chicago 98.7 - Classical",
-    "EXTIMG": "http___stream_wfmt_com_main.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United States",
-    "LANGUAGE": "English",
-    "streamUri": "http://stream.wfmt.com/main"
-  },
-  "http___stream_wqxr_org_wqxr.m3u": {
-    "EXTINF": "-1,WQXR New York - Classical Music",
-    "EXTGENRE": "Classical",
-    "PLAYLIST": "WQXR New York - Classical Music",
-    "EXTIMG": "http___stream_wqxr_org_wqxr.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United States",
-    "LANGUAGE": "English",
-    "streamUri": "http://stream.wqxr.org/wqxr"
-  },
   "http___strm112_1_fm_blues_mobile_mp3.m3u": {
     "EXTINF": "-1,1.FM - Blues Radio",
     "EXTGENRE": "Blues",
@@ -2189,16 +1919,6 @@
     "LANGUAGE": "English",
     "streamUri": "http://subfm.radioca.st/Sub.FM"
   },
-  "https___wdr-wdr3-live_icecastssl_wdr_de_wdr_wdr3_live_mp3_256_stream_mp3.m3u": {
-    "EXTINF": "-1,WDR 3",
-    "EXTGENRE": "Classical, Jazz",
-    "PLAYLIST": "WDR 3",
-    "EXTIMG": "https___wdr-wdr3-live_icecastssl_wdr_de_wdr_wdr3_live_mp3_256_stream_mp3.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Germany",
-    "LANGUAGE": "German",
-    "streamUri": "https://wdr-wdr3-live.icecastssl.wdr.de/wdr/wdr3/live/mp3/256/stream.mp3"
-  },
   "http___swr-swr2-live_cast_addradio_de_swr_swr2_live_mp3_256_stream_mp3.m3u": {
     "EXTINF": "-1,SWR 2",
     "EXTGENRE": "Classical, Jazz",
@@ -2208,26 +1928,6 @@
     "COUNTRY": "Germany",
     "LANGUAGE": "German",
     "streamUri": "http://swr-swr2-live.cast.addradio.de/swr/swr2/live/mp3/256/stream.mp3"
-  },
-  "https___www_wwoz_org_listen_hi.m3u": {
-    "EXTINF": "-1,WWOZ New Orleans FM 90.7 - Various Artists",
-    "EXTGENRE": "Jazz, Blues, Latin, Cajun, Funk",
-    "PLAYLIST": "WWOZ New Orleans FM 90.7 - Various Artists",
-    "EXTIMG": "https___www_wwoz_org_listen_hi.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "United States",
-    "LANGUAGE": "English",
-    "streamUri": "https://www.wwoz.org/listen/hi"
-  },
-  "https___wz4web_scahw_com_au_live_4buddha_32_stream_playlist_m3u8.m3u": {
-    "EXTINF": "-1,Buddha Radio",
-    "EXTGENRE": "Chill Out",
-    "PLAYLIST": "Buddha Radio",
-    "EXTIMG": "https___wz4web_scahw_com_au_live_4buddha_32_stream_playlist_m3u8.webp",
-    "HOMEPAGE": "",
-    "COUNTRY": "Australia",
-    "LANGUAGE": "English",
-    "streamUri": "https://wz4web.scahw.com.au/live/4buddha_32.stream/playlist.m3u8"
   },
   "http___wbjc-ice_streamguys1_com_80_live.m3u": {
     "EXTINF": "-1,WBJC Baltimore 91.5 - Classical",
@@ -2278,5 +1978,305 @@
     "COUNTRY": "United States",
     "LANGUAGE": "English",
     "streamUri": "http://wkcr.streamguys1.com:80/live"
+  },
+  "https___22653_live_streamtheworld_com_TOPZEN_mp3.m3u": {
+    "EXTINF": "-1,Zen FM",
+    "EXTGENRE": "Lounge",
+    "PLAYLIST": "Zen FM",
+    "EXTIMG": "https___22653_live_streamtheworld_com_TOPZEN_mp3.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "Dutch",
+    "streamUri": "https://22653.live.streamtheworld.com/TOPZEN.mp3"
+  },
+  "https___bytefm-ice-edge-1106-fra-eco-cdn_cast_addradio_de_bytefm_main_high_stream_mp3.m3u": {
+    "EXTINF": "-1,ByteFM",
+    "EXTGENRE": "Eclectic",
+    "PLAYLIST": "ByteFM",
+    "EXTIMG": "https___bytefm-ice-edge-1106-fra-eco-cdn_cast_addradio_de_bytefm_main_high_stream_mp3.webp",
+    "HOMEPAGE": "https://www.byte.fm/",
+    "COUNTRY": "Germany",
+    "LANGUAGE": "German",
+    "streamUri": "https://bytefm-ice-edge-1106-fra-eco-cdn.cast.addradio.de/bytefm/main/high/stream.mp3"
+  },
+  "https___dispatcher_rndfnk_com_br_br2_sued_mp3_mid.m3u": {
+    "EXTINF": "-1,Bayern 2",
+    "EXTGENRE": "Eclectic",
+    "PLAYLIST": "Bayern 2",
+    "EXTIMG": "https___dispatcher_rndfnk_com_br_br2_sued_mp3_mid.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Germany",
+    "LANGUAGE": "German",
+    "streamUri": "https://dispatcher.rndfnk.com/br/br2/sued/mp3/mid"
+  },
+  "https___dispatcher_rndfnk_com_br_brklassik_live_mp3_high.m3u": {
+    "EXTINF": "-1,BR-Klassik",
+    "EXTGENRE": "Classical",
+    "PLAYLIST": "BR-Klassik",
+    "EXTIMG": "https___dispatcher_rndfnk_com_br_brklassik_live_mp3_high.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Germany",
+    "LANGUAGE": "German",
+    "streamUri": "https://dispatcher.rndfnk.com/br/brklassik/live/mp3/high"
+  },
+  "https___http-live_sr_se_p2musik-aac-320.m3u": {
+    "EXTINF": "-1,P2",
+    "EXTGENRE": "Classical, Jazz",
+    "PLAYLIST": "P2",
+    "EXTIMG": "https___http-live_sr_se_p2musik-aac-320.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Sweden",
+    "LANGUAGE": "Swedish",
+    "streamUri": "https://http-live.sr.se/p2musik-aac-320"
+  },
+  "https___ice_cr1_streamzilla_xlcdn_com_8000_sz=RCOLiveWebradio=mp3-192.m3u": {
+    "EXTINF": "-1,RCO Live",
+    "EXTGENRE": "Classical",
+    "PLAYLIST": "RCO Live",
+    "EXTIMG": "https___ice_cr1_streamzilla_xlcdn_com_8000_sz=RCOLiveWebradio=mp3-192.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Netherlands",
+    "LANGUAGE": "Dutch",
+    "streamUri": "https://ice.cr1.streamzilla.xlcdn.com:8000/sz=RCOLiveWebradio=mp3-192"
+  },
+  "https___iheart_4zzz_org_au_4zzz.m3u": {
+    "EXTINF": "-1,4ZZZ FM 102.1 - Alternative",
+    "EXTGENRE": "Alternative",
+    "PLAYLIST": "4ZZZ FM 102.1 - Alternative",
+    "EXTIMG": "https___iheart_4zzz_org_au_4zzz.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Australia",
+    "LANGUAGE": "English",
+    "streamUri": "https://iheart.4zzz.org.au/4zzz"
+  },
+  "https___live-cdn_sr_se_pool2_p2musik_p2musik_isml_p2musik-audio=192000_m3u8.m3u": {
+    "EXTINF": "-1,Swedish Classic Radio",
+    "EXTGENRE": "Classical, Contemporary, Jazz, Folk",
+    "PLAYLIST": "Swedish Classic Radio",
+    "EXTIMG": "https___live-cdn_sr_se_pool2_p2musik_p2musik_isml_p2musik-audio=192000_m3u8.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Netherlands",
+    "LANGUAGE": "Dutch",
+    "streamUri": "https://live-cdn.sr.se/pool2/p2musik/p2musik.isml/p2musik-audio=192000.m3u8"
+  },
+  "https___liveradio_swr_de_sw331ch_swr1bw_play_mp3.m3u": {
+    "EXTINF": "-1,SWR1 BW",
+    "EXTGENRE": "Pop, Rock",
+    "PLAYLIST": "SWR1 BW",
+    "EXTIMG": "https___liveradio_swr_de_sw331ch_swr1bw_play_mp3.webp",
+    "HOMEPAGE": "https://www.swr.de/swr1/",
+    "COUNTRY": "Germany",
+    "LANGUAGE": "German",
+    "streamUri": "https://liveradio.swr.de/sw331ch/swr1bw/play.mp3"
+  },
+  "https___maggie_torontocast_com_8076_mp3.m3u": {
+    "EXTINF": "-1,JB Radio2 (320K)",
+    "EXTGENRE": "Alternative, Rock, Eclectic",
+    "PLAYLIST": "JB Radio2 (320K)",
+    "EXTIMG": "https___maggie_torontocast_com_8076_mp3.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Canada",
+    "LANGUAGE": "English",
+    "streamUri": "https://maggie.torontocast.com:8076/mp3"
+  },
+  "https___mediaserv73_live-streams_nl_18058_stream.m3u": {
+    "EXTINF": "-1,Ancient FM - Mediaeval and Renaissance Music",
+    "EXTGENRE": "Classical, Mediaeval, Renaissance",
+    "PLAYLIST": "Ancient FM - Mediaeval and Renaissance Music",
+    "EXTIMG": "https___mediaserv73_live-streams_nl_18058_stream.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Canada",
+    "LANGUAGE": "English",
+    "streamUri": "https://mediaserv73.live-streams.nl:18058/stream"
+  },
+  "https___orf-live_ors-shoutcast_at_fm4-q2a.m3u": {
+    "EXTINF": "-1,Radio FM4",
+    "EXTGENRE": "Alternative, Alt Rock, Electronic",
+    "PLAYLIST": "Radio FM4",
+    "EXTIMG": "https___orf-live_ors-shoutcast_at_fm4-q2a.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Austria",
+    "LANGUAGE": "English",
+    "streamUri": "https://orf-live.ors-shoutcast.at/fm4-q2a"
+  },
+  "https___playerservices_streamtheworld_com_api_livestream-redirect_WEMUFM_mp3.m3u": {
+    "EXTINF": "-1,WEMU Ypsilanti FM 89.1 - Jazz",
+    "EXTGENRE": "Jazz",
+    "PLAYLIST": "WEMU Ypsilanti FM 89.1 - Jazz",
+    "EXTIMG": "https___playerservices_streamtheworld_com_api_livestream-redirect_WEMUFM_mp3.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United States",
+    "LANGUAGE": "English",
+    "streamUri": "https://playerservices.streamtheworld.com/api/livestream-redirect/WEMUFM.mp3"
+  },
+  "https___radios_rtbf_be_musiq3-128_aac.m3u": {
+    "EXTINF": "-1,Musiq 3",
+    "EXTGENRE": "Classical",
+    "PLAYLIST": "Musiq 3",
+    "EXTIMG": "https___radios_rtbf_be_musiq3-128_aac.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "streamUri": "https://radios.rtbf.be/musiq3-128.aac"
+  },
+  "https___smoothjazz_cdnstream1_com_2585_320_mp3.m3u": {
+    "EXTINF": "-1,SmoothJazz Global",
+    "EXTGENRE": "Jazz, Smooth Jazz",
+    "PLAYLIST": "SmoothJazz Global",
+    "EXTIMG": "https___smoothjazz_cdnstream1_com_2585_320_mp3.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United States",
+    "LANGUAGE": "English",
+    "streamUri": "https://smoothjazz.cdnstream1.com/2585_320.mp3"
+  },
+  "https___smoothjazz_cdnstream1_com_2586_320_mp3.m3u": {
+    "EXTINF": "-1,SmoothLounge Global",
+    "EXTGENRE": "Lounge, Smooth Lounge",
+    "PLAYLIST": "SmoothLounge Global",
+    "EXTIMG": "https___smoothjazz_cdnstream1_com_2586_320_mp3.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United States",
+    "LANGUAGE": "English",
+    "streamUri": "https://smoothjazz.cdnstream1.com/2586_320.mp3"
+  },
+  "https___sohoradiomusic_doughunt_co_uk_8010_320mp3.m3u": {
+    "EXTINF": "-1,Soho Radio London",
+    "EXTGENRE": "Eclectic, Music, Culture",
+    "PLAYLIST": "Soho Radio London",
+    "EXTIMG": "https___sohoradiomusic_doughunt_co_uk_8010_320mp3.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United Kingdom",
+    "LANGUAGE": "English",
+    "streamUri": "https://sohoradiomusic.doughunt.co.uk:8010/320mp3"
+  },
+  "https___stream-al_planetradio_co_uk_jazzhigh_aac.m3u": {
+    "EXTINF": "-1,Jazz FM",
+    "EXTGENRE": "Jazz, Blues. Soul",
+    "PLAYLIST": "Jazz FM",
+    "EXTIMG": "https___stream-al_planetradio_co_uk_jazzhigh_aac.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United Kingdom",
+    "LANGUAGE": "English",
+    "streamUri": "https://stream-al.planetradio.co.uk/jazzhigh.aac"
+  },
+  "https___stream-mz_planetradio_co_uk_scalahigh_aac.m3u": {
+    "EXTINF": "-1,Scala Radio",
+    "EXTGENRE": "Classical, News, Classical, Requests",
+    "PLAYLIST": "Scala Radio",
+    "EXTIMG": "https___stream-mz_planetradio_co_uk_scalahigh_aac.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United Kingdom",
+    "LANGUAGE": "English",
+    "streamUri": "https://stream-mz.planetradio.co.uk/scalahigh.aac"
+  },
+  "https___stream_nowyswiat_online_mp3.m3u": {
+    "EXTINF": "-1,Radio Nowy Swiat",
+    "EXTGENRE": "Rock, Alternative, Jazz",
+    "PLAYLIST": "Radio Nowy Swiat",
+    "EXTIMG": "https___stream_nowyswiat_online_mp3.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Poland",
+    "LANGUAGE": "Polish",
+    "streamUri": "https://stream.nowyswiat.online/mp3"
+  },
+  "https___stream_radioparadise_com_aac-320.m3u": {
+    "EXTINF": "-1,Radio Paradise - Main Mix",
+    "EXTGENRE": "Eclectic",
+    "PLAYLIST": "Radio Paradise - Main Mix",
+    "EXTIMG": "https___stream_radioparadise_com_aac-320.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United States",
+    "LANGUAGE": "English",
+    "streamUri": "https://stream.radioparadise.com/aac-320"
+  },
+  "https___stream_radioparadise_com_mellow-320.m3u": {
+    "EXTINF": "-1,Radio Paradise - Mellow",
+    "EXTGENRE": "Rock, Mellow Rock",
+    "PLAYLIST": "Radio Paradise - Mellow",
+    "EXTIMG": "https___stream_radioparadise_com_mellow-320.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United States",
+    "LANGUAGE": "English",
+    "streamUri": "https://stream.radioparadise.com/mellow-320"
+  },
+  "https___stream_radioparadise_com_rock-320.m3u": {
+    "EXTINF": "-1,Radio Paradise - Rock",
+    "EXTGENRE": "Rock",
+    "PLAYLIST": "Radio Paradise - Rock",
+    "EXTIMG": "https___stream_radioparadise_com_rock-320.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United States",
+    "LANGUAGE": "English",
+    "streamUri": "https://stream.radioparadise.com/rock-320"
+  },
+  "https___stream_radioparadise_com_world-etc-320.m3u": {
+    "EXTINF": "-1,Radio Paradise - World",
+    "EXTGENRE": "World Music",
+    "PLAYLIST": "Radio Paradise - World",
+    "EXTIMG": "https___stream_radioparadise_com_world-etc-320.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United States",
+    "LANGUAGE": "English",
+    "streamUri": "https://stream.radioparadise.com/world-etc-320"
+  },
+  "https___stream_rcs_revma_com_an1ugyygzk8uv.m3u": {
+    "EXTINF": "-1,Radio 357",
+    "EXTGENRE": "Rock, Alternative, Jazz",
+    "PLAYLIST": "Radio 357",
+    "EXTIMG": "https___stream_rcs_revma_com_an1ugyygzk8uv.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Poland",
+    "LANGUAGE": "Polish",
+    "streamUri": "https://stream.rcs.revma.com/an1ugyygzk8uv"
+  },
+  "https___sverigesradio_se_topsy_direkt_132-hi-aac.m3u": {
+    "EXTINF": "-1,P1",
+    "EXTGENRE": "News, Culture",
+    "PLAYLIST": "P1",
+    "EXTIMG": "https___sverigesradio_se_topsy_direkt_132-hi-aac.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Sweden",
+    "LANGUAGE": "Swedish",
+    "streamUri": "https://sverigesradio.se/topsy/direkt/132-hi-aac"
+  },
+  "https___sverigesradio_se_topsy_direkt_164-hi-aac.m3u": {
+    "EXTINF": "-1,P3",
+    "EXTGENRE": "Pop, Culture",
+    "PLAYLIST": "P3",
+    "EXTIMG": "https___sverigesradio_se_topsy_direkt_164-hi-aac.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Sweden",
+    "LANGUAGE": "Swedish",
+    "streamUri": "https://sverigesradio.se/topsy/direkt/164-hi-aac"
+  },
+  "https___wdr-wdr3-live_icecastssl_wdr_de_wdr_wdr3_live_mp3_256_stream_mp3.m3u": {
+    "EXTINF": "-1,WDR 3",
+    "EXTGENRE": "Classical, Jazz",
+    "PLAYLIST": "WDR 3",
+    "EXTIMG": "https___wdr-wdr3-live_icecastssl_wdr_de_wdr_wdr3_live_mp3_256_stream_mp3.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Germany",
+    "LANGUAGE": "German",
+    "streamUri": "https://wdr-wdr3-live.icecastssl.wdr.de/wdr/wdr3/live/mp3/256/stream.mp3"
+  },
+  "https___www_wwoz_org_listen_hi.m3u": {
+    "EXTINF": "-1,WWOZ New Orleans FM 90.7 - Various Artists",
+    "EXTGENRE": "Jazz, Blues, Latin, Cajun, Funk",
+    "PLAYLIST": "WWOZ New Orleans FM 90.7 - Various Artists",
+    "EXTIMG": "https___www_wwoz_org_listen_hi.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "United States",
+    "LANGUAGE": "English",
+    "streamUri": "https://www.wwoz.org/listen/hi"
+  },
+  "https___wz4web_scahw_com_au_live_4buddha_32_stream_playlist_m3u8.m3u": {
+    "EXTINF": "-1,Buddha Radio",
+    "EXTGENRE": "Chill Out",
+    "PLAYLIST": "Buddha Radio",
+    "EXTIMG": "https___wz4web_scahw_com_au_live_4buddha_32_stream_playlist_m3u8.webp",
+    "HOMEPAGE": "",
+    "COUNTRY": "Australia",
+    "LANGUAGE": "English",
+    "streamUri": "https://wz4web.scahw.com.au/live/4buddha_32.stream/playlist.m3u8"
   }
 }
