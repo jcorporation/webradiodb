@@ -1,5 +1,7 @@
 This is my attempt to create a curated webradio list for [myMPD](https://github.com/jcorporation/myMPD).
 
+Currently there are <span id="stationCount"></span> stations in the list.
+
 - [Browse the repository](https://github.com/jcorporation/radiodb)
 - [Get the json index file](https://jcorporation.github.io/radiodb/publish/index/webradios.min.json)
 - [Get the js file](https://jcorporation.github.io/radiodb/publish/index/webradios.min.js)
@@ -13,6 +15,8 @@ This is my attempt to create a curated webradio list for [myMPD](https://github.
 <script src="publish/index/webradios.min.js"></script>
 <script>
   const resultEl = document.getElementById('result');
+  document.getElementById('stationCount').textContent = Object.keys(webradios).length;
+
   document.getElementById('searchstr').addEventListener('keyup', function(event) {
     if (event.key === 'Enter') {
       const searchstr = event.target.value.toLowerCase();
