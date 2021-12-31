@@ -1,9 +1,3 @@
----
-layout: page
-permalink: /
-title: myMPD Webradio Database
----
-
 This is my attempt to create a curated webradio list for [myMPD](https://github.com/jcorporation/myMPD).
 
 - [Browse the repository](https://github.com/jcorporation/radiodb)
