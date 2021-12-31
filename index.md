@@ -22,9 +22,17 @@ document.getElementById('searchstr').addEventListener('keyup', function(event) {
     }
     for (const key in webradios) {
       if (webradios[key].PLAYLIST.toLowerCase().indexOf(searchstr) > -1) {
-        const p = document.createElement('p');
-        p.textContent = webradios[key].PLAYLIST;
-        resultEl.appendChild(p);
+        const div = document.createElement('div');
+        const pic = webradios[key].EXTIMG.indexOf(http) === 0 ?
+          webradios[key].EXTIMG :
+          'publish/pics/' + webradios[key].EXTIMG;
+        div.innerHTML =
+          '<img src="' + pic +'" style="float:left;display:block;width:5rem;heigth:auto;"/>' +
+          '<div>' + 
+            '<h5>' + webradios[key].PLAYLIST + '</h5>' +
+            '<p><a target="_blank" href="publish/webradios/' + key + '">Get playlist</a></p>' +
+          '</div>';
+        resultEl.appendChild(div);
       }
     }
   }
