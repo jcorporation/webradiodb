@@ -6,7 +6,6 @@
 
 PUBLISH_DIR="publish"
 SOURCES_DIR="sources"
-
 PICS_DIR="${PUBLISH_DIR}/pics"
 PLS_DIR="${PUBLISH_DIR}/webradios"
 INDEXFILE="${PUBLISH_DIR}/index/webradios.min.json"
