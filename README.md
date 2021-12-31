@@ -6,7 +6,7 @@ At the moment there are two sources for webradio files:
 - Webradios from moode audio (sources/moode-*)
 - Manually added files (sources/mympd-*)
 
-Webradios are saved as plain extended m3u files with some custom fields. Coverimages an be specified as file in the pics directory or an url.
+Webradios are saved as plain extended m3u files with some custom fields. A coverimage could be specified as file in the pics directory or an url.
 
 ```
 #EXTM3U
