@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: sudo apt-get install -y --no-install-recommends jq
 
-      - name: Run a multi-line script
+      - name: Create the webradio publish files
         run: ./build.sh create
       
       - name: Push result
