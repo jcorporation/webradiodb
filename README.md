@@ -1,4 +1,4 @@
-# myMPD Radio Database
+# myMPD Webradio Database
 
 This is my attempt to create a curated webradio list for [myMPD](https://github.com/jcorporation/myMPD).
 
@@ -26,14 +26,14 @@ You can find the playlists in the `publish/webradios` directory and the station 
 
 The publish directory is refreshed on each pull request through GitHub actions.
 
-This repository is also published through [GitHub Pages](https://jcorporation.github.io/radiodb/).
+This repository is also published through [GitHub Pages](https://jcorporation.github.io/webradiodb/).
 
-You must not download all the images, instead you can prepend `https://jcorporation.github.io/radiodb/publish/pics/` to the image name, e.g. https://jcorporation.github.io/radiodb/publish/pics/http___119_15_96_188_stream2_mp3.webp.
+You must not download all the images, instead you can prepend `https://jcorporation.github.io/webradiodb/publish/pics/` to the image name, e.g. https://jcorporation.github.io/webradiodb/publish/pics/http___119_15_96_188_stream2_mp3.webp.
 
 ## Adding new webradios
 
 1. Fork this repository - add/modify entries and create a pull request
-2. Open an issue with all needed data, use the "New webradio" template
+2. Open an [issue](https://github.com/jcorporation/webradiodb/issues/new?template=add-webradio.yml)
 
 ## Usage in myMPD
 

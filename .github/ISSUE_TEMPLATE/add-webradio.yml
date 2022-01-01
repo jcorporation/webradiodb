@@ -1,0 +1,67 @@
+---
+name: New webradio
+about: Add a new webradio
+title: ''
+labels: ''
+assignees: ''
+
+---
+
+Name: 
+Stream URL:
+Genre:
+Homepage:
+Country:
+Language:
+
+name: Add Webradio
+description: Add a new webradio
+title: "[Add Webradio]: "
+labels: ["AddWebradio"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to propose a new webradio!
+  - type: input
+    id: name
+    attributes:
+      label: Webradio Name
+      description: The name of the webradio.
+    validations:
+      required: true
+  - type: input
+    id: streamuri
+    attributes:
+      label: Stream URI
+      description: The URI of the stream - not the playlist.
+    validations:
+      required: true
+  - type: input
+    id: genre
+    attributes:
+      label: Genre
+      description: A comma separated list of genres.
+    validations:
+      required: true
+  - type: input
+    id: homepage
+    attributes:
+      label: Homepage
+      description: The homepage of the webradio.
+    validations:
+      required: true
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      description: The country e.g. Germany.
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      description: The language of the webradio.
+    validations:
+      required: true
