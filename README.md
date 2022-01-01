@@ -42,15 +42,15 @@ Webradios are saved as extended m3u files with some custom fields. A coverimage 
 
 The filename of the playlist and the coverimage are derived from the streamuri by replacing `<>/.:?&$!#\|` characters with `_`. This is the same behaviour as in myMPD and makes this playlists compatible with the myMPD webradio feature.
 
-You must not download the station images, instead you can prepend `https://jcorporation.github.io/webradiodb/publish/pics/` to the image name, e.g. https://jcorporation.github.io/webradiodb/publish/pics/http___119_15_96_188_stream2_mp3.webp.
+You must not download the station images, instead you can prepend `https://jcorporation.github.io/webradiodb/db/pics/` to the image name, e.g. https://jcorporation.github.io/webradiodb/db/pics/http___119_15_96_188_stream2_mp3.webp.
 
-The final files are located in the `publish` folder, it is rebuild on each push request.
+The final files are located in the `docs/db` folder, it is rebuild on each push request.
 
-- Playlists: [publish/webradios](/jcorporation/webradiodb/tree/master/publish/webradios)
-- Station images: [publish/pics](/jcorporation/webradiodb/tree/master/publish/pics)
-- Metadata as json and javascript: [publish/index](/jcorporation/webradiodb/tree/master/publish/index)
+- Playlists: [docs/db/webradios](/jcorporation/webradiodb/tree/master/docs/db/webradios)
+- Station images: [docs/db/pics](/jcorporation/webradiodb/tree/master/docs/db/pics)
+- Metadata as json and javascript: [docs/db/index](/jcorporation/webradiodb/tree/master/docs/db/index)
 
-This repository is also published through [GitHub Pages](https://jcorporation.github.io/webradiodb/).
+The `docs` is also published through [GitHub Pages](https://jcorporation.github.io/webradiodb/).
 
 ### Script usage
 

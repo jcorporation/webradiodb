@@ -5,8 +5,8 @@ Contributions to the webradio database are very welcome. It should be a communit
 Currently there are <span id="stationCount"></span> stations in the list.
 
 - [Browse the repository](https://github.com/jcorporation/webradiodb)
-- [Get the json index file](https://jcorporation.github.io/webradiodb/publish/index/webradios.min.json)
-- [Get the js file](https://jcorporation.github.io/webradiodb/publish/index/webradios.min.js)
+- [Get the json index file](https://jcorporation.github.io/webradiodb/db/index/webradios.min.json)
+- [Get the js file](https://jcorporation.github.io/webradiodb/db/index/webradios.min.js)
 
 ## Add a webradio
 
@@ -18,5 +18,5 @@ Currently there are <span id="stationCount"></span> stations in the list.
 <hr/>
 <div id="result">Type search string and press enter.</div>
 
-<script src="publish/index/webradios.min.js"></script>
+<script src="db/index/webradios.min.js"></script>
 <script src="assets/js/radiodb.js"></script>

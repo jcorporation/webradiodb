@@ -37,7 +37,7 @@ jobs:
       - name: Add, commit and push
         uses: EndBug/add-and-commit@v7.5.0
         with:
-          add: sources publish
+          add: sources docs/db
           pull: NO-PULL
           push: true
 

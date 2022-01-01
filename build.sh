@@ -4,7 +4,7 @@
 #myMPD (c) 2021-2022 Juergen Mang <mail@jcgames.de>
 #https://github.com/jcorporation/radiodb
 
-PUBLISH_DIR="publish"
+PUBLISH_DIR="docs/db"
 SOURCES_DIR="sources"
 PICS_DIR="${PUBLISH_DIR}/pics"
 PLS_DIR="${PUBLISH_DIR}/webradios"
