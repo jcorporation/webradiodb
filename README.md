@@ -12,7 +12,7 @@ Contributions to the webradio database are very welcome. It should be a communit
 ## Adding new webradios
 
 1. Simple: Open an [issue](https://github.com/jcorporation/webradiodb/issues/new?template=add-webradio.yml).
-2. Advanced: Fork this repository - add/modify entries and create a pull request. You should only change the `mympd-*` folders.
+2. Advanced: Fork this repository - add/modify entries and create a pull request. You should only change the `sources/mympd-*` folders.
 
 ## Usage
 
