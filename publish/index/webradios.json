@@ -1407,6 +1407,17 @@
     "DESCRIPTION": "",
     "streamUri": "http://stream.kanalk.ch:80"
   },
+  "http___stream_laut_fm_alternativeworld.m3u": {
+    "EXTINF": "-1,Alternativeworld",
+    "EXTGENRE": "Indie, Alternative, Punk, New Wave, Britpop",
+    "PLAYLIST": "Alternativeworld",
+    "EXTIMG": "http___stream_laut_fm_alternativeworld.webp",
+    "HOMEPAGE": "https://laut.fm/alternativeworld",
+    "COUNTRY": "Germany",
+    "LANGUAGE": "German",
+    "DESCRIPTION": "The Best in Indie, Alternative, Punk, New Wave and Britpop - from the classics of the 70's to the latest inside tips.",
+    "streamUri": "http://stream.laut.fm/alternativeworld"
+  },
   "http___stream_laut_fm_anderswelt.m3u": {
     "EXTINF": "-1,Anderswelt",
     "EXTGENRE": "Wave, Goth, Minimal, 80er",

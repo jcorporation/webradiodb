@@ -176,6 +176,7 @@ resize_image() {
     FILE="$1"
     TOWIDTH="400"
     TOHEIGHT="400"
+    [ -s "$FILE" ] || exit 1
     #get actual size
     SIZE=$(identify "$FILE" | cut -d' ' -f3)
     WIDTH=$(cut -dx -f1 <<< "$SIZE")
