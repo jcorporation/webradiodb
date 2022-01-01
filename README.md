@@ -1,5 +1,8 @@
 # myMPD Webradio Database
 
+[![createWebradioIndex](https://github.com/jcorporation/webradiodb/actions/workflows/createWebradioIndex.yml/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/createWebradioIndex.yml)
+[![pages-build-deployment](https://github.com/jcorporation/webradiodb/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/pages/pages-build-deployment)
+
 This is my attempt to create a curated webradio list for [myMPD](https://github.com/jcorporation/myMPD).
 
 Contributions to the webradio database are very welcome. It should be a community driven databse. You must only open an issue to add a webradio. Your proposal will be reviewed and then merged, therefore it could take some time before the webradio is added.
