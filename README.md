@@ -20,7 +20,7 @@ Webradios are saved as plain extended m3u files with some custom fields. A cover
 <streamuri>
 ```
 
-The filename of the playlist and the coverimage are derived from the streamuri by replacing `<>/.:?$!#\|` characters with `_`. This is the same behaviour as in myMPD and makes this playlists compatible with the myMPD webradio feature.
+The filename of the playlist and the coverimage are derived from the streamuri by replacing `<>/.:?&$!#\|` characters with `_`. This is the same behaviour as in myMPD and makes this playlists compatible with the myMPD webradio feature.
 
 You can find the playlists in the `publish/webradios` directory and the station images in the `publish/pics` directory. There is also a json index file in the `publish/index` directory.
 
@@ -32,7 +32,7 @@ You must not download all the images, instead you can prepend `https://jcorporat
 
 ## Adding new webradios
 
-1. Fork this repository - add/modify entries and create a pull request
+1. Fork this repository - add/modify entries and create a pull request. You should only change the `mympd-*` folders, the `moode-*` folder are overwritten through the sync_moode action.
 2. Open an [issue](https://github.com/jcorporation/webradiodb/issues/new?template=add-webradio.yml)
 
 ## Usage in myMPD
@@ -53,4 +53,4 @@ Dependencies: csvkit, jq, wget, convert
 
 Everyone is free to use the collected data (station names, etc.) in their works. I give all the rights I have at the accumulated data to the public domain.
 
-2021 Juergen Mang <mail@jcgames.de>
+2021-2022 Juergen Mang <mail@jcgames.de>

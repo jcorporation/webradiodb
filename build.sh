@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #SPDX-License-Identifier: GPL-3.0-or-later
-#myMPD (c) 2021 Juergen Mang <mail@jcgames.de>
+#myMPD (c) 2021-2022 Juergen Mang <mail@jcgames.de>
 #https://github.com/jcorporation/radiodb
 
 PUBLISH_DIR="publish"
@@ -37,7 +37,7 @@ sync_moode() {
 
         # create the same plist name as myMPD
         PLIST=$(csvcut -c 1 <<< "$LINE" | \
-            sed -E -e 's/[<>/.:?$!#\\|]/_/g')
+            sed -E -e 's/[<>/.:?&$!#\\|]/_/g')
 
         # extract fields
         STATION=$(csvcut -c 1 <<< "$LINE" | sed -e s/\"//g)
@@ -75,7 +75,7 @@ sync_moode() {
 $STATION
 EOL
     printf "."
-    ((i++))
+    ((I++))
     done < <(wget -q "$MOODE_DB" -O - | \
         grep "INSERT INTO cfg_radio" | \
         awk -F "VALUES " '{print $2}' | \
@@ -89,7 +89,7 @@ add_radio() {
     # get the uri and write out a skeletion file
     read -p "URI: " URI
     # create the same plist name as myMPD
-    PLIST=$(sed -E -e 's/[<>/.:?$!#\\|]/_/g' <<< "$URI")
+    PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$URI")
     # write ext m3u with custom myMPD fields
         cat > "${MYMPD_PLS_DIR}/${PLIST}.m3u" << EOL
 #EXTM3U
@@ -105,7 +105,7 @@ EOL
     echo ""
     echo "Playlist file ${MYMPD_PLS_DIR}/$PLIST.m3u created."
     echo "Edit it to add details."
-    echo "You shoud add an image with the name ${MYMPD_PLS_DIR}/$PLIST.webp"
+    echo "You shoud add an image with the name $PLIST.webp to the ${MYMPD_PICS_DIR} folder"
     echo "or replace the #EXTIMG tag with an url to the image."
     echo ""
 }
