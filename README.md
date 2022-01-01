@@ -50,7 +50,7 @@ The final files are located in the `docs/db` folder, it is rebuild on each push 
 - Station images: [docs/db/pics](docs/db/pics)
 - Metadata as json and javascript: [docs/db/index](docs/db/index)
 
-The `docs` is also published through [GitHub Pages](https://jcorporation.github.io/webradiodb/).
+The folder `docs` is also published through [GitHub Pages](https://jcorporation.github.io/webradiodb/).
 
 ### Script usage
 
