@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,SciFi Radio
+#EXTGENRE:Vocal, Pop, Star Trek, Scifi, Science Fiction
+#PLAYLIST:SciFi Radio
+#EXTIMG:http___stream_laut_fm_scifi.webp
+#HOMEPAGE:https://laut.fm/scifi
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:Ein Online Radio für den Bereich Science Fiction.
+http://stream.laut.fm/scifi
