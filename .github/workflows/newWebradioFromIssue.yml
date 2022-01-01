@@ -1,0 +1,23 @@
+name: newWebradioFromIssue
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    if: ${{ github.event.label.name == 'Merge' }}
+    
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - uses: stefanbuck/github-issue-parser@v2
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/add-webradio.yml
+
+      - run: echo '${{ steps.issue-parser.outputs.jsonString }}'
