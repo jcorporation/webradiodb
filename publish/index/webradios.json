@@ -1279,11 +1279,21 @@
     "LANGUAGE": "German",
     "streamUri": "http://stream.kanalk.ch:80"
   },
+  "http___stream_laut_fm_kakerlakenradio.m3u": {
+    "EXTINF": "-1,Kakerlaken Radio",
+    "EXTGENRE": "Indie, Rock, Pop, Alternative, New Wave, Punk, Britpop, Garage",
+    "PLAYLIST": "Kakerlaken Radio",
+    "EXTIMG": "http___stream_laut_fm_kakerlakenradio.webp",
+    "HOMEPAGE": "http://indie-rock-radio.de/",
+    "COUNTRY": "Germany",
+    "LANGUAGE": "German",
+    "streamUri": "http://stream.laut.fm/kakerlakenradio"
+  },
   "http___stream_laut_fm_nonpop.m3u": {
     "EXTINF": "-1,NONPOP",
     "EXTGENRE": "Ambient, Avantgarde, Black Metal, Folk, Industrial, Lo-Fi, Minimal, Alternative",
     "PLAYLIST": "NONPOP",
-    "EXTIMG": "https://assets.laut.fm/2d08a568520e67ded8e01ceac3f761f4",
+    "EXTIMG": "http___stream_laut_fm_nonpop.webp",
     "HOMEPAGE": "https://laut.fm/nonpop",
     "COUNTRY": "Germany",
     "LANGUAGE": "German",
