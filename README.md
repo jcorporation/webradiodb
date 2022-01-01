@@ -52,7 +52,7 @@ The final files are located in the `publish` folder, it is rebuild on each push 
 
 This repository is also published through [GitHub Pages](https://jcorporation.github.io/webradiodb/).
 
-## Script usage
+### Script usage
 
 The script is used by GitHub actions.
 
