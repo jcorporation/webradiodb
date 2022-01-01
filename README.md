@@ -46,9 +46,9 @@ You must not download the station images, instead you can prepend `https://jcorp
 
 The final files are located in the `docs/db` folder, it is rebuild on each push request.
 
-- Playlists: [docs/db/webradios](/jcorporation/webradiodb/tree/master/docs/db/webradios)
-- Station images: [docs/db/pics](/jcorporation/webradiodb/tree/master/docs/db/pics)
-- Metadata as json and javascript: [docs/db/index](/jcorporation/webradiodb/tree/master/docs/db/index)
+- Playlists: [docs/db/webradios](docs/db/webradios)
+- Station images: [docs/db/pics](docs/db/pics)
+- Metadata as json and javascript: [docs/db/index](docs/db/index)
 
 The `docs` is also published through [GitHub Pages](https://jcorporation.github.io/webradiodb/).
 
