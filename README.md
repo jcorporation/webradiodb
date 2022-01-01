@@ -33,7 +33,7 @@ You can find the playlists in the `publish/webradios` directory and the station 
 
 The publish directory is refreshed on each push request through GitHub actions.
 
-This repository is also published through [GitHub Pages](https://jcorporation.github.io/webradiodb/).
+This repository is also published through [GitHub Pages](https://jcorporation.github.io/webradiodb/), there is a simple station search interface.
 
 You must not download all the images, instead you can prepend `https://jcorporation.github.io/webradiodb/publish/pics/` to the image name, e.g. https://jcorporation.github.io/webradiodb/publish/pics/http___119_15_96_188_stream2_mp3.webp.
 
@@ -58,6 +58,6 @@ Type `./build.sh` for usage information.
 
 ## Copyright
 
-Everyone is free to use the collected data (station names, etc.) in their works. I give all the rights I have at the accumulated data to the public domain.
+Everyone is free to use the collected data in their works. I give all the rights I have at the accumulated data to the public domain.
 
 2021-2022 Juergen Mang <mail@jcgames.de>
