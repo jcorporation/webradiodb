@@ -16,7 +16,7 @@ document.getElementById('searchstr').addEventListener('keyup', function(event) {
         const div = document.createElement('div');
         const pic = webradios[key].EXTIMG.indexOf('http:') === 0 ||
             webradios[key].EXTIMG.indexOf('https:') === 0 ?
-                webradios[key].EXTIMG : 'publish/pics/' + webradios[key].EXTIMG;
+                webradios[key].EXTIMG : 'db/pics/' + webradios[key].EXTIMG;
         div.innerHTML =
             '<table>' +
                 '<caption>' + webradios[key].PLAYLIST + '</caption>' +
@@ -24,7 +24,7 @@ document.getElementById('searchstr').addEventListener('keyup', function(event) {
                 '<tr><td rowspan="5"><img src="' + pic + '" class="stationImage"/></td><td>Genre</td><td>' + webradios[key].EXTGENRE + '</td></tr>' +
                 '<tr><td>Country</td><td>' + webradios[key].COUNTRY + '/' + webradios[key].LANGUAGE + '</td></tr>' +
                 '<tr><td>Homepage</td><td><a target="_blank" href="' + webradios[key].HOMEPAGE + '">' + webradios[key].HOMEPAGE + '</a></td></tr>' +
-                '<tr><td>Playlist</td><td><a target="_blank" href="publish/webradios/' + key + '">Get playlist</a></td></tr>' +
+                '<tr><td>Playlist</td><td><a target="_blank" href="db/webradios/' + key + '">Get playlist</a></td></tr>' +
                 '<tr><td colspan="2">' + webradios[key].DESCRIPTION + '</td></tr>' +
                 '</tbody>' +
             '</table>';
