@@ -1440,6 +1440,17 @@
     "DESCRIPTION": " Der Kakerlakeneffekt: Wenn alle bei einem Song fluchtartig die Tanzfläche verlassen.",
     "streamUri": "http://stream.laut.fm/kakerlakenradio"
   },
+  "http___stream_laut_fm_nightshift_alternative.m3u": {
+    "EXTINF": "-1,Nightshift Alternativ",
+    "EXTGENRE": "Gothic, Mitellalter, Nu-Metal, 80ies, 90ies, Industrial, Metal, Metalcore, NDH",
+    "PLAYLIST": "Nightshift Alternativ",
+    "EXTIMG": "http___stream_laut_fm_nightshift_alternative.webp",
+    "HOMEPAGE": "https://nightshift-alternativ.de/",
+    "COUNTRY": "Germany",
+    "LANGUAGE": "German",
+    "DESCRIPTION": "Wir spielen Musik aus den Richtungen Gothic, Mitellalter, Nu-Metal, 80ies, 90ies, Industrial, Metal, Metalcore, NDH uvm.",
+    "streamUri": "http://stream.laut.fm/nightshift_alternative"
+  },
   "http___stream_laut_fm_nonpop.m3u": {
     "EXTINF": "-1,NONPOP",
     "EXTGENRE": "Ambient, Avantgarde, Black Metal, Folk, Industrial, Lo-Fi, Minimal, Alternative",
