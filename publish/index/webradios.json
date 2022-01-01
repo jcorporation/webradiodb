@@ -1279,6 +1279,16 @@
     "LANGUAGE": "German",
     "streamUri": "http://stream.kanalk.ch:80"
   },
+  "http___stream_laut_fm_anderswelt.m3u": {
+    "EXTINF": "-1,Anderswelt",
+    "EXTGENRE": "Wave, Goth, Minimal, 80er",
+    "PLAYLIST": "Anderswelt",
+    "EXTIMG": "http___stream_laut_fm_anderswelt.webp",
+    "HOMEPAGE": "https://laut.fm/anderswelt",
+    "COUNTRY": "Germany",
+    "LANGUAGE": "German",
+    "streamUri": "http://stream.laut.fm/anderswelt"
+  },
   "http___stream_laut_fm_kakerlakenradio.m3u": {
     "EXTINF": "-1,Kakerlaken Radio",
     "EXTGENRE": "Indie, Rock, Pop, Alternative, New Wave, Punk, Britpop, Garage",
