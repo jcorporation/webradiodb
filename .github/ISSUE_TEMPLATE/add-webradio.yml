@@ -49,3 +49,10 @@ body:
       description: The language of the webradio.
     validations:
       required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A short description (one-liner).
+    validations:
+      required: false

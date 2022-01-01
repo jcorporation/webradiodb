@@ -26,7 +26,7 @@ sync_moode() {
     # start with clean output dirs
     rm -fr "$MOODE_PLS_DIR" 
     mkdir "$MOODE_PLS_DIR"
-    rm -fr "$MOODE_PICS_DIR"
+    mv "$MOODE_PICS_DIR" "${MOODE_PICS_DIR}.old"
     mkdir "$MOODE_PICS_DIR"
 
     # fetch the sql file and grep the webradio stations and convert it to csv
@@ -51,13 +51,18 @@ sync_moode() {
         # get images 
         if [ "$IMAGE" = "local" ]
         then
-            if wget -q "${MOODE_IMAGES}${NAME}.jpg" \
+            if [ -s "${MOODE_PICS_DIR}.old/${PLIST}.webp" ]
+            then
+                cp "${MOODE_PICS_DIR}.old/${PLIST}.webp" "${MOODE_PICS_DIR}/${PLIST}.webp"
+                IMAGE="${PLIST}.webp"
+            elif wget -q "${MOODE_IMAGES}${NAME}.jpg" \
                 -O "${MOODE_PICS_DIR}/${PLIST}.jpg"
             then
                 convert "${MOODE_PICS_DIR}/${PLIST}.jpg" "${MOODE_PICS_DIR}/${PLIST}.webp"
                 rm "${MOODE_PICS_DIR}/${PLIST}.jpg"
                 IMAGE="${PLIST}.webp"
             else
+                rm -f "${MOODE_PICS_DIR}/${PLIST}.jpg"
                 IMAGE=""
             fi
         fi
@@ -72,6 +77,7 @@ sync_moode() {
 #HOMEPAGE:$HOMEPAGE
 #COUNTRY:$COUNTRY
 #LANGUAGE:$LANGUAGE
+#DESCRIPTION:
 $STATION
 EOL
     printf "."
@@ -82,6 +88,7 @@ EOL
         sed -e 's/^(//' -e 's/);//' -e "s/', /',/g" -e "s/, '/,'/g"  | \
         csvcut -q \' -c 2,3,5,6,8,9,14 |
         grep -v -E "(OFFLINE|zx reserved 499)")
+    rm -fr "${MOODE_PICS_DIR}.old"
     echo "$I webradios synced"
 }
 
@@ -90,6 +97,11 @@ add_radio() {
     read -p "URI: " URI
     # create the same plist name as myMPD
     PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$URI")
+    if [ -f "${MYMPD_PLS_DIR}/${PLIST}.m3u" ]
+    then
+        echo "This webradio already exists."
+        exit 1
+    fi
     # write ext m3u with custom myMPD fields
         cat > "${MYMPD_PLS_DIR}/${PLIST}.m3u" << EOL
 #EXTM3U
@@ -100,6 +112,7 @@ add_radio() {
 #HOMEPAGE:<homepage>
 #COUNTRY:<country>
 #LANGUAGE:<language>
+#DESCRIPTION:<description>
 $URI
 EOL
     echo ""

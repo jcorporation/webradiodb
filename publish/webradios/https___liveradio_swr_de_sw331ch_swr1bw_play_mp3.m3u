@@ -1,9 +1,10 @@
 #EXTM3U
-#EXTINF:-1,SWR1 BW
+#EXTINF:-1,SWR1
 #EXTGENRE:Pop, Rock
-#PLAYLIST:SWR1 BW
+#PLAYLIST:SWR1
 #EXTIMG:https___liveradio_swr_de_sw331ch_swr1bw_play_mp3.webp
 #HOMEPAGE:https://www.swr.de/swr1/
 #COUNTRY:Germany
 #LANGUAGE:German
+#DESCRIPTION:SWR 1 Baden-Wuerttemberg
 https://liveradio.swr.de/sw331ch/swr1bw/play.mp3

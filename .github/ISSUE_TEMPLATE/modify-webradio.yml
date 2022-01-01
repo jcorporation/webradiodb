@@ -60,3 +60,10 @@ body:
       description: The language of the webradio.
     validations:
       required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: New description
+      description: A short description (one-liner).
+    validations:
+      required: false

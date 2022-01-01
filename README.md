@@ -2,6 +2,8 @@
 
 This is my attempt to create a curated webradio list for [myMPD](https://github.com/jcorporation/myMPD).
 
+Contributions to the webradio database are very welcome. It should be a community driven databse. You must only open an issue to add a webradio. Your proposal will be reviewed and then merged, therefore it could take some time before the webradio is added.
+
 At the moment there are two sources for webradio files:
 - Webradios from moode audio (sources/moode-*)
 - Manually added files (sources/mympd-*)
@@ -17,6 +19,7 @@ Webradios are saved as plain extended m3u files with some custom fields. A cover
 #HOMEPAGE:<homepage>
 #COUNTRY:<country>
 #LANGUAGE:<language>
+#DESCRIPTION:<description>
 <streamuri>
 ```
 
@@ -32,8 +35,8 @@ You must not download all the images, instead you can prepend `https://jcorporat
 
 ## Adding new webradios
 
-1. Fork this repository - add/modify entries and create a pull request. You should only change the `mympd-*` folders, the `moode-*` folder are overwritten through the sync_moode action.
-2. Open an [issue](https://github.com/jcorporation/webradiodb/issues/new?template=add-webradio.yml)
+1. Simple: Open an [issue](https://github.com/jcorporation/webradiodb/issues/new?template=add-webradio.yml)
+2. Advanced: Fork this repository - add/modify entries and create a pull request. You should only change the `mympd-*` folders, the `moode-*` folder are overwritten through the sync_moode action.
 
 ## Usage in myMPD
 
