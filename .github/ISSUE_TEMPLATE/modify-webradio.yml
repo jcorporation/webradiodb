@@ -1,51 +1,62 @@
-name: Add Webradio
-description: Add a new webradio
-title: "[Add Webradio]: "
-labels: ["AddWebradio"]
+name: Modify Webradio
+description: Modify a webradio
+title: "[Modify Webradio]: "
+labels: ["ModifyWebradio"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to propose a new webradio!
+        Thanks for taking the time to propose a modification!
+  - type: input
+    id: mdofiyName
+    attributes:
+      label: Webradio to modify
+      description: The name of the webradio to modify.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        Add the new values, leave unchanged fields empty.
   - type: input
     id: name
     attributes:
-      label: Webradio Name
+      label: New webradio Name
       description: The name of the webradio.
     validations:
-      required: true
+      required: false
   - type: input
     id: streamuri
     attributes:
-      label: Stream URI
+      label: New stream URI
       description: The URI of the stream - not the playlist.
     validations:
-      required: true
+      required: false
   - type: input
     id: genre
     attributes:
-      label: Genres
+      label: New genres
       description: A comma separated list of genres.
     validations:
-      required: true
+      required: false
   - type: input
     id: homepage
     attributes:
-      label: Homepage
+      label: New homepage
       description: The homepage of the webradio.
     validations:
-      required: true
+      required: false
   - type: input
     id: country
     attributes:
-      label: Country
+      label: New country
       description: The country e.g. Germany.
     validations:
-      required: true
+      required: false
   - type: input
     id: language
     attributes:
-      label: Language
+      label: New language
       description: The language of the webradio.
     validations:
-      required: true
+      required: false

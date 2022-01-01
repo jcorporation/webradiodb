@@ -1,0 +1,34 @@
+name: Delete Webradio
+description: Delete a new webradio
+title: "[Delete Webradio]: "
+labels: ["DeleteWebradio"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to propose a deletion!
+  - type: input
+    id: name
+    attributes:
+      label: Webradio Name
+      description: The name of the webradio.
+    validations:
+      required: true
+  - type: dropdown
+    id: justification
+    attributes:
+      label: Justification
+      description: Why?
+      options:
+        - No longer available
+        - Illegal stream
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: justificationText
+    attributes:
+      label: Other
+      description: Why?
+    validations:
+      required: false
