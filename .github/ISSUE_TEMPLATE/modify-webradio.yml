@@ -67,7 +67,7 @@ body:
       description: The language of the webradio.
     validations:
       required: false
-  - type: textarea
+  - type: input
     id: description
     attributes:
       label: New description
