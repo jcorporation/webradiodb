@@ -60,6 +60,7 @@ sync_moode() {
             then
                 convert "${MOODE_PICS_DIR}/${PLIST}.jpg" "${MOODE_PICS_DIR}/${PLIST}.webp"
                 rm "${MOODE_PICS_DIR}/${PLIST}.jpg"
+                resize_image "${MOODE_PICS_DIR}/${PLIST}.webp"
                 IMAGE="${PLIST}.webp"
             else
                 rm -f "${MOODE_PICS_DIR}/${PLIST}.jpg"
@@ -149,6 +150,7 @@ add_radio_from_json() {
             if [ -s "${MYMPD_PICS_DIR}/${PLIST}.webp" ]
             then
                 IMAGE="${PLIST}.webp"
+                resize_image "${MYMPD_PICS_DIR}/${PLIST}.webp"
             else
                 IMAGE=""
             fi
@@ -168,6 +170,40 @@ add_radio_from_json() {
 #DESCRIPTION:$DESCRIPTION
 $URI
 EOL
+}
+
+resize_image() {
+    FILE="$1"
+    TOWIDTH="400"
+    TOHEIGHT="400"
+    #get actual size
+    SIZE=$(identify "$FILE" | cut -d' ' -f3)
+    WIDTH=$(cut -dx -f1 <<< "$SIZE")
+    HEIGHT=$(cut -dx -f2 <<< "$SIZE")
+
+    if [ "${WIDTH}x${HEIGHT}" != "${TOWIDTH}x${TOHEIGHT}" ]
+    then
+        if [ "$WIDTH" != "$TOWIDTH" ]
+        then
+            echo "Resizing $FILE from $SIZE to $TOWIDTH width"
+            if convert "$FILE" -resize "$TOWIDTH" "$FILE.resize"
+            then
+                mv "$FILE.resize" "$FILE"
+            else
+                echo "Error resizing $FILE"
+                rm -f "$FILE.resize"
+                return
+            fi
+        fi
+        echo "Croping $FILE to $TOHEIGHT height"
+        if convert "$FILE" -crop "$TOSIZE+0+0" "$FILE.crop"
+        then
+            mv "$FILE.crop" "$FILE"
+        else
+            rm -f "$FILE.crop"
+            echo "Error croping $FILE"
+        fi
+    fi
 }
 
 parse_m3u() {
@@ -234,9 +270,6 @@ create() {
 }
 
 case "$1" in
-    sync_moode)
-        sync_moode
-        ;;
     add_radio)
         add_radio
         ;;
@@ -245,6 +278,12 @@ case "$1" in
         ;;
     create)
         create
+        ;;
+    resize_image)
+        resize_image "$2"
+        ;;
+    sync_moode)
+        sync_moode
         ;;
     *)
         echo "Usage: $0 <action>"
@@ -255,6 +294,7 @@ case "$1" in
         echo "  create:              copies playlists and images from sources dir and creates an unified index"
         echo "  sync_moode:          syncs the moode audio webradios to sources/moode-webradios, downloads"
         echo "                       and converts the images to webp"
+        echo "  resize_image:        resizes the image to 400x400 pixels"
         echo ""
         ;;
 esac

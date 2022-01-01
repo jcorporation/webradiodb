@@ -5,9 +5,10 @@
 
 This is my attempt to create a curated webradio list for [myMPD](https://github.com/jcorporation/myMPD).
 
-Contributions to the webradio database are very welcome. It should be a community driven databse. You must only open an issue to add a webradio. Your proposal will be reviewed and then merged, therefore it could take some time before the webradio is added.
+Contributions to the webradio database are very welcome. It should be a community driven database. You must only open an issue to add a webradio. Your proposal will be reviewed and then merged, therefore it could take some time before the webradio is added.
 
 At the moment there are two sources for webradio files:
+
 - Webradios from moode audio (sources/moode-*)
 - Manually added files (sources/mympd-*)
 
@@ -30,7 +31,7 @@ The filename of the playlist and the coverimage are derived from the streamuri b
 
 You can find the playlists in the `publish/webradios` directory and the station images in the `publish/pics` directory. There is also a json index file in the `publish/index` directory.
 
-The publish directory is refreshed on each pull request through GitHub actions.
+The publish directory is refreshed on each push request through GitHub actions.
 
 This repository is also published through [GitHub Pages](https://jcorporation.github.io/webradiodb/).
 
@@ -39,7 +40,7 @@ You must not download all the images, instead you can prepend `https://jcorporat
 ## Adding new webradios
 
 1. Simple: Open an [issue](https://github.com/jcorporation/webradiodb/issues/new?template=add-webradio.yml)
-2. Advanced: Fork this repository - add/modify entries and create a pull request. You should only change the `mympd-*` folders, the `moode-*` folder are overwritten through the sync_moode action.
+2. Advanced: Fork this repository - add/modify entries and create a pull request. You should only change the `mympd-*` folders.
 
 ## Usage in myMPD
 
@@ -49,11 +50,11 @@ You must not download all the images, instead you can prepend `https://jcorporat
 
 ## Script usage
 
+The script is used by GitHub actions.
+
 Dependencies: csvkit, jq, wget, imagemagick
 
-- `./build.sh add_radio`: interactively adds an webradio to sources/mympd-webradios
-- `./build.sh create`: copies pls and images from sources dir and creates an unified index
-- `./build.sh sync_moode`: syncs the moode audio webradios to sources/moode-webradios, downloads and converts the images to webp
+Type `./build.sh` for usage information.
 
 ## Copyright
 
