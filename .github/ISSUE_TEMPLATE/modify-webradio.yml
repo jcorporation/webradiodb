@@ -47,6 +47,13 @@ body:
     validations:
       required: false
   - type: input
+    id: image
+    attributes:
+      label: Image
+      description: The radiostation logo.
+    validations:
+      required: false
+  - type: input
     id: country
     attributes:
       label: New country

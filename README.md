@@ -49,7 +49,7 @@ You must not download all the images, instead you can prepend `https://jcorporat
 
 ## Script usage
 
-Dependencies: csvkit, jq, wget, convert
+Dependencies: csvkit, jq, wget, imagemagick
 
 - `./build.sh add_radio`: interactively adds an webradio to sources/mympd-webradios
 - `./build.sh create`: copies pls and images from sources dir and creates an unified index
