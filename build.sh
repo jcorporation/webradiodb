@@ -176,13 +176,14 @@ resize_image() {
     FILE="$1"
     TOWIDTH="400"
     TOHEIGHT="400"
+    TOSIZE="400x400"
     [ -s "$FILE" ] || exit 1
     #get actual size
     SIZE=$(identify "$FILE" | cut -d' ' -f3)
     WIDTH=$(cut -dx -f1 <<< "$SIZE")
     HEIGHT=$(cut -dx -f2 <<< "$SIZE")
 
-    if [ "${WIDTH}x${HEIGHT}" != "${TOWIDTH}x${TOHEIGHT}" ]
+    if [ "${SIZE}" != "${TOSIZE}" ]
     then
         if [ "$WIDTH" != "$TOWIDTH" ]
         then
@@ -196,13 +197,18 @@ resize_image() {
                 return
             fi
         fi
-        echo "Croping $FILE to $TOHEIGHT height"
-        if convert "$FILE" -crop "$TOSIZE+0+0" "$FILE.crop"
+        SIZE=$(identify "$FILE" | cut -d' ' -f3)
+        HEIGHT=$(cut -dx -f2 <<< $SIZE)
+        if [ "$HEIGHT" -gt "$TOHEIGHT" ]
         then
-            mv "$FILE.crop" "$FILE"
-        else
-            rm -f "$FILE.crop"
-            echo "Error croping $FILE"
+            echo "Croping $FILE to $TOHEIGHT height"
+            if convert "$FILE" -crop "$TOSIZE+0+0" "$FILE.crop"
+            then
+                mv "$FILE.crop" "$FILE"
+            else
+                rm -f "$FILE.crop"
+                echo "Error croping $FILE"
+            fi
         fi
     fi
 }
