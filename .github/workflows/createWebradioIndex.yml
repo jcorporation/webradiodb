@@ -4,9 +4,11 @@ name: createWebradioIndex
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push request events but only for the master branch
+  # Triggers the workflow on push request events but only for the master branch and sources root folder
   push:
     branches: [ master ]
+    paths:
+    - 'sources/**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
