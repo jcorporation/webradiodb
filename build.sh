@@ -259,6 +259,19 @@ modify_radio_from_json() {
     #Webradio to modify
     MODIFY_URI=$(jq -r ".modifyWebradio" < "$INPUT")
     MODIFY_PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$MODIFY_URI")
+    if [ ! -f "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" ]
+    then
+        if [ -f "${MOODE_PLS_DIR}/${MODIFY_PLIST}.m3u" ]
+        then
+            echo "Copy webradio from moode to mympd"
+            cp "${MOODE_PLS_DIR}/${MODIFY_PLIST}.m3u" "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u"
+            [ -f "${MOODE_PICS_DIR}/${MODIFY_PLIST}.webp" ] && \
+                cp "${MOODE_PICS_DIR}/${MODIFY_PLIST}.webp" "${MYMPD_PICS_DIR}/${MODIFY_PLIST}.webp"
+        else
+            echo "Webradio ${MODIFY_PLIST} not found"
+            exit 1
+        fi
+    fi
     echo "Modifying webradio $MODIFY_PLIST"
     #New values
     NEW_URI=$(jq -r ".streamuri" < "$INPUT")
