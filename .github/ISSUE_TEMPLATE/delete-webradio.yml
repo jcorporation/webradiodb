@@ -8,10 +8,10 @@ body:
       value: |
         Thanks for taking the time to propose a deletion!
   - type: input
-    id: name
+    id: deleteWebradio
     attributes:
-      label: Webradio Name
-      description: The name of the webradio.
+      label: Webradio to delete
+      description: The stream uri, e.g. http://119.15.96.188/stream2.mp3
     validations:
       required: true
   - type: dropdown
@@ -22,7 +22,7 @@ body:
       options:
         - No longer available
         - Illegal stream
-        - other
+        - other (please describe)
     validations:
       required: true
   - type: textarea
