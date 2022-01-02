@@ -1,0 +1,35 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 12
+    },
+    "globals": {
+        "webradios": true
+    },
+    "rules": {
+        "block-scoped-var": "error",
+        "camelcase": "error",
+        "default-case-last": "error",
+        "eqeqeq": ["error", "always", {"null": "ignore"}],
+        "no-alert": "error",
+        "no-caller": "error",
+        "no-console": "off",
+        "no-eq-null": "error",
+        "no-eval": "error",
+        "no-implied-eval": "error",
+        "no-invalid-this": "error",
+        "no-restricted-globals": "error",
+        "no-restricted-properties": "error",
+        "no-return-assign": "error",
+        "no-self-compare": "error",
+        "no-shadow": "error",
+        "no-shadow-restricted-names": "error",
+        "no-useless-concat": "error",
+        "no-var": "error",
+        "prefer-const": "error"
+    }
+}
