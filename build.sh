@@ -361,7 +361,7 @@ delete_radio_from_json() {
     fi
 }
 
-m3u_to_jsoon() {
+m3u_to_json() {
     LINE="$1"
     if [ "${LINE:0:1}" = "#" ]
     then
