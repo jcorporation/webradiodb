@@ -1,4 +1,4 @@
-name: newWebradioFromIssue
+name: deleteWebradioFromIssue
 
 on:
   issues:
@@ -6,28 +6,24 @@ on:
 
 jobs:
   addradio:
-    if: ${{ github.event.label.name == 'MergeNewWebradio' }}
+    if: ${{ github.event.label.name == 'MergeDeleteWebradio' }}
 
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      - name: Install dependencies
-        run: sudo apt-get install -y --no-install-recommends imagemagick
 
       - uses: stefanbuck/github-issue-parser@v2
         id: issue-parser
         with:
-          template-path: .github/ISSUE_TEMPLATE/add-webradio.yml
+          template-path: .github/ISSUE_TEMPLATE/delete-webradio.yml
 
-      - name: Creating webradio m3u
+      - name: Deleting webradio m3u
         run: |
           cat > issue.json << EOL
           ${{ steps.issue-parser.outputs.jsonString }}
           EOL
-          ./build.sh add_radio_from_json issue.json
+          ./build.sh delete_radio_from_json issue.json
           rm issue.json
 
       - name: Create the webradio publish files

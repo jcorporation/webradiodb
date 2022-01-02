@@ -7,12 +7,15 @@ This is my attempt to create a curated webradio list for [myMPD](https://github.
 
 - [Station search](https://jcorporation.github.io/webradiodb/)
 
-Contributions to the webradio database are very welcome. It should be a community driven database. You must only open an issue to add a webradio. Your proposal will be reviewed and then merged, therefore it could take some time before the webradio is added.
+Contributions to the webradio database are very welcome. It should be a community driven database. You must only open an issue to add or modify a webradio. Your proposal will be reviewed and then merged, therefore it could take some time before the webradio is added.
 
-## Adding new webradios
+## Add a new webradio
 
-1. Simple: Open an [issue](https://github.com/jcorporation/webradiodb/issues/new?template=add-webradio.yml) - a GitHub workflow will do the rest upon approval.
-2. Advanced: Fork this repository - add/modify entries and create a pull request. You should only change the `sources/mympd-*` folders.
+Open an [issue](https://github.com/jcorporation/webradiodb/issues/new?template=add-webradio.yml) - a GitHub workflow will do the rest upon approval.
+
+### Modify a webradio
+
+[Search](https://jcorporation.github.io/webradiodb/) for the webradio and click on the modify link to open a prefilled GitHub issue.
 
 ## Usage
 

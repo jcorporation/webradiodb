@@ -1,0 +1,16 @@
+name: test
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: installdeps
+      run: sudo apt install imagemagick
+
+    - name: test
+      run: ./test/test.sh

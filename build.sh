@@ -4,6 +4,11 @@
 #myMPD (c) 2021-2022 Juergen Mang <mail@jcgames.de>
 #https://github.com/jcorporation/radiodb
 
+set -euo pipefail
+
+#print out commands
+[ -z "${DEBUG+x}" ] || set -x
+
 PUBLISH_DIR="docs/db"
 SOURCES_DIR="sources"
 PICS_DIR="${PUBLISH_DIR}/pics"
@@ -15,6 +20,85 @@ MOODE_PICS_DIR="${SOURCES_DIR}/moode-pics"
 MOODE_PLS_DIR="${SOURCES_DIR}/moode-webradios"
 MYMPD_PICS_DIR="${SOURCES_DIR}/mympd-pics"
 MYMPD_PLS_DIR="${SOURCES_DIR}/mympd-webradios"
+
+is_uri() {
+    URI="$1"
+    [ "${URI:0:7}" = "http://" ] && return 0
+    [ "${URI:0:8}" = "https://" ] && return 0
+    return 1
+}
+
+get_m3u_field() {
+    FILE="$1"
+    FIELD="$2"
+
+    LINE=$(grep "^#${FIELD}:" "$FILE")
+    echo "${LINE#*:}"
+}
+
+download_image() {
+    URL="$1"
+    DST="$2"
+    if ! wget -q "$URL" -O "${DST}.image"
+    then
+        rm -f "${DST}.image"
+        return 1
+    fi
+    if ! convert "${DST}.image" "${DST}.webp"
+    then
+        rm -f "${DST}.image"
+        return 1
+    fi
+    rm -f "${DST}.image"
+    if ! resize_image "${DST}.webp"
+    then
+        return 1
+    fi
+    return 0
+}
+
+resize_image() {
+    FILE="$1"
+    TOWIDTH="400"
+    TOHEIGHT="400"
+    TOSIZE="400x400"
+    [ -s "$FILE" ] || exit 1
+    #get actual size
+    SIZE=$(identify "$FILE" | cut -d' ' -f3)
+    WIDTH=$(cut -dx -f1 <<< "$SIZE")
+    HEIGHT=$(cut -dx -f2 <<< "$SIZE")
+
+    if [ "${SIZE}" != "${TOSIZE}" ]
+    then
+        if [ "$WIDTH" != "$TOWIDTH" ]
+        then
+            echo "Resizing $FILE from $SIZE to $TOWIDTH width"
+            if convert "$FILE" -resize "$TOWIDTH" "$FILE.resize"
+            then
+                mv "$FILE.resize" "$FILE"
+            else
+                echo "Error resizing $FILE"
+                rm -f "$FILE.resize"
+                return 1
+            fi
+        fi
+        SIZE=$(identify "$FILE" | cut -d' ' -f3)
+        HEIGHT=$(cut -dx -f2 <<< "$SIZE")
+        if [ "$HEIGHT" -gt "$TOHEIGHT" ]
+        then
+            echo "Croping $FILE to $TOHEIGHT height"
+            if convert "$FILE" -crop "$TOSIZE+0+0" "$FILE.crop"
+            then
+                mv "$FILE.crop" "$FILE"
+            else
+                rm -f "$FILE.crop"
+                echo "Error croping $FILE"
+                return 1
+            fi
+        fi
+    fi
+    return 0
+}
 
 sync_moode() {
     echo "Syncing moode audio webradios"
@@ -55,17 +139,17 @@ sync_moode() {
             then
                 cp "${MOODE_PICS_DIR}.old/${PLIST}.webp" "${MOODE_PICS_DIR}/${PLIST}.webp"
                 IMAGE="${PLIST}.webp"
-            elif wget -q "${MOODE_IMAGES}${NAME}.jpg" \
-                -O "${MOODE_PICS_DIR}/${PLIST}.jpg"
+            elif download_image "${MOODE_IMAGES}${NAME}.jpg" "${MOODE_PICS_DIR}/${PLIST}"
             then
-                convert "${MOODE_PICS_DIR}/${PLIST}.jpg" "${MOODE_PICS_DIR}/${PLIST}.webp"
-                rm "${MOODE_PICS_DIR}/${PLIST}.jpg"
-                resize_image "${MOODE_PICS_DIR}/${PLIST}.webp"
                 IMAGE="${PLIST}.webp"
             else
-                rm -f "${MOODE_PICS_DIR}/${PLIST}.jpg"
                 IMAGE=""
             fi
+        elif download_image "${MOODE_IMAGES}${NAME}.jpg" "${MOODE_PICS_DIR}/${PLIST}"
+        then
+            IMAGE="${PLIST}.webp"
+        else
+            IMAGE=""
         fi
 
         # write ext m3u with custom myMPD fields
@@ -95,7 +179,7 @@ EOL
 
 add_radio() {
     # get the uri and write out a skeletion file
-    read -p "URI: " URI
+    read -r -p "URI: " URI
     # create the same plist name as myMPD
     PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$URI")
     if [ -f "${MYMPD_PLS_DIR}/${PLIST}.m3u" ]
@@ -136,28 +220,26 @@ add_radio_from_json() {
     DESCRIPTION=$(jq -r ".description" < "$INPUT")
     # create the same plist name as myMPD
     PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$URI")
+    echo "Adding webradio $PLIST"
     if [ -f "${MYMPD_PLS_DIR}/${PLIST}.m3u" ]
     then
         echo "This webradio already exists."
         exit 1
     fi
-    if [ -n "$IMAGE" ]
+    if [ -n "$IMAGE" ] && is_uri "$IMAGE"
     then
-        if wget "$IMAGE" -O "${MYMPD_PICS_DIR}/${PLIST}.image"
+        if download_image "$IMAGE" "${MYMPD_PICS_DIR}/${PLIST}"
         then
-            convert "${MYMPD_PICS_DIR}/${PLIST}.image" "${MYMPD_PICS_DIR}/${PLIST}.webp"
-            rm -f "${MYMPD_PICS_DIR}/${PLIST}.image"
-            if [ -s "${MYMPD_PICS_DIR}/${PLIST}.webp" ]
-            then
-                IMAGE="${PLIST}.webp"
-                resize_image "${MYMPD_PICS_DIR}/${PLIST}.webp"
-            else
-                IMAGE=""
-            fi
+            IMAGE="${PLIST}.webp"
         else
+            echo "Download of image has failed"
             IMAGE=""
         fi
+    else
+        echo "Image is not an uri, skipping download"
+        IMAGE=""
     fi
+    echo "Writing ${PLIST}.m3u"
     cat > "${MYMPD_PLS_DIR}/${PLIST}.m3u" << EOL
 #EXTM3U
 #EXTINF:-1,$NAME
@@ -172,48 +254,101 @@ $URI
 EOL
 }
 
-resize_image() {
-    FILE="$1"
-    TOWIDTH="400"
-    TOHEIGHT="400"
-    TOSIZE="400x400"
-    [ -s "$FILE" ] || exit 1
-    #get actual size
-    SIZE=$(identify "$FILE" | cut -d' ' -f3)
-    WIDTH=$(cut -dx -f1 <<< "$SIZE")
-    HEIGHT=$(cut -dx -f2 <<< "$SIZE")
-
-    if [ "${SIZE}" != "${TOSIZE}" ]
+modify_radio_from_json() {
+    INPUT="$1"
+    #Webradio to modify
+    MODIFY_URI=$(jq -r ".modifyWebradio" < "$INPUT")
+    MODIFY_PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$MODIFY_URI")
+    echo "Modifying webradio $MODIFY_PLIST"
+    #New values
+    NEW_URI=$(jq -r ".streamuri" < "$INPUT")
+    NEW_NAME=$(jq -r ".name" < "$INPUT")
+    NEW_GENRE=$(jq -r ".genre" < "$INPUT")
+    NEW_IMAGE=$(jq -r ".image" < "$INPUT")
+    NEW_HOMEPAGE=$(jq -r ".homepage" < "$INPUT")
+    NEW_COUNTRY=$(jq -r ".country" < "$INPUT")
+    NEW_LANGUAGE=$(jq -r ".language" < "$INPUT")
+    NEW_DESCRIPTION=$(jq -r ".description" < "$INPUT")
+    NEW_PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$NEW_URI")
+    #Get old values
+    OLD_NAME=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "PLAYLIST")
+    OLD_GENRE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "EXTGENRE")
+    OLD_IMAGE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "EXTIMG")
+    OLD_HOMEPAGE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "HOMEPAGE")
+    OLD_COUNTRY=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "COUNTRY")
+    OLD_LANGUAGE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "LANGUAGE")
+    OLD_DESCRIPTION=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "DESCRIPTION")
+    if [ "$MODIFY_PLIST" != "$NEW_PLIST" ] && [ -f "${MYMPD_PLS_DIR}/${NEW_PLIST}.m3u" ]
     then
-        if [ "$WIDTH" != "$TOWIDTH" ]
+        echo "A webradio for the new streamuri already exists."
+        exit 1
+    fi
+    #set new plist name
+    [ -z "$NEW_PLIST" ] && NEW_PLIST="$MODIFY_PLIST"
+    if [ "$MODIFY_PLIST" != "$NEW_PLIST" ]
+    then
+        rm "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u"
+        mv "${MYMPD_PICS_DIR}/${MODIFY_PLIST}.webp" "${MYMPD_PICS_DIR}/${NEW_PLIST}.webp"
+    fi
+    #get changed image
+    if [ "$NEW_IMAGE" != "$OLD_IMAGE" ] && [ -n "$NEW_IMAGE" ]
+    then
+        echo "Image has changed"
+        rm -f "$OLD_IMAGE"
+        if is_uri "$NEW_IMAGE"
         then
-            echo "Resizing $FILE from $SIZE to $TOWIDTH width"
-            if convert "$FILE" -resize "$TOWIDTH" "$FILE.resize"
+            if download_image "$NEW_IMAGE" "${MYMPD_PICS_DIR}/${NEW_PLIST}"
             then
-                mv "$FILE.resize" "$FILE"
+                NEW_IMAGE="${MYMPD_PICS_DIR}/${NEW_PLIST}.webp"
             else
-                echo "Error resizing $FILE"
-                rm -f "$FILE.resize"
-                return
+                echo "Download of image has failed"
+                NEW_IMAGE=""
             fi
+        else
+            echo "Image is not an uri, skipping download"
         fi
-        SIZE=$(identify "$FILE" | cut -d' ' -f3)
-        HEIGHT=$(cut -dx -f2 <<< $SIZE)
-        if [ "$HEIGHT" -gt "$TOHEIGHT" ]
-        then
-            echo "Croping $FILE to $TOHEIGHT height"
-            if convert "$FILE" -crop "$TOSIZE+0+0" "$FILE.crop"
-            then
-                mv "$FILE.crop" "$FILE"
-            else
-                rm -f "$FILE.crop"
-                echo "Error croping $FILE"
-            fi
-        fi
+    fi
+    echo "Setting new values"
+    #merge other values
+    [ -z "$NEW_URI" ] && NEW_URI="$MODIFY_URI"
+    [ -z "$NEW_NAME" ] && NEW_NAME="$OLD_NAME"
+    [ -z "$NEW_IMAGE" ] && NEW_IMAGE="$OLD_IMAGE"
+    [ -z "$NEW_GENRE" ] && NEW_GENRE="$OLD_GENRE"
+    [ -z "$NEW_HOMEPAGE" ] && NEW_HOMEPAGE="$OLD_HOMEPAGE"
+    [ -z "$NEW_COUNTRY" ] && NEW_COUNTRY="$OLD_COUNTRY"
+    [ -z "$NEW_LANGUAGE" ] && NEW_LANGUAGE="$OLD_LANGUAGE"
+    [ -z "$NEW_DESCRIPTION" ] && NEW_DESCRIPTION="$OLD_DESCRIPTION"
+    echo "Writing ${NEW_PLIST}.m3u"
+    cat > "${MYMPD_PLS_DIR}/${NEW_PLIST}.m3u" << EOL
+#EXTM3U
+#EXTINF:-1,$NEW_NAME
+#EXTGENRE:$NEW_GENRE
+#PLAYLIST:$NEW_NAME
+#EXTIMG:$NEW_IMAGE
+#HOMEPAGE:$NEW_HOMEPAGE
+#COUNTRY:$NEW_COUNTRY
+#LANGUAGE:$NEW_LANGUAGE
+#DESCRIPTION:$NEW_DESCRIPTION
+$NEW_URI
+EOL
+}
+
+delete_radio_from_json() {
+    INPUT="$1"
+    URI=$(jq -r ".deleteWebradio" < "$INPUT")
+    # create the same plist name as myMPD
+    PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$URI")
+    #only mympd webradios can be deleted
+    echo "Deleting webradio ${PLIST}"
+    if rm "${MYMPD_PLS_DIR}/${PLIST}.m3u"
+    then
+        rm -f "${MYMPD_PICS_DIR}/${PLIST}.webp"
+    else
+        exit 1
     fi
 }
 
-parse_m3u() {
+m3u_to_jsoon() {
     LINE="$1"
     if [ "${LINE:0:1}" = "#" ]
     then
@@ -259,9 +394,9 @@ create() {
             [ "$LINE" = "#EXTM3U" ] && continue
             [ "$LINE" = "" ] && continue
             [ "$J" -gt 0 ] && printf "," >&3
-            parse_m3u "$LINE" >&3
+            m3u_to_json "$LINE" >&3
             ((J++))
-        done < $F
+        done < "$F"
         printf "}" >&3
         ((I++))
         printf "."
@@ -273,7 +408,7 @@ create() {
     then
         #create javascript file
         printf "const webradios=" > "${INDEXFILE_JS}.tmp"
-        cat "${INDEXFILE}.tmp" | tr -d '\n' >> "${INDEXFILE_JS}.tmp"
+        tr -d '\n' < "${INDEXFILE}.tmp" >> "${INDEXFILE_JS}.tmp"
         printf ";\n"  >> "${INDEXFILE_JS}.tmp"
         #finished, move all files in place
         echo "$I webradios in index"
@@ -286,7 +421,16 @@ create() {
     fi
 }
 
-case "$1" in
+#get action
+if [ -z "${1+x}" ]
+then
+  ACTION=""
+else
+  ACTION="$1"
+fi
+
+
+case "$ACTION" in
     add_radio)
         add_radio
         ;;
@@ -295,6 +439,15 @@ case "$1" in
         ;;
     create)
         create
+        ;;
+    delete_radio_from_json)
+        delete_radio_from_json "$2"
+        ;;
+    download_image)
+        download_image "$2" "$3"
+        ;;
+    modify_radio_from_json)
+        modify_radio_from_json "$2"
         ;;
     resize_image)
         resize_image "$2"
@@ -306,12 +459,23 @@ case "$1" in
         echo "Usage: $0 <action>"
         echo ""
         echo "Actions:"
-        echo "  add_radio:           interactively adds a webradio to sources/mympd-webradios"
-        echo "  add_radio_from_json: add a webradio from json generated by issue parser"
-        echo "  create:              copies playlists and images from sources dir and creates an unified index"
-        echo "  resize_image:        resizes the image to 400x400 pixels"
-        echo "  sync_moode:          syncs the moode audio webradios to sources/moode-webradios, downloads"
-        echo "                       and converts the images to webp"
+        echo "  add_radio:"
+        echo "    interactively adds a webradio to sources/mympd-webradios"
+        echo "  add_radio_from_json <json file>:"
+        echo "    add a webradio from json generated by issue parser"
+        echo "  create:"
+        echo "    copies playlists and images from sources dir and creates an unified index"
+        echo "  delete_radio_from_json <json file>:"
+        echo "    deletes a webradio from json generated by issue parser"
+        echo "  download_image <uri> <dst>:"
+        echo "    downloads and converts an image from <uri> to <dst>.webp"
+        echo "  modify_radio_from_json <json file>:"
+        echo "    modifies a webradio from json generated by issue parser"
+        echo "  resize_image <image>:"
+        echo "    resizes the image to 400x400 pixels"
+        echo "  sync_moode:"
+        echo "    syncs the moode audio webradios to sources/moode-webradios, downloads"
+        echo "    and converts the images to webp"
         echo ""
         ;;
 esac
