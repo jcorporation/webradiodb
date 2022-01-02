@@ -166,7 +166,7 @@ sync_moode() {
 $STATION
 EOL
     printf "."
-    ((I++))
+    I=$((I+1))
     done < <(wget -q "$MOODE_DB" -O - | \
         grep "INSERT INTO cfg_radio" | \
         awk -F "VALUES " '{print $2}' | \
@@ -408,10 +408,10 @@ create() {
             [ "$LINE" = "" ] && continue
             [ "$J" -gt 0 ] && printf "," >&3
             m3u_to_json "$LINE" >&3
-            ((J++))
+            J=$((J+1))
         done < "$F"
         printf "}" >&3
-        ((I++))
+        I=$((I+1))
         printf "."
     done
     printf "}\n" >&3
@@ -430,6 +430,7 @@ create() {
         mv "${INDEXFILE_JS}.tmp" "$INDEXFILE_JS"
     else
         echo "Error creating index"
+        rm "${INDEXFILE}.tmp"
         exit 1
     fi
 }
@@ -441,7 +442,6 @@ then
 else
   ACTION="$1"
 fi
-
 
 case "$ACTION" in
     add_radio)
