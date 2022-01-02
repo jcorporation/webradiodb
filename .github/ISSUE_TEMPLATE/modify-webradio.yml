@@ -8,10 +8,10 @@ body:
       value: |
         Thanks for taking the time to propose a modification!
   - type: input
-    id: mdofiyName
+    id: modifyWebradio
     attributes:
       label: Webradio to modify
-      description: The name of the webradio to modify.
+      description: The stream uri, e.g. http://119.15.96.188/stream2.mp3
     validations:
       required: true
   - type: markdown
