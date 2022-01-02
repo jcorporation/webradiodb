@@ -40,7 +40,7 @@ document.getElementById('searchstr').addEventListener('keyup', function(event) {
                 '</td></tr>' +
               '</tfoot>' +
             '</table>';
-        div.getElementsByTagName('caption')[0] = webradios[key].PLAYLIST;
+        div.getElementsByTagName('caption')[0].textContent = webradios[key].PLAYLIST;
         div.getElementsByTagName('img')[0].src = pic;
         div.getElementsByClassName('genre')[0].textContent = webradios[key].EXTGENRE;
         div.getElementsByClassName('country')[0].textContent = webradios[key].COUNTRY + ' / ' + webradios[key].LANGUAGE;
