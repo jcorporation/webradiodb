@@ -5,7 +5,7 @@ on:
     types: [labeled]
 
 jobs:
-  addradio:
+  modifyradio:
     if: ${{ github.event.label.name == 'MergeModifyWebradio' }}
 
     runs-on: ubuntu-latest
