@@ -51,7 +51,7 @@ document.getElementById('searchstr').addEventListener('keyup', function(event) {
         div.getElementsByClassName('description')[0].textContent = webradios[key].DESCRIPTION;
 
         div.getElementsByClassName('modify')[0].href =
-          issueUri + issueDelete + '&title=' + encodeURIComponent('[Modify Webradio]: ' + webradios[key].PLAYLIST) +
+          issueUri + issueModify + '&title=' + encodeURIComponent('[Modify Webradio]: ' + webradios[key].PLAYLIST) +
             '&modifyWebradio=' + encodeURIComponent(webradios[key].streamUri) +
             '&name=' + encodeURIComponent(webradios[key].PLAYLIST) +
             '&streamuri=' + encodeURIComponent(webradios[key].streamUri) +

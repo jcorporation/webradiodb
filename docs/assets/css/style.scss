@@ -32,3 +32,7 @@ td {
 td:first-child {
     width: 6rem;
 }
+
+input {
+    width: calc(100% - 1.5rem);
+}
