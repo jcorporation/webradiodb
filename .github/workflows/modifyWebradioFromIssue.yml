@@ -1,4 +1,4 @@
-name: deleteWebradioFromIssue
+name: modifyWebradioFromIssue
 
 on:
   issues:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   addradio:
-    if: ${{ github.event.label.name == 'MergeDeleteWebradio' }}
+    if: ${{ github.event.label.name == 'MergeModifyWebradio' }}
 
     runs-on: ubuntu-latest
 
@@ -16,7 +16,7 @@ jobs:
       - uses: stefanbuck/github-issue-parser@v2
         id: issue-parser
         with:
-          template-path: .github/ISSUE_TEMPLATE/delete-webradio.yml
+          template-path: .github/ISSUE_TEMPLATE/modify-webradio.yml
 
       - name: Modifying webradio m3u
         run: |
