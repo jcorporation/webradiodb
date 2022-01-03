@@ -2375,6 +2375,17 @@
     "DESCRIPTION": "",
     "streamUri": "https://playerservices.streamtheworld.com/api/livestream-redirect/WEMUFM.mp3"
   },
+  "https___radios_rtbf_be_classic21-128_mp3.m3u": {
+    "EXTINF": "-1,RTBF - Classic 21",
+    "EXTGENRE": "Pop-Rock",
+    "PLAYLIST": "RTBF - Classic 21",
+    "EXTIMG": "",
+    "HOMEPAGE": "https://www.rtbf.be/classic21/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://radios.rtbf.be/classic21-128.mp3"
+  },
   "https___radios_rtbf_be_laprem1ere-128_mp3.m3u": {
     "EXTINF": "-1,RTBF - La Première",
     "EXTGENRE": "Misc; Variety; News",
