@@ -1,5 +1,6 @@
 # myMPD Webradio Database
 
+[![test](https://github.com/jcorporation/webradiodb/actions/workflows/test.yml/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/test.yml)
 [![createWebradioIndex](https://github.com/jcorporation/webradiodb/actions/workflows/createWebradioIndex.yml/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/createWebradioIndex.yml)
 [![pages-build-deployment](https://github.com/jcorporation/webradiodb/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/pages/pages-build-deployment)
 
@@ -79,11 +80,11 @@ The final files are located in the `docs/db` folder, it is rebuild on each push 
 
 | FILE | DESCRIPTION |
 | ---- | ----------- |
-| countries.min.json | Array of countries |
-| genres.min.json | Array of genres |
-| languages.min.json | Array of languages |
-| webradios.min.json | JSON object of webradios |
-| webradiodb.min.s | JavaScript file with all above indexes |
+| [countries.min.json](https://jcorporation.github.io/webradiodb/db/index/countries.min.json) | Array of countries |
+| [genres.min.json](https://jcorporation.github.io/webradiodb/db/index/genres.min.json) | Array of genres |
+| [languages.min.json](https://jcorporation.github.io/webradiodb/db/index/languages.min.json) | Array of languages |
+| [webradios.min.json](https://jcorporation.github.io/webradiodb/db/index/webradios.min.json) | JSON object of webradios |
+| [webradiodb.min.js](https://jcorporation.github.io/webradiodb/db/index/webradiodb.min.js) | JavaScript file with all above indexes |
 
 ### Script usage
 
