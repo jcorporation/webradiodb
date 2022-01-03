@@ -2419,6 +2419,17 @@
     "DESCRIPTION": "",
     "streamUri": "https://radios.rtbf.be/musiq3-128.aac"
   },
+  "https___radios_rtbf_be_pure-128_mp3.m3u": {
+    "EXTINF": "-1,RTBF - Tipik / PureFM",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "RTBF - Tipik / PureFM",
+    "EXTIMG": "https___radios_rtbf_be_pure-128_mp3.webp",
+    "HOMEPAGE": "https://www.rtbf.be/tipik/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "null",
+    "streamUri": "https://radios.rtbf.be/pure-128.mp3"
+  },
   "https___smoothjazz_cdnstream1_com_2585_320_mp3.m3u": {
     "EXTINF": "-1,SmoothJazz Global",
     "EXTGENRE": "Jazz, Smooth Jazz",
