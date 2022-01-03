@@ -2398,11 +2398,11 @@
     "streamUri": "https://radios.rtbf.be/laprem1ere-128.mp3"
   },
   "https___radios_rtbf_be_musiq3-128_aac.m3u": {
-    "EXTINF": "-1,Musiq 3",
+    "EXTINF": "-1,RTBF - Musiq 3",
     "EXTGENRE": "Classical",
-    "PLAYLIST": "Musiq 3",
-    "EXTIMG": "https___radios_rtbf_be_musiq3-128_aac.webp",
-    "HOMEPAGE": "",
+    "PLAYLIST": "RTBF - Musiq 3",
+    "EXTIMG": "sources/mympd-pics/https___radios_rtbf_be_musiq3-128_aac.webp",
+    "HOMEPAGE": "https://www.rtbf.be/musiq3/",
     "COUNTRY": "Belgium",
     "LANGUAGE": "French",
     "DESCRIPTION": "",
