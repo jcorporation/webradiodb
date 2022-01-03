@@ -13,7 +13,7 @@ Contributions to the webradio database are very welcome. It should be a communit
 
 Open an [issue](https://github.com/jcorporation/webradiodb/issues/new?template=add-webradio.yml).
 
-### Modify a webradio
+## Modify a webradio
 
 [Search](https://jcorporation.github.io/webradiodb/) for the webradio and click on the modify link to open a prefilled GitHub issue.
 
