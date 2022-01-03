@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,VRT - MNM
+#EXTGENRE:Pop
+#PLAYLIST:VRT - MNM
+#EXTIMG:http___icecast_vrtcdn_be_mnm-high_mp3.webp
+#HOMEPAGE:https://mnm.be/
+#COUNTRY:Belgium
+#LANGUAGE:Dutch
+#DESCRIPTION:
+http://icecast.vrtcdn.be/mnm-high.mp3
