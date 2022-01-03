@@ -31,5 +31,5 @@ jobs:
         uses: EndBug/add-and-commit@v7.5.0
         with:
           add: docs/db
-          pull: NO-PULL
+          pull: --rebase
           push: true
