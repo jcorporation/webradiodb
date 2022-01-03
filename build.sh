@@ -312,7 +312,7 @@ modify_radio_from_json() {
         then
             if download_image "$NEW_IMAGE" "${MYMPD_PICS_DIR}/${NEW_PLIST}"
             then
-                NEW_IMAGE="${MYMPD_PICS_DIR}/${NEW_PLIST}.webp"
+                NEW_IMAGE="${NEW_PLIST}.webp"
             else
                 echo "Download of image has failed"
                 NEW_IMAGE=""
