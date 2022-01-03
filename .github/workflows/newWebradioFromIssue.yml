@@ -36,7 +36,7 @@ jobs:
         uses: EndBug/add-and-commit@v7.5.0
         with:
           add: sources docs/db
-          pull: --rebase
+          pull: NO-PULL
           push: true
 
       - uses: peter-evans/close-issue@v1
