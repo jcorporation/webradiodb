@@ -2386,6 +2386,17 @@
     "DESCRIPTION": "",
     "streamUri": "https://radios.rtbf.be/classic21-128.mp3"
   },
+  "https___radios_rtbf_be_jam-128_mp3.m3u": {
+    "EXTINF": "-1,RTBF - Jam",
+    "EXTGENRE": "Urbain; Pop; Electro; Rock; Folk; New Jazz; World",
+    "PLAYLIST": "RTBF - Jam",
+    "EXTIMG": "https___radios_rtbf_be_jam-128_mp3.webp",
+    "HOMEPAGE": "https://www.rtbf.be/jam",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://radios.rtbf.be/jam-128.mp3"
+  },
   "https___radios_rtbf_be_laprem1ere-128_mp3.m3u": {
     "EXTINF": "-1,RTBF - La Première",
     "EXTGENRE": "Misc; Variety; News",
@@ -2401,7 +2412,7 @@
     "EXTINF": "-1,RTBF - Musiq 3",
     "EXTGENRE": "Classical",
     "PLAYLIST": "RTBF - Musiq 3",
-    "EXTIMG": "sources/mympd-pics/https___radios_rtbf_be_musiq3-128_aac.webp",
+    "EXTIMG": "https___radios_rtbf_be_musiq3-128_aac.webp",
     "HOMEPAGE": "https://www.rtbf.be/musiq3/",
     "COUNTRY": "Belgium",
     "LANGUAGE": "French",
