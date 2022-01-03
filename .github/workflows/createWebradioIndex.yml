@@ -13,6 +13,8 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+concurrency: webradio-sources
+
 jobs:
   # This workflow contains a single job called "build"
   build:

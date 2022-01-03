@@ -4,6 +4,8 @@ on:
   issues:
     types: [labeled]
 
+concurrency: webradio-sources
+
 jobs:
   addradio:
     if: ${{ github.event.label.name == 'MergeNewWebradio' }}
