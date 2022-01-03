@@ -1,5 +1,5 @@
 {
-  "timestamp": 1641229284,
+  "timestamp": 1641230036,
   "data": {
     "http___119_15_96_188_stream2_mp3.m3u": {
       "EXTINF": "-1,ArtSound FM 92.7",
@@ -2313,7 +2313,7 @@
     },
     "https___contactgold_ice_infomaniak_ch_contactgold-192_mp3.m3u": {
       "EXTINF": "-1,Radio Contact Gold",
-      "EXTGENRE": "80's; 90's",
+      "EXTGENRE": "80's, 90's",
       "PLAYLIST": "Radio Contact Gold",
       "EXTIMG": "https___contactgold_ice_infomaniak_ch_contactgold-192_mp3.webp",
       "HOMEPAGE": "https://www.radiocontact.be/",
@@ -2324,7 +2324,7 @@
     },
     "https___contactkids_ice_infomaniak_ch_contactkids-192_mp3.m3u": {
       "EXTINF": "-1,Radio Contact Kids",
-      "EXTGENRE": "Children; Kids",
+      "EXTGENRE": "Children, Kids",
       "PLAYLIST": "Radio Contact Kids",
       "EXTIMG": "https___contactkids_ice_infomaniak_ch_contactkids-192_mp3.webp",
       "HOMEPAGE": "https://www.radiocontact.be/",
@@ -2346,7 +2346,7 @@
     },
     "https___contactlove_ice_infomaniak_ch_contactlove-192_mp3.m3u": {
       "EXTINF": "-1,Radio Contact Love",
-      "EXTGENRE": "Love; 80's; 90's;",
+      "EXTGENRE": "Love, 80's, 90's",
       "PLAYLIST": "Radio Contact Love",
       "EXTIMG": "https___contactlove_ice_infomaniak_ch_contactlove-192_mp3.webp",
       "HOMEPAGE": "https://www.radiocontact.be/",
@@ -2412,7 +2412,7 @@
     },
     "https___funradiobe_ice_infomaniak_ch_funradiobe-high.m3u": {
       "EXTINF": "-1,Fun Radio Belgique",
-      "EXTGENRE": "Dance; Groove; R'n'B; Soul",
+      "EXTGENRE": "Dance, Groove, R'n'B, Soul",
       "PLAYLIST": "Fun Radio Belgique",
       "EXTIMG": "https___funradiobe_ice_infomaniak_ch_funradiobe-high.webp",
       "HOMEPAGE": "https://www.funradio.be/",
@@ -2445,7 +2445,7 @@
     },
     "https___icecast_radiofrance_fr_franceinter-midfi_mp3.m3u": {
       "EXTINF": "-1,France Inter",
-      "EXTGENRE": "Misc; Variety",
+      "EXTGENRE": "Misc, Variety",
       "PLAYLIST": "France Inter",
       "EXTIMG": "https___icecast_radiofrance_fr_franceinter-midfi_mp3.webp",
       "HOMEPAGE": "https://www.franceinter.fr/",
@@ -2544,7 +2544,7 @@
     },
     "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_70S_mp3.m3u": {
       "EXTINF": "-1,Joe 60's & 70's",
-      "EXTGENRE": "60's; 70's",
+      "EXTGENRE": "60's, 70's",
       "PLAYLIST": "Joe 60's & 70's",
       "EXTIMG": "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_70S_mp3.webp",
       "HOMEPAGE": "https://joe.be/",
@@ -2555,7 +2555,7 @@
     },
     "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_80S_mp3.m3u": {
       "EXTINF": "-1,Joe 80's & 90's",
-      "EXTGENRE": "80's; 90's",
+      "EXTGENRE": "80's, 90's",
       "PLAYLIST": "Joe 80's & 90's",
       "EXTIMG": "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_80S_mp3.webp",
       "HOMEPAGE": "https://joe.be/",
@@ -2588,7 +2588,7 @@
     },
     "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_mp3.m3u": {
       "EXTINF": "-1,Joe FM",
-      "EXTGENRE": "Misc; 70's; 80's; 90's",
+      "EXTGENRE": "Misc, 70's, 80's, 90's",
       "PLAYLIST": "Joe FM",
       "EXTIMG": "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_mp3.webp",
       "HOMEPAGE": "https://joe.be/",
@@ -2643,7 +2643,7 @@
     },
     "https___radios_rtbf_be_jam-128_mp3.m3u": {
       "EXTINF": "-1,RTBF - Jam",
-      "EXTGENRE": "Urbain; Pop; Electro; Rock; Folk; New Jazz; World",
+      "EXTGENRE": "Urbain, Pop, Electro, Rock, Folk, New Jazz, World",
       "PLAYLIST": "RTBF - Jam",
       "EXTIMG": "https___radios_rtbf_be_jam-128_mp3.webp",
       "HOMEPAGE": "https://www.rtbf.be/jam",
@@ -2654,7 +2654,7 @@
     },
     "https___radios_rtbf_be_laprem1ere-128_mp3.m3u": {
       "EXTINF": "-1,RTBF - La Première",
-      "EXTGENRE": "Misc; Variety; News",
+      "EXTGENRE": "Misc, Variety, News",
       "PLAYLIST": "RTBF - La Première",
       "EXTIMG": "https___radios_rtbf_be_laprem1ere-128_mp3.webp",
       "HOMEPAGE": "https://www.rtbf.be/lapremiere/",
@@ -2709,7 +2709,7 @@
     },
     "https___radios_rtbf_be_vivaplus-128_mp3.m3u": {
       "EXTINF": "-1,RTBF - Viva+",
-      "EXTGENRE": "60's; 70's",
+      "EXTGENRE": "60's, 70's",
       "PLAYLIST": "RTBF - Viva+",
       "EXTIMG": "https___radios_rtbf_be_vivaplus-128_mp3.webp",
       "HOMEPAGE": "https://www.rtbf.be/vivaplus",
@@ -2720,7 +2720,7 @@
     },
     "https___relay2_bide-et-musique_com_9300_bm_mp3.m3u": {
       "EXTINF": "-1,Bide et Musique - La radio de l'improbable et de l'inouï",
-      "EXTGENRE": "70's; 80's",
+      "EXTGENRE": "70's, 80's",
       "PLAYLIST": "Bide et Musique - La radio de l'improbable et de l'inouï",
       "EXTIMG": "https___relay2_bide-et-musique_com_9300_bm_mp3.webp",
       "HOMEPAGE": "https://www.bide-et-musique.com/",
@@ -2907,7 +2907,7 @@
     },
     "https___stream_rcs_revma_com_vnmbzemrmm0uv.m3u": {
       "EXTINF": "-1,Maximum FM",
-      "EXTGENRE": "Pop-Rock; Dance; Club;",
+      "EXTGENRE": "Pop-Rock, Dance, Club",
       "PLAYLIST": "Maximum FM",
       "EXTIMG": "https___stream_rcs_revma_com_vnmbzemrmm0uv.webp",
       "HOMEPAGE": "https://www.maximumfm.be/",
@@ -2929,7 +2929,7 @@
     },
     "https___streamingp_shoutcast_com_Cherie-mp3.m3u": {
       "EXTINF": "-1,Chérie Belgique",
-      "EXTGENRE": "Pop; Misc",
+      "EXTGENRE": "Pop, Misc",
       "PLAYLIST": "Chérie Belgique",
       "EXTIMG": "https___streamingp_shoutcast_com_Cherie-mp3.webp",
       "HOMEPAGE": "https://www.cheriebelgique.be/",
@@ -2995,7 +2995,7 @@
     },
     "https___streamingp_shoutcast_com_NostalgieLove-aac.m3u": {
       "EXTINF": "-1,Nostalgie Love",
-      "EXTGENRE": "Love; 80's; 90's;",
+      "EXTGENRE": "Love, 80's, 90's",
       "PLAYLIST": "Nostalgie Love",
       "EXTIMG": "https___streamingp_shoutcast_com_NostalgieLove-aac.webp",
       "HOMEPAGE": "https://www.nostalgie.be/",
@@ -3061,7 +3061,7 @@
     },
     "https___www_radioking_com_play_radio-doudou.m3u": {
       "EXTINF": "-1,Radio Doudou",
-      "EXTGENRE": "Kids; Lullabies",
+      "EXTGENRE": "Kids, Lullabies",
       "PLAYLIST": "Radio Doudou",
       "EXTIMG": "https___www_radioking_com_play_radio-doudou.webp",
       "HOMEPAGE": "https://www.radiodoudou.com",
@@ -3072,7 +3072,7 @@
     },
     "https___www_radiopommedapi_com_radio_mp3.m3u": {
       "EXTINF": "-1,Radio Pomme d'Api - La Radio des Petits",
-      "EXTGENRE": "Kids; Lullabies",
+      "EXTGENRE": "Kids, Lullabies",
       "PLAYLIST": "Radio Pomme d'Api - La Radio des Petits",
       "EXTIMG": "https___www_radiopommedapi_com_radio_mp3.webp",
       "HOMEPAGE": "https://www.radiopommedapi.com/",

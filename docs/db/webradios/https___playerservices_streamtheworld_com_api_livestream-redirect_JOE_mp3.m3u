@@ -1,6 +1,6 @@
 #EXTM3U
 #EXTINF:-1,Joe FM
-#EXTGENRE:Misc; 70's; 80's; 90's
+#EXTGENRE:Misc, 70's, 80's, 90's
 #PLAYLIST:Joe FM
 #EXTIMG:https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_mp3.webp
 #HOMEPAGE:https://joe.be/
