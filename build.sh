@@ -368,7 +368,12 @@ m3u_to_json() {
         INFO="${LINE:1}"
         KEY=${INFO%%:*}
         VALUE=${INFO#*:}
-        VALUE=$(jq -n --arg value "$VALUE" '$value')
+        if [ "$KEY" = "EXTGENRE" ]
+        then
+            VALUE=$(jq -c -R 'split(", ")' <<< "$VALUE")
+        else
+            VALUE=$(jq -n --arg value "$VALUE" '$value')
+        fi
         printf "\"$KEY\":%s" "$VALUE"
     else
         VALUE=$(jq -n --arg value "$LINE" '$value')

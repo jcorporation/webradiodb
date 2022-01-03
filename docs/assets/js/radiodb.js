@@ -43,7 +43,7 @@ document.getElementById('searchstr').addEventListener('keyup', function(event) {
             '</table>';
         div.getElementsByTagName('caption')[0].textContent = webradios.data[key].PLAYLIST;
         div.getElementsByTagName('img')[0].src = pic;
-        div.getElementsByClassName('genre')[0].textContent = webradios.data[key].EXTGENRE;
+        div.getElementsByClassName('genre')[0].textContent = webradios.data[key].EXTGENRE.join(', ');
         div.getElementsByClassName('country')[0].textContent = webradios.data[key].COUNTRY + ' / ' + webradios.data[key].LANGUAGE;
         div.getElementsByClassName('homepage')[0].href = webradios.data[key].HOMEPAGE;
         div.getElementsByClassName('homepage')[0].textContent = webradios.data[key].HOMEPAGE;
