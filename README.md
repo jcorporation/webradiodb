@@ -39,7 +39,12 @@ The primary workflow to add or modify a webradio is to open an issue. The issue 
 
 #### Index creation
 
-The create index workflow runs once a day. It parses the m3u files and creates JSON index files. After this workflow all files published to the GitHub page.
+The create workflow runs once a day. 
+
+- copies files from `sources` to `docs/db` folder
+- parses the m3u files and creates JSON index files
+
+After this workflow the `docs` folder is published to the GitHub page.
 
 ### Storage format
 
