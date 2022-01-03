@@ -72,7 +72,7 @@ resize_image() {
     then
         if [ "$CUR_WIDTH" != "$TO_WIDTH" ]
         then
-            echo "Resizing $RESIZE_FILE from $RESIZE_SIZE to $TO_WIDTH width"
+            echo "Resizing $RESIZE_FILE from $CUR_SIZE to $TO_WIDTH width"
             if convert "$RESIZE_FILE" -resize "$TO_WIDTH" "$RESIZE_FILE.resize"
             then
                 mv "$RESIZE_FILE.resize" "$RESIZE_FILE"
