@@ -50,7 +50,7 @@ body:
     id: image
     attributes:
       label: Image
-      description: The radiostation logo.
+      description: A link to the radiostation logo or the already downloaded filename.
     validations:
       required: false
   - type: input
