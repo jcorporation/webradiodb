@@ -1,9 +1,9 @@
 #EXTM3U
-#EXTINF:-1,VRT - Studio Brussel
+#EXTINF:-1,VTR - StuBru - Studio Brussels
 #EXTGENRE:Alternative
-#PLAYLIST:VRT - Studio Brussel
+#PLAYLIST:VTR - StuBru - Studio Brussels
 #EXTIMG:http___icecast_vrtcdn_be_stubru-high_mp3.webp
-#HOMEPAGE:
+#HOMEPAGE:https://stubru.be/
 #COUNTRY:Belgium
 #LANGUAGE:Dutch
 #DESCRIPTION:
