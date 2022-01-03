@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,VRT - Radio 2
+#EXTGENRE:Eclectic
+#PLAYLIST:VRT - Radio 2
+#EXTIMG:http___icecast_vrtcdn_be_ra2vlb-high_mp3.webp
+#HOMEPAGE:https://radio2.be/
+#COUNTRY:Belgium
+#LANGUAGE:Dutch
+#DESCRIPTION:
+http://icecast.vrtcdn.be/ra2vlb-high.mp3
