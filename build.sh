@@ -13,9 +13,14 @@ PUBLISH_DIR="docs/db"
 SOURCES_DIR="sources"
 PICS_DIR="${PUBLISH_DIR}/pics"
 PLS_DIR="${PUBLISH_DIR}/webradios"
+
 INDEXFILE="${PUBLISH_DIR}/index/webradios.min.json"
-INDEXFILE_FORMATED="${PUBLISH_DIR}/index/webradios.json"
-INDEXFILE_JS="${PUBLISH_DIR}/index/webradios.min.js"
+INDEXFILE_JS="${PUBLISH_DIR}/index/webradiodb.min.js"
+
+LANGFILE="${PUBLISH_DIR}/index/languages.min.json"
+COUNTRYFILE="${PUBLISH_DIR}/index/countries.min.json"
+GENREFILE="${PUBLISH_DIR}/index/genres.min.json"
+
 MOODE_PICS_DIR="${SOURCES_DIR}/moode-pics"
 MOODE_PLS_DIR="${SOURCES_DIR}/moode-webradios"
 MYMPD_PICS_DIR="${SOURCES_DIR}/mympd-pics"
@@ -210,14 +215,14 @@ EOL
 
 add_radio_from_json() {
     INPUT="$1"
-    URI=$(jq -r ".streamuri" < "$INPUT")
-    NAME=$(jq -r ".name" < "$INPUT")
-    GENRE=$(jq -r ".genre" < "$INPUT")
+    URI=$(jq -r ".streamuri" < "$INPUT" | head -1 | tr -d '\n')
+    NAME=$(jq -r ".name" < "$INPUT" | head -1 | tr -d '\n')
+    GENRE=$(jq -r ".genre" < "$INPUT" | head -1 | tr -d '\n' | sed -E -e 's/;\s?/, /g' -e 's/,(\S)/, \1/g')
     IMAGE=$(jq -r ".image" < "$INPUT" | head -1 | tr -d '\n')
-    HOMEPAGE=$(jq -r ".homepage" < "$INPUT")
-    COUNTRY=$(jq -r ".country" < "$INPUT")
-    LANGUAGE=$(jq -r ".language" < "$INPUT")
-    DESCRIPTION=$(jq -r ".description" < "$INPUT")
+    HOMEPAGE=$(jq -r ".homepage" < "$INPUT" | head -1 | tr -d '\n')
+    COUNTRY=$(jq -r ".country" < "$INPUT" | head -1 | tr -d '\n')
+    LANGUAGE=$(jq -r ".language" < "$INPUT" | head -1 | tr -d '\n')
+    DESCRIPTION=$(jq -r ".description" < "$INPUT" | head -1 | tr -d '\n')
     # create the same plist name as myMPD
     PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$URI")
     echo "Adding webradio $PLIST"
@@ -274,14 +279,14 @@ modify_radio_from_json() {
     fi
     echo "Modifying webradio $MODIFY_PLIST"
     #New values
-    NEW_URI=$(jq -r ".streamuri" < "$INPUT")
-    NEW_NAME=$(jq -r ".name" < "$INPUT")
-    NEW_GENRE=$(jq -r ".genre" < "$INPUT")
+    NEW_URI=$(jq -r ".streamuri" < "$INPUT" | head -1 | tr -d '\n')
+    NEW_NAME=$(jq -r ".name" < "$INPUT" | head -1 | tr -d '\n')
+    NEW_GENRE=$(jq -r ".genre" < "$INPUT" | head -1 | tr -d '\n' | sed -E -e 's/;\s?/, /g' -e 's/,(\S)/, \1/g')
     NEW_IMAGE=$(jq -r ".image" < "$INPUT" | head -1 | tr -d '\n')
-    NEW_HOMEPAGE=$(jq -r ".homepage" < "$INPUT")
-    NEW_COUNTRY=$(jq -r ".country" < "$INPUT")
-    NEW_LANGUAGE=$(jq -r ".language" < "$INPUT")
-    NEW_DESCRIPTION=$(jq -r ".description" < "$INPUT")
+    NEW_HOMEPAGE=$(jq -r ".homepage" < "$INPUT" | head -1 | tr -d '\n')
+    NEW_COUNTRY=$(jq -r ".country" < "$INPUT" | head -1 | tr -d '\n')
+    NEW_LANGUAGE=$(jq -r ".language" < "$INPUT" | head -1 | tr -d '\n')
+    NEW_DESCRIPTION=$(jq -r ".description" < "$INPUT" | head -1 | tr -d '\n')
     NEW_PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$NEW_URI")
     #Get old values
     OLD_NAME=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "PLAYLIST")
@@ -421,17 +426,44 @@ create() {
     done
     printf "}, \"total\": %s}\n" "$I" >&3
     exec 3>&-
-    #create formated json file
-    if jq < "${INDEXFILE}.tmp" > "${INDEXFILE_FORMATED}.tmp"
+    NEW_CHKSUM=$(jq '.data' < "${INDEXFILE}.tmp" | md5sum)
+    OLD_CHKSUM=$(jq '.data' < "${INDEXFILE}" | md5sum)
+    if [ "$NEW_CHKSUM" = "$OLD_CHKSUM" ]
     then
+        echo "Index not changed."
+        rm "${INDEXFILE}.tmp"
+        exit 0
+    fi
+    #create formated json file
+    if jq < "${INDEXFILE}.tmp" > /dev/null
+    then
+        #create other index files
+        jq -r '.data | .[] | .LANGUAGE' "$INDEXFILE.tmp" | sort -u | \
+            jq -R -s -c 'split("\n") | .[0:-1]' > "$LANGFILE.tmp"
+        jq -r '.data | .[] | .COUNTRY' "$INDEXFILE.tmp" | sort -u | \
+            jq -R -s -c 'split("\n") | .[0:-1]' > "$COUNTRYFILE.tmp"
+        jq -r '.data | .[] | .EXTGENRE | .[]' "$INDEXFILE.tmp" | sort -u | \
+            jq -R -s -c 'split("\n") | .[0:-1]' > "$GENREFILE.tmp"
         #create javascript file
         printf "const webradios=" > "${INDEXFILE_JS}.tmp"
         tr -d '\n' < "${INDEXFILE}.tmp" >> "${INDEXFILE_JS}.tmp"
+        printf ";\n"  >> "${INDEXFILE_JS}.tmp"
+        printf "const languages=" >> "${INDEXFILE_JS}.tmp"
+        tr -d '\n' < "${LANGFILE}.tmp" >> "${INDEXFILE_JS}.tmp"
+        printf ";\n"  >> "${INDEXFILE_JS}.tmp"
+        printf "const country=" >> "${INDEXFILE_JS}.tmp"
+        tr -d '\n' < "${COUNTRYFILE}.tmp" >> "${INDEXFILE_JS}.tmp"
+        printf ";\n"  >> "${INDEXFILE_JS}.tmp"
+        printf "const genres=" >> "${INDEXFILE_JS}.tmp"
+        tr -d '\n' < "${GENREFILE}.tmp" >> "${INDEXFILE_JS}.tmp"
         printf ";\n"  >> "${INDEXFILE_JS}.tmp"
         #finished, move all files in place
         echo "$I webradios in index"
         mv "${INDEXFILE}.tmp" "$INDEXFILE"
         mv "${INDEXFILE_FORMATED}.tmp" "$INDEXFILE_FORMATED"
+        mv "${LANGFILE}.tmp" "$LANGFILE"
+        mv "${COUNTRYFILE}.tmp" "$COUNTRYFILE"
+        mv "${GENREFILE}.tmp" "$GENREFILE"
         mv "${INDEXFILE_JS}.tmp" "$INDEXFILE_JS"
     else
         echo "Error creating index"

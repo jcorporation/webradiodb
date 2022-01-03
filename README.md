@@ -11,7 +11,7 @@ Contributions to the webradio database are very welcome. It should be a communit
 
 ## Add a new webradio
 
-Open an [issue](https://github.com/jcorporation/webradiodb/issues/new?template=add-webradio.yml) - a GitHub workflow will do the rest upon approval.
+Open an [issue](https://github.com/jcorporation/webradiodb/issues/new?template=add-webradio.yml).
 
 ### Modify a webradio
 
@@ -27,6 +27,21 @@ At the moment there are two sources for webradio files:
 
 - Webradios from moode audio (sources/moode-*)
 - Manually added files (sources/mympd-*)
+
+### Workflows
+
+#### Add, modify and delete a webradio
+The primary workflow to add or modify a webradio is to open an issue. The issue must be manually approved by adding a merge label. A GitHub action is triggered on the label event and the build script runs:
+
+- creates the m3u file
+- downloads the image
+- converts the image to webp and resizes it to 400x400 pixel
+
+#### Index creation
+
+The create index workflow runs once a day. It parses the m3u files and creates JSON index files. After this workflow all files published to the GitHub page.
+
+### Storage format
 
 Webradios are saved as extended m3u files with some custom fields. A coverimage could be specified as file in the pics folder or an url.
 
@@ -47,13 +62,23 @@ The filename of the playlist and the coverimage are derived from the streamuri b
 
 You must not download the station images, instead you can prepend `https://jcorporation.github.io/webradiodb/db/pics/` to the image name, e.g. https://jcorporation.github.io/webradiodb/db/pics/http___119_15_96_188_stream2_mp3.webp.
 
-The final files are located in the `docs/db` folder, it is rebuild on each push request.
+The final files are located in the `docs/db` folder, it is rebuild on each push request. The folder `docs` is published through [GitHub Pages](https://jcorporation.github.io/webradiodb/).
 
-- Playlists: [docs/db/webradios](docs/db/webradios)
-- Station images: [docs/db/pics](docs/db/pics)
-- Metadata as json and javascript: [docs/db/index](docs/db/index)
+| FOLDER | DESCRIPTION |
+| ------ | ----------- |
+| [docs/db/webradios](docs/db/webradios) | Playlists |
+| [docs/db/pics](docs/db/pics) | Station images |
+| [docs/db/index](docs/db/index) | Metadata as json and javascript |
 
-The folder `docs` is also published through [GitHub Pages](https://jcorporation.github.io/webradiodb/).
+### Index files
+
+| FILE | DESCRIPTION |
+| ---- | ----------- |
+| countries.min.json | Array of countries |
+| genres.min.json | Array of genres |
+| languages.min.json | Array of languages |
+| webradios.min.json | JSON object of webradios |
+| webradiodb.min.s | JavaScript file with all above indexes |
 
 ### Script usage
 
