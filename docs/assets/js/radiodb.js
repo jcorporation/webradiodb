@@ -1,5 +1,6 @@
 const resultEl = document.getElementById('result');
-document.getElementById('stationCount').textContent = Object.keys(webradios).length;
+document.getElementById('lastUpdate').textContent = new Date(webradios.timestamp * 1000).toLocaleString('en-US');
+document.getElementById('stationCount').textContent = webradios.total;
 
 const issueUri = 'https://github.com/jcorporation/webradiodb/issues/new';
 const issueDelete = '?labels=DeleteWebradio&template=delete-webradio.yml';
@@ -14,13 +15,13 @@ document.getElementById('searchstr').addEventListener('keyup', function(event) {
       return;
     }
     let i = 0;
-    for (const key in webradios) {
-      if (webradios[key].PLAYLIST.toLowerCase().indexOf(searchstr) > -1) {
+    for (const key in webradios.data) {
+      if (webradios.data[key].PLAYLIST.toLowerCase().indexOf(searchstr) > -1) {
         i++;
         const div = document.createElement('div');
-        const pic = webradios[key].EXTIMG.indexOf('http:') === 0 ||
-            webradios[key].EXTIMG.indexOf('https:') === 0 ?
-                webradios[key].EXTIMG : 'db/pics/' + webradios[key].EXTIMG;
+        const pic = webradios.data[key].EXTIMG.indexOf('http:') === 0 ||
+            webradios.data[key].EXTIMG.indexOf('https:') === 0 ?
+                webradios.data[key].EXTIMG : 'db/pics/' + webradios.data[key].EXTIMG;
         div.innerHTML =
             '<table>' +
               '<caption></caption>' +
@@ -40,31 +41,31 @@ document.getElementById('searchstr').addEventListener('keyup', function(event) {
                 '</td></tr>' +
               '</tfoot>' +
             '</table>';
-        div.getElementsByTagName('caption')[0].textContent = webradios[key].PLAYLIST;
+        div.getElementsByTagName('caption')[0].textContent = webradios.data[key].PLAYLIST;
         div.getElementsByTagName('img')[0].src = pic;
-        div.getElementsByClassName('genre')[0].textContent = webradios[key].EXTGENRE;
-        div.getElementsByClassName('country')[0].textContent = webradios[key].COUNTRY + ' / ' + webradios[key].LANGUAGE;
-        div.getElementsByClassName('homepage')[0].href = webradios[key].HOMEPAGE;
-        div.getElementsByClassName('homepage')[0].textContent = webradios[key].HOMEPAGE;
-        div.getElementsByTagName('input')[0].value = webradios[key].streamUri;
+        div.getElementsByClassName('genre')[0].textContent = webradios.data[key].EXTGENRE;
+        div.getElementsByClassName('country')[0].textContent = webradios.data[key].COUNTRY + ' / ' + webradios.data[key].LANGUAGE;
+        div.getElementsByClassName('homepage')[0].href = webradios.data[key].HOMEPAGE;
+        div.getElementsByClassName('homepage')[0].textContent = webradios.data[key].HOMEPAGE;
+        div.getElementsByTagName('input')[0].value = webradios.data[key].streamUri;
         div.getElementsByClassName('playlist')[0].href = 'db/webradios/' + key;
-        div.getElementsByClassName('description')[0].textContent = webradios[key].DESCRIPTION;
+        div.getElementsByClassName('description')[0].textContent = webradios.data[key].DESCRIPTION;
 
         div.getElementsByClassName('modify')[0].href =
-          issueUri + issueModify + '&title=' + encodeURIComponent('[Modify Webradio]: ' + webradios[key].PLAYLIST) +
-            '&modifyWebradio=' + encodeURIComponent(webradios[key].streamUri) +
-            '&name=' + encodeURIComponent(webradios[key].PLAYLIST) +
-            '&streamuri=' + encodeURIComponent(webradios[key].streamUri) +
-            '&genre=' + encodeURIComponent(webradios[key].EXTGENRE) +
-            '&homepage=' + encodeURIComponent(webradios[key].HOMEPAGE) +
-            '&image=' + encodeURIComponent(webradios[key].EXTIMG) +
-            '&country=' + encodeURIComponent(webradios[key].COUNTRY) +
-            '&language=' + encodeURIComponent(webradios[key].LANGUAGE) +
-            '&description=' + encodeURIComponent(webradios[key].DESCRIPTION);
+          issueUri + issueModify + '&title=' + encodeURIComponent('[Modify Webradio]: ' + webradios.data[key].PLAYLIST) +
+            '&modifyWebradio=' + encodeURIComponent(webradios.data[key].streamUri) +
+            '&name=' + encodeURIComponent(webradios.data[key].PLAYLIST) +
+            '&streamuri=' + encodeURIComponent(webradios.data[key].streamUri) +
+            '&genre=' + encodeURIComponent(webradios.data[key].EXTGENRE) +
+            '&homepage=' + encodeURIComponent(webradios.data[key].HOMEPAGE) +
+            '&image=' + encodeURIComponent(webradios.data[key].EXTIMG) +
+            '&country=' + encodeURIComponent(webradios.data[key].COUNTRY) +
+            '&language=' + encodeURIComponent(webradios.data[key].LANGUAGE) +
+            '&description=' + encodeURIComponent(webradios.data[key].DESCRIPTION);
 
         div.getElementsByClassName('delete')[0].href =
-          issueUri + issueDelete + '&title=' + encodeURIComponent('[Delete Webradio]: ' + webradios[key].PLAYLIST) +
-            '&deleteWebradio=' + encodeURIComponent(webradios[key].streamUri);
+          issueUri + issueDelete + '&title=' + encodeURIComponent('[Delete Webradio]: ' + webradios.data[key].PLAYLIST) +
+            '&deleteWebradio=' + encodeURIComponent(webradios.data[key].streamUri);
         resultEl.appendChild(div);
       }
     }

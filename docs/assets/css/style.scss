@@ -3,11 +3,6 @@
 
 @import "{{ site.theme }}";
 
-#main-content h3::before {
-    content: "" !important;
-    margin-left: 0 !important;
-}
-
 img.stationImage {
     width: 5rem;
     height: auto;

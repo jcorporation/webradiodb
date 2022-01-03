@@ -2,7 +2,7 @@ This is my attempt to create a curated webradio list for [myMPD](https://github.
 
 Contributions to the webradio database are very welcome. It should be a community driven database. You must only open an issue to add or modify a webradio. Your proposal will be reviewed and then merged, therefore it could take some time before the webradio is added.
 
-Currently there are <span id="stationCount"></span> stations in the list.
+Currently there are <span id="stationCount"></span> stations in the list and the last update was on <span id="lastUpdate"></span>.
 
 - [Browse the repository](https://github.com/jcorporation/webradiodb)
 - [Get the json index file](https://jcorporation.github.io/webradiodb/db/index/webradios.min.json)

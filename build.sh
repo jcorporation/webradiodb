@@ -394,7 +394,7 @@ create() {
     echo "Creating json index"
     rm -f "${INDEXFILE}.tmp"
     exec 3<> "${INDEXFILE}.tmp"
-    printf "{" >&3
+    printf "{\"timestamp\": %s, \"data\":{" "$(date +%s)" >&3
     I=0
     for F in "$PLS_DIR"/*.m3u
     do
@@ -414,7 +414,7 @@ create() {
         I=$((I+1))
         printf "."
     done
-    printf "}\n" >&3
+    printf "}, \"total\": %s}\n" "$I" >&3
     exec 3>&-
     #create formated json file
     if jq < "${INDEXFILE}.tmp" > "${INDEXFILE_FORMATED}.tmp"
