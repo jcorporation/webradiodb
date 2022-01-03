@@ -4,7 +4,9 @@ on:
   issues:
     types: [labeled]
 
-concurrency: webradio-sources
+concurrency:
+  group: webradio-sources
+  cancel-in-progress: false
 
 jobs:
   deleteradio:
