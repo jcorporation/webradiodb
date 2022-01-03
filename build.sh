@@ -460,7 +460,6 @@ create() {
         #finished, move all files in place
         echo "$I webradios in index"
         mv "${INDEXFILE}.tmp" "$INDEXFILE"
-        mv "${INDEXFILE_FORMATED}.tmp" "$INDEXFILE_FORMATED"
         mv "${LANGFILE}.tmp" "$LANGFILE"
         mv "${COUNTRYFILE}.tmp" "$COUNTRYFILE"
         mv "${GENREFILE}.tmp" "$GENREFILE"
