@@ -22,35 +22,35 @@ MYMPD_PICS_DIR="${SOURCES_DIR}/mympd-pics"
 MYMPD_PLS_DIR="${SOURCES_DIR}/mympd-webradios"
 
 is_uri() {
-    URI="$1"
-    [ "${URI:0:7}" = "http://" ] && return 0
-    [ "${URI:0:8}" = "https://" ] && return 0
+    CHECK_URI="$1"
+    [ "${CHECK_URI:0:7}" = "http://" ] && return 0
+    [ "${CHECK_URI:0:8}" = "https://" ] && return 0
     return 1
 }
 
 get_m3u_field() {
-    FILE="$1"
-    FIELD="$2"
+    M3U_FILE="$1"
+    M3U_FIELD="$2"
 
-    LINE=$(grep "^#${FIELD}:" "$FILE")
+    LINE=$(grep "^#${M3U_FIELD}:" "$M3U_FILE")
     echo "${LINE#*:}"
 }
 
 download_image() {
-    URL="$1"
-    DST="$2"
-    if ! wget -q "$URL" -O "${DST}.image"
+    DOWNLOAD_URI="$1"
+    DOWNLOAD_DST="$2"
+    if ! wget -q "$DOWNLOAD_URI" -O "${DOWNLOAD_DST}.image"
     then
-        rm -f "${DST}.image"
+        rm -f "${DOWNLOAD_DST}.image"
         return 1
     fi
-    if ! convert "${DST}.image" "${DST}.webp"
+    if ! convert "${DOWNLOAD_DST}.image" "${DOWNLOAD_DST}.webp"
     then
-        rm -f "${DST}.image"
+        rm -f "${DOWNLOAD_DST}.image"
         return 1
     fi
-    rm -f "${DST}.image"
-    if ! resize_image "${DST}.webp"
+    rm -f "${DOWNLOAD_DST}.image"
+    if ! resize_image "${DOWNLOAD_DST}.webp"
     then
         return 1
     fi
@@ -58,41 +58,41 @@ download_image() {
 }
 
 resize_image() {
-    FILE="$1"
-    TOWIDTH="400"
-    TOHEIGHT="400"
-    TOSIZE="400x400"
-    [ -s "$FILE" ] || exit 1
+    RESIZE_FILE="$1"
+    TO_WIDTH="400"
+    TO_HEIGHT="400"
+    TO_SIZE="400x400"
+    [ -s "$RESIZE_FILE" ] || exit 1
     #get actual size
-    SIZE=$(identify "$FILE" | cut -d' ' -f3)
-    WIDTH=$(cut -dx -f1 <<< "$SIZE")
-    HEIGHT=$(cut -dx -f2 <<< "$SIZE")
+    CUR_SIZE=$(identify "$RESIZE_FILE" | cut -d' ' -f3)
+    CUR_WIDTH=$(cut -dx -f1 <<< "$CUR_SIZE")
+    CUR_HEIGHT=$(cut -dx -f2 <<< "$CUR_SIZE")
 
-    if [ "${SIZE}" != "${TOSIZE}" ]
+    if [ "${CUR_SIZE}" != "${TO_SIZE}" ]
     then
-        if [ "$WIDTH" != "$TOWIDTH" ]
+        if [ "$CUR_WIDTH" != "$TO_WIDTH" ]
         then
-            echo "Resizing $FILE from $SIZE to $TOWIDTH width"
-            if convert "$FILE" -resize "$TOWIDTH" "$FILE.resize"
+            echo "Resizing $RESIZE_FILE from $RESIZE_SIZE to $TO_WIDTH width"
+            if convert "$RESIZE_FILE" -resize "$TO_WIDTH" "$RESIZE_FILE.resize"
             then
-                mv "$FILE.resize" "$FILE"
+                mv "$RESIZE_FILE.resize" "$RESIZE_FILE"
             else
-                echo "Error resizing $FILE"
-                rm -f "$FILE.resize"
+                echo "Error resizing $RESIZE_FILE"
+                rm -f "$RESIZE_FILE.resize"
                 return 1
             fi
         fi
-        SIZE=$(identify "$FILE" | cut -d' ' -f3)
-        HEIGHT=$(cut -dx -f2 <<< "$SIZE")
-        if [ "$HEIGHT" -gt "$TOHEIGHT" ]
+        CUR_SIZE=$(identify "$RESIZE_FILE" | cut -d' ' -f3)
+        CUR_HEIGHT=$(cut -dx -f2 <<< "$CUR_SIZE")
+        if [ "$CUR_HEIGHT" -gt "$TO_HEIGHT" ]
         then
-            echo "Croping $FILE to $TOHEIGHT height"
-            if convert "$FILE" -crop "$TOSIZE+0+0" "$FILE.crop"
+            echo "Croping $RESIZE_FILE to $TO_HEIGHT height"
+            if convert "$RESIZE_FILE" -crop "$TO_SIZE+0+0" "$RESIZE_FILE.crop"
             then
-                mv "$FILE.crop" "$FILE"
+                mv "$RESIZE_FILE.crop" "$RESIZE_FILE"
             else
-                rm -f "$FILE.crop"
-                echo "Error croping $FILE"
+                rm -f "$RESIZE_FILE.crop"
+                echo "Error croping $RESIZE_FILE"
                 return 1
             fi
         fi
