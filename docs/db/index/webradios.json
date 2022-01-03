@@ -164,6 +164,17 @@
     "DESCRIPTION": "",
     "streamUri": "http://audio.wgbh.org:8004"
   },
+  "http___audiostream_rtl_be_mint192.m3u": {
+    "EXTINF": "-1,Mint (RTL)",
+    "EXTGENRE": "Pop-Rock",
+    "PLAYLIST": "Mint (RTL)",
+    "EXTIMG": "http___audiostream_rtl_be_mint192.webp",
+    "HOMEPAGE": "https://mint.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "Mint radio est née de la fusion de BXL Radio et Contact 2 en 2007.",
+    "streamUri": "http://audiostream.rtl.be/mint192"
+  },
   "http___current_stream_publicradio_org_kcmp_mp3.m3u": {
     "EXTINF": "-1,KCMP 89.3 FM - The Current",
     "EXTGENRE": "Alternative",
@@ -708,7 +719,7 @@
     "EXTGENRE": "Classical, Jazz",
     "PLAYLIST": "VRT - Klara",
     "EXTIMG": "http___icecast_vrtcdn_be_klara-high_mp3.webp",
-    "HOMEPAGE": "",
+    "HOMEPAGE": "https://klara.be/",
     "COUNTRY": "Belgium",
     "LANGUAGE": "Dutch",
     "DESCRIPTION": "",
@@ -719,7 +730,7 @@
     "EXTGENRE": "Classical",
     "PLAYLIST": "VRT - Klara Continuo",
     "EXTIMG": "http___icecast_vrtcdn_be_klaracontinuo-high_mp3.webp",
-    "HOMEPAGE": "",
+    "HOMEPAGE": "https://klara.be/",
     "COUNTRY": "Belgium",
     "LANGUAGE": "Dutch",
     "DESCRIPTION": "",
@@ -730,7 +741,7 @@
     "EXTGENRE": "Pop",
     "PLAYLIST": "VRT - MNM",
     "EXTIMG": "http___icecast_vrtcdn_be_mnm-high_mp3.webp",
-    "HOMEPAGE": "",
+    "HOMEPAGE": "https://mnm.be/",
     "COUNTRY": "Belgium",
     "LANGUAGE": "Dutch",
     "DESCRIPTION": "",
@@ -741,7 +752,7 @@
     "EXTGENRE": "Pop, Top 40, Chart",
     "PLAYLIST": "VRT - MNM Hits",
     "EXTIMG": "http___icecast_vrtcdn_be_mnm_hits-high_mp3.webp",
-    "HOMEPAGE": "",
+    "HOMEPAGE": "https://mnm.be/",
     "COUNTRY": "Belgium",
     "LANGUAGE": "Dutch",
     "DESCRIPTION": "",
@@ -752,7 +763,7 @@
     "EXTGENRE": "Eclectic",
     "PLAYLIST": "VRT - Radio 2",
     "EXTIMG": "http___icecast_vrtcdn_be_ra2vlb-high_mp3.webp",
-    "HOMEPAGE": "",
+    "HOMEPAGE": "https://radio2.be/",
     "COUNTRY": "Belgium",
     "LANGUAGE": "Dutch",
     "DESCRIPTION": "",
@@ -762,19 +773,30 @@
     "EXTINF": "-1,VRT - Radio 1",
     "EXTGENRE": "Pop, Contemporary, Rock, News",
     "PLAYLIST": "VRT - Radio 1",
-    "EXTIMG": "http___icecast_vrtcdn_be_radio1-high_mp3.webp",
-    "HOMEPAGE": "",
+    "EXTIMG": "[http___icecast_vrtcdn_be_radio1-high_mp3.webp](https://user-images.githubusercontent.com/4215150/147944209-141d7acb-ebeb-4599-a723-9587a7e80e5d.png)",
+    "HOMEPAGE": "https://radio1.be/",
     "COUNTRY": "Belgium",
     "LANGUAGE": "Dutch",
     "DESCRIPTION": "",
     "streamUri": "http://icecast.vrtcdn.be/radio1-high.mp3"
   },
+  "http___icecast_vrtcdn_be_radio2_unwind-high_mp3.m3u": {
+    "EXTINF": "-1,VRT Radio Twee Unwind",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "VRT Radio Twee Unwind",
+    "EXTIMG": "http___icecast_vrtcdn_be_radio2_unwind-high_mp3.webp",
+    "HOMEPAGE": "https://radio2.be/programmagids/radio-2-unwind",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "Dutch",
+    "DESCRIPTION": "",
+    "streamUri": "http://icecast.vrtcdn.be/radio2_unwind-high.mp3"
+  },
   "http___icecast_vrtcdn_be_stubru-high_mp3.m3u": {
-    "EXTINF": "-1,VRT - Studio Brussel",
+    "EXTINF": "-1,VTR - StuBru - Studio Brussels",
     "EXTGENRE": "Alternative",
-    "PLAYLIST": "VRT - Studio Brussel",
+    "PLAYLIST": "VTR - StuBru - Studio Brussels",
     "EXTIMG": "http___icecast_vrtcdn_be_stubru-high_mp3.webp",
-    "HOMEPAGE": "",
+    "HOMEPAGE": "https://stubru.be/",
     "COUNTRY": "Belgium",
     "LANGUAGE": "Dutch",
     "DESCRIPTION": "",
@@ -1164,6 +1186,17 @@
     "LANGUAGE": "English",
     "DESCRIPTION": "",
     "streamUri": "http://playerservices.streamtheworld.com/api/livestream-redirect/WRTI_JAZZ.mp3"
+  },
+  "http___progressive-audio_lwc_vrtcdn_be_content_fixed_11_11niws-snip_hi_mp3.m3u": {
+    "EXTINF": "-1,VRT NWS",
+    "EXTGENRE": "News",
+    "PLAYLIST": "VRT NWS",
+    "EXTIMG": "http___progressive-audio_lwc_vrtcdn_be_content_fixed_11_11niws-snip_hi_mp3.webp",
+    "HOMEPAGE": "https://www.vrt.be/vrtnws/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "Dutch",
+    "DESCRIPTION": "",
+    "streamUri": "http://progressive-audio.lwc.vrtcdn.be/content/fixed/11_11niws-snip_hi.mp3"
   },
   "http___psn1_prostreaming_net_8095_stream.m3u": {
     "EXTINF": "-1,Mad Music Asylum",
@@ -2243,6 +2276,17 @@
     "DESCRIPTION": "",
     "streamUri": "https://22653.live.streamtheworld.com/TOPZEN.mp3"
   },
+  "https___belrtl_ice_infomaniak_ch_belrtl-mp3-192_mp3.m3u": {
+    "EXTINF": "-1,Bel RTL",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "Bel RTL",
+    "EXTIMG": "https___belrtl_ice_infomaniak_ch_belrtl-mp3-192_mp3.webp",
+    "HOMEPAGE": "https://www.rtl.be/belrtl/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "Bel RTL est une station de radio généraliste privée du groupe RTL.\r",
+    "streamUri": "https://belrtl.ice.infomaniak.ch/belrtl-mp3-192.mp3"
+  },
   "https___bytefm-ice-edge-1106-fra-eco-cdn_cast_addradio_de_bytefm_main_high_stream_mp3.m3u": {
     "EXTINF": "-1,ByteFM",
     "EXTGENRE": "Eclectic",
@@ -2253,6 +2297,94 @@
     "LANGUAGE": "German",
     "DESCRIPTION": "",
     "streamUri": "https://bytefm-ice-edge-1106-fra-eco-cdn.cast.addradio.de/bytefm/main/high/stream.mp3"
+  },
+  "https___contact2_ice_infomaniak_ch_contact2-192_mp3.m3u": {
+    "EXTINF": "-1,Radio Contact 2000",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "Radio Contact 2000",
+    "EXTIMG": "https___contact2_ice_infomaniak_ch_contact2-192_mp3.webp",
+    "HOMEPAGE": "https://www.radiocontact.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://contact2.ice.infomaniak.ch/contact2-192.mp3"
+  },
+  "https___contactgold_ice_infomaniak_ch_contactgold-192_mp3.m3u": {
+    "EXTINF": "-1,Radio Contact Gold",
+    "EXTGENRE": "80's; 90's",
+    "PLAYLIST": "Radio Contact Gold",
+    "EXTIMG": "https___contactgold_ice_infomaniak_ch_contactgold-192_mp3.webp",
+    "HOMEPAGE": "https://www.radiocontact.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://contactgold.ice.infomaniak.ch/contactgold-192.mp3"
+  },
+  "https___contactkids_ice_infomaniak_ch_contactkids-192_mp3.m3u": {
+    "EXTINF": "-1,Radio Contact Kids",
+    "EXTGENRE": "Children; Kids",
+    "PLAYLIST": "Radio Contact Kids",
+    "EXTIMG": "https___contactkids_ice_infomaniak_ch_contactkids-192_mp3.webp",
+    "HOMEPAGE": "https://www.radiocontact.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://contactkids.ice.infomaniak.ch/contactkids-192.mp3"
+  },
+  "https___contactlounge_ice_infomaniak_ch_contactlounge-192_mp3.m3u": {
+    "EXTINF": "-1,Radio Contact Lounge",
+    "EXTGENRE": "Lounge",
+    "PLAYLIST": "Radio Contact Lounge",
+    "EXTIMG": "https___contactlounge_ice_infomaniak_ch_contactlounge-192_mp3.webp",
+    "HOMEPAGE": "https://www.radiocontact.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://contactlounge.ice.infomaniak.ch/contactlounge-192.mp3"
+  },
+  "https___contactlove_ice_infomaniak_ch_contactlove-192_mp3.m3u": {
+    "EXTINF": "-1,Radio Contact Love",
+    "EXTGENRE": "Love; 80's; 90's;",
+    "PLAYLIST": "Radio Contact Love",
+    "EXTIMG": "https___contactlove_ice_infomaniak_ch_contactlove-192_mp3.webp",
+    "HOMEPAGE": "https://www.radiocontact.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://contactlove.ice.infomaniak.ch/contactlove-192.mp3"
+  },
+  "https___contactmix_ice_infomaniak_ch_contactmix-192_mp3.m3u": {
+    "EXTINF": "-1,Radio Contact Mix",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "Radio Contact Mix",
+    "EXTIMG": "https___contactmix_ice_infomaniak_ch_contactmix-192_mp3.webp",
+    "HOMEPAGE": "https://www.radiocontact.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://contactmix.ice.infomaniak.ch/contactmix-192.mp3"
+  },
+  "https___contactplus_ice_infomaniak_ch_contactplus-192_mp3.m3u": {
+    "EXTINF": "-1,Radio Contact Fresh",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "Radio Contact Fresh",
+    "EXTIMG": "https___contactplus_ice_infomaniak_ch_contactplus-192_mp3.webp",
+    "HOMEPAGE": "https://www.radiocontact.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://contactplus.ice.infomaniak.ch/contactplus-192.mp3"
+  },
+  "https___contacturban_ice_infomaniak_ch_contacturban-192_mp3.m3u": {
+    "EXTINF": "-1,Radio Contact Urban",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "Radio Contact Urban",
+    "EXTIMG": "https___contacturban_ice_infomaniak_ch_contacturban-192_mp3.webp",
+    "HOMEPAGE": "https://www.radiocontact.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://contacturban.ice.infomaniak.ch/contacturban-192.mp3"
   },
   "https___dispatcher_rndfnk_com_br_br2_sued_mp3_mid.m3u": {
     "EXTINF": "-1,Bayern 2",
@@ -2276,6 +2408,17 @@
     "DESCRIPTION": "",
     "streamUri": "https://dispatcher.rndfnk.com/br/brklassik/live/mp3/high"
   },
+  "https___funradiobe_ice_infomaniak_ch_funradiobe-high.m3u": {
+    "EXTINF": "-1,Fun Radio Belgique",
+    "EXTGENRE": "Dance; Groove; R'n'B; Soul",
+    "PLAYLIST": "Fun Radio Belgique",
+    "EXTIMG": "",
+    "HOMEPAGE": "https://www.funradio.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "Fun Radio est une station de radio musicale belge privée au format dancefloor d'origine française.",
+    "streamUri": "https://funradiobe.ice.infomaniak.ch/funradiobe-high"
+  },
   "https___http-live_sr_se_p2musik-aac-320.m3u": {
     "EXTINF": "-1,P2",
     "EXTGENRE": "Classical, Jazz",
@@ -2297,6 +2440,39 @@
     "LANGUAGE": "Dutch",
     "DESCRIPTION": "",
     "streamUri": "https://ice.cr1.streamzilla.xlcdn.com:8000/sz=RCOLiveWebradio=mp3-192"
+  },
+  "https___icecast_radiofrance_fr_franceinter-midfi_mp3.m3u": {
+    "EXTINF": "-1,France Inter",
+    "EXTGENRE": "Misc; Variety",
+    "PLAYLIST": "France Inter",
+    "EXTIMG": "https___icecast_radiofrance_fr_franceinter-midfi_mp3.webp",
+    "HOMEPAGE": "https://www.franceinter.fr/",
+    "COUNTRY": "France",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "France Inter est une station de radio généraliste nationale publique française du groupe Radio France.",
+    "streamUri": "https://icecast.radiofrance.fr/franceinter-midfi.mp3"
+  },
+  "https___icecast_vrtcdn_be_radio1_classics-high_mp3.m3u": {
+    "EXTINF": "-1,VRT Radio 1 Classics",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "VRT Radio 1 Classics",
+    "EXTIMG": "https___icecast_vrtcdn_be_radio1_classics-high_mp3.webp",
+    "HOMEPAGE": "https://radio1.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "Dutch",
+    "DESCRIPTION": "",
+    "streamUri": "https://icecast.vrtcdn.be/radio1_classics-high.mp3"
+  },
+  "https___icecast_vrtcdn_be_radio2_benebene-high_mp3.m3u": {
+    "EXTINF": "-1,VRT Radio Twee Bene Bene",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "VRT Radio Twee Bene Bene",
+    "EXTIMG": "https___icecast_vrtcdn_be_radio2_benebene-high_mp3.webp",
+    "HOMEPAGE": "https://radio2.be/programmagids/radio-2-bene-bene",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "Dutch",
+    "DESCRIPTION": "",
+    "streamUri": "https://icecast.vrtcdn.be/radio2_benebene-high.mp3"
   },
   "https___iheart_4zzz_org_au_4zzz.m3u": {
     "EXTINF": "-1,4ZZZ FM 102.1 - Alternative",
@@ -2364,6 +2540,72 @@
     "DESCRIPTION": "",
     "streamUri": "https://orf-live.ors-shoutcast.at/fm4-q2a"
   },
+  "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_70S_mp3.m3u": {
+    "EXTINF": "-1,Joe 60's & 70's",
+    "EXTGENRE": "60's; 70's",
+    "PLAYLIST": "Joe 60's & 70's",
+    "EXTIMG": "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_70S_mp3.webp",
+    "HOMEPAGE": "https://joe.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "Dutch",
+    "DESCRIPTION": "",
+    "streamUri": "https://playerservices.streamtheworld.com/api/livestream-redirect/JOE_70S.mp3"
+  },
+  "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_80S_mp3.m3u": {
+    "EXTINF": "-1,Joe 80's & 90's",
+    "EXTGENRE": "80's; 90's",
+    "PLAYLIST": "Joe 80's & 90's",
+    "EXTIMG": "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_80S_mp3.webp",
+    "HOMEPAGE": "https://joe.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "Dutch",
+    "DESCRIPTION": "",
+    "streamUri": "https://playerservices.streamtheworld.com/api/livestream-redirect/JOE_80S.mp3"
+  },
+  "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_EASY_mp3.m3u": {
+    "EXTINF": "-1,Joe Easy",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "Joe Easy",
+    "EXTIMG": "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_EASY_mp3.webp",
+    "HOMEPAGE": "https://joe.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "Dutch",
+    "DESCRIPTION": "",
+    "streamUri": "https://playerservices.streamtheworld.com/api/livestream-redirect/JOE_EASY.mp3"
+  },
+  "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_TOP2000_mp3.m3u": {
+    "EXTINF": "-1,Joe Top 2000",
+    "EXTGENRE": "2000's",
+    "PLAYLIST": "Joe Top 2000",
+    "EXTIMG": "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_TOP2000_mp3.webp",
+    "HOMEPAGE": "https://joe.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "Dutch",
+    "DESCRIPTION": "",
+    "streamUri": "https://playerservices.streamtheworld.com/api/livestream-redirect/JOE_TOP2000.mp3"
+  },
+  "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_mp3.m3u": {
+    "EXTINF": "-1,Joe FM",
+    "EXTGENRE": "Misc; 70's; 80's; 90's",
+    "PLAYLIST": "Joe FM",
+    "EXTIMG": "https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_mp3.webp",
+    "HOMEPAGE": "https://joe.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "Dutch",
+    "DESCRIPTION": "",
+    "streamUri": "https://playerservices.streamtheworld.com/api/livestream-redirect/JOE.mp3"
+  },
+  "https___playerservices_streamtheworld_com_api_livestream-redirect_QMUSIC_mp3.m3u": {
+    "EXTINF": "-1,Q Music",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "Q Music",
+    "EXTIMG": "https___playerservices_streamtheworld_com_api_livestream-redirect_QMUSIC_mp3.webp",
+    "HOMEPAGE": "https://qmusic.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "Dutch",
+    "DESCRIPTION": "",
+    "streamUri": "https://playerservices.streamtheworld.com/api/livestream-redirect/QMUSIC.mp3"
+  },
   "https___playerservices_streamtheworld_com_api_livestream-redirect_WEMUFM_mp3.m3u": {
     "EXTINF": "-1,WEMU Ypsilanti FM 89.1 - Jazz",
     "EXTGENRE": "Jazz",
@@ -2374,6 +2616,17 @@
     "LANGUAGE": "English",
     "DESCRIPTION": "",
     "streamUri": "https://playerservices.streamtheworld.com/api/livestream-redirect/WEMUFM.mp3"
+  },
+  "https___radiocontact_ice_infomaniak_ch_radiocontact-mp3-192_mp3.m3u": {
+    "EXTINF": "-1,Radio Contact \"Feel Good\"",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "Radio Contact \"Feel Good\"",
+    "EXTIMG": "https___radiocontact_ice_infomaniak_ch_radiocontact-mp3-192_mp3.webp",
+    "HOMEPAGE": "https://www.radiocontact.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://radiocontact.ice.infomaniak.ch/radiocontact-mp3-192.mp3"
   },
   "https___radios_rtbf_be_classic21-128_mp3.m3u": {
     "EXTINF": "-1,RTBF - Classic 21",
@@ -2430,6 +2683,50 @@
     "DESCRIPTION": "null",
     "streamUri": "https://radios.rtbf.be/pure-128.mp3"
   },
+  "https___radios_rtbf_be_rtbfmix-128_mp3.m3u": {
+    "EXTINF": "-1,RTBF - RTBF Mix",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "RTBF - RTBF Mix",
+    "EXTIMG": "https___radios_rtbf_be_rtbfmix-128_mp3",
+    "HOMEPAGE": "https://www.rtbf.be/rtbfmix",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://radios.rtbf.be/rtbfmix-128.mp3"
+  },
+  "https___radios_rtbf_be_vivaliege-128_mp3.m3u": {
+    "EXTINF": "-1,RTBF - VivaCité Liège",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "RTBF - VivaCité Liège",
+    "EXTIMG": "https___radios_rtbf_be_vivaliege-128_mp3.webp",
+    "HOMEPAGE": "https://www.rtbf.be/vivacite/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://radios.rtbf.be/vivaliege-128.mp3"
+  },
+  "https___radios_rtbf_be_vivaplus-128_mp3.m3u": {
+    "EXTINF": "-1,RTBF - Viva+",
+    "EXTGENRE": "60's; 70's",
+    "PLAYLIST": "RTBF - Viva+",
+    "EXTIMG": "https___radios_rtbf_be_vivaplus-128_mp3.webp",
+    "HOMEPAGE": "https://www.rtbf.be/vivaplus",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://radios.rtbf.be/vivaplus-128.mp3"
+  },
+  "https___relay2_bide-et-musique_com_9300_bm_mp3.m3u": {
+    "EXTINF": "-1,Bide et Musique - La radio de l'improbable et de l'inouï",
+    "EXTGENRE": "70's; 80's",
+    "PLAYLIST": "Bide et Musique - La radio de l'improbable et de l'inouï",
+    "EXTIMG": "",
+    "HOMEPAGE": "https://www.bide-et-musique.com/",
+    "COUNTRY": "France",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "Bide et Musique (parfois abrégé B&M) est une webradio associative française créée en 2000. Le bide est un morceau de variété (souvent chanté, parfois instrumental, parfois on se demande) pour lequel on a une tendresse particulière, auquel on souhaite donner une importance qu'il n'a pas nécessairement eue dans l'histoire de la musique et, bien entendu, que l'on a plaisir à entendre… et réentendre… et…",
+    "streamUri": "https://relay2.bide-et-musique.com:9300/bm.mp3"
+  },
   "https___smoothjazz_cdnstream1_com_2585_320_mp3.m3u": {
     "EXTINF": "-1,SmoothJazz Global",
     "EXTGENRE": "Jazz, Smooth Jazz",
@@ -2463,6 +2760,17 @@
     "DESCRIPTION": "",
     "streamUri": "https://sohoradiomusic.doughunt.co.uk:8010/320mp3"
   },
+  "https___str_topradio_be_topradio_mp3.m3u": {
+    "EXTINF": "-1,Top Radio",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "Top Radio",
+    "EXTIMG": "https___str_topradio_be_topradio_mp3.webp",
+    "HOMEPAGE": "https://www.topradio.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "Dutch",
+    "DESCRIPTION": "",
+    "streamUri": "https://str.topradio.be/topradio.mp3"
+  },
   "https___stream-al_planetradio_co_uk_jazzhigh_aac.m3u": {
     "EXTINF": "-1,Jazz FM",
     "EXTGENRE": "Jazz, Blues. Soul",
@@ -2484,6 +2792,28 @@
     "LANGUAGE": "English",
     "DESCRIPTION": "",
     "streamUri": "https://stream-mz.planetradio.co.uk/scalahigh.aac"
+  },
+  "https___stream_ceit_be_sudradio-hainaut.m3u": {
+    "EXTINF": "-1,Sud Radio Hainaut",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "Sud Radio Hainaut",
+    "EXTIMG": "https___stream_ceit_be_sudradio-hainaut.webp",
+    "HOMEPAGE": "https://sudradio.net",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://stream.ceit.be/sudradio-hainaut"
+  },
+  "https___stream_live_vc_bbcmedia_co_uk_bbc_world_service.m3u": {
+    "EXTINF": "-1,BBC World Service",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "BBC World Service",
+    "EXTIMG": "https___stream_live_vc_bbcmedia_co_uk_bbc_world_service.webp",
+    "HOMEPAGE": "https://www.bbc.co.uk/sounds/play/live:bbc_world_service",
+    "COUNTRY": "United Kingdom",
+    "LANGUAGE": "English",
+    "DESCRIPTION": "",
+    "streamUri": "https://stream.live.vc.bbcmedia.co.uk/bbc_world_service"
   },
   "https___stream_nowyswiat_online_mp3.m3u": {
     "EXTINF": "-1,Radio Nowy Swiat",
@@ -2551,6 +2881,94 @@
     "DESCRIPTION": "",
     "streamUri": "https://stream.rcs.revma.com/an1ugyygzk8uv"
   },
+  "https___stream_rcs_revma_com_anew1ctrgzzuv.m3u": {
+    "EXTINF": "-1,DH Radio / Twizz",
+    "EXTGENRE": "Pop-Rock",
+    "PLAYLIST": "DH Radio / Twizz",
+    "EXTIMG": "https___stream_rcs_revma_com_anew1ctrgzzuv.webp",
+    "HOMEPAGE": "https://www.dhnet.be/medias/dh-radio",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "DH Radio (« Dernière Heure Radio », anciennement Twizz et Ciel radio) est une radio belge née à Seraing.",
+    "streamUri": "https://stream.rcs.revma.com/anew1ctrgzzuv"
+  },
+  "https___stream_rcs_revma_com_cm96zpmrmm0uv.m3u": {
+    "EXTINF": "-1,Must FM",
+    "EXTGENRE": "Pop-Rock",
+    "PLAYLIST": "Must FM",
+    "EXTIMG": "https___stream_rcs_revma_com_cm96zpmrmm0uv.webp",
+    "HOMEPAGE": "https://mustfm.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "Must FM est une station de radio à caractère provincial Belgique, dans le Brabant Wallon.",
+    "streamUri": "https://stream.rcs.revma.com/cm96zpmrmm0uv"
+  },
+  "https___stream_rcs_revma_com_vnmbzemrmm0uv.m3u": {
+    "EXTINF": "-1,Maximum FM",
+    "EXTGENRE": "Pop-Rock; Dance; Club;",
+    "PLAYLIST": "Maximum FM",
+    "EXTIMG": "https___stream_rcs_revma_com_vnmbzemrmm0uv.webp",
+    "HOMEPAGE": "https://www.maximumfm.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "Maximum FM est une station de radio musicale belge francophone diffusant en province de Liège.",
+    "streamUri": "https://stream.rcs.revma.com/vnmbzemrmm0uv"
+  },
+  "https___streaming_antipode_be_antipode_mp3.m3u": {
+    "EXTINF": "-1,Antipode - La Radio du Brabant Wallon",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "Antipode - La Radio du Brabant Wallon",
+    "EXTIMG": "https___streaming_antipode_be_antipode_mp3.webp",
+    "HOMEPAGE": "https://www.antipode.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://streaming.antipode.be/antipode.mp3"
+  },
+  "https___streamingp_shoutcast_com_Cherie-mp3.m3u": {
+    "EXTINF": "-1,Chérie Belgique",
+    "EXTGENRE": "Pop; Misc",
+    "PLAYLIST": "Chérie Belgique",
+    "EXTIMG": "https___streamingp_shoutcast_com_Cherie-mp3.webp",
+    "HOMEPAGE": "https://www.cheriebelgique.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "Chérie (ex Chérie FM) est une station webradio musicale privée en Belgique.",
+    "streamUri": "https://streamingp.shoutcast.com/Cherie-mp3"
+  },
+  "https___streamingp_shoutcast_com_NRJ.m3u": {
+    "EXTINF": "-1,NRJ Belgique",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "NRJ Belgique",
+    "EXTIMG": "https___streamingp_shoutcast_com_NRJ.webp",
+    "HOMEPAGE": "https://www.nrj.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://streamingp.shoutcast.com/NRJ"
+  },
+  "https___streamingp_shoutcast_com_NostalgiePremium.m3u": {
+    "EXTINF": "-1,Nostalgie",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "Nostalgie",
+    "EXTIMG": "https___streamingp_shoutcast_com_NostalgiePremium.webp",
+    "HOMEPAGE": "https://www.nostalgie.be/",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "Nostalgie est une station de radio privée en Belgique créée à Namur",
+    "streamUri": "https://streamingp.shoutcast.com/NostalgiePremium"
+  },
+  "https___streamingp_shoutcast_com_nostaplus-mp3.m3u": {
+    "EXTINF": "-1,Nostalgie +",
+    "EXTGENRE": "Misc",
+    "PLAYLIST": "Nostalgie +",
+    "EXTIMG": "https___streamingp_shoutcast_com_nostaplus-mp3.webp",
+    "HOMEPAGE": "https://www.nostalgie.be/nostalgieplus",
+    "COUNTRY": "Belgium",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://streamingp.shoutcast.com/nostaplus-mp3"
+  },
   "https___sverigesradio_se_topsy_direkt_132-hi-aac.m3u": {
     "EXTINF": "-1,P1",
     "EXTGENRE": "News, Culture",
@@ -2583,6 +3001,28 @@
     "LANGUAGE": "German",
     "DESCRIPTION": "",
     "streamUri": "https://wdr-wdr3-live.icecastssl.wdr.de/wdr/wdr3/live/mp3/256/stream.mp3"
+  },
+  "https___www_radioking_com_play_radio-doudou.m3u": {
+    "EXTINF": "-1,Radio Doudou",
+    "EXTGENRE": "Kids; Lullabies",
+    "PLAYLIST": "Radio Doudou",
+    "EXTIMG": "https___www_radioking_com_play_radio-doudou.webp",
+    "HOMEPAGE": "https://www.radiodoudou.com",
+    "COUNTRY": "France",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://www.radioking.com/play/radio-doudou"
+  },
+  "https___www_radiopommedapi_com_radio_mp3.m3u": {
+    "EXTINF": "-1,Radio Pomme d'Api - La Radio des Petits",
+    "EXTGENRE": "Kids; Lullabies",
+    "PLAYLIST": "Radio Pomme d'Api - La Radio des Petits",
+    "EXTIMG": "https___www_radiopommedapi_com_radio_mp3.webp",
+    "HOMEPAGE": "https://www.radiopommedapi.com/",
+    "COUNTRY": "France",
+    "LANGUAGE": "French",
+    "DESCRIPTION": "",
+    "streamUri": "https://www.radiopommedapi.com/radio.mp3"
   },
   "https___www_wwoz_org_listen_hi.m3u": {
     "EXTINF": "-1,WWOZ New Orleans FM 90.7 - Various Artists",

@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,VRT NWS
+#EXTGENRE:News
+#PLAYLIST:VRT NWS
+#EXTIMG:http___progressive-audio_lwc_vrtcdn_be_content_fixed_11_11niws-snip_hi_mp3.webp
+#HOMEPAGE:https://www.vrt.be/vrtnws/
+#COUNTRY:Belgium
+#LANGUAGE:Dutch
+#DESCRIPTION:
+http://progressive-audio.lwc.vrtcdn.be/content/fixed/11_11niws-snip_hi.mp3
