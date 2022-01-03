@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,VRT Radio 1 Classics
+#EXTGENRE:Misc
+#PLAYLIST:VRT Radio 1 Classics
+#EXTIMG:https___icecast_vrtcdn_be_radio1_classics-high_mp3.webp
+#HOMEPAGE:https://radio1.be/
+#COUNTRY:Belgium
+#LANGUAGE:Dutch
+#DESCRIPTION:
+https://icecast.vrtcdn.be/radio1_classics-high.mp3
