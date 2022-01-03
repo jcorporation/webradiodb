@@ -1,5 +1,5 @@
 {
-  "timestamp": 1641228093,
+  "timestamp": 1641229284,
   "data": {
     "http___119_15_96_188_stream2_mp3.m3u": {
       "EXTINF": "-1,ArtSound FM 92.7",
@@ -775,7 +775,7 @@
       "EXTINF": "-1,VRT - Radio 1",
       "EXTGENRE": "Pop, Contemporary, Rock, News",
       "PLAYLIST": "VRT - Radio 1",
-      "EXTIMG": "[http___icecast_vrtcdn_be_radio1-high_mp3.webp](https://user-images.githubusercontent.com/4215150/147944209-141d7acb-ebeb-4599-a723-9587a7e80e5d.png)",
+      "EXTIMG": "http___icecast_vrtcdn_be_radio1-high_mp3.webp",
       "HOMEPAGE": "https://radio1.be/",
       "COUNTRY": "Belgium",
       "LANGUAGE": "Dutch",
@@ -783,9 +783,9 @@
       "streamUri": "http://icecast.vrtcdn.be/radio1-high.mp3"
     },
     "http___icecast_vrtcdn_be_radio2_unwind-high_mp3.m3u": {
-      "EXTINF": "-1,VRT Radio Twee Unwind",
+      "EXTINF": "-1,VRT Radio 2 Unwind",
       "EXTGENRE": "Misc",
-      "PLAYLIST": "VRT Radio Twee Unwind",
+      "PLAYLIST": "VRT Radio 2 Unwind",
       "EXTIMG": "http___icecast_vrtcdn_be_radio2_unwind-high_mp3.webp",
       "HOMEPAGE": "https://radio2.be/programmagids/radio-2-unwind",
       "COUNTRY": "Belgium",
@@ -794,9 +794,9 @@
       "streamUri": "http://icecast.vrtcdn.be/radio2_unwind-high.mp3"
     },
     "http___icecast_vrtcdn_be_stubru-high_mp3.m3u": {
-      "EXTINF": "-1,VTR - StuBru - Studio Brussels",
+      "EXTINF": "-1,VRT - StuBru - Studio Brussels",
       "EXTGENRE": "Alternative",
-      "PLAYLIST": "VTR - StuBru - Studio Brussels",
+      "PLAYLIST": "VRT - StuBru - Studio Brussels",
       "EXTIMG": "http___icecast_vrtcdn_be_stubru-high_mp3.webp",
       "HOMEPAGE": "https://stubru.be/",
       "COUNTRY": "Belgium",
@@ -2414,7 +2414,7 @@
       "EXTINF": "-1,Fun Radio Belgique",
       "EXTGENRE": "Dance; Groove; R'n'B; Soul",
       "PLAYLIST": "Fun Radio Belgique",
-      "EXTIMG": "",
+      "EXTIMG": "https___funradiobe_ice_infomaniak_ch_funradiobe-high.webp",
       "HOMEPAGE": "https://www.funradio.be/",
       "COUNTRY": "Belgium",
       "LANGUAGE": "French",
@@ -2466,9 +2466,9 @@
       "streamUri": "https://icecast.vrtcdn.be/radio1_classics-high.mp3"
     },
     "https___icecast_vrtcdn_be_radio2_benebene-high_mp3.m3u": {
-      "EXTINF": "-1,VRT Radio Twee Bene Bene",
+      "EXTINF": "-1,VRT Radio 2 Bene Bene",
       "EXTGENRE": "Misc",
-      "PLAYLIST": "VRT Radio Twee Bene Bene",
+      "PLAYLIST": "VRT Radio 2 Bene Bene",
       "EXTIMG": "https___icecast_vrtcdn_be_radio2_benebene-high_mp3.webp",
       "HOMEPAGE": "https://radio2.be/programmagids/radio-2-bene-bene",
       "COUNTRY": "Belgium",
@@ -2689,7 +2689,7 @@
       "EXTINF": "-1,RTBF - RTBF Mix",
       "EXTGENRE": "Misc",
       "PLAYLIST": "RTBF - RTBF Mix",
-      "EXTIMG": "https___radios_rtbf_be_rtbfmix-128_mp3",
+      "EXTIMG": "https___radios_rtbf_be_rtbfmix-128_mp3.webp",
       "HOMEPAGE": "https://www.rtbf.be/rtbfmix",
       "COUNTRY": "Belgium",
       "LANGUAGE": "French",
@@ -2722,7 +2722,7 @@
       "EXTINF": "-1,Bide et Musique - La radio de l'improbable et de l'inouï",
       "EXTGENRE": "70's; 80's",
       "PLAYLIST": "Bide et Musique - La radio de l'improbable et de l'inouï",
-      "EXTIMG": "",
+      "EXTIMG": "https___relay2_bide-et-musique_com_9300_bm_mp3.webp",
       "HOMEPAGE": "https://www.bide-et-musique.com/",
       "COUNTRY": "France",
       "LANGUAGE": "French",
@@ -2949,6 +2949,61 @@
       "DESCRIPTION": "",
       "streamUri": "https://streamingp.shoutcast.com/NRJ"
     },
+    "https___streamingp_shoutcast_com_Nostalgie-70_aac.m3u": {
+      "EXTINF": "-1,Nostalgie 70",
+      "EXTGENRE": "70's",
+      "PLAYLIST": "Nostalgie 70",
+      "EXTIMG": "https___streamingp_shoutcast_com_Nostalgie-70_aac.webp",
+      "HOMEPAGE": "https://www.nostalgie.be/",
+      "COUNTRY": "Belgium",
+      "LANGUAGE": "French",
+      "DESCRIPTION": "",
+      "streamUri": "https://streamingp.shoutcast.com/Nostalgie-70_aac"
+    },
+    "https___streamingp_shoutcast_com_Nostalgie60-aac.m3u": {
+      "EXTINF": "-1,Nostalgie 60",
+      "EXTGENRE": "60's",
+      "PLAYLIST": "Nostalgie 60",
+      "EXTIMG": "https___streamingp_shoutcast_com_Nostalgie60-aac.webp",
+      "HOMEPAGE": "https://www.nostalgie.be/",
+      "COUNTRY": "Belgium",
+      "LANGUAGE": "French",
+      "DESCRIPTION": "",
+      "streamUri": "https://streamingp.shoutcast.com/Nostalgie60-aac"
+    },
+    "https___streamingp_shoutcast_com_Nostalgie80-aac.m3u": {
+      "EXTINF": "-1,Nostalgie 80",
+      "EXTGENRE": "80's",
+      "PLAYLIST": "Nostalgie 80",
+      "EXTIMG": "https___streamingp_shoutcast_com_Nostalgie80-aac.webp",
+      "HOMEPAGE": "https://www.nostalgie.be/",
+      "COUNTRY": "Belgium",
+      "LANGUAGE": "French",
+      "DESCRIPTION": "",
+      "streamUri": "https://streamingp.shoutcast.com/Nostalgie80-aac"
+    },
+    "https___streamingp_shoutcast_com_Nostalgie90-aac.m3u": {
+      "EXTINF": "-1,Nostalgie 90",
+      "EXTGENRE": "90's",
+      "PLAYLIST": "Nostalgie 90",
+      "EXTIMG": "https___streamingp_shoutcast_com_Nostalgie90-aac.webp",
+      "HOMEPAGE": "https://www.nostalgie.be/",
+      "COUNTRY": "Belgium",
+      "LANGUAGE": "French",
+      "DESCRIPTION": "",
+      "streamUri": "https://streamingp.shoutcast.com/Nostalgie90-aac"
+    },
+    "https___streamingp_shoutcast_com_NostalgieLove-aac.m3u": {
+      "EXTINF": "-1,Nostalgie Love",
+      "EXTGENRE": "Love; 80's; 90's;",
+      "PLAYLIST": "Nostalgie Love",
+      "EXTIMG": "https___streamingp_shoutcast_com_NostalgieLove-aac.webp",
+      "HOMEPAGE": "https://www.nostalgie.be/",
+      "COUNTRY": "Belgium",
+      "LANGUAGE": "French",
+      "DESCRIPTION": "",
+      "streamUri": "https://streamingp.shoutcast.com/NostalgieLove-aac"
+    },
     "https___streamingp_shoutcast_com_NostalgiePremium.m3u": {
       "EXTINF": "-1,Nostalgie",
       "EXTGENRE": "Misc",
@@ -3049,5 +3104,5 @@
       "streamUri": "https://wz4web.scahw.com.au/live/4buddha_32.stream/playlist.m3u8"
     }
   },
-  "total": 277
+  "total": 282
 }
