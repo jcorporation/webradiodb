@@ -4,10 +4,6 @@ Contributions to the webradio database are very welcome. It should be a communit
 
 Currently there are <span id="stationCount"></span> stations in the list and the last update was on <span id="lastUpdate"></span>.
 
-- [Browse the repository](https://github.com/jcorporation/webradiodb)
-- [Get the json index file](https://jcorporation.github.io/webradiodb/db/index/webradios.min.json)
-- [Get the js file](https://jcorporation.github.io/webradiodb/db/index/webradios.min.js)
-
 ### Add a webradio
 
 - Open a [GitHub Issue](https://github.com/jcorporation/webradiodb/issues/new?template=add-webradio.yml)
@@ -16,11 +12,16 @@ Currently there are <span id="stationCount"></span> stations in the list and the
 
 Search for the webradio and click on the modify link to open a prefilled GitHub issue.
 
-## Simple station search
+## Webradio search
 
-<input type="search" value="" id="searchstr" placeholder="Search by station name"/>
+<div class="searchbar">
+    <input id="searchstr" type="search" placeholder="Search by station name"/>
+    <select id="genres"></select>
+    <select id="countries"></select>
+    <select id="languages"></select>
+</div>
 <hr/>
 <div id="result">Type search string and press enter.</div>
 
-<script src="db/index/webradios.min.js"></script>
+<script src="db/index/webradiodb.min.js"></script>
 <script src="assets/js/radiodb.js"></script>

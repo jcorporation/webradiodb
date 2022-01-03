@@ -1,10 +1,29 @@
 const resultEl = document.getElementById('result');
-document.getElementById('lastUpdate').textContent = new Date(webradios.timestamp * 1000).toLocaleString('en-US');
-document.getElementById('stationCount').textContent = webradios.total;
-
 const issueUri = 'https://github.com/jcorporation/webradiodb/issues/new';
 const issueDelete = '?labels=DeleteWebradio&template=delete-webradio.yml';
 const issueModify = '?labels=ModifyWebradio&template=modify-webradio.yml';
+const genreSelect = document.getElementById('genres');
+const countrySelect = document.getElementById('countries');
+const languageSelect = document.getElementById('languages');
+
+document.getElementById('lastUpdate').textContent = new Date(webradios.timestamp * 1000).toLocaleString('en-US');
+document.getElementById('stationCount').textContent = webradios.total;
+
+function populateSelect(el, options) {
+  for (const value of options) {
+    const opt = document.createElement('option');
+    opt.text = value;
+    el.appendChild(opt);
+  }
+}
+
+populateSelect(genreSelect, webradioGenres);
+populateSelect(countrySelect, webradioCountries);
+populateSelect(languageSelect, webradioLanguages);
+
+function getSelectText(el) {
+  return el.selectedIndex >= 0 ? el.options[el.selectedIndex].text : '';
+}
 
 document.getElementById('searchstr').addEventListener('keyup', function(event) {
   if (event.key === 'Enter') {
@@ -15,8 +34,15 @@ document.getElementById('searchstr').addEventListener('keyup', function(event) {
       return;
     }
     let i = 0;
+    const genreFilter = getSelectText(genreSelect);
+    const countryFilter = getSelectText(countrySelect);
+    const languageFilter = getSelectText(languageSelect);
     for (const key in webradios.data) {
-      if (webradios.data[key].PLAYLIST.toLowerCase().indexOf(searchstr) > -1) {
+      if (webradios.data[key].PLAYLIST.toLowerCase().indexOf(searchstr) > -1 &&
+          (genreFilter === ''    || webradios.data[key].EXTGENRE.includes(genreFilter)) &&
+          (countryFilter === ''  || countryFilter === webradios.data[key].COUNTRY) &&
+          (languageFilter === '' || languageFilter === webradios.data[key].LANGUAGE)
+      ) {
         i++;
         const div = document.createElement('div');
         const pic = webradios.data[key].EXTIMG.indexOf('http:') === 0 ||
