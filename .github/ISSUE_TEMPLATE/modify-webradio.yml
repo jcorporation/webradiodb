@@ -14,6 +14,13 @@ body:
       description: The stream uri, e.g. http://119.15.96.188/stream2.mp3
     validations:
       required: true
+  - type: textarea
+    id: note
+    attributes:
+      label: Note
+      description: Short description of the modification.
+    validations:
+      required: false
   - type: markdown
     attributes:
       value: |
