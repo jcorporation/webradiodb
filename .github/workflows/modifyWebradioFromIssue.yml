@@ -26,8 +26,8 @@ jobs:
           ./build.sh modify_radio_from_json issue.json
           rm issue.json
 
-      - name: Create the webradio publish files
-        run: ./build.sh create
+      #- name: Create the webradio publish files
+      #  run: ./build.sh create
 
       - name: Add, commit and push
         uses: EndBug/add-and-commit@v7.5.0
