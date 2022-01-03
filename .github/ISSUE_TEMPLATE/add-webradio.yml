@@ -39,7 +39,7 @@ body:
     id: image
     attributes:
       label: Image
-      description: The radiostation logo.
+      description: A link to the radiostation logo.
     validations:
       required: false
   - type: input
