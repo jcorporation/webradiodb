@@ -2384,7 +2384,7 @@
     "COUNTRY": "Belgium",
     "LANGUAGE": "French",
     "DESCRIPTION": "La Première (« La 1ère »), est la première station de radio publique de la Radio-télévision belge de la Communauté française (RTBF). Sa programmation est généraliste et axée sur l'information et la culture.",
-    "streamUri": "https://user-images.githubusercontent.com/4215150/147925304-a7e62c75-8f1d-4934-b142-c0384997ba5e.png"
+    "streamUri": "https://radios.rtbf.be/laprem1ere-128.mp3"
   },
   "https___radios_rtbf_be_musiq3-128_aac.m3u": {
     "EXTINF": "-1,Musiq 3",
