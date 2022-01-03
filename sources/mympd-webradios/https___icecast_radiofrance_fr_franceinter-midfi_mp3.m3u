@@ -1,6 +1,6 @@
 #EXTM3U
 #EXTINF:-1,France Inter
-#EXTGENRE:Misc; Variety
+#EXTGENRE:Misc, Variety
 #PLAYLIST:France Inter
 #EXTIMG:https___icecast_radiofrance_fr_franceinter-midfi_mp3.webp
 #HOMEPAGE:https://www.franceinter.fr/
