@@ -1,0 +1,105 @@
+name: deleteWebradioFromIssue
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  addradio:
+    if: ${{ github.event.label.name == 'MergeNewWebradio' }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: sudo apt-get install -y --no-install-recommends imagemagick
+
+      - uses: stefanbuck/github-issue-parser@v2
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/add-webradio.yml
+
+      - name: Creating webradio m3u
+        run: |
+          cat > issue.json << EOL
+          ${{ steps.issue-parser.outputs.jsonString }}
+          EOL
+          ./build.sh add_radio_from_json issue.json
+          rm issue.json
+
+      - name: Add, commit and push
+        uses: EndBug/add-and-commit@v7.5.0
+        with:
+          add: sources docs/db
+          pull: NO-PULL
+          push: true
+
+      - uses: peter-evans/close-issue@v1
+        with:
+          comment: Merged!
+
+  modifyradio:
+    if: ${{ github.event.label.name == 'MergeModifyWebradio' }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: stefanbuck/github-issue-parser@v2
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/modify-webradio.yml
+
+      - name: Modifying webradio m3u
+        run: |
+          cat > issue.json << EOL
+          ${{ steps.issue-parser.outputs.jsonString }}
+          EOL
+          ./build.sh modify_radio_from_json issue.json
+          rm issue.json
+
+      - name: Add, commit and push
+        uses: EndBug/add-and-commit@v7.5.0
+        with:
+          add: sources docs/db
+          pull: NO-PULL
+          push: true
+
+      - uses: peter-evans/close-issue@v1
+        with:
+          comment: Merged!
+
+  deleteradio:
+    if: ${{ github.event.label.name == 'MergeDeleteWebradio' }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: stefanbuck/github-issue-parser@v2
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/delete-webradio.yml
+
+      - name: Deleting webradio m3u
+        run: |
+          cat > issue.json << EOL
+          ${{ steps.issue-parser.outputs.jsonString }}
+          EOL
+          ./build.sh delete_radio_from_json issue.json
+          rm issue.json
+
+      - name: Add, commit and push
+        uses: EndBug/add-and-commit@v7.5.0
+        with:
+          add: sources docs/db
+          pull: NO-PULL
+          push: true
+
+      - uses: peter-evans/close-issue@v1
+        with:
+          comment: Merged!
