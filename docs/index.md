@@ -16,7 +16,7 @@ Search for the webradio and click on the modify link to open a prefilled GitHub 
 
 <div class="searchBar">
     <div class="row">
-        <input id="searchStr" type="search" placeholder="Search by station name"/>
+        <input id="searchStr" type="text" placeholder="Search by station name"/>
         <input id="searchBtn" type="button" value="Search"/>
     </div>
     <div class="row">
