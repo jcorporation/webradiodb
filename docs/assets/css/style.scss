@@ -3,9 +3,17 @@
 
 @import "{{ site.theme }}";
 
-img.stationImage {
-    width: 5rem;
-    height: auto;
+input#searchStr {
+    width: calc(100% - 0.5rem);
+    margin-bottom: 0.25rem;
+    border: 1px solid #8f8f9d;
+}
+
+input#searchBtn {
+    background-color: #2879d0;
+    border: 2px solid #2879d0;
+    color: white;
+    border-radius: 0.25rem;
 }
 
 caption {
@@ -28,11 +36,17 @@ td:first-child {
     width: 6rem;
 }
 
+img.stationImage {
+    width: 5rem;
+    height: auto;
+}
+
 td > input {
     width: calc(100% - 1.5rem);
 }
 
-div.searchbar input {
-    width: 100%;
-    margin-bottom: 0.25rem;
+a#more {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

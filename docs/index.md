@@ -25,7 +25,13 @@ Search for the webradio and click on the modify link to open a prefilled GitHub 
     <select id="languages">
         <option value="">Language</option>
     </select>
-    <button id="searchBtn">Search</button>
+    <select id="sort">
+        <option value="PLAYLIST">Sort by name</option>
+        <option value="EXTGENRE">Sort by genre</option>
+        <option value="COUNTRY">Sort by country</option>
+        <option value="LANGUAGE">Sort by language</option>
+    </select>
+    <input id="searchBtn" type="button" value="Search"/>
 </div>
 <hr/>
 <div id="result">Type search string and press enter.</div>

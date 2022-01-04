@@ -1,3 +1,8 @@
+"use strict";
+// SPDX-License-Identifier: GPL-3.0-or-later
+// myMPD (c) 2021-2022 Juergen Mang <mail@jcgames.de>
+// https://github.com/jcorporation/mympd
+
 const resultEl = document.getElementById('result');
 const issueUri = 'https://github.com/jcorporation/webradiodb/issues/new';
 const issueDelete = '?labels=DeleteWebradio&template=delete-webradio.yml';
@@ -6,6 +11,8 @@ const searchInput = document.getElementById('searchStr');
 const genreSelect = document.getElementById('genres');
 const countrySelect = document.getElementById('countries');
 const languageSelect = document.getElementById('languages');
+const sortSelect = document.getElementById('sort');
+const resultLimit = 5;
 
 document.getElementById('lastUpdate').textContent = new Date(webradios.timestamp * 1000).toLocaleString('en-US');
 document.getElementById('stationCount').textContent = webradios.total;
@@ -29,84 +36,125 @@ function getSelectValue(el) {
 
 searchInput.addEventListener('keyup', function(event) {
   if (event.key === 'Enter') {
-    search();
+    showSearchResult(0, resultLimit);
   }
 }, false);
 
 document.getElementById('searchBtn').addEventListener('click', function() {
-  search();
+  showSearchResult(0, resultLimit);
 }, false);
 
-function search() {
-  const searchstr = searchInput.value.toLowerCase();
-  resultEl.textContent = '';
-  if (searchstr.length < 3) {
-    resultEl.innerText = 'Searchstring is too short.';
-    return;
+function search(name, genre, country, language, sort) {
+  const result = {
+    "returnedEntities": 0,
+    "data": []
+  };
+
+  for (const key in webradios.data) {
+    if (webradios.data[key].PLAYLIST.toLowerCase().indexOf(name) > -1 &&
+        (genre === ''    || webradios.data[key].EXTGENRE.includes(genre)) &&
+        (country === ''  || country === webradios.data[key].COUNTRY) &&
+        (language === '' || language === webradios.data[key].LANGUAGE)
+    ) {
+      result.data.push(webradios.data[key]);
+      result.returnedEntities++;
+    }
   }
-  let i = 0;
+  result.data.sort(function(a, b) {
+    if (a[sort] < b[sort]) {
+      return -1;
+    }
+    if (a[sort] > b[sort]) {
+      return 1;
+    }
+    return 0;
+  });
+  return result;
+}
+
+function showSearchResult(offset, limit) {
+  const searchstr = searchInput.value.toLowerCase();
   const genreFilter = getSelectValue(genreSelect);
   const countryFilter = getSelectValue(countrySelect);
   const languageFilter = getSelectValue(languageSelect);
-  for (const key in webradios.data) {
-    if (webradios.data[key].PLAYLIST.toLowerCase().indexOf(searchstr) > -1 &&
-        (genreFilter === ''    || webradios.data[key].EXTGENRE.includes(genreFilter)) &&
-        (countryFilter === ''  || countryFilter === webradios.data[key].COUNTRY) &&
-        (languageFilter === '' || languageFilter === webradios.data[key].LANGUAGE)
-    ) {
-      i++;
-      const div = document.createElement('div');
-      const pic = webradios.data[key].EXTIMG.indexOf('http:') === 0 ||
-          webradios.data[key].EXTIMG.indexOf('https:') === 0 ?
-              webradios.data[key].EXTIMG : 'db/pics/' + webradios.data[key].EXTIMG;
-      div.innerHTML =
-          '<table>' +
-            '<caption></caption>' +
-            '<tbody>' +
-              '<tr>' +
-                '<td rowspan="6"><img src="" class="stationImage"/></td><td>Genre</td>' +
-                '<td class="genre"></td></tr>' +
-              '<tr><td>Country</td><td class="country"></td></tr>' +
-              '<tr><td>Homepage</td><td><a class="homepage" target="_blank" href=""></a></td></tr>' +
-              '<tr><td>Stream URI</td><td><input type="text" value=""/></td></tr>' +
-              '<tr><td>Playlist</td><td><a class="playlist" target="_blank" href="">Get playlist</a></td></tr>' +
-              '<tr><td colspan="2" class="description"></td></tr>' +
-            '</tbody>' +
-            '<tfoot>' +
-              '<tr><td colspan="3">' +
-                '<a class="modify" href="">Modify</a>&nbsp;&nbsp;<a class="delete" href="">Delete</a>' +
-              '</td></tr>' +
-            '</tfoot>' +
-          '</table>';
-      div.getElementsByTagName('caption')[0].textContent = webradios.data[key].PLAYLIST;
-      div.getElementsByTagName('img')[0].src = pic;
-      div.getElementsByClassName('genre')[0].textContent = webradios.data[key].EXTGENRE.join(', ');
-      div.getElementsByClassName('country')[0].textContent = webradios.data[key].COUNTRY + ' / ' + webradios.data[key].LANGUAGE;
-      div.getElementsByClassName('homepage')[0].href = webradios.data[key].HOMEPAGE;
-      div.getElementsByClassName('homepage')[0].textContent = webradios.data[key].HOMEPAGE;
-      div.getElementsByTagName('input')[0].value = webradios.data[key].streamUri;
-      div.getElementsByClassName('playlist')[0].href = 'db/webradios/' + key;
-      div.getElementsByClassName('description')[0].textContent = webradios.data[key].DESCRIPTION;
+  const sort = getSelectValue(sortSelect);
 
-      div.getElementsByClassName('modify')[0].href =
-        issueUri + issueModify + '&title=' + encodeURIComponent('[Modify Webradio]: ' + webradios.data[key].PLAYLIST) +
-          '&modifyWebradio=' + encodeURIComponent(webradios.data[key].streamUri) +
-          '&name=' + encodeURIComponent(webradios.data[key].PLAYLIST) +
-          '&streamuri=' + encodeURIComponent(webradios.data[key].streamUri) +
-          '&genre=' + encodeURIComponent(webradios.data[key].EXTGENRE) +
-          '&homepage=' + encodeURIComponent(webradios.data[key].HOMEPAGE) +
-          '&image=' + encodeURIComponent(webradios.data[key].EXTIMG) +
-          '&country=' + encodeURIComponent(webradios.data[key].COUNTRY) +
-          '&language=' + encodeURIComponent(webradios.data[key].LANGUAGE) +
-          '&description=' + encodeURIComponent(webradios.data[key].DESCRIPTION);
-
-      div.getElementsByClassName('delete')[0].href =
-        issueUri + issueDelete + '&title=' + encodeURIComponent('[Delete Webradio]: ' + webradios.data[key].PLAYLIST) +
-          '&deleteWebradio=' + encodeURIComponent(webradios.data[key].streamUri);
-      resultEl.appendChild(div);
-    }
+  if (offset === 0) {
+    resultEl.textContent = '';
   }
-  if (i === 0) {
+
+  const result = search(searchstr, genreFilter, countryFilter, languageFilter, sort);
+  let i = 0;
+  const last = offset + limit;
+  for (const key in result.data) {
+    if (i < offset) {
+      i++;
+      continue;
+    }
+    if (i > last) {
+      const a = document.createElement('a');
+      a.setAttribute('id', 'more');
+      a.setAttribute('href', '#');
+      a.textContent = 'Show more results';
+      a.addEventListener('click', function(event) {
+        event.preventDefault();
+        event.target.remove();
+        showSearchResult(last, limit);
+      }, false);
+      break;
+    }
+    i++;
+    const div = document.createElement('div');
+    const pic = result.data[key].EXTIMG.indexOf('http:') === 0 ||
+        result.data[key].EXTIMG.indexOf('https:') === 0 ?
+            result.data[key].EXTIMG : 'db/pics/' + result.data[key].EXTIMG;
+    div.innerHTML =
+        '<table>' +
+          '<caption></caption>' +
+          '<tbody>' +
+            '<tr>' +
+              '<td rowspan="6"><img src="" class="stationImage"/></td><td>Genre</td>' +
+              '<td class="genre"></td></tr>' +
+            '<tr><td>Country</td><td class="country"></td></tr>' +
+            '<tr><td>Homepage</td><td><a class="homepage" target="_blank" href=""></a></td></tr>' +
+            '<tr><td>Stream URI</td><td><input type="text" value=""/></td></tr>' +
+            '<tr><td>Playlist</td><td><a class="playlist" target="_blank" href="">Get playlist</a></td></tr>' +
+            '<tr><td colspan="2" class="description"></td></tr>' +
+          '</tbody>' +
+          '<tfoot>' +
+            '<tr><td colspan="3">' +
+              '<a class="modify" href="">Modify</a>&nbsp;&nbsp;<a class="delete" href="">Delete</a>' +
+            '</td></tr>' +
+          '</tfoot>' +
+        '</table>';
+    div.getElementsByTagName('caption')[0].textContent = result.data[key].PLAYLIST;
+    div.getElementsByTagName('img')[0].src = pic;
+    div.getElementsByClassName('genre')[0].textContent = result.data[key].EXTGENRE.join(', ');
+    div.getElementsByClassName('country')[0].textContent = result.data[key].COUNTRY + ' / ' + result.data[key].LANGUAGE;
+    div.getElementsByClassName('homepage')[0].href = result.data[key].HOMEPAGE;
+    div.getElementsByClassName('homepage')[0].textContent = result.data[key].HOMEPAGE;
+    div.getElementsByTagName('input')[0].value = result.data[key].streamUri;
+    div.getElementsByClassName('playlist')[0].href = 'db/webradios/' + key;
+    div.getElementsByClassName('description')[0].textContent = result.data[key].DESCRIPTION;
+
+    div.getElementsByClassName('modify')[0].href =
+      issueUri + issueModify + '&title=' + encodeURIComponent('[Modify Webradio]: ' + result.data[key].PLAYLIST) +
+        '&modifyWebradio=' + encodeURIComponent(result.data[key].streamUri) +
+        '&name=' + encodeURIComponent(result.data[key].PLAYLIST) +
+        '&streamuri=' + encodeURIComponent(result.data[key].streamUri) +
+        '&genre=' + encodeURIComponent(result.data[key].EXTGENRE) +
+        '&homepage=' + encodeURIComponent(result.data[key].HOMEPAGE) +
+        '&image=' + encodeURIComponent(result.data[key].EXTIMG) +
+        '&country=' + encodeURIComponent(result.data[key].COUNTRY) +
+        '&language=' + encodeURIComponent(result.data[key].LANGUAGE) +
+        '&description=' + encodeURIComponent(result.data[key].DESCRIPTION);
+
+    div.getElementsByClassName('delete')[0].href =
+      issueUri + issueDelete + '&title=' + encodeURIComponent('[Delete Webradio]: ' + result.data[key].PLAYLIST) +
+        '&deleteWebradio=' + encodeURIComponent(result.data[key].streamUri);
+    resultEl.appendChild(div);
+  }
+  if (result.returnedEntities === 0) {
     resultEl.innerText = 'No search result.';
   }
 }
