@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,Soma FM - DEF CON Radio
+#EXTGENRE:Electronic, DEF CON Conference Music
+#PLAYLIST:Soma FM - DEF CON Radio
+#EXTIMG:http___ice1_somafm_com_defcon-128-aac.webp
+#HOMEPAGE:https://somafm.com/defcon/
+#COUNTRY:United States
+#LANGUAGE:English
+#DESCRIPTION:Music for Hacking. The DEF CON Year-Round Channel.
+http://ice1.somafm.com/defcon-128-aac
