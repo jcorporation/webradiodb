@@ -91,7 +91,7 @@ function showSearchResult(offset, limit) {
       i++;
       continue;
     }
-    if (i > last) {
+    if (i >= last) {
       const a = document.createElement('a');
       a.setAttribute('id', 'more');
       a.setAttribute('href', '#');
@@ -101,6 +101,7 @@ function showSearchResult(offset, limit) {
         event.target.remove();
         showSearchResult(last, limit);
       }, false);
+      resultEl.appendChild(a);
       break;
     }
     i++;
