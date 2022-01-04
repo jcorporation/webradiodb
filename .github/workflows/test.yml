@@ -1,5 +1,7 @@
 name: test
 on: [push]
+  paths:
+    - 'build.sh'
 
 jobs:
   test:
