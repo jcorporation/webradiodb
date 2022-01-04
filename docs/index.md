@@ -40,7 +40,6 @@ Search for the webradio and click on the modify link to open a prefilled GitHub 
 <div class="resultCountRow">
     <small>Results: <span id="resultCount">0</span></small>
 </div>
-<hr/>
 <div id="result">Type search string and press enter.</div>
 
 <script src="db/index/webradiodb.min.js"></script>
