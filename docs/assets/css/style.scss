@@ -3,10 +3,14 @@
 
 @import "{{ site.theme }}";
 
+div.searchBar > * {
+    margin-bottom: 0.25rem;
+}
+
 input#searchStr {
     width: calc(100% - 0.5rem);
-    margin-bottom: 0.25rem;
     border: 1px solid #8f8f9d;
+    border-radius: 0.25rem;
 }
 
 input#searchBtn {

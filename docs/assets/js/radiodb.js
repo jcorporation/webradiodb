@@ -12,7 +12,7 @@ const genreSelect = document.getElementById('genres');
 const countrySelect = document.getElementById('countries');
 const languageSelect = document.getElementById('languages');
 const sortSelect = document.getElementById('sort');
-const resultLimit = 5;
+const resultLimit = 25;
 
 document.getElementById('lastUpdate').textContent = new Date(webradios.timestamp * 1000).toLocaleString('en-US');
 document.getElementById('stationCount').textContent = webradios.total;

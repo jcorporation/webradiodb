@@ -14,7 +14,7 @@ Search for the webradio and click on the modify link to open a prefilled GitHub 
 
 ## Webradio search
 
-<div class="searchbar">
+<div class="searchBar">
     <input id="searchStr" type="search" placeholder="Search by station name"/>
     <select id="genres">
         <option value="">Genre</option>
