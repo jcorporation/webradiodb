@@ -37,7 +37,7 @@ Search for the webradio and click on the modify link to open a prefilled GitHub 
         </select>
     </div>
 </div>
-<div>
+<div class="resultCountRow">
     <small>Results: <span id="resultCount">0</span></small>
 </div>
 <hr/>

@@ -28,6 +28,12 @@ input#searchBtn {
     padding: 0.25rem 0.5rem;
 }
 
+div.resultCountRow {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+    text-align: right;
+}
+
 caption {
     text-align: left;
     text-indent: 0.5rem;
