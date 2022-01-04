@@ -7,7 +7,7 @@ const resultEl = document.getElementById('result');
 const issueUri = 'https://github.com/jcorporation/webradiodb/issues/new';
 const issueDelete = '?labels=DeleteWebradio&template=delete-webradio.yml';
 const issueModify = '?labels=ModifyWebradio&template=modify-webradio.yml';
-const issueNew = '?labels=labels=AddWebradiotemplate=add-webradio.yml';
+const issueNew = '?labels=labels=AddWebradio&template=add-webradio.yml';
 const searchInput = document.getElementById('searchStr');
 const genreSelect = document.getElementById('genres');
 const countrySelect = document.getElementById('countries');
