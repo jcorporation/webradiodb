@@ -3,13 +3,14 @@
 
 @import "{{ site.theme }}";
 
-div.searchBar > * {
-    margin-bottom: 0.25rem;
-}
-
 div.row {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+div.row > * {
+    margin-bottom: 0.25rem;
 }
 
 input#searchStr {
@@ -55,11 +56,4 @@ img.stationImage {
 td > input {
     width: calc(100% - 1.5rem);
     border: none;
-}
-
-a#more,
-div.noResult {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }

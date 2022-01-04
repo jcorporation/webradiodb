@@ -162,7 +162,7 @@ function showSearchResult(offset, limit) {
     div.innerHTML = '<p>No search result.</p>' +
       '<p><a href="#">Add this webradio to the database</a></p>'
     div.getElementsByTagName('a')[0].href =
-      issueUri + issueDelete + '&title=' + encodeURIComponent('[Add Webradio]: ' + searchstr) +
+      issueUri + issueNew + '&title=' + encodeURIComponent('[Add Webradio]: ' + searchstr) +
         '&name=' + encodeURIComponent(searchstr);
     resultEl.appendChild(div);
   }
