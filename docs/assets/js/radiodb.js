@@ -85,6 +85,7 @@ function showSearchResult(offset, limit) {
   }
 
   const result = search(searchstr, genreFilter, countryFilter, languageFilter, sort);
+  document.getElementById('resultCount').textContent = result.returnedEntities;
   let i = 0;
   const last = offset + limit;
   for (const key in result.data) {
