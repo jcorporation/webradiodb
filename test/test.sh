@@ -45,11 +45,9 @@ echo "Delete the new radio"
 echo "Check for changes"
 [ "$(git diff | wc -l)" -gt 0 ] && false
 
-echo "Creating index"
-./build.sh create
-
 echo "Remove test branch"
 git checkout master
 git branch -D test
 
+echo "All tests finished sucessfull"
 exit 0
