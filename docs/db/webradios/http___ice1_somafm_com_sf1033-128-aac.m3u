@@ -1,10 +1,10 @@
 #EXTM3U
 #EXTINF:-1,Soma FM - SF 10-33
-#EXTGENRE:Electronic, Ambient, San Francisco Public Safety Radio Traffic
+#EXTGENRE:Electronic, Ambient
 #PLAYLIST:Soma FM - SF 10-33
 #EXTIMG:http___ice1_somafm_com_sf1033-128-aac.webp
-#HOMEPAGE:
+#HOMEPAGE:https://somafm.com/sf1033/
 #COUNTRY:United States
 #LANGUAGE:English
-#DESCRIPTION:
+#DESCRIPTION:Ambient music mixed with the sounds of San Francisco public safety radio traffic.
 http://ice1.somafm.com/sf1033-128-aac
