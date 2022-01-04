@@ -32,6 +32,7 @@ div.resultCountRow {
     border-bottom: 1px solid #ddd;
     margin-bottom: 1rem;
     text-align: right;
+    padding-right: 0.25rem;
 }
 
 caption {
@@ -47,7 +48,7 @@ table {
 
 td {
     text-align: left;
-    text-indent: 0.5rem;
+    padding: 0.1rem 0.5rem;
 }
 
 td:first-child {
@@ -60,6 +61,6 @@ img.stationImage {
 }
 
 td > input {
-    width: calc(100% - 1.5rem);
+    width: calc(100% - 0.25rem);
     border: none;
 }
