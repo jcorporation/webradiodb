@@ -1,4 +1,4 @@
-name: deleteWebradioFromIssue
+name: webradioFromIssue
 
 on:
   issues:
