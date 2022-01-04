@@ -422,10 +422,12 @@ create() {
     mkdir "$PICS_DIR"
 
     echo "Copy moode webradios"
+    cleanup_genres sources/moode-webradios
     cp "${MOODE_PICS_DIR}"/* "${PICS_DIR}"
     cp "${MOODE_PLS_DIR}"/* "${PLS_DIR}"
 
     echo "Copy myMPD webradios"
+    cleanup_genres sources/mympd-webradios
     cp "${MYMPD_PICS_DIR}"/* "${PICS_DIR}"
     cp "${MYMPD_PLS_DIR}"/* "${PLS_DIR}"
 
@@ -462,9 +464,6 @@ create() {
         rm "${INDEXFILE}.tmp"
         exit 0
     fi
-    #cleanup genres
-    cleanup_genres sources/moode-webradios
-    cleanup_genres sources/mympd-webradios
     #create formated json file
     if jq < "${INDEXFILE}.tmp" > /dev/null
     then
