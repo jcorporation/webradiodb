@@ -1,6 +1,9 @@
+# This workflow test the webradio add/modify/delete actions
+
 name: test
-on: [push]
-  paths:
+on:
+  push:
+    paths:
     - 'build.sh'
 
 jobs:
