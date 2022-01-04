@@ -16,9 +16,15 @@ Search for the webradio and click on the modify link to open a prefilled GitHub 
 
 <div class="searchbar">
     <input id="searchstr" type="search" placeholder="Search by station name"/>
-    <select id="genres"></select>
-    <select id="countries"></select>
-    <select id="languages"></select>
+    <select id="genres">
+        <option value="">Genre</option>
+    </select>
+    <select id="countries">
+        <option value="">Country</option>
+    </select>
+    <select id="languages">
+        <option value="">Language</option>
+    </select>
 </div>
 <hr/>
 <div id="result">Type search string and press enter.</div>

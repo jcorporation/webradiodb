@@ -28,6 +28,11 @@ td:first-child {
     width: 6rem;
 }
 
-input {
+td > input {
     width: calc(100% - 1.5rem);
+}
+
+div.searchbar input {
+    width: 100%;
+    margin-bottom: 0.25rem;
 }

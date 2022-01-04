@@ -13,6 +13,7 @@ function populateSelect(el, options) {
   for (const value of options) {
     const opt = document.createElement('option');
     opt.text = value;
+    opt.value = value;
     el.appendChild(opt);
   }
 }
@@ -21,8 +22,8 @@ populateSelect(genreSelect, webradioGenres);
 populateSelect(countrySelect, webradioCountries);
 populateSelect(languageSelect, webradioLanguages);
 
-function getSelectText(el) {
-  return el.selectedIndex >= 0 ? el.options[el.selectedIndex].text : '';
+function getSelectValue(el) {
+  return el.selectedIndex >= 0 ? el.options[el.selectedIndex].getAttribute('value') : '';
 }
 
 document.getElementById('searchstr').addEventListener('keyup', function(event) {
@@ -34,9 +35,9 @@ document.getElementById('searchstr').addEventListener('keyup', function(event) {
       return;
     }
     let i = 0;
-    const genreFilter = getSelectText(genreSelect);
-    const countryFilter = getSelectText(countrySelect);
-    const languageFilter = getSelectText(languageSelect);
+    const genreFilter = getSelectValue(genreSelect);
+    const countryFilter = getSelectValue(countrySelect);
+    const languageFilter = getSelectValue(languageSelect);
     for (const key in webradios.data) {
       if (webradios.data[key].PLAYLIST.toLowerCase().indexOf(searchstr) > -1 &&
           (genreFilter === ''    || webradios.data[key].EXTGENRE.includes(genreFilter)) &&
