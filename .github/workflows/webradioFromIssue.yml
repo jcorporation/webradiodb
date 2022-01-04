@@ -5,9 +5,16 @@ on:
     types: [labeled]
 
 jobs:
+  consecutiveness:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: mktcode/consecutive-workflow-action@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
   addradio:
     if: ${{ github.event.label.name == 'MergeNewWebradio' }}
-
+    needs: [ consecutiveness ]
     runs-on: ubuntu-latest
 
     steps:
@@ -42,7 +49,7 @@ jobs:
 
   modifyradio:
     if: ${{ github.event.label.name == 'MergeModifyWebradio' }}
-
+    needs: [ consecutiveness ]
     runs-on: ubuntu-latest
 
     steps:
@@ -74,7 +81,7 @@ jobs:
 
   deleteradio:
     if: ${{ github.event.label.name == 'MergeDeleteWebradio' }}
-
+    needs: [ consecutiveness ]
     runs-on: ubuntu-latest
 
     steps:
