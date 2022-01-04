@@ -7,17 +7,24 @@ div.searchBar > * {
     margin-bottom: 0.25rem;
 }
 
+div.row {
+    display: flex;
+    justify-content: space-between;
+}
+
 input#searchStr {
-    width: calc(100% - 0.5rem);
     border: 1px solid #8f8f9d;
-    border-radius: 0.25rem;
+    border-radius: 0.25rem 0 0 0.25rem;
+    flex-grow: 1;
+    text-indent: 0.25rem;
 }
 
 input#searchBtn {
     background-color: #2879d0;
     border: 2px solid #2879d0;
     color: white;
-    border-radius: 0.25rem;
+    border-radius: 0 0.25rem 0.25rem 0;
+    padding: 0.25rem 0.5rem;
 }
 
 caption {
@@ -47,9 +54,11 @@ img.stationImage {
 
 td > input {
     width: calc(100% - 1.5rem);
+    border: none;
 }
 
-a#more {
+a#more,
+div.noResult {
     display: block;
     margin-left: auto;
     margin-right: auto;

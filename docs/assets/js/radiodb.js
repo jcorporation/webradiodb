@@ -7,6 +7,7 @@ const resultEl = document.getElementById('result');
 const issueUri = 'https://github.com/jcorporation/webradiodb/issues/new';
 const issueDelete = '?labels=DeleteWebradio&template=delete-webradio.yml';
 const issueModify = '?labels=ModifyWebradio&template=modify-webradio.yml';
+const issueNew = '?labels=labels=AddWebradiotemplate=add-webradio.yml';
 const searchInput = document.getElementById('searchStr');
 const genreSelect = document.getElementById('genres');
 const countrySelect = document.getElementById('countries');
@@ -156,6 +157,13 @@ function showSearchResult(offset, limit) {
     resultEl.appendChild(div);
   }
   if (result.returnedEntities === 0) {
-    resultEl.innerText = 'No search result.';
+    const div = document.createElement('div');
+    div.classList.add('noResult');
+    div.innerHTML = '<p>No search result.</p>' +
+      '<p><a href="#">Add this webradio to the database</a></p>'
+    div.getElementsByTagName('a')[0].href =
+      issueUri + issueDelete + '&title=' + encodeURIComponent('[Add Webradio]: ' + searchstr) +
+        '&name=' + encodeURIComponent(searchstr);
+    resultEl.appendChild(div);
   }
 }
