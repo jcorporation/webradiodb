@@ -15,7 +15,8 @@ PICS_DIR="${PUBLISH_DIR}/pics"
 PLS_DIR="${PUBLISH_DIR}/webradios"
 
 INDEXFILE="${PUBLISH_DIR}/index/webradios.min.json"
-INDEXFILE_JS="${PUBLISH_DIR}/index/webradiodb.min.js"
+INDEXFILE_COMBINED="${PUBLISH_DIR}/index/webradiodb-combined.min.json"
+INDEXFILE_JS="${PUBLISH_DIR}/index/webradiodb-combined.min.js"
 
 LANGFILE="${PUBLISH_DIR}/index/languages.min.json"
 COUNTRYFILE="${PUBLISH_DIR}/index/countries.min.json"
@@ -114,7 +115,7 @@ cleanup_genres() {
         GENRE_LINE=$(grep "^#EXTGENRE" "$F")
         GENRE_LINE=${GENRE_LINE#*:}
         NEW_GENRE=""
-        while read -d, GENRE
+        while read -r -d, GENRE
         do
             NG="${genremap[$GENRE]:-}"
             if [ "$NG" != "" ]
@@ -128,7 +129,7 @@ cleanup_genres() {
         if [ "$GENRE_LINE" != "$NEW_GENRE" ]
         then
             echo "$F: $GENRE_LINE -> $NEW_GENRE"
-            sed -i -e "s/^#EXTGENRE:.*/#EXTGENRE:$NEW_GENRE/" $F
+            sed -i -e "s/^#EXTGENRE:.*/#EXTGENRE:$NEW_GENRE/" "$F"
         fi
     done
 }
@@ -434,66 +435,87 @@ create() {
     echo "Creating json index"
     rm -f "${INDEXFILE}.tmp"
     exec 3<> "${INDEXFILE}.tmp"
-    printf "{\"timestamp\": %s, \"data\":{" "$(date +%s)" >&3
-    I=0
+    printf "{" >&3
+    WEBRADIO_COUNT=0
     for F in "$PLS_DIR"/*.m3u
     do
         FILENAME=${F##*/}
-        [ "$I" -gt 0 ] && printf "," >&3
+        [ "$WEBRADIO_COUNT" -gt 0 ] && printf "," >&3
         printf "\"%s\":{" "$FILENAME" >&3
-        J=0
+        LINE_COUNT=0
         while read -r LINE
         do
             [ "$LINE" = "#EXTM3U" ] && continue
             [ "$LINE" = "" ] && continue
-            [ "$J" -gt 0 ] && printf "," >&3
+            [ "$LINE_COUNT" -gt 0 ] && printf "," >&3
             m3u_to_json "$LINE" >&3
-            J=$((J+1))
+            LINE_COUNT=$((LINE_COUNT+1))
         done < "$F"
         printf "}" >&3
-        I=$((I+1))
+        WEBRADIO_COUNT=$((WEBRADIO_COUNT+1))
         printf "."
     done
-    printf "}, \"total\": %s}\n" "$I" >&3
+    printf "}" >&3
     exec 3>&-
-    NEW_CHKSUM=$(jq '.data' < "${INDEXFILE}.tmp" | md5sum)
-    OLD_CHKSUM=$(jq '.data' < "${INDEXFILE}" | md5sum)
+    NEW_CHKSUM=$(md5sum "${INDEXFILE}.tmp" | cut -d" " -f1)
+    OLD_CHKSUM=""
+    [ -f "${INDEXFILE}" ] && OLD_CHKSUM=$(md5sum "${INDEXFILE}" | cut -d" " -f1)
+    echo ""
     if [ "$NEW_CHKSUM" = "$OLD_CHKSUM" ]
     then
         echo "Index not changed."
         rm "${INDEXFILE}.tmp"
         exit 0
     fi
-    #create formated json file
+    #validate the json file
     if jq < "${INDEXFILE}.tmp" > /dev/null
     then
+        echo "${WEBRADIO_COUNT} webradios in index"
         #create other index files
-        jq -r '.data | .[] | .LANGUAGE' "$INDEXFILE.tmp" | sort -u | \
+        jq -r '.[] | .LANGUAGE' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$LANGFILE.tmp"
-        jq -r '.data | .[] | .COUNTRY' "$INDEXFILE.tmp" | sort -u | \
+        LANGUAGES_COUNT=$(jq -r '.[] | .LANGUAGE' "${INDEXFILE}.tmp" | sort -u | wc -l)
+        echo "${LANGUAGES_COUNT} languages in index"
+
+        jq -r '.[] | .COUNTRY' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$COUNTRYFILE.tmp"
-        jq -r '.data | .[] | .EXTGENRE | .[]' "$INDEXFILE.tmp" | sort -u | \
+        COUNTRIES_COUNT=$(jq -r '.[] | .COUNTRY' "${INDEXFILE}.tmp" | sort -u | wc -l)
+        echo "${COUNTRIES_COUNT} countries in index"
+
+        jq -r '.[] | .EXTGENRE | .[]' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$GENREFILE.tmp"
-        #create javascript file
-        printf "const webradios=" > "${INDEXFILE_JS}.tmp"
-        tr -d '\n' < "${INDEXFILE}.tmp" >> "${INDEXFILE_JS}.tmp"
-        printf ";\n"  >> "${INDEXFILE_JS}.tmp"
-        printf "const webradioLanguages=" >> "${INDEXFILE_JS}.tmp"
-        tr -d '\n' < "${LANGFILE}.tmp" >> "${INDEXFILE_JS}.tmp"
-        printf ";\n"  >> "${INDEXFILE_JS}.tmp"
-        printf "const webradioCountries=" >> "${INDEXFILE_JS}.tmp"
-        tr -d '\n' < "${COUNTRYFILE}.tmp" >> "${INDEXFILE_JS}.tmp"
-        printf ";\n"  >> "${INDEXFILE_JS}.tmp"
-        printf "const webradioGenres=" >> "${INDEXFILE_JS}.tmp"
-        tr -d '\n' < "${GENREFILE}.tmp" >> "${INDEXFILE_JS}.tmp"
-        printf ";\n"  >> "${INDEXFILE_JS}.tmp"
+        GENRES_COUNT=$(jq -r '.[] | .EXTGENRE | .[]' "${INDEXFILE}.tmp" | sort -u | wc -l)
+        echo "${GENRES_COUNT} genres in index"
+
+        #create combined json
+        printf "{\"timestamp\":%s, \"webradios\":" "$(date +%s)" > "${INDEXFILE_COMBINED}.tmp"
+        tr -d '\n' < "${INDEXFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
+        printf ",\"totalWebradios\":%s," "$WEBRADIO_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+
+        printf "\"webradioLanguages\":" >> "${INDEXFILE_COMBINED}.tmp"
+        tr -d '\n' < "${LANGFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
+        printf ",\"totalWebradioLanguages\":%s," "$LANGUAGES_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+
+        printf "\"webradioCountries\":" >> "${INDEXFILE_COMBINED}.tmp"
+        tr -d '\n' < "${COUNTRYFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
+        printf ",\"totalwebradioCountries\":%s," "$COUNTRIES_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+
+        printf "\"webradioGenres\":" >> "${INDEXFILE_COMBINED}.tmp"
+        tr -d '\n' < "${GENREFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
+        printf ",\"totalWebradioGenres\":%s" "$GENRES_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+
+        printf "}\n" >> "${INDEXFILE_COMBINED}.tmp"
+        #create javascript index
+        printf "const webradiodb=" > "${INDEXFILE_JS}.tmp"
+        tr -d '\n' < "${INDEXFILE_COMBINED}.tmp" >> "${INDEXFILE_JS}.tmp"
+        printf ";\n" >> "${INDEXFILE_JS}.tmp"
         #finished, move all files in place
-        echo "$I webradios in index"
-        mv "${INDEXFILE}.tmp" "$INDEXFILE"
+        mv "$INDEXFILE.tmp" "$INDEXFILE"
         mv "${LANGFILE}.tmp" "$LANGFILE"
         mv "${COUNTRYFILE}.tmp" "$COUNTRYFILE"
         mv "${GENREFILE}.tmp" "$GENREFILE"
         mv "${INDEXFILE_JS}.tmp" "$INDEXFILE_JS"
+        mv "${INDEXFILE_COMBINED}.tmp" "$INDEXFILE_COMBINED"
     else
         echo "Error creating index"
         rm "${INDEXFILE}.tmp"

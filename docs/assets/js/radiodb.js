@@ -15,8 +15,8 @@ const languageSelect = document.getElementById('languages');
 const sortSelect = document.getElementById('sort');
 const resultLimit = 25;
 
-document.getElementById('lastUpdate').textContent = new Date(webradios.timestamp * 1000).toLocaleString('en-US');
-document.getElementById('stationCount').textContent = webradios.total;
+document.getElementById('lastUpdate').textContent = new Date(webradiodb.timestamp * 1000).toLocaleString('en-US');
+document.getElementById('stationCount').textContent = webradiodb.totalWebradios;
 
 function populateSelect(el, options) {
 	for (const value of options) {
@@ -27,9 +27,9 @@ function populateSelect(el, options) {
 	}
 }
 
-populateSelect(genreSelect, webradioGenres);
-populateSelect(countrySelect, webradioCountries);
-populateSelect(languageSelect, webradioLanguages);
+populateSelect(genreSelect, webradiodb.webradioGenres);
+populateSelect(countrySelect, webradiodb.webradioCountries);
+populateSelect(languageSelect, webradiodb.webradioLanguages);
 
 function getSelectValue(el) {
 	return el.selectedIndex >= 0 ? el.options[el.selectedIndex].getAttribute('value') : '';
@@ -51,13 +51,13 @@ function search(name, genre, country, language, sort) {
 		"data": []
 	};
 
-	for (const key in webradios.data) {
-		if (webradios.data[key].PLAYLIST.toLowerCase().indexOf(name) > -1 &&
-			(genre === ''    || webradios.data[key].EXTGENRE.includes(genre)) &&
-			(country === ''  || country === webradios.data[key].COUNTRY) &&
-			(language === '' || language === webradios.data[key].LANGUAGE)
+	for (const key in webradiodb.webradios) {
+		if (webradiodb.webradios[key].PLAYLIST.toLowerCase().indexOf(name) > -1 &&
+			(genre === ''    || webradiodb.webradios[key].EXTGENRE.includes(genre)) &&
+			(country === ''  || country === webradiodb.webradios[key].COUNTRY) &&
+			(language === '' || language === webradiodb.webradios[key].LANGUAGE)
 		) {
-			result.data.push(webradios.data[key]);
+			result.data.push(webradiodb.webradios[key]);
 			result.returnedEntities++;
 		}
 	}

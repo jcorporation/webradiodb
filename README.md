@@ -84,7 +84,8 @@ The final files are located in the `docs/db` folder, it is rebuild on each push 
 | [genres.min.json](https://jcorporation.github.io/webradiodb/db/index/genres.min.json) | Array of genres |
 | [languages.min.json](https://jcorporation.github.io/webradiodb/db/index/languages.min.json) | Array of languages |
 | [webradios.min.json](https://jcorporation.github.io/webradiodb/db/index/webradios.min.json) | JSON object of webradios |
-| [webradiodb.min.js](https://jcorporation.github.io/webradiodb/db/index/webradiodb.min.js) | JavaScript file with all above indexes |
+| [webradiodb-combined.min.json](https://jcorporation.github.io/webradiodb/db/index/webradiodb-combined.min.json) | JSON object file with all the above indexes |
+| [webradiodb-combined.min.js](https://jcorporation.github.io/webradiodb/db/index/webradiodb-combined.min.js) | JavaScript file with all the above indexes |
 
 ### Script usage
 

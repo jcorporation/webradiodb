@@ -42,5 +42,5 @@ Search for the webradio and click on the modify link to open a prefilled GitHub 
 </div>
 <div id="result">Type search string and press enter.</div>
 
-<script src="db/index/webradiodb.min.js"></script>
+<script src="db/index/webradiodb-combined.min.js"></script>
 <script src="assets/js/radiodb.js"></script>
