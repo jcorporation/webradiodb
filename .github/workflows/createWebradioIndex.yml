@@ -34,6 +34,6 @@ jobs:
         uses: EndBug/add-and-commit@v7.5.0
         with:
           add: docs/db sources
-          message: update db index
+          message: Update db index
           pull: NO-PULL
           push: true
