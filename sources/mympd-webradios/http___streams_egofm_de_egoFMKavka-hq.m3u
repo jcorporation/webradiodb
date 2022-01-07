@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,egoFM Kavka
+#EXTGENRE:Alternative
+#PLAYLIST:egoFM Kavka
+#EXTIMG:http___streams_egofm_de_egoFMKavka-hq.webp
+#HOMEPAGE:https://www.egofm.de/
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:Die kavkaeske Seite von egoFM.
+http://streams.egofm.de/egoFMKavka-hq
