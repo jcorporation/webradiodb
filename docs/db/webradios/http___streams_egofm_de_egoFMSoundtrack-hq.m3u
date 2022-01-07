@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,egoFM Soundtrack
+#EXTGENRE:Soundtrack
+#PLAYLIST:egoFM Soundtrack
+#EXTIMG:http___streams_egofm_de_egoFMSoundtrack-hq.webp
+#HOMEPAGE:https://www.egofm.de/
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:Die cineastische Seite von egoFM.
+http://streams.egofm.de/egoFMSoundtrack-hq

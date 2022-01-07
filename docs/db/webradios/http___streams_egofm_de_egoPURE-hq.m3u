@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,egoFM PURE
+#EXTGENRE:Alternative
+#PLAYLIST:egoFM PURE
+#EXTIMG:http___streams_egofm_de_egoPURE-hq.webp
+#HOMEPAGE:https://www.egofm.de/
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:Ohne Punkt und Komma.
+http://streams.egofm.de/egoPURE-hq

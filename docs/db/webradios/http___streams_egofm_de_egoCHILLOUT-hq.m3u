@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,egoFM CHILLOUT
+#EXTGENRE:Alternative
+#PLAYLIST:egoFM CHILLOUT
+#EXTIMG:http___streams_egofm_de_egoCHILLOUT-hq.webp
+#HOMEPAGE:https://www.egofm.de/
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:Die beruhigende Seite von egoFM.
+http://streams.egofm.de/egoCHILLOUT-hq
