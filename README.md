@@ -87,6 +87,35 @@ The final files are located in the `docs/db` folder, it is rebuild on each push 
 | [webradiodb-combined.min.json](https://jcorporation.github.io/webradiodb/db/index/webradiodb-combined.min.json) | JSON object file with all the above indexes |
 | [webradiodb-combined.min.js](https://jcorporation.github.io/webradiodb/db/index/webradiodb-combined.min.js) | JavaScript file with all the above indexes |
 
+The m3u fields are mapped for better readability.
+
+| M3U FIELD | JSON KEY |
+| --------- | -------- |
+| EXTGENRE | Genre |
+| PLAYLIST | Name |
+| EXTIMG | Image |
+| HOMEPAGE | Homepage |
+| COUNTRY | Country |
+| LANGUAGE | Language |
+| DESCRIPTION | Description |
+| uri | StreamUri |
+
+```
+"https___liveradio_swr_de_sw331ch_swr1bw_play_mp3.m3u": {
+    "Genre": [
+        "Pop",
+        "Rock"
+    ],
+    "Name": "SWR 1",
+    "Image": "https___liveradio_swr_de_sw331ch_swr1bw_play_mp3.webp",
+    "Homepage": "https://www.swr.de/swr1/",
+    "Country": "Germany",
+    "Language": "German",
+    "Description": "SWR 1 Baden-Wuerttemberg",
+    "StreamUri": "https://liveradio.swr.de/sw331ch/swr1bw/play.mp3"
+}
+```
+
 ### Script usage
 
 The script is used by GitHub actions.

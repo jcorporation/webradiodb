@@ -27,7 +27,8 @@ MOODE_PLS_DIR="${SOURCES_DIR}/moode-webradios"
 MYMPD_PICS_DIR="${SOURCES_DIR}/mympd-pics"
 MYMPD_PLS_DIR="${SOURCES_DIR}/mympd-webradios"
 
-source ./genremap
+source ./mappings/genre_map.sh
+source ./mappings/m3ufields_map.sh
 
 is_uri() {
     CHECK_URI="$1"
@@ -117,7 +118,7 @@ cleanup_genres() {
         NEW_GENRE=""
         while read -r -d, GENRE
         do
-            NG="${genremap[$GENRE]:-}"
+            NG="${genre_map[$GENRE]:-}"
             if [ "$NG" != "" ]
             then
                 NEW_GENRE="$NEW_GENRE, $NG"
@@ -408,10 +409,10 @@ m3u_to_json() {
         else
             VALUE=$(jq -n --arg value "$VALUE" '$value')
         fi
-        printf "\"$KEY\":%s" "$VALUE"
+        printf "\"${m3ufields_map[$KEY]:-}\":%s" "$VALUE"
     else
         VALUE=$(jq -n --arg value "$LINE" '$value')
-        printf "\"streamUri\":%s" "$VALUE"
+        printf "\"StreamUri\":%s" "$VALUE"
     fi
 }
 
@@ -446,6 +447,7 @@ create() {
         while read -r LINE
         do
             [ "$LINE" = "#EXTM3U" ] && continue
+            [ "${LINE%%:*}" = "#EXTINF" ] && continue
             [ "$LINE" = "" ] && continue
             [ "$LINE_COUNT" -gt 0 ] && printf "," >&3
             m3u_to_json "$LINE" >&3
@@ -472,19 +474,19 @@ create() {
     then
         echo "${WEBRADIO_COUNT} webradios in index"
         #create other index files
-        jq -r '.[] | .LANGUAGE' "${INDEXFILE}.tmp" | sort -u | \
+        jq -r '.[] | .Language' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$LANGFILE.tmp"
-        LANGUAGES_COUNT=$(jq -r '.[] | .LANGUAGE' "${INDEXFILE}.tmp" | sort -u | wc -l)
+        LANGUAGES_COUNT=$(jq -r '.[] | .Language' "${INDEXFILE}.tmp" | sort -u | wc -l)
         echo "${LANGUAGES_COUNT} languages in index"
 
-        jq -r '.[] | .COUNTRY' "${INDEXFILE}.tmp" | sort -u | \
+        jq -r '.[] | .Country' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$COUNTRYFILE.tmp"
-        COUNTRIES_COUNT=$(jq -r '.[] | .COUNTRY' "${INDEXFILE}.tmp" | sort -u | wc -l)
+        COUNTRIES_COUNT=$(jq -r '.[] | .Country' "${INDEXFILE}.tmp" | sort -u | wc -l)
         echo "${COUNTRIES_COUNT} countries in index"
 
-        jq -r '.[] | .EXTGENRE | .[]' "${INDEXFILE}.tmp" | sort -u | \
+        jq -r '.[] | .Genre | .[]' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$GENREFILE.tmp"
-        GENRES_COUNT=$(jq -r '.[] | .EXTGENRE | .[]' "${INDEXFILE}.tmp" | sort -u | wc -l)
+        GENRES_COUNT=$(jq -r '.[] | .Genre | .[]' "${INDEXFILE}.tmp" | sort -u | wc -l)
         echo "${GENRES_COUNT} genres in index"
 
         #create combined json

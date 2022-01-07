@@ -52,10 +52,10 @@ function search(name, genre, country, language, sort) {
 	};
 
 	for (const key in webradiodb.webradios) {
-		if (webradiodb.webradios[key].PLAYLIST.toLowerCase().indexOf(name) > -1 &&
-			(genre === ''    || webradiodb.webradios[key].EXTGENRE.includes(genre)) &&
-			(country === ''  || country === webradiodb.webradios[key].COUNTRY) &&
-			(language === '' || language === webradiodb.webradios[key].LANGUAGE)
+		if (webradiodb.webradios[key].Name.toLowerCase().indexOf(name) > -1 &&
+			(genre === ''    || webradiodb.webradios[key].Genre.includes(genre)) &&
+			(country === ''  || country === webradiodb.webradios[key].Country) &&
+			(language === '' || language === webradiodb.webradios[key].Language)
 		) {
 			result.data.push(webradiodb.webradios[key]);
 			result.returnedEntities++;
@@ -108,9 +108,9 @@ function showSearchResult(offset, limit) {
 		}
 		i++;
 		const div = document.createElement('div');
-		const pic = result.data[key].EXTIMG.indexOf('http:') === 0 ||
-			result.data[key].EXTIMG.indexOf('https:') === 0 ?
-				result.data[key].EXTIMG : 'db/pics/' + result.data[key].EXTIMG;
+		const pic = result.data[key].Image.indexOf('http:') === 0 ||
+			result.data[key].Image.indexOf('https:') === 0 ?
+				result.data[key].Image : 'db/pics/' + result.data[key].Image;
 		div.innerHTML =
 			'<table>' +
 				'<caption></caption>' +
@@ -133,32 +133,32 @@ function showSearchResult(offset, limit) {
 					'</tr>' +
 				'</tfoot>' +
 			'</table>';
-		div.getElementsByTagName('caption')[0].textContent = result.data[key].PLAYLIST;
+		div.getElementsByTagName('caption')[0].textContent = result.data[key].Name;
 		div.getElementsByTagName('img')[0].src = pic;
-		div.getElementsByClassName('genre')[0].textContent = result.data[key].EXTGENRE.join(', ');
-		div.getElementsByClassName('country')[0].textContent = result.data[key].COUNTRY + ' / ' + result.data[key].LANGUAGE;
-		div.getElementsByClassName('homepage')[0].href = result.data[key].HOMEPAGE;
-		div.getElementsByClassName('homepage')[0].textContent = result.data[key].HOMEPAGE;
-		div.getElementsByTagName('input')[0].value = result.data[key].streamUri;
+		div.getElementsByClassName('genre')[0].textContent = result.data[key].Genre.join(', ');
+		div.getElementsByClassName('country')[0].textContent = result.data[key].Country + ' / ' + result.data[key].Language;
+		div.getElementsByClassName('homepage')[0].href = result.data[key].Homepage;
+		div.getElementsByClassName('homepage')[0].textContent = result.data[key].Homepage;
+		div.getElementsByTagName('input')[0].value = result.data[key].StreamUri;
 		div.getElementsByClassName('playlist')[0].href = 'db/webradios/' + key;
 		div.getElementsByClassName('description')[0].textContent =
-		result.data[key].DESCRIPTION !== '' ? result.data[key].DESCRIPTION : 'No description available';
+			result.data[key].Description !== '' ? result.data[key].Description : 'No description available';
 
 		div.getElementsByClassName('modify')[0].href =
-			issueUri + issueModify + '&title=' + encodeURIComponent('[Modify Webradio]: ' + result.data[key].PLAYLIST) +
-				'&modifyWebradio=' + encodeURIComponent(result.data[key].streamUri) +
-				'&name=' + encodeURIComponent(result.data[key].PLAYLIST) +
-				'&streamuri=' + encodeURIComponent(result.data[key].streamUri) +
-				'&genre=' + encodeURIComponent(result.data[key].EXTGENRE) +
-				'&homepage=' + encodeURIComponent(result.data[key].HOMEPAGE) +
-				'&image=' + encodeURIComponent(result.data[key].EXTIMG) +
-				'&country=' + encodeURIComponent(result.data[key].COUNTRY) +
-				'&language=' + encodeURIComponent(result.data[key].LANGUAGE) +
-				'&description=' + encodeURIComponent(result.data[key].DESCRIPTION);
+			issueUri + issueModify + '&title=' + encodeURIComponent('[Modify Webradio]: ' + result.data[key].Name) +
+				'&modifyWebradio=' + encodeURIComponent(result.data[key].StreamUri) +
+				'&name=' + encodeURIComponent(result.data[key].Name) +
+				'&streamuri=' + encodeURIComponent(result.data[key].StreamUri) +
+				'&genre=' + encodeURIComponent(result.data[key].Genre) +
+				'&homepage=' + encodeURIComponent(result.data[key].Homepage) +
+				'&image=' + encodeURIComponent(result.data[key].Image) +
+				'&country=' + encodeURIComponent(result.data[key].Country) +
+				'&language=' + encodeURIComponent(result.data[key].Language) +
+				'&description=' + encodeURIComponent(result.data[key].Description);
 
 		div.getElementsByClassName('delete')[0].href =
-			issueUri + issueDelete + '&title=' + encodeURIComponent('[Delete Webradio]: ' + result.data[key].PLAYLIST) +
-				'&deleteWebradio=' + encodeURIComponent(result.data[key].streamUri);
+			issueUri + issueDelete + '&title=' + encodeURIComponent('[Delete Webradio]: ' + result.data[key].Name) +
+				'&deleteWebradio=' + encodeURIComponent(result.data[key].StreamUri);
 		resultEl.appendChild(div);
 	}
 	if (result.returnedEntities === 0) {
