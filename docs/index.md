@@ -6,7 +6,7 @@ Currently there are <span id="stationCount"></span> stations in the database and
 
 ### Add a webradio
 
-- Open a [GitHub Issue](https://github.com/jcorporation/webradiodb/issues/new?template=add-webradio.yml)
+- Open a [GitHub Issue](https://github.com/jcorporation/webradiodb/issues/new?labels=AddWebradio&template=add-webradio.yml&title=%5BAdd+Webradio%5D%3A+)
 
 ### Modify a webradio
 
