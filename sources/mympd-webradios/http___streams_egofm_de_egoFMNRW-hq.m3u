@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,egoFM NRW
+#EXTGENRE:Alternative
+#PLAYLIST:egoFM NRW
+#EXTIMG:http___streams_egofm_de_egoFMNRW-hq.webp
+#HOMEPAGE:https://www.egofm.de/
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:Das Radio für Musikentdecker
+http://streams.egofm.de/egoFMNRW-hq
