@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,Roots Legacy Radio - Dub UK & Roots Reggae
+#EXTGENRE:Dub, Roots Reggae
+#PLAYLIST:Roots Legacy Radio - Dub UK & Roots Reggae
+#EXTIMG:http___rootslegacy_fr_8080_;listen_mp3.webp
+#HOMEPAGE:https://www.rootslegacy.fr/
+#COUNTRY:France
+#LANGUAGE:English
+#DESCRIPTION:
+http://rootslegacy.fr:8080/;listen.mp3
