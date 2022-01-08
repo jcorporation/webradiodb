@@ -45,6 +45,10 @@ document.getElementById('searchBtn').addEventListener('click', function() {
 	showSearchResult(0, resultLimit);
 }, false);
 
+function uriHostname(uri) {
+	return uri.replace(/^.+:\/\/([^/]+)\/.*$/, '$1');
+}
+
 function search(name, genre, country, language, sort) {
 	const result = {
 		"returnedEntities": 0,
@@ -138,7 +142,7 @@ function showSearchResult(offset, limit) {
 		div.getElementsByClassName('genre')[0].textContent = result.data[key].Genre.join(', ');
 		div.getElementsByClassName('country')[0].textContent = result.data[key].Country + ' / ' + result.data[key].Language;
 		div.getElementsByClassName('homepage')[0].href = result.data[key].Homepage;
-		div.getElementsByClassName('homepage')[0].textContent = result.data[key].Homepage;
+		div.getElementsByClassName('homepage')[0].textContent = uriHostname(result.data[key].Homepage);
 		div.getElementsByTagName('input')[0].value = result.data[key].StreamUri;
 		div.getElementsByClassName('playlist')[0].href = 'db/webradios/' + key;
 		div.getElementsByClassName('description')[0].textContent =
