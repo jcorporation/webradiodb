@@ -120,6 +120,7 @@ cleanup_genres() {
         NEW_GENRE=""
         while read -r -d, GENRE
         do
+            [ "$GENRE" = "" ] && continue
             NG="${genre_map[$GENRE]:-}"
             if [ "$NG" != "" ]
             then
