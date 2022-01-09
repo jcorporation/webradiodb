@@ -64,7 +64,8 @@ function search(name, genre, country, language, sort, offset, limit) {
 			(country === ''  || country === webradiodb.webradios[key].Country) &&
 			(language === '' || language === webradiodb.webradios[key].Language)
 		) {
-			obj.result.data.push({key: webradiodb.webradios[key]});
+			webradiodb.webradios[key].filename = key;
+			obj.result.data.push(webradiodb.webradios[key]);
 			obj.result.totalEntities++;
 		}
 	}
@@ -135,7 +136,7 @@ function showSearchResult(offset, limit) {
 		div.getElementsByClassName('homepage')[0].href = obj.result.data[key].Homepage;
 		div.getElementsByClassName('homepage')[0].textContent = uriHostname(obj.result.data[key].Homepage);
 		div.getElementsByTagName('input')[0].value = obj.result.data[key].StreamUri;
-		div.getElementsByClassName('playlist')[0].href = 'db/webradios/' + key;
+		div.getElementsByClassName('playlist')[0].href = 'db/webradios/' + obj.result.data[key].filename;
 		div.getElementsByClassName('description')[0].textContent =
 			obj.result.data[key].Description !== '' ? obj.result.data[key].Description : 'No description available';
 
