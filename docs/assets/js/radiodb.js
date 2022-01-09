@@ -55,7 +55,7 @@ function search(name, genre, country, language, sort) {
 		"data": []
 	};
 
-	for (const key in webradiodb.webradios) {
+	for (const key of webradiodb.webradios) {
 		if (webradiodb.webradios[key].Name.toLowerCase().indexOf(name) > -1 &&
 			(genre === ''    || webradiodb.webradios[key].Genre.includes(genre)) &&
 			(country === ''  || country === webradiodb.webradios[key].Country) &&
@@ -92,7 +92,7 @@ function showSearchResult(offset, limit) {
 	document.getElementById('resultCount').textContent = result.returnedEntities;
 	let i = 0;
 	const last = offset + limit;
-	for (const key in result.data) {
+	for (const key of result.data) {
 		if (i < offset) {
 			i++;
 			continue;
