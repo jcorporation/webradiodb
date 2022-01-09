@@ -49,10 +49,13 @@ function uriHostname(uri) {
 	return uri.replace(/^.+:\/\/([^/]+)\/.*$/, '$1');
 }
 
-function search(name, genre, country, language, sort) {
-	const result = {
-		"returnedEntities": 0,
-		"data": []
+function search(name, genre, country, language, sort, offset, limit) {
+	const obj = {
+		"result": {
+			"returnedEntities": 0,
+			"totalEntities": 0,
+			"data": []
+		}
 	};
 
 	for (const key in webradiodb.webradios) {
@@ -61,11 +64,11 @@ function search(name, genre, country, language, sort) {
 			(country === ''  || country === webradiodb.webradios[key].Country) &&
 			(language === '' || language === webradiodb.webradios[key].Language)
 		) {
-			result.data.push(webradiodb.webradios[key]);
-			result.returnedEntities++;
+			obj.result.data.push({key: webradiodb.webradios[key]});
+			obj.result.totalEntities++;
 		}
 	}
-	result.data.sort(function(a, b) {
+	obj.result.data.sort(function(a, b) {
 		if (a[sort] < b[sort]) {
 			return -1;
 		}
@@ -74,7 +77,15 @@ function search(name, genre, country, language, sort) {
 		}
 		return 0;
 	});
-	return result;
+	if (offset > 0) {
+        obj.result.data.splice(0, offset - 1);
+    }
+    const last = obj.result.data.length - limit;
+    if (last > 0) {
+        obj.result.data.splice(limit, last);
+    }
+	obj.result.returnedEntities = obj.result.data.length;
+	return obj;
 }
 
 function showSearchResult(offset, limit) {
@@ -88,29 +99,9 @@ function showSearchResult(offset, limit) {
 		resultEl.textContent = '';
 	}
 
-	const result = search(searchstr, genreFilter, countryFilter, languageFilter, sort);
+	const result = search(searchstr, genreFilter, countryFilter, languageFilter, sort, offset, limit);
 	document.getElementById('resultCount').textContent = result.returnedEntities;
-	let i = 0;
-	const last = offset + limit;
 	for (const key in result.data) {
-		if (i < offset) {
-			i++;
-			continue;
-		}
-		if (i >= last) {
-			const a = document.createElement('a');
-			a.setAttribute('id', 'more');
-			a.setAttribute('href', '#');
-			a.textContent = 'Show more results';
-			a.addEventListener('click', function(event) {
-				event.preventDefault();
-				event.target.remove();
-				showSearchResult(last, limit);
-			}, false);
-			resultEl.appendChild(a);
-			break;
-		}
-		i++;
 		const div = document.createElement('div');
 		const pic = result.data[key].Image.indexOf('http:') === 0 ||
 			result.data[key].Image.indexOf('https:') === 0 ?
@@ -165,7 +156,20 @@ function showSearchResult(offset, limit) {
 				'&deleteWebradio=' + encodeURIComponent(result.data[key].StreamUri);
 		resultEl.appendChild(div);
 	}
-	if (result.returnedEntities === 0) {
+	const last = offset + result.returnedEntities;
+	if (result.totalEntities > last) {
+		const a = document.createElement('a');
+		a.setAttribute('id', 'more');
+		a.setAttribute('href', '#');
+		a.textContent = 'Show more results';
+		a.addEventListener('click', function(event) {
+			event.preventDefault();
+			event.target.remove();
+			showSearchResult(last, limit);
+		}, false);
+		resultEl.appendChild(a);
+	}
+	else if (result.returnedEntities === 0) {
 		const div = document.createElement('div');
 		div.classList.add('noResult');
 		div.innerHTML = '<p>No search result.</p>' +

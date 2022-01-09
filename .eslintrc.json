@@ -8,10 +8,7 @@
         "ecmaVersion": 12
     },
     "globals": {
-        "webradios": true,
-        "webradioGenres": true,
-        "webradioCountries": true,
-        "webradioLanguages": true
+        "webradiodb": true
     },
     "rules": {
         "block-scoped-var": "error",
