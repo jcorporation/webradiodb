@@ -58,7 +58,7 @@ function search(name, genre, country, language, sort, offset, limit) {
 		}
 	};
 
-	for (const key in webradiodb.webradios) {
+	for (const key of webradiodb.webradios) {
 		if (webradiodb.webradios[key].Name.toLowerCase().indexOf(name) > -1 &&
 			(genre === ''    || webradiodb.webradios[key].Genre.includes(genre)) &&
 			(country === ''  || country === webradiodb.webradios[key].Country) &&
@@ -101,7 +101,7 @@ function showSearchResult(offset, limit) {
 
 	const obj = search(searchstr, genreFilter, countryFilter, languageFilter, sort, offset, limit);
 	document.getElementById('resultCount').textContent = obj.result.returnedEntities;
-	for (const key in obj.result.data) {
+	for (const key of obj.result.data) {
 		const div = document.createElement('div');
 		const pic = obj.result.data[key].Image.indexOf('http:') === 0 ||
 			obj.result.data[key].Image.indexOf('https:') === 0 ?
