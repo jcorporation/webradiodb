@@ -49,7 +49,7 @@ download_image() {
     DOWNLOAD_URI="$1"
     DOWNLOAD_DST="$2"
     echo "Downloading image: \"$DOWNLOAD_URI\""
-    if ! wget -t3 "$DOWNLOAD_URI" -O "${DOWNLOAD_DST}.image"
+    if ! curl -fsSL "$DOWNLOAD_URI" --output "${DOWNLOAD_DST}.image"
     then
         rm -f "${DOWNLOAD_DST}.image"
         return 1
