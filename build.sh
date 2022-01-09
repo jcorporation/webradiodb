@@ -48,7 +48,8 @@ get_m3u_field() {
 download_image() {
     DOWNLOAD_URI="$1"
     DOWNLOAD_DST="$2"
-    if ! wget -q "$DOWNLOAD_URI" -O "${DOWNLOAD_DST}.image"
+    echo "Downloading image: \"$DOWNLOAD_URI\""
+    if ! wget -t3 "$DOWNLOAD_URI" -O "${DOWNLOAD_DST}.image"
     then
         rm -f "${DOWNLOAD_DST}.image"
         return 1
@@ -56,6 +57,7 @@ download_image() {
     if ! convert "${DOWNLOAD_DST}.image" "${DOWNLOAD_DST}.webp"
     then
         rm -f "${DOWNLOAD_DST}.image"
+        echo "Converting image to webp failed"
         return 1
     fi
     rm -f "${DOWNLOAD_DST}.image"
