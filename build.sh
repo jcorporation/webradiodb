@@ -524,6 +524,14 @@ create() {
         mv "${GENREFILE}.tmp" "$GENREFILE"
         mv "${INDEXFILE_JS}.tmp" "$INDEXFILE_JS"
         mv "${INDEXFILE_COMBINED}.tmp" "$INDEXFILE_COMBINED"
+        #add compressed index files
+        echo "Compressing index files"
+        gzip -9 -c "$INDEXFILE" > "${INDEXFILE}.gz"
+        gzip -9 -c "$LANGFILE" > "$[LANGFILE}.gz"
+        gzip -9 -c "$COUNTRYFILE" > "${COUNTRYFILE}.gz"
+        gzip -9 -c "$GENREFILE" > "${GENREFILE}.gz"
+        gzip -9 -c "$INDEXFILE_JS" > "${INDEXFILE_JS}.gz"
+        gzip -9 -c "$INDEXFILE_COMBINED" > "${INDEXFILE_COMBINED}.gz"
     else
         echo "Error creating index"
         rm "${INDEXFILE}.tmp"
