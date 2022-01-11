@@ -341,6 +341,7 @@ modify_radio_from_json() {
     then
         rm "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u"
         mv "${MYMPD_PICS_DIR}/${MODIFY_PLIST}.webp" "${MYMPD_PICS_DIR}/${NEW_PLIST}.webp"
+        NEW_IMAGE="${NEW_PLIST}.webp"
     fi
     #get changed image
     if [ "$NEW_IMAGE" != "$OLD_IMAGE" ] && [ -n "$NEW_IMAGE" ]
