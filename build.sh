@@ -527,7 +527,7 @@ create() {
         #add compressed index files
         echo "Compressing index files"
         gzip -9 -c "$INDEXFILE" > "${INDEXFILE}.gz"
-        gzip -9 -c "$LANGFILE" > "$[LANGFILE}.gz"
+        gzip -9 -c "$LANGFILE" > "${LANGFILE}.gz"
         gzip -9 -c "$COUNTRYFILE" > "${COUNTRYFILE}.gz"
         gzip -9 -c "$GENREFILE" > "${GENREFILE}.gz"
         gzip -9 -c "$INDEXFILE_JS" > "${INDEXFILE_JS}.gz"
