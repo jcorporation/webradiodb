@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,harmony.fm
+#EXTGENRE:80's
+#PLAYLIST:harmony.fm
+#EXTIMG:http___mp3_harmonyfm_de_harmonyfm_livestream_aac.webp
+#HOMEPAGE:https://www.harmonyfm.de
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:Alles 80er!
+http://mp3.harmonyfm.de/harmonyfm/livestream.aac
