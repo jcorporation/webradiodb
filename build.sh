@@ -401,13 +401,20 @@ delete_radio_from_json() {
     URI=$(jq -r ".deleteWebradio" < "$INPUT")
     # create the same plist name as myMPD
     PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$URI")
-    #only mympd webradios can be deleted
-    echo "Deleting webradio ${PLIST}"
-    if rm "${MYMPD_PLS_DIR}/${PLIST}.m3u"
+
+    if [ -f "${MYMPD_PLS_DIR}/${PLIST}.m3u" ]
     then
-        rm -f "${MYMPD_PICS_DIR}/${PLIST}.webp"
+        #only mympd webradios can be deleted
+        echo "Deleting webradio ${PLIST}"
+        if rm "${MYMPD_PLS_DIR}/${PLIST}.m3u"
+        then
+            rm -f "${MYMPD_PICS_DIR}/${PLIST}.webp"
+        else
+            exit 1
+        fi
     else
-        exit 1
+        #add moode radio ignore
+        echo "${PLIST}" >> mappings/moode-ignore
     fi
 }
 
