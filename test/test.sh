@@ -21,14 +21,14 @@ file sources/mympd-webradios/http___test_radio_teststream.m3u
 file sources/mympd-pics/http___test_radio_teststream.webp
 IMAGE_CHK=$(md5sum sources/mympd-pics/http___test_radio_teststream.webp)
 
-echo "Modify the new radio"
+echo "Modify the new webradio"
 ./build.sh modify_radio_from_json test/modify-webradio.json
 
 grep "\-modified" sources/mympd-webradios/http___test_radio_teststream.m3u > /dev/null
 NEW_IMAGE_CHK=$(md5sum sources/mympd-pics/http___test_radio_teststream.webp)
 [ "$IMAGE_CHK" = "$NEW_IMAGE_CHK" ] && false
 
-echo "Change only the streamuri of the new radio"
+echo "Change only the streamuri of the new webradio"
 ./build.sh modify_radio_from_json test/rename-webradio.json
 
 [ -f sources/mympd-webradios/http___test_radio_teststream.m3u ] && false
@@ -36,7 +36,7 @@ echo "Change only the streamuri of the new radio"
 file sources/mympd-webradios/http___test_radio_teststream-modified.m3u
 file sources/mympd-pics/http___test_radio_teststream-modified.webp
 
-echo "Delete the new radio"
+echo "Delete the new webradio"
 ./build.sh delete_radio_from_json test/delete-webradio.json
 
 [ -f sources/mympd-webradios/http___test_radio_teststream-modified.m3u ] && false
