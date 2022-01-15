@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,SWR 2
+#EXTGENRE:Classical, Jazz
+#PLAYLIST:SWR 2
+#EXTIMG:https___liveradio_swr_de_sw282p3_swr2_play_mp3.webp
+#HOMEPAGE:https://www.swr.de/swr2/index.html
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:Kultur neu entdecken
+https://liveradio.swr.de/sw282p3/swr2/play.mp3
