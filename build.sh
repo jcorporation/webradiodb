@@ -153,6 +153,7 @@ sync_moode() {
 
     # fetch the sql file and grep the webradio stations and convert it to csv
     I=0
+    S=0
     while read -r LINE
     do
         # LINE is a csv: station, name, genre, language, country, homepage
@@ -161,6 +162,12 @@ sync_moode() {
         PLIST=$(csvcut -c 1 <<< "$LINE" | \
             sed -E -e 's/[<>/.:?&$!#\\|]/_/g')
 
+        if grep -q "$PLIST" mappings/moode-ignore
+        then
+            printf "s"
+            S=$((S+1))
+            continue
+        fi
         # extract fields
         STATION=$(csvcut -c 1 <<< "$LINE" | sed -e s/\"//g)
         NAME=$(csvcut -c 2 <<< "$LINE" | sed -e s/\"//g)
@@ -203,8 +210,8 @@ sync_moode() {
 #DESCRIPTION:
 $STATION
 EOL
-    printf "."
-    I=$((I+1))
+        printf "."
+        I=$((I+1))
     done < <(wget -q "$MOODE_DB" -O - | \
         grep "INSERT INTO cfg_radio" | \
         awk -F "VALUES " '{print $2}' | \
@@ -212,7 +219,9 @@ EOL
         csvcut -q \' -c 2,3,5,6,8,9,14 |
         grep -v -E "(OFFLINE|zx reserved 499)")
     rm -fr "${MOODE_PICS_DIR}.old"
+    echo ""
     echo "$I webradios synced"
+    echo "$S webradios skipped"
 }
 
 add_radio() {
