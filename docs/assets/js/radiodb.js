@@ -101,7 +101,7 @@ function showSearchResult(offset, limit) {
 	}
 
 	const obj = search(searchstr, genreFilter, countryFilter, languageFilter, sort, offset, limit);
-	document.getElementById('resultCount').textContent = obj.result.returnedEntities;
+	document.getElementById('resultCount').textContent = obj.result.totalEntities;
 	for (const key in obj.result.data) {
 		const div = document.createElement('div');
 		const pic = obj.result.data[key].Image.indexOf('http:') === 0 ||
