@@ -5,7 +5,7 @@ on:
   push:
     paths:
     - 'build.sh'
-    - 'test'
+    - 'test/*'
 
 jobs:
   test:
