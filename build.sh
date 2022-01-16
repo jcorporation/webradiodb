@@ -222,6 +222,7 @@ EOL
     echo ""
     echo "$I webradios synced"
     echo "$S webradios skipped"
+    cleanup_genres "${MOODE_PLS_DIR}"
 }
 
 add_radio() {
@@ -446,12 +447,12 @@ create() {
     mkdir "$PICS_DIR"
 
     echo "Copy moode webradios"
-    cleanup_genres sources/moode-webradios
+    cleanup_genres "${MOODE_PLS_DIR}"
     cp "${MOODE_PICS_DIR}"/* "${PICS_DIR}"
     cp "${MOODE_PLS_DIR}"/* "${PLS_DIR}"
 
     echo "Copy myMPD webradios"
-    cleanup_genres sources/mympd-webradios
+    cleanup_genres "${MYMPD_PLS_DIR}"
     cp "${MYMPD_PICS_DIR}"/* "${PICS_DIR}"
     cp "${MYMPD_PLS_DIR}"/* "${PLS_DIR}"
 
