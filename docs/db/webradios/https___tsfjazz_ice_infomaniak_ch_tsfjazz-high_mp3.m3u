@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,TSF Jazz
+#EXTGENRE:Jazz
+#PLAYLIST:TSF Jazz
+#EXTIMG:https___tsfjazz_ice_infomaniak_ch_tsfjazz-high_mp3.webp
+#HOMEPAGE:https://www.tsfjazz.com/
+#COUNTRY:France
+#LANGUAGE:French
+#DESCRIPTION:Station consacrée au jazz qui diffuse sur plusieurs régions en France. « TSF », le sigle utilisé par la radio depuis sa création en 1982, signifie « télégraphie sans fil ».
+https://tsfjazz.ice.infomaniak.ch/tsfjazz-high.mp3
