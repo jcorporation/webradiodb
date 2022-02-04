@@ -50,6 +50,7 @@ function uriHostname(uri) {
 }
 
 function search(name, genre, country, language, sort, offset, limit) {
+	name = name.toLowerCase();
 	const obj = {
 		"result": {
 			"returnedEntities": 0,
