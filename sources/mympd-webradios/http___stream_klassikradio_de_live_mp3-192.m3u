@@ -1,0 +1,10 @@
+#EXTM3U
+#EXTINF:-1,Klassik Radio Live
+#EXTGENRE:Classical
+#PLAYLIST:Klassik Radio Live
+#EXTIMG:http___stream_klassikradio_de_live_mp3-192.webp
+#HOMEPAGE:https://www.klassikradio.de/
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:
+http://stream.klassikradio.de/live/mp3-192
