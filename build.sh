@@ -178,19 +178,20 @@ sync_moode() {
         HOMEPAGE=$(csvcut -c 7 <<< "$LINE" | sed -e s/\"//g)
 
         # get images 
+        NAME_ENCODED=$(jq -rn --arg x "$NAME" '$x|@uri')
         if [ "$IMAGE" = "local" ]
         then
             if [ -s "${MOODE_PICS_DIR}.old/${PLIST}.webp" ]
             then
                 cp "${MOODE_PICS_DIR}.old/${PLIST}.webp" "${MOODE_PICS_DIR}/${PLIST}.webp"
                 IMAGE="${PLIST}.webp"
-            elif download_image "${MOODE_IMAGES}${NAME}.jpg" "${MOODE_PICS_DIR}/${PLIST}"
+            elif download_image "${MOODE_IMAGES}${NAME_ENCODED}.jpg" "${MOODE_PICS_DIR}/${PLIST}"
             then
                 IMAGE="${PLIST}.webp"
             else
                 IMAGE=""
             fi
-        elif download_image "${MOODE_IMAGES}${NAME}.jpg" "${MOODE_PICS_DIR}/${PLIST}"
+        elif download_image "${MOODE_IMAGES}${NAME_ENCODED}.jpg" "${MOODE_PICS_DIR}/${PLIST}"
         then
             IMAGE="${PLIST}.webp"
         else
