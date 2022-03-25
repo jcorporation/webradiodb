@@ -160,7 +160,7 @@ sync_moode() {
 
         # create the same plist name as myMPD
         PLIST=$(csvcut -c 1 <<< "$LINE" | \
-            sed -E -e 's/[<>/.:?&$!#\\|]/_/g')
+            sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g')
 
         if grep -q "$PLIST" mappings/moode-ignore
         then
@@ -230,7 +230,7 @@ add_radio() {
     # get the uri and write out a skeletion file
     read -r -p "URI: " URI
     # create the same plist name as myMPD
-    PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$URI")
+    PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$URI")
     if [ -f "${MYMPD_PLS_DIR}/${PLIST}.m3u" ]
     then
         echo "This webradio already exists."
@@ -268,7 +268,7 @@ add_radio_from_json() {
     LANGUAGE=$(jq -r ".language" < "$INPUT" | head -1 | tr -d '\n')
     DESCRIPTION=$(jq -r ".description" < "$INPUT" | head -1 | tr -d '\n')
     # create the same plist name as myMPD
-    PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$URI")
+    PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$URI")
     echo "Adding webradio $PLIST"
     if [ -f "${MYMPD_PLS_DIR}/${PLIST}.m3u" ]
     then
@@ -308,7 +308,7 @@ modify_radio_from_json() {
     INPUT="$1"
     #Webradio to modify
     MODIFY_URI=$(jq -r ".modifyWebradio" < "$INPUT")
-    MODIFY_PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$MODIFY_URI")
+    MODIFY_PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$MODIFY_URI")
     if [ ! -f "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" ]
     then
         if [ -f "${MOODE_PLS_DIR}/${MODIFY_PLIST}.m3u" ]
@@ -332,7 +332,7 @@ modify_radio_from_json() {
     NEW_COUNTRY=$(jq -r ".country" < "$INPUT" | head -1 | tr -d '\n')
     NEW_LANGUAGE=$(jq -r ".language" < "$INPUT" | head -1 | tr -d '\n')
     NEW_DESCRIPTION=$(jq -r ".description" < "$INPUT" | head -1 | tr -d '\n')
-    NEW_PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$NEW_URI")
+    NEW_PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$NEW_URI")
     #Get old values
     OLD_NAME=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "PLAYLIST")
     OLD_GENRE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "EXTGENRE")
@@ -402,7 +402,7 @@ delete_radio_from_json() {
     INPUT="$1"
     URI=$(jq -r ".deleteWebradio" < "$INPUT")
     # create the same plist name as myMPD
-    PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|]/_/g' <<< "$URI")
+    PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$URI")
 
     if [ -f "${MYMPD_PLS_DIR}/${PLIST}.m3u" ]
     then
