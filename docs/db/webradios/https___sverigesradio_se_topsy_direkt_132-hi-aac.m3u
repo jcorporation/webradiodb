@@ -1,9 +1,9 @@
 #EXTM3U
-#EXTINF:-1,P1
-#EXTGENRE:News, Culture
-#PLAYLIST:P1
+#EXTINF:-1,SR P1
+#EXTGENRE:News, Talk, Culture
+#PLAYLIST:SR P1
 #EXTIMG:https___sverigesradio_se_topsy_direkt_132-hi-aac.webp
-#HOMEPAGE:
+#HOMEPAGE:https://sverigesradio.se/p1
 #COUNTRY:Sweden
 #LANGUAGE:Swedish
 #DESCRIPTION:
