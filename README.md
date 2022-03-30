@@ -121,7 +121,7 @@ The m3u fields are mapped for better readability.
 
 The script is used by GitHub actions.
 
-Dependencies: imagemagick,jq, csvkit, curl
+Dependencies: imagemagick, jq, csvkit, curl
 
 Type `./build.sh` for usage information.
 
