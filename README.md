@@ -65,7 +65,7 @@ Webradios are saved as extended m3u files with some custom fields. A coverimage 
 <streamuri>
 ```
 
-The filename of the playlist and the coverimage are derived from the streamuri by replacing `<>/.:?&$!#\|` characters with `_`. This is the same behaviour as in myMPD and makes this playlists compatible with the myMPD webradio feature.
+The filename of the playlist and the coverimage are derived from the streamuri by replacing `<>/.:?&$!#\|;=` characters with `_`. This is the same behaviour as in myMPD and makes this playlists compatible with the myMPD webradio feature.
 
 You must not download the station images, instead you can prepend `https://jcorporation.github.io/webradiodb/db/pics/` to the image name, e.g. https://jcorporation.github.io/webradiodb/db/pics/http___119_15_96_188_stream2_mp3.webp.
 
