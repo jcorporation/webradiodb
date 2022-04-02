@@ -462,6 +462,38 @@ m3u_to_json() {
     fi
 }
 
+parse_alternative_streams() {
+    S="$1"
+    RADIO="$2"
+    CODEC=""
+    BITRATE=""
+    URI=""
+    NAME=""
+    while read -r LINE
+    do
+        if [ "${LINE:0:1}" = "#" ]
+        then
+            INFO="${LINE:1}"
+            KEY=${INFO%%:*}
+            VALUE=${INFO#*:}
+            VALUE=$(jq -n --arg value "$VALUE" '$value')
+            case "$KEY" in
+                CODEC)    CODEC="$VALUE" ;;
+                BITRATE)  BITRATE="$VALUE" ;;
+            esac
+        else
+            NAME=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$LINE")
+            URI=$(jq -n --arg value "$LINE" '$value')
+        fi
+    done < "$S"
+    #print to index
+    printf "\"%s\":{\"StreamUri\":%s,\"Codec\":%s,\"Bitrate\":%s}" "$NAME" "$URI" "$CODEC" "$BITRATE"
+    #create m3u for alternative stream
+    head -9 "$RADIO" > "$PLS_DIR/$NAME.m3u"
+    cat "$S" >> "$PLS_DIR/$NAME.m3u"
+    rm "$S"
+}
+
 create() {
     echo "Cleaning up"
     rm -fr "$PLS_DIR"
@@ -499,7 +531,19 @@ create() {
             m3u_to_json "$LINE" >&3
             LINE_COUNT=$((LINE_COUNT+1))
         done < "$F"
-        printf "}" >&3
+        #alternative streams
+        printf ",\"alternativeStreams\":{" >&3
+        if [ "$(echo $F.*)" != "$F.*" ]
+        then
+            FILE_COUNT=0
+            for S in "$F."*
+            do
+                [ "$FILE_COUNT" -gt 0 ] && printf "," >&3
+                parse_alternative_streams "$S" "$F" >&3
+                FILE_COUNT=$((FILE_COUNT+1))
+            done
+        fi
+        printf "}}" >&3
         WEBRADIO_COUNT=$((WEBRADIO_COUNT+1))
         printf "."
     done
