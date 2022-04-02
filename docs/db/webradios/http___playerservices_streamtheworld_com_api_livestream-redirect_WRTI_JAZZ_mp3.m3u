@@ -7,4 +7,6 @@
 #COUNTRY:United States
 #LANGUAGE:English
 #DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
 http://playerservices.streamtheworld.com/api/livestream-redirect/WRTI_JAZZ.mp3

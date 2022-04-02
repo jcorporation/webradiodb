@@ -7,5 +7,7 @@
     "image": "https://jcorporation.github.io/webradiodb/db/pics/https___liveradio_swr_de_sw282p3_swr1bw_play_mp3.webp",
     "country": "Germany-modified",
     "language": "German-modified",
+    "codec": "mp3-modified",
+    "bitrate": "256",
     "description": "Ein Online Radio für den Bereich Science Fiction.-modified"
 }

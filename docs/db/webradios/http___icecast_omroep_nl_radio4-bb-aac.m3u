@@ -7,4 +7,6 @@
 #COUNTRY:Netherlands
 #LANGUAGE:Dutch
 #DESCRIPTION:
+#CODEC:AAC
+#BITRATE:64
 http://icecast.omroep.nl/radio4-bb-aac

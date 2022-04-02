@@ -6,7 +6,7 @@
 
 # simple testsuite
 
-set -euo pipefail
+set -uo pipefail
 
 # print out commands
 [ -z "${DEBUG+x}" ] || set -x

@@ -57,6 +57,20 @@ body:
     validations:
       required: true
   - type: input
+    id: codec
+    attributes:
+      label: Codec
+      description: The codec of the stream, e. g. MP3, AAC, ...
+    validations:
+      required: false
+  - type: input
+    id: bitrate
+    attributes:
+      label: Bitrate
+      description: The birate of the stream in kbit.
+    validations:
+      required: false
+  - type: input
     id: description
     attributes:
       label: Description

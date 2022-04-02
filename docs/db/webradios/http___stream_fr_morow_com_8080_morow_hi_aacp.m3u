@@ -7,4 +7,6 @@
 #COUNTRY:France
 #LANGUAGE:English
 #DESCRIPTION:
+#CODEC:AAC
+#BITRATE:128
 http://stream.fr.morow.com:8080/morow_hi.aacp

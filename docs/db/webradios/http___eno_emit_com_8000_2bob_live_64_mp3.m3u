@@ -7,4 +7,6 @@
 #COUNTRY:Australia
 #LANGUAGE:English
 #DESCRIPTION:
+#CODEC:MP3
+#BITRATE:64
 http://eno.emit.com:8000/2bob_live_64.mp3

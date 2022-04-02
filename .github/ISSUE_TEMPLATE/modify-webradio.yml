@@ -74,6 +74,20 @@ body:
       description: The language of the webradio.
     validations:
       required: false
+    - type: input
+    id: codec
+    attributes:
+      label: New codec
+      description: The codec of the stream, e. g. MP3, AAC, ...
+    validations:
+      required: false
+  - type: input
+    id: bitrate
+    attributes:
+      label: New bitrate
+      description: The birate of the stream in kbit.
+    validations:
+      required: false
   - type: input
     id: description
     attributes:

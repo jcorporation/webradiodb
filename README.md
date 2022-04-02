@@ -61,6 +61,8 @@ Webradios are saved as extended m3u files with some custom fields. A coverimage 
 #HOMEPAGE:<homepage>
 #COUNTRY:<country>
 #LANGUAGE:<language>
+#CODEC:<codec>
+#BITRATE:<bitrate>
 #DESCRIPTION:<description>
 <streamuri>
 ```
@@ -81,6 +83,8 @@ The final files are located in the `docs/db` folder, it is rebuild on each push 
 
 | FILE | DESCRIPTION |
 | ---- | ----------- |
+| [bitrates.min.json](https://jcorporation.github.io/webradiodb/db/index/bitrates.min.json) | Array of bitrates |
+| [codecs.min.json](https://jcorporation.github.io/webradiodb/db/index/codecs.min.json) | Array of codecs |
 | [countries.min.json](https://jcorporation.github.io/webradiodb/db/index/countries.min.json) | Array of countries |
 | [genres.min.json](https://jcorporation.github.io/webradiodb/db/index/genres.min.json) | Array of genres |
 | [languages.min.json](https://jcorporation.github.io/webradiodb/db/index/languages.min.json) | Array of languages |
@@ -98,6 +102,8 @@ The m3u fields are mapped for better readability.
 | HOMEPAGE | Homepage |
 | COUNTRY | Country |
 | LANGUAGE | Language |
+| CODEC | Codec |
+| BITRATE | Bitrate |
 | DESCRIPTION | Description |
 | uri | StreamUri |
 
@@ -112,6 +118,8 @@ The m3u fields are mapped for better readability.
     "Homepage": "https://www.swr.de/swr1/",
     "Country": "Germany",
     "Language": "German",
+    "Codec": "MP3",
+    "Bitrate": 128,
     "Description": "SWR 1 Baden-Wuerttemberg",
     "StreamUri": "https://liveradio.swr.de/sw331ch/swr1bw/play.mp3"
 }

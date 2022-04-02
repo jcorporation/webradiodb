@@ -7,4 +7,6 @@
 #COUNTRY:Germany
 #LANGUAGE:German
 #DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
 http://wdr-1live-live.icecast.wdr.de/wdr/1live/live/mp3/128/stream.mp3

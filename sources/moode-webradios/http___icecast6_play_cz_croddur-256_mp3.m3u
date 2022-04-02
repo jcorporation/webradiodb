@@ -7,4 +7,6 @@
 #COUNTRY:Czech Republic
 #LANGUAGE:Czech
 #DESCRIPTION:
+#CODEC:MP3
+#BITRATE:256
 http://icecast6.play.cz/croddur-256.mp3

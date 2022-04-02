@@ -12,6 +12,8 @@ const searchInput = document.getElementById('searchStr');
 const genreSelect = document.getElementById('genres');
 const countrySelect = document.getElementById('countries');
 const languageSelect = document.getElementById('languages');
+const codecSelect = document.getElementById('codecs');
+const bitrateSelect = document.getElementById('bitrates');
 const sortSelect = document.getElementById('sort');
 const resultLimit = 25;
 
@@ -30,6 +32,8 @@ function populateSelect(el, options) {
 populateSelect(genreSelect, webradiodb.webradioGenres);
 populateSelect(countrySelect, webradiodb.webradioCountries);
 populateSelect(languageSelect, webradiodb.webradioLanguages);
+populateSelect(codecSelect, webradiodb.webradioCodecs);
+populateSelect(bitrateSelect, webradiodb.webradioBitrates);
 
 function getSelectValue(el) {
 	return el.selectedIndex >= 0 ? el.options[el.selectedIndex].getAttribute('value') : '';
@@ -49,7 +53,7 @@ function uriHostname(uri) {
 	return uri.replace(/^.+:\/\/([^/]+)\/.*$/, '$1');
 }
 
-function search(name, genre, country, language, sort, offset, limit) {
+function search(name, genre, country, language, codec, bitrate, sort, offset, limit) {
 	name = name.toLowerCase();
 	const obj = {
 		"result": {
@@ -63,7 +67,9 @@ function search(name, genre, country, language, sort, offset, limit) {
 		if (webradiodb.webradios[key].Name.toLowerCase().indexOf(name) > -1 &&
 			(genre === ''    || webradiodb.webradios[key].Genre.includes(genre)) &&
 			(country === ''  || country === webradiodb.webradios[key].Country) &&
-			(language === '' || language === webradiodb.webradios[key].Language)
+			(language === '' || language === webradiodb.webradios[key].Language) &&
+			(codec === '' || codec === webradiodb.webradios[key].Codec) &&
+			(bitrate === '' || bitrate <= webradiodb.webradios[key].Bitrate)
 		) {
 			webradiodb.webradios[key].filename = key;
 			obj.result.data.push(webradiodb.webradios[key]);
@@ -95,13 +101,15 @@ function showSearchResult(offset, limit) {
 	const genreFilter = getSelectValue(genreSelect);
 	const countryFilter = getSelectValue(countrySelect);
 	const languageFilter = getSelectValue(languageSelect);
+	const codecFilter = getSelectValue(codecSelect);
+	const bitrateFilter = getSelectValue(bitrateSelect);
 	const sort = getSelectValue(sortSelect);
 
 	if (offset === 0) {
 		resultEl.textContent = '';
 	}
 
-	const obj = search(searchstr, genreFilter, countryFilter, languageFilter, sort, offset, limit);
+	const obj = search(searchstr, genreFilter, countryFilter, languageFilter, codecFilter, bitrateFilter, sort, offset, limit);
 	document.getElementById('resultCount').textContent = obj.result.totalEntities;
 	for (const key in obj.result.data) {
 		const div = document.createElement('div');
@@ -120,6 +128,7 @@ function showSearchResult(offset, limit) {
 					'<tr><td>Homepage</td><td><a class="homepage" target="_blank" href=""></a></td></tr>' +
 					'<tr><td>Stream URI</td><td><input type="text" value=""/></td></tr>' +
 					'<tr><td>Playlist</td><td><a class="playlist" target="_blank" href="">Get playlist</a></td></tr>' +
+					'<tr><td>Format</td><td class="format"></td></tr>' +
 					'<tr><td colspan="2" class="description"></td></tr>' +
 				'</tbody>' +
 				'<tfoot>' +
@@ -134,6 +143,17 @@ function showSearchResult(offset, limit) {
 		div.getElementsByTagName('img')[0].src = pic;
 		div.getElementsByClassName('genre')[0].textContent = obj.result.data[key].Genre.join(', ');
 		div.getElementsByClassName('country')[0].textContent = obj.result.data[key].Country + ' / ' + obj.result.data[key].Language;
+		let format = obj.result.data[key].Codec;
+		if (format !== '' && obj.result.data[key].Bitrate !== '') {
+			format += ' / ';
+		}
+		if (obj.result.data[key].Bitrate !== '') {
+			format += obj.result.data[key].Bitrate + ' kbit'
+		}
+		if (format === '') {
+			format = 'unknown';
+		}
+		div.getElementsByClassName('format')[0].textContent = format;
 		div.getElementsByClassName('homepage')[0].href = obj.result.data[key].Homepage;
 		div.getElementsByClassName('homepage')[0].textContent = uriHostname(obj.result.data[key].Homepage);
 		div.getElementsByTagName('input')[0].value = obj.result.data[key].StreamUri;
@@ -151,6 +171,8 @@ function showSearchResult(offset, limit) {
 				'&image=' + encodeURIComponent(obj.result.data[key].Image) +
 				'&country=' + encodeURIComponent(obj.result.data[key].Country) +
 				'&language=' + encodeURIComponent(obj.result.data[key].Language) +
+				'&codec=' + encodeURIComponent(obj.result.data[key].Codec) +
+				'&bitrate=' + encodeURIComponent(obj.result.data[key].Bitrate) +
 				'&description=' + encodeURIComponent(obj.result.data[key].Description);
 
 		div.getElementsByClassName('delete')[0].href =

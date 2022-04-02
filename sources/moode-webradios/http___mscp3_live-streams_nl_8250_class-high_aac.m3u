@@ -7,4 +7,6 @@
 #COUNTRY:United Kingdom
 #LANGUAGE:English
 #DESCRIPTION:
+#CODEC:AAC
+#BITRATE:320
 http://mscp3.live-streams.nl:8250/class-high.aac

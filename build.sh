@@ -4,7 +4,7 @@
 #myMPD (c) 2021-2022 Juergen Mang <mail@jcgames.de>
 #https://github.com/jcorporation/radiodb
 
-set -euo pipefail
+set -uo pipefail
 
 #print out commands
 [ -z "${DEBUG+x}" ] || set -x
@@ -21,6 +21,8 @@ INDEXFILE_JS="${PUBLISH_DIR}/index/webradiodb-combined.min.js"
 LANGFILE="${PUBLISH_DIR}/index/languages.min.json"
 COUNTRYFILE="${PUBLISH_DIR}/index/countries.min.json"
 GENREFILE="${PUBLISH_DIR}/index/genres.min.json"
+CODECFILE="${PUBLISH_DIR}/index/codecs.min.json"
+BITRATEFILE="${PUBLISH_DIR}/index/bitrates.min.json"
 
 MOODE_PICS_DIR="${SOURCES_DIR}/moode-pics"
 MOODE_PLS_DIR="${SOURCES_DIR}/moode-webradios"
@@ -141,7 +143,7 @@ cleanup_genres() {
 sync_moode() {
     echo "Syncing moode audio webradios"
     # fields of cfg_radios are:
-    # id, station, name, type, logo, genre, broadcaster, language, country, region, bitrate, format, geo_fenced, home_page, reserved2
+    # id, station, name, type, logo, genre, broadcaster, language, country, region, bitrate, codec, geo_fenced, home_page, reserved2
     MOODE_DB="https://raw.githubusercontent.com/moode-player/moode/master/var/local/www/db/moode-sqlite3.db.sql"
     MOODE_IMAGES="https://raw.githubusercontent.com/moode-player/moode/master/var/local/www/imagesw/radio-logos/"
 
@@ -156,7 +158,7 @@ sync_moode() {
     S=0
     while read -r LINE
     do
-        # LINE is a csv: station, name, genre, language, country, homepage
+        # LINE is a csv: station, name, genre, language, country, bitrate, codec, homepage
 
         # create the same plist name as myMPD
         PLIST=$(csvcut -c 1 <<< "$LINE" | \
@@ -175,7 +177,9 @@ sync_moode() {
         GENRE=$(csvcut -c 4 <<< "$LINE" | sed -e s/\"//g)
         LANGUAGE=$(csvcut -c 5 <<< "$LINE" | sed -e s/\"//g)
         COUNTRY=$(csvcut -c 6 <<< "$LINE" | sed -e s/\"//g)
-        HOMEPAGE=$(csvcut -c 7 <<< "$LINE" | sed -e s/\"//g)
+        BITRATE=$(csvcut -c 7 <<< "$LINE" | sed -e s/\"//g)
+        CODEC=$(csvcut -c 8 <<< "$LINE" | sed -e s/\"//g)
+        HOMEPAGE=$(csvcut -c 9 <<< "$LINE" | sed -e s/\"//g)
 
         # get images 
         NAME_ENCODED=$(jq -rn --arg x "$NAME" '$x|@uri')
@@ -209,6 +213,8 @@ sync_moode() {
 #COUNTRY:$COUNTRY
 #LANGUAGE:$LANGUAGE
 #DESCRIPTION:
+#CODEC:$CODEC
+#BITRATE:$BITRATE
 $STATION
 EOL
         printf "."
@@ -217,7 +223,7 @@ EOL
         grep "INSERT INTO cfg_radio" | \
         awk -F "VALUES " '{print $2}' | \
         sed -e 's/^(//' -e 's/);//' -e "s/', /',/g" -e "s/, '/,'/g"  | \
-        csvcut -q \' -c 2,3,5,6,8,9,14 |
+        csvcut -q \' -c 2,3,5,6,8,9,11,12,14 |
         grep -v -E "(OFFLINE|zx reserved 499)")
     rm -fr "${MOODE_PICS_DIR}.old"
     echo ""
@@ -247,6 +253,8 @@ add_radio() {
 #COUNTRY:<country>
 #LANGUAGE:<language>
 #DESCRIPTION:<description>
+#CODEC:<codec>
+#BITRATE:<bitrate>
 $URI
 EOL
     echo ""
@@ -267,6 +275,8 @@ add_radio_from_json() {
     COUNTRY=$(jq -r ".country" < "$INPUT" | head -1 | tr -d '\n')
     LANGUAGE=$(jq -r ".language" < "$INPUT" | head -1 | tr -d '\n')
     DESCRIPTION=$(jq -r ".description" < "$INPUT" | head -1 | tr -d '\n')
+    CODEC=$(jq -r ".codec" < "$INPUT" | head -1 | tr -d '\n')
+    BITRATE=$(jq -r ".bitrate" < "$INPUT" | head -1 | tr -d '\n')
     # create the same plist name as myMPD
     PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$URI")
     echo "Adding webradio $PLIST"
@@ -300,6 +310,8 @@ add_radio_from_json() {
 #COUNTRY:$COUNTRY
 #LANGUAGE:$LANGUAGE
 #DESCRIPTION:$DESCRIPTION
+#CODEC:$CODEC
+#BITRATE:$BITRATE
 $URI
 EOL
 }
@@ -317,6 +329,8 @@ modify_radio_from_json() {
             cp "${MOODE_PLS_DIR}/${MODIFY_PLIST}.m3u" "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u"
             [ -f "${MOODE_PICS_DIR}/${MODIFY_PLIST}.webp" ] && \
                 cp "${MOODE_PICS_DIR}/${MODIFY_PLIST}.webp" "${MYMPD_PICS_DIR}/${MODIFY_PLIST}.webp"
+            #add moode radio ignore
+            echo "${MODIFY_PLIST}" >> mappings/moode-ignore
         else
             echo "Webradio ${MODIFY_PLIST} not found"
             exit 1
@@ -332,6 +346,8 @@ modify_radio_from_json() {
     NEW_COUNTRY=$(jq -r ".country" < "$INPUT" | head -1 | tr -d '\n')
     NEW_LANGUAGE=$(jq -r ".language" < "$INPUT" | head -1 | tr -d '\n')
     NEW_DESCRIPTION=$(jq -r ".description" < "$INPUT" | head -1 | tr -d '\n')
+    NEW_CODEC=$(jq -r ".codec" < "$INPUT" | head -1 | tr -d '\n')
+    NEW_BITRATE=$(jq -r ".bitrate" < "$INPUT" | head -1 | tr -d '\n')
     NEW_PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$NEW_URI")
     #Get old values
     OLD_NAME=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "PLAYLIST")
@@ -341,6 +357,8 @@ modify_radio_from_json() {
     OLD_COUNTRY=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "COUNTRY")
     OLD_LANGUAGE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "LANGUAGE")
     OLD_DESCRIPTION=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "DESCRIPTION")
+    OLD_CODEC=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "CODEC")
+    OLD_BITRATE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "BITRATE")
     if [ "$MODIFY_PLIST" != "$NEW_PLIST" ] && [ -f "${MYMPD_PLS_DIR}/${NEW_PLIST}.m3u" ]
     then
         echo "A webradio for the new streamuri already exists."
@@ -383,6 +401,8 @@ modify_radio_from_json() {
     [ -z "$NEW_COUNTRY" ] && NEW_COUNTRY="$OLD_COUNTRY"
     [ -z "$NEW_LANGUAGE" ] && NEW_LANGUAGE="$OLD_LANGUAGE"
     [ -z "$NEW_DESCRIPTION" ] && NEW_DESCRIPTION="$OLD_DESCRIPTION"
+    [ -z "$NEW_CODEC" ] && NEW_CODEC="$OLD_CODEC"
+    [ -z "$NEW_BITRATE" ] && NEW_BITRATE="$OLD_BITRATE"
     echo "Writing ${NEW_PLIST}.m3u"
     cat > "${MYMPD_PLS_DIR}/${NEW_PLIST}.m3u" << EOL
 #EXTM3U
@@ -394,6 +414,8 @@ modify_radio_from_json() {
 #COUNTRY:$NEW_COUNTRY
 #LANGUAGE:$NEW_LANGUAGE
 #DESCRIPTION:$NEW_DESCRIPTION
+#CODEC:$NEW_CODEC
+#BITRATE:$NEW_BITRATE
 $NEW_URI
 EOL
 }
@@ -513,6 +535,16 @@ create() {
         GENRES_COUNT=$(jq -r '.[] | .Genre | .[]' "${INDEXFILE}.tmp" | sort -u | wc -l)
         echo "${GENRES_COUNT} genres in index"
 
+        jq -r '.[] | .Codec' "${INDEXFILE}.tmp" | sort -u | grep -v -P '^\s*$' | \
+            jq -R -s -c 'split("\n") | .[0:-1]' > "$CODECFILE.tmp"
+        CODECS_COUNT=$(jq -r '.[] | .Codec' "${INDEXFILE}.tmp" | sort -u | grep -v -P '^\s*$' | wc -l)
+        echo "${CODECS_COUNT} codecs in index"
+
+        jq -r '.[] | .Bitrate' "${INDEXFILE}.tmp" | sort -u -g | grep -v -P '^\s*$' | \
+            jq -R -s -c 'split("\n") | .[0:-1]' > "$BITRATEFILE.tmp"
+        BITRATES_COUNT=$(jq -r '.[] | .Bitrate' "${INDEXFILE}.tmp" | sort -u | grep -v -P '^\s*$' | wc -l)
+        echo "${BITRATES_COUNT} bitrates in index"
+
         #create combined json
         printf "{\"timestamp\":%s, \"webradios\":" "$(date +%s)" > "${INDEXFILE_COMBINED}.tmp"
         tr -d '\n' < "${INDEXFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
@@ -526,6 +558,14 @@ create() {
         tr -d '\n' < "${COUNTRYFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
         printf ",\"totalwebradioCountries\":%s," "$COUNTRIES_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
 
+        printf "\"webradioCodecs\":" >> "${INDEXFILE_COMBINED}.tmp"
+        tr -d '\n' < "${CODECFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
+        printf ",\"totalwebradioCodecs\":%s," "$CODECS_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+
+        printf "\"webradioBitrates\":" >> "${INDEXFILE_COMBINED}.tmp"
+        tr -d '\n' < "${BITRATEFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
+        printf ",\"totalwebradioBitrates\":%s," "$BITRATES_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+
         printf "\"webradioGenres\":" >> "${INDEXFILE_COMBINED}.tmp"
         tr -d '\n' < "${GENREFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
         printf ",\"totalWebradioGenres\":%s" "$GENRES_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
@@ -536,10 +576,12 @@ create() {
         tr -d '\n' < "${INDEXFILE_COMBINED}.tmp" >> "${INDEXFILE_JS}.tmp"
         printf ";\n" >> "${INDEXFILE_JS}.tmp"
         #finished, move all files in place
-        mv "$INDEXFILE.tmp" "$INDEXFILE"
+        mv "${INDEXFILE}.tmp" "$INDEXFILE"
         mv "${LANGFILE}.tmp" "$LANGFILE"
         mv "${COUNTRYFILE}.tmp" "$COUNTRYFILE"
         mv "${GENREFILE}.tmp" "$GENREFILE"
+        mv "${CODECFILE}.tmp" "$CODECFILE"
+        mv "${BITRATEFILE}.tmp" "$BITRATEFILE"
         mv "${INDEXFILE_JS}.tmp" "$INDEXFILE_JS"
         mv "${INDEXFILE_COMBINED}.tmp" "$INDEXFILE_COMBINED"
         #add compressed index files
@@ -548,6 +590,8 @@ create() {
         gzip -9 -c "$LANGFILE" > "${LANGFILE}.gz"
         gzip -9 -c "$COUNTRYFILE" > "${COUNTRYFILE}.gz"
         gzip -9 -c "$GENREFILE" > "${GENREFILE}.gz"
+        gzip -9 -c "$CODECFILE" > "${CODECFILE}.gz"
+        gzip -9 -c "$BITRATEFILE" > "${BITRATEFILE}.gz"
         gzip -9 -c "$INDEXFILE_JS" > "${INDEXFILE_JS}.gz"
         gzip -9 -c "$INDEXFILE_COMBINED" > "${INDEXFILE_COMBINED}.gz"
     else

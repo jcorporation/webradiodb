@@ -7,4 +7,6 @@
 #COUNTRY:Belgium
 #LANGUAGE:Dutch
 #DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
 http://icecast.vrtcdn.be/stubru-high.mp3

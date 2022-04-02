@@ -7,4 +7,6 @@
 #COUNTRY:Netherlands
 #LANGUAGE:English
 #DESCRIPTION:
+#CODEC:MP3
+#BITRATE:320
 http://mediaserv30.live-streams.nl:8000/live
