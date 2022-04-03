@@ -7,7 +7,8 @@ const resultEl = document.getElementById('result');
 const issueUri = 'https://github.com/jcorporation/webradiodb/issues/new';
 const issueDelete = '?labels=DeleteWebradio&template=delete-webradio.yml';
 const issueModify = '?labels=ModifyWebradio&template=modify-webradio.yml';
-const issueNew = '?labels=labels=AddWebradio&template=add-webradio.yml';
+const issueNew = '?labels=AddWebradio&template=add-webradio.yml';
+const issueAddAlternate = '?labels=AddAlternateStream&template=add-alternate-stream.yml';
 const searchInput = document.getElementById('searchStr');
 const genreSelect = document.getElementById('genres');
 const countrySelect = document.getElementById('countries');
@@ -121,7 +122,7 @@ function showSearchResult(offset, limit) {
 				'<caption></caption>' +
 				'<tbody>' +
 					'<tr>' +
-						'<td rowspan="6"><img src="" class="stationImage"/></td><td>Genre</td>' +
+						'<td rowspan="8"><img src="" class="stationImage"/></td><td>Genre</td>' +
 						'<td class="genre"></td>' +
 					'</tr>' +
 					'<tr><td>Country</td><td class="country"></td></tr>' +
@@ -129,12 +130,14 @@ function showSearchResult(offset, limit) {
 					'<tr><td>Stream URI</td><td><input type="text" value=""/></td></tr>' +
 					'<tr><td>Playlist</td><td><a class="playlist" target="_blank" href="">Get playlist</a></td></tr>' +
 					'<tr><td>Format</td><td class="format"></td></tr>' +
+					'<tr><td>Alternate streams</td><td class="alternativeStreams"></td></tr>' +
 					'<tr><td colspan="2" class="description"></td></tr>' +
 				'</tbody>' +
 				'<tfoot>' +
 					'<tr>' +
 						'<td colspan="3">' +
-							'<a class="modify" href="">Modify</a>&nbsp;&nbsp;<a class="delete" href="">Delete</a>' +
+							'<a class="modify" href="">Modify</a>&nbsp;|&nbsp;<a class="delete" href="">Delete</a>&nbsp;|&nbsp;' +
+							'<a class="addAlternate" href="">Add alternate stream</a>'
 						'</td>' +
 					'</tr>' +
 				'</tfoot>' +
@@ -160,6 +163,22 @@ function showSearchResult(offset, limit) {
 		div.getElementsByClassName('playlist')[0].href = 'db/webradios/' + obj.result.data[key].filename;
 		div.getElementsByClassName('description')[0].textContent =
 			obj.result.data[key].Description !== '' ? obj.result.data[key].Description : 'No description available';
+		let alternateCount = 0;
+		for (const alternate in obj.result.data[key].alternativeStreams) {
+			const p = document.createElement('p');
+			const a = document.createElement('a');
+			a.innerText = obj.result.data[key].alternativeStreams[alternate].Codec + ' / ' +
+				obj.result.data[key].alternativeStreams[alternate].Bitrate + 'kbit';
+			a.href = 'db/webradios/' + alternate + '.m3u';
+			p.appendChild(a);
+			div.getElementsByClassName('alternativeStreams')[0].appendChild(p);
+			alternateCount++;
+		}
+		if (alternateCount === 0) {
+			const p = document.createElement('p');
+			p.textContent = 'No alternative streams';
+			div.getElementsByClassName('alternativeStreams')[0].appendChild(p);
+		}
 
 		div.getElementsByClassName('modify')[0].href =
 			issueUri + issueModify + '&title=' + encodeURIComponent('[Modify Webradio]: ' + obj.result.data[key].Name) +
@@ -178,6 +197,9 @@ function showSearchResult(offset, limit) {
 		div.getElementsByClassName('delete')[0].href =
 			issueUri + issueDelete + '&title=' + encodeURIComponent('[Delete Webradio]: ' + obj.result.data[key].Name) +
 				'&deleteWebradio=' + encodeURIComponent(obj.result.data[key].StreamUri);
+		div.getElementsByClassName('addAlternate')[0].href =
+			issueUri + issueAddAlternate + '&title=' + encodeURIComponent('[Add alternate stream for webradio]: ' + obj.result.data[key].Name) +
+				'&modifyWebradio=' + encodeURIComponent(obj.result.data[key].StreamUri);
 		resultEl.appendChild(div);
 	}
 	const last = offset + obj.result.returnedEntities;

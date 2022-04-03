@@ -46,7 +46,8 @@ table {
     margin-bottom: 2rem;
 }
 
-td {
+td,
+th {
     text-align: left;
     padding: 0.1rem 0.5rem;
 }
@@ -63,4 +64,12 @@ img.stationImage {
 td > input {
     width: calc(100% - 0.25rem);
     border: none;
+}
+
+th {
+    font-weight: bold;
+}
+
+td.alternativeStreams > p {
+    margin-bottom: 0.2rem;
 }

@@ -74,7 +74,7 @@ body:
       description: The language of the webradio.
     validations:
       required: false
-    - type: input
+  - type: input
     id: codec
     attributes:
       label: New codec

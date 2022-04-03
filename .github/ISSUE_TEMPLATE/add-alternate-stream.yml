@@ -1,0 +1,41 @@
+name: Add Alternate Stream
+description: Adds an alternate stream to a webradio
+title: "[Add alternate stream for webradio]: "
+labels: ["AddAlternateStream"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to add an atlernate stream.
+  - type: input
+    id: modifyWebradio
+    attributes:
+      label: Webradio to modify
+      description: The stream uri, e.g. http://119.15.96.188/stream2.mp3
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        Add the alternate stream here.
+  - type: input
+    id: streamuri
+    attributes:
+      label: Stream URI
+      description: The URI of the stream - not the playlist.
+    validations:
+      required: true
+  - type: input
+    id: codec
+    attributes:
+      label: Codec
+      description: The codec of the stream, e. g. MP3, AAC, ...
+    validations:
+      required: true
+  - type: input
+    id: bitrate
+    attributes:
+      label: Bitrate
+      description: The birate of the stream in kbit.
+    validations:
+      required: true

@@ -371,6 +371,15 @@ modify_radio_from_json() {
         rm "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u"
         mv "${MYMPD_PICS_DIR}/${MODIFY_PLIST}.webp" "${MYMPD_PICS_DIR}/${NEW_PLIST}.webp"
         NEW_IMAGE="${NEW_PLIST}.webp"
+        #rename alternative streams
+        if [ "$(echo ${MYMPD_PLS_DIR}/$MODIFY_PLIST.*)" != "${MYMPD_PLS_DIR}/$MODIFY_PLIST.*" ]
+        then
+            for S in "${MYMPD_PLS_DIR}/$MODIFY_PLIST."*
+            do
+                G=$(sed "s/$MODIFY_PLIST/$NEW_PLIST/" <<< "$S")
+                mv -v "$S" "$G"
+            done
+        fi
     fi
     #get changed image
     if [ "$NEW_IMAGE" != "$OLD_IMAGE" ] && [ -n "$NEW_IMAGE" ]
@@ -430,7 +439,7 @@ delete_radio_from_json() {
     then
         #only mympd webradios can be deleted
         echo "Deleting webradio ${PLIST}"
-        if rm "${MYMPD_PLS_DIR}/${PLIST}.m3u"
+        if rm "${MYMPD_PLS_DIR}/${PLIST}.m3u"*
         then
             rm -f "${MYMPD_PICS_DIR}/${PLIST}.webp"
         else
@@ -440,6 +449,23 @@ delete_radio_from_json() {
         #add moode radio ignore
         echo "${PLIST}" >> mappings/moode-ignore
     fi
+}
+
+add_alternate_stream_from_json() {
+    INPUT="$1"
+    URI=$(jq -r ".modifyWebradio" < "$INPUT")
+    # create the same plist name as myMPD
+    PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$URI")
+    
+    URI=$(jq -r ".streamuri" < "$INPUT" | head -1 | tr -d '\n')
+    CODEC=$(jq -r ".codec" < "$INPUT" | head -1 | tr -d '\n')
+    BITRATE=$(jq -r ".bitrate" < "$INPUT" | head -1 | tr -d '\n')
+    echo "Writing ${PLIST}.m3u.$CODEC.$BITRATE"
+    cat > "${MYMPD_PLS_DIR}/${PLIST}.m3u.$CODEC.$BITRATE" << EOL
+#CODEC:$CODEC
+#BITRATE:$BITRATE
+$URI
+EOL
 }
 
 m3u_to_json() {
@@ -674,6 +700,9 @@ else
 fi
 
 case "$ACTION" in
+    add_alternate_stream_from_json)
+        add_alternate_stream_from_json "$2"
+        ;;
     add_radio)
         add_radio
         ;;
@@ -712,6 +741,8 @@ case "$ACTION" in
         echo "Usage: $0 <action>"
         echo ""
         echo "Actions:"
+        echo "  add_alternate_stream_from_json:"
+        echo "    adds an alternate stream to an existing webradio"
         echo "  add_radio:"
         echo "    interactively adds a webradio to sources/mympd-webradios"
         echo "  add_radio_from_json <json file>:"
