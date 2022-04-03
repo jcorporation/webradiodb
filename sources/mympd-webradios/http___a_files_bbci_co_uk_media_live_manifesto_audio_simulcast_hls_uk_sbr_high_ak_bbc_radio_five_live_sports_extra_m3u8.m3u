@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,BBC Radio 5 live sports extra
+#EXTGENRE:News, Sports
+#PLAYLIST:BBC Radio 5 live sports extra
+#EXTIMG:http___a_files_bbci_co_uk_media_live_manifesto_audio_simulcast_hls_uk_sbr_high_ak_bbc_radio_five_live_sports_extra_m3u8.webp
+#HOMEPAGE:
+#COUNTRY:United Kingdom
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:AAC-LC
+#BITRATE:320
+http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_five_live_sports_extra.m3u8
