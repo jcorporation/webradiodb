@@ -1,12 +1,12 @@
 #EXTM3U
-#EXTINF:-1,SWR 1 RP
+#EXTINF:-1,SWR1 RP
 #EXTGENRE:Pop, Rock
-#PLAYLIST:SWR 1 RP
+#PLAYLIST:SWR1 RP
 #EXTIMG:https___liveradio_swr_de_sw282p3_swr1rp_play_mp3.webp
 #HOMEPAGE:https://www.swr.de/swr1/
 #COUNTRY:Germany
 #LANGUAGE:German
-#DESCRIPTION:SWR 1 Rheinland-Pfalz
+#DESCRIPTION:SWR1 Rheinland-Pfalz
 #CODEC:AAC
 #BITRATE:48
 https://liveradio.swr.de/sw890cl/swr1rp/
