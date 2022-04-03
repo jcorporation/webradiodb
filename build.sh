@@ -649,13 +649,13 @@ check_images() {
     rc=0
     for F in docs/db/webradios/*.m3u
     do
-        G=$(basename "$F" .m3u)
-        if [ "$(file --mime-type "docs/db/pics/${G}.webp")" != "docs/db/pics/${G}.webp: image/webp" ]
+        G=$(grep "#EXTIMG" "$F" | cut -d: -f2)
+        if [ "$(file --mime-type "docs/db/pics/${G}")" != "docs/db/pics/${G}: image/webp" ]
         then 
-            if [ -f "docs/db/pics/${G}.webp" ]
+            if [ -f "docs/db/pics/${G}" ]
             then
                 echo "Invalid image for $G"
-                rm -f "docs/db/pics/${G}.webp"
+                rm -f "docs/db/pics/${G}"
             else
                 echo "Missing image for $G"
             fi
