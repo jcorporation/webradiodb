@@ -1,12 +1,12 @@
 #EXTM3U
-#EXTINF:-1,BBC Radio 5 live (320K)
+#EXTINF:-1,BBC Radio 5 live
 #EXTGENRE:News, Discussion, Sports, Interviews
-#PLAYLIST:BBC Radio 5 live (320K)
+#PLAYLIST:BBC Radio 5 live
 #EXTIMG:http___a_files_bbci_co_uk_media_live_manifesto_audio_simulcast_hls_uk_sbr_high_ak_bbc_radio_five_live_m3u8.webp
 #HOMEPAGE:https://www.bbc.co.uk/programmes/b0070hx6
 #COUNTRY:United Kingdom
 #LANGUAGE:English
 #DESCRIPTION:The latest sport with coverage and debate, featuring commentaries on the big games and sporting events.
 #CODEC:
-#BITRATE:
+#BITRATE:0
 http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_five_live.m3u8
