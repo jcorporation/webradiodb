@@ -437,7 +437,6 @@ delete_radio_from_json() {
 
     if [ -f "${MYMPD_PLS_DIR}/${PLIST}.m3u" ]
     then
-        #only mympd webradios can be deleted
         echo "Deleting webradio ${PLIST}"
         if rm "${MYMPD_PLS_DIR}/${PLIST}.m3u"*
         then
@@ -445,9 +444,16 @@ delete_radio_from_json() {
         else
             exit 1
         fi
-    else
-        #add moode radio ignore
-        rm "${MOODE_PLS_DIR}/${PLIST}.m3u"
+    elif [ -f "${MOODE_PLS_DIR}/${PLIST}.m3u" ]
+    then
+        echo "Deleting webradio ${PLIST}"
+        if rm "${MOODE_PLS_DIR}/${PLIST}.m3u"
+        then
+            rm -f "${MOODE_PLS_DIR}/${PLIST}.webp"
+        else
+            exit 1
+        fi
+        echo "Adding webradio $PLIST to moode-ignore"
         echo "${PLIST}" >> mappings/moode-ignore
     fi
 }
