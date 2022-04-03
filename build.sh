@@ -485,6 +485,10 @@ m3u_to_json() {
         if [ "$KEY" = "EXTGENRE" ]
         then
             VALUE=$(jq -c -R 'split(", ")' <<< "$VALUE")
+        elif [ "$KEY" = "BITRATE" ]
+        then
+            #enforce bitrate value
+            [ "$VALUE" = "" ] && VALUE="0"
         else
             VALUE=$(jq -n --arg value "$VALUE" '$value')
         fi
@@ -509,10 +513,15 @@ parse_alternative_streams() {
             INFO="${LINE:1}"
             KEY=${INFO%%:*}
             VALUE=${INFO#*:}
-            VALUE=$(jq -n --arg value "$VALUE" '$value')
             case "$KEY" in
-                CODEC)    CODEC="$VALUE" ;;
-                BITRATE)  BITRATE="$VALUE" ;;
+                CODEC)
+                    CODEC=$(jq -n --arg value "$VALUE" '$value')
+                    ALL_CODECS["$VALUE"]="1"
+                    ;;
+                BITRATE)
+                    BITRATE="$VALUE"
+                    ALL_BITRATES["$VALUE"]="1"
+                    ;;
             esac
         else
             NAME=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$LINE")
@@ -555,13 +564,19 @@ create() {
         [ "$WEBRADIO_COUNT" -gt 0 ] && printf "," >&3
         printf "\"%s\":{" "$FILENAME" >&3
         LINE_COUNT=0
+        declare -A ALL_CODECS=()
+        declare -A ALL_BITRATES=()
         while read -r LINE
         do
+            KEY=${LINE%%:*}
             [ "$LINE" = "#EXTM3U" ] && continue
-            [ "${LINE%%:*}" = "#EXTINF" ] && continue
+            [ "$KEY" = "#EXTINF" ] && continue
             [ "$LINE" = "" ] && continue
             [ "$LINE_COUNT" -gt 0 ] && printf "," >&3
             m3u_to_json "$LINE" >&3
+            VALUE=${LINE#*:}
+            [ "$KEY" = "CODEC" ] && [ "$VALUE" != "" ] && ALL_CODECS["$VALUE"]="1"
+            [ "$KEY" = "BITRATE" ] && [ "$VALUE" != "" ] && ALL_BITRATES["$VALUE"]="1"
             LINE_COUNT=$((LINE_COUNT+1))
         done < "$F"
         #alternative streams
@@ -576,7 +591,26 @@ create() {
                 FILE_COUNT=$((FILE_COUNT+1))
             done
         fi
-        printf "}}" >&3
+        printf "},\"allCodecs\":[" >&3
+        CODEC_COUNT=0
+        for C in "${!ALL_CODECS[@]}"
+        do
+            [ "$CODEC_COUNT" -gt 0 ] && printf "," >&3
+            printf "\"%s\"" "$C" >&3
+            CODEC_COUNT=$((CODEC_COUNT+1))
+        done
+        printf "],\"allBitrates\":[" >&3
+        BITRATE_COUNT=0
+        BITRATE_HIGHEST=0
+        for B in "${!ALL_BITRATES[@]}"
+        do
+            [ "$BITRATE_COUNT" -gt 0 ] && printf "," >&3
+            printf "%s" "$B" >&3
+            BITRATE_COUNT=$((BITRATE_COUNT+1))
+            [ $B -gt $BITRATE_HIGHEST ] && BITRATE_HIGHEST=$B
+        done
+        printf "],\"highestBitrate\":%s" "$BITRATE_HIGHEST" >&3
+        printf "}" >&3
         WEBRADIO_COUNT=$((WEBRADIO_COUNT+1))
         printf "."
     done
@@ -617,7 +651,7 @@ create() {
         CODECS_COUNT=$(jq -r '.[] | .Codec' "${INDEXFILE}.tmp" | sort -u | grep -v -P '^\s*$' | wc -l)
         echo "${CODECS_COUNT} codecs in index"
 
-        jq -r '.[] | .Bitrate' "${INDEXFILE}.tmp" | sort -u -g | grep -v -P '^\s*$' | \
+        jq -r '.[] | .Bitrate' "${INDEXFILE}.tmp" | sort -u -g | grep -v -P '^(\s*|0)$' | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$BITRATEFILE.tmp"
         BITRATES_COUNT=$(jq -r '.[] | .Bitrate' "${INDEXFILE}.tmp" | sort -u | grep -v -P '^\s*$' | wc -l)
         echo "${BITRATES_COUNT} bitrates in index"

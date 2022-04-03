@@ -70,8 +70,8 @@ function search(name, genre, country, language, codec, bitrate, sort, offset, li
 			(genre === ''    || webradiodb.webradios[key].Genre.includes(genre)) &&
 			(country === ''  || country === webradiodb.webradios[key].Country) &&
 			(language === '' || language === webradiodb.webradios[key].Language) &&
-			(codec === '' || codec === webradiodb.webradios[key].Codec) &&
-			(bitrate === '' || bitrate <= webradiodb.webradios[key].Bitrate)
+			(codec === '' || webradiodb.webradios[key].allCodecs.includes(codec)) &&
+			(bitrate === 0 || bitrate <= webradiodb.webradios[key].highestBitrate)
 		) {
 			webradiodb.webradios[key].filename = key;
 			obj.result.data.push(webradiodb.webradios[key]);
@@ -151,7 +151,7 @@ function showSearchResult(offset, limit) {
 		if (format !== '' && obj.result.data[key].Bitrate !== '') {
 			format += ' / ';
 		}
-		if (obj.result.data[key].Bitrate !== '') {
+		if (obj.result.data[key].Bitrate !== 0) {
 			format += obj.result.data[key].Bitrate + ' kbit'
 		}
 		if (format === '') {
