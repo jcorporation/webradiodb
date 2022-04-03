@@ -65,7 +65,7 @@ jobs:
       - name: Add, commit and push
         uses: EndBug/add-and-commit@v7.5.0
         with:
-          add: sources docs/db
+          add: sources docs/db mappings
           message: "webradioFromIssue - modifyradio #${{ github.event.issue.number }}"
           pull: NO-PULL
           push: true
@@ -98,7 +98,7 @@ jobs:
       - name: Add, commit and push
         uses: EndBug/add-and-commit@v7.5.0
         with:
-          add: sources docs/db
+          add: sources docs/db mappings
           message: "webradioFromIssue - deleteradio #${{ github.event.issue.number }}"
           pull: NO-PULL
           push: true
