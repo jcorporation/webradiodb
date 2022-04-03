@@ -447,6 +447,7 @@ delete_radio_from_json() {
         fi
     else
         #add moode radio ignore
+        rm "${MOODE_PLS_DIR}/${PLIST}.m3u"
         echo "${PLIST}" >> mappings/moode-ignore
     fi
 }
