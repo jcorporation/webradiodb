@@ -444,7 +444,8 @@ delete_radio_from_json() {
         else
             exit 1
         fi
-    elif [ -f "${MOODE_PLS_DIR}/${PLIST}.m3u" ]
+    fi
+    if [ -f "${MOODE_PLS_DIR}/${PLIST}.m3u" ]
     then
         echo "Deleting webradio ${PLIST}"
         if rm "${MOODE_PLS_DIR}/${PLIST}.m3u"
@@ -720,10 +721,19 @@ create() {
 }
 
 check_duplicates() {
+    #duplicate uris
     DUP=$(grep -h -v -P '^(#|s+)' docs/db/webradios/* | sort | uniq -d)
     if [ "$DUP" != "" ]
     then
-        echo "Duplicates found"
+        echo "Duplicate uris found"
+        echo "$DUP"
+        exit 1
+    fi
+    #duplicate names
+    DUP=$(jq -r '.[] | .Name' docs/db/index/webradios.min.json | sort | uniq -d)
+    if [ "$DUP" != "" ]
+    then
+        echo "Duplicate names found"
         echo "$DUP"
         exit 1
     fi
