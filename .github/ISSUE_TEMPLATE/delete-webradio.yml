@@ -22,6 +22,7 @@ body:
       options:
         - No longer available
         - Illegal stream
+        - Duplicate
         - other (please describe)
     validations:
       required: true
