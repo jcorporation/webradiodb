@@ -453,13 +453,14 @@ delete_radio_from_json() {
 
 add_alternate_stream_from_json() {
     INPUT="$1"
-    URI=$(jq -r ".modifyWebradio" < "$INPUT")
+    WEBRADIO=$(jq -r ".modifyWebradio" < "$INPUT")
     # create the same plist name as myMPD
-    PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$URI")
+    PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$WEBRADIO")
     
     URI=$(jq -r ".streamuri" < "$INPUT" | head -1 | tr -d '\n')
     CODEC=$(jq -r ".codec" < "$INPUT" | head -1 | tr -d '\n')
     BITRATE=$(jq -r ".bitrate" < "$INPUT" | head -1 | tr -d '\n')
+
     echo "Writing ${PLIST}.m3u.$CODEC.$BITRATE"
     cat > "${MYMPD_PLS_DIR}/${PLIST}.m3u.$CODEC.$BITRATE" << EOL
 #CODEC:$CODEC
