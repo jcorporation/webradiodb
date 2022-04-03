@@ -1,12 +1,12 @@
 #EXTM3U
 #EXTINF:-1,BBC Radio 5 live
-#EXTGENRE:News, Discussion, Sports, Interviews
+#EXTGENRE:News, Discussion, Sports, Interviews, Phone-ins
 #PLAYLIST:BBC Radio 5 live
 #EXTIMG:http___stream_live_vc_bbcmedia_co_uk_bbc_radio_five_live_online_nonuk.webp
-#HOMEPAGE:https://www.bbc.co.uk/programmes/b0070hx6
+#HOMEPAGE:
 #COUNTRY:United Kingdom
 #LANGUAGE:English
-#DESCRIPTION:The latest sport with coverage and debate, featuring commentaries on the big games and sporting events.
-#CODEC:
-#BITRATE:
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
 http://stream.live.vc.bbcmedia.co.uk/bbc_radio_five_live_online_nonuk
