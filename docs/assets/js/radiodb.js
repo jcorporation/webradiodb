@@ -9,6 +9,7 @@ const issueDelete = '?labels=DeleteWebradio&template=delete-webradio.yml';
 const issueModify = '?labels=ModifyWebradio&template=modify-webradio.yml';
 const issueNew = '?labels=AddWebradio&template=add-webradio.yml';
 const issueAddAlternate = '?labels=AddAlternateStream&template=add-alternate-stream.yml';
+const issueDeleteAlternate = '?labels=DeleteAlternateStream&template=delete-alternate-stream.yml';
 const searchInput = document.getElementById('searchStr');
 const genreSelect = document.getElementById('genres');
 const countrySelect = document.getElementById('countries');
@@ -170,7 +171,15 @@ function showSearchResult(offset, limit) {
 			a.innerText = obj.result.data[key].alternativeStreams[alternate].Codec + ' / ' +
 				obj.result.data[key].alternativeStreams[alternate].Bitrate + 'kbit';
 			a.href = 'db/webradios/' + alternate + '.m3u';
+			a.title = 'Download playlist';
 			p.appendChild(a);
+			const del = document.createElement('a');
+			del.href = issueUri + issueDeleteAlternate + '&title=' + encodeURIComponent('[Delete alternate stream for webradio]: ' + obj.result.data[key].Name) +
+				'&deleteAlternateStream=' + encodeURIComponent(alternate);
+			del.textContent = '(X)'
+			del.title = 'Delete';
+			del.classList.add('delAternateStream');
+			p.appendChild(del);
 			div.getElementsByClassName('alternativeStreams')[0].appendChild(p);
 			alternateCount++;
 		}

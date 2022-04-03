@@ -139,3 +139,36 @@ jobs:
       - uses: peter-evans/close-issue@v1
         with:
           comment: Merged!
+
+  deleteAlternateStream:
+    if: ${{ github.event.label.name == 'MergeDeleteAlternateStream' }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: stefanbuck/github-issue-parser@v2
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/delete-alternate-stream.yml
+
+      - name: Delete alternate stream
+        run: |
+          cat > issue.json << EOL
+          ${{ steps.issue-parser.outputs.jsonString }}
+          EOL
+          ./build.sh delete_alternate_stream_from_json issue.json
+          rm issue.json
+
+      - name: Add, commit and push
+        uses: EndBug/add-and-commit@v7.5.0
+        with:
+          add: sources docs/db
+          message: "webradioFromIssue - deleteAlternateStream #${{ github.event.issue.number }}"
+          pull: NO-PULL
+          push: true
+
+      - uses: peter-evans/close-issue@v1
+        with:
+          comment: Merged!

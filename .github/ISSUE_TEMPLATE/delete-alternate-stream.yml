@@ -1,0 +1,34 @@
+name: Delete Alternate Stream
+description: Delete a alternate stream
+title: "[Delete alternate stream for webradio]: "
+labels: ["DeleteAlternateStream"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to propose a deletion!
+  - type: input
+    id: deleteAlternateStream
+    attributes:
+      label: Alternate stream to delete
+      description: The alternate stream file to delete
+    validations:
+      required: true
+  - type: dropdown
+    id: justification
+    attributes:
+      label: Justification
+      description: Why?
+      options:
+        - No longer available
+        - Illegal stream
+        - other (please describe)
+    validations:
+      required: true
+  - type: textarea
+    id: justificationText
+    attributes:
+      label: Other
+      description: Why?
+    validations:
+      required: false
