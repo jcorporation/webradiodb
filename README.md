@@ -33,6 +33,7 @@ At the moment there are two sources for webradio files:
 ### Workflows
 
 #### Add, modify and delete a webradio
+
 The primary workflow to add or modify a webradio is to open an issue. The issue must be manually approved by adding a merge label. A GitHub action is triggered on the label event and the build script runs:
 
 - creates the m3u file
@@ -61,9 +62,9 @@ Webradios are saved as extended m3u files with some custom fields. A coverimage 
 #HOMEPAGE:<homepage>
 #COUNTRY:<country>
 #LANGUAGE:<language>
+#DESCRIPTION:<description>
 #CODEC:<codec>
 #BITRATE:<bitrate>
-#DESCRIPTION:<description>
 <streamuri>
 ```
 
@@ -108,21 +109,33 @@ The m3u fields are mapped for better readability.
 | uri | StreamUri |
 
 ```
-"https___liveradio_swr_de_sw331ch_swr1bw_play_mp3.m3u": {
+"https___liveradio_swr_de_sw282p3_swr1bw_play_mp3.m3u": {
     "Genre": [
         "Pop",
         "Rock"
     ],
-    "Name": "SWR 1",
-    "Image": "https___liveradio_swr_de_sw331ch_swr1bw_play_mp3.webp",
+    "Name": "SWR 1 BW",
+    "Image": "https___liveradio_swr_de_sw282p3_swr1bw_play_mp3.webp",
     "Homepage": "https://www.swr.de/swr1/",
     "Country": "Germany",
     "Language": "German",
-    "Codec": "MP3",
-    "Bitrate": 128,
-    "Description": "SWR 1 Baden-Wuerttemberg",
-    "StreamUri": "https://liveradio.swr.de/sw331ch/swr1bw/play.mp3"
-}
+    "Description": "SWR 1 Baden-Württemberg",
+    "Codec": " MP3",
+    "Bitrate": " 128",
+    "StreamUri": "https://liveradio.swr.de/sw282p3/swr1bw/play.mp3",
+    "alternativeStreams": {
+        "https___liveradio_swr_de_sw890cl_swr1bw_": {
+            "StreamUri": "https://liveradio.swr.de/sw890cl/swr1bw/",
+            "Codec": "AAC",
+            "Bitrate": "48"
+        },
+        "https___liveradio_swr_de_sw331ch_swr1bw_": {
+            "StreamUri": "https://liveradio.swr.de/sw331ch/swr1bw/",
+            "Codec": "AAC",
+            "Bitrate": "96"
+        }
+    }
+},
 ```
 
 ### Script usage
