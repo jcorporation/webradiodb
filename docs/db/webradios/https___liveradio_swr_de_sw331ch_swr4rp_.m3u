@@ -7,6 +7,6 @@
 #COUNTRY:Germany
 #LANGUAGE:German
 #DESCRIPTION:SWR4. Da sind wir daheim.
-#CODEC:MP3
-#BITRATE:128
-https://liveradio.swr.de/sw282p3/swr4rp/play.mp3
+#CODEC:AAC
+#BITRATE:96
+https://liveradio.swr.de/sw331ch/swr4rp/
