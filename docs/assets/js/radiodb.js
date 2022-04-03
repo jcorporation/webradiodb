@@ -173,9 +173,11 @@ function showSearchResult(offset, limit) {
 			a.href = 'db/webradios/' + alternate + '.m3u';
 			a.title = 'Download playlist';
 			p.appendChild(a);
+			const filename = obj.result.data[key].filename + '.' + obj.result.data[key].alternativeStreams[alternate].Codec + '.' +
+				obj.result.data[key].alternativeStreams[alternate].Bitrate;
 			const del = document.createElement('a');
 			del.href = issueUri + issueDeleteAlternate + '&title=' + encodeURIComponent('[Delete alternate stream for webradio]: ' + obj.result.data[key].Name) +
-				'&deleteAlternateStream=' + encodeURIComponent(alternate);
+				'&deleteAlternateStream=' + encodeURIComponent(filename);
 			del.textContent = '(X)'
 			del.title = 'Delete';
 			del.classList.add('delAternateStream');
