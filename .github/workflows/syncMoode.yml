@@ -1,6 +1,6 @@
 # This workflow creates the publish files
 
-name: createWebradioIndex
+name: syncMoode
 
 # Controls when the workflow will run
 on:
