@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Absolut Hot
+#EXTGENRE:Pop, Charts, Electro, Hip-Hop
+#PLAYLIST:Absolut Hot
+#EXTIMG:https___edge68_live-sm_absolutradio_de_absolut-hot_stream_aacp_aggregator_smk-m3u-aac.webp
+#HOMEPAGE:https://absolutradio.de/
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:
+#CODEC:AAC
+#BITRATE:128
+https://edge68.live-sm.absolutradio.de/absolut-hot/stream/aacp?aggregator=smk-m3u-aac
