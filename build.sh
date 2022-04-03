@@ -742,6 +742,7 @@ check_duplicates() {
 
 check_images() {
     rc=0
+    #check images for playlists
     for F in docs/db/webradios/*.m3u
     do
         G=$(grep "#EXTIMG" "$F" | cut -d: -f2)
@@ -754,6 +755,16 @@ check_images() {
             else
                 echo "Missing image for $G"
             fi
+            rc=1
+        fi
+    done
+    #check for obsolet images
+    for F in docs/db/pics/*.webp
+    do
+        G=$(basename "$F" .webp)
+        if [ ! -f "docs/db/webradios/${G}.m3u" ]
+        then
+            echo "Obsolet image: $F"
             rc=1
         fi
     done
