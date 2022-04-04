@@ -956,6 +956,8 @@ case "$ACTION" in
         echo "    and converts the images to webp"
         echo "  update_format <m3u>:"
         echo "    connects to the stream and updates the codec and bitrate"
+        echo "  update_format_all:"
+        echo "    connects to all streams and updates the codec and bitrate"
         echo ""
         ;;
 esac
