@@ -856,6 +856,29 @@ rename_alternate_streams() {
     done
 }
 
+check_stream() {
+    M3U_FILE="$1"
+    STREAM=$(grep -v "#" "$M3U_FILE" | head -1)
+    if ! ffprobe -loglevel error "$STREAM"
+    then
+    echo "Error getting streaminfo for \"$M3U_FILE\""
+        return 1
+    fi
+    return 0
+}
+
+check_stream_all() {
+    rc=0
+    for F in "$PLS_DIR/"*
+    do
+        if ! check_stream "$F"
+        then
+            rc=1
+        fi
+    done
+    return $rc
+}
+
 #get action
 if [ -z "${1+x}" ]
 then
@@ -879,6 +902,12 @@ case "$ACTION" in
         ;;
     check_images)
         check_images
+        ;;
+    check_stream)
+        check_stream "$2"
+        ;;
+    check_stream_all)
+        check_stream_all
         ;;
     cleanup_genres)
         cleanup_genres "$2"
@@ -933,6 +962,10 @@ case "$ACTION" in
         echo "    checks for duplicates"
         echo "  check_images:"
         echo "    checks for missing images"
+        echo "  check_stream <m3u>:"
+        echo "    checks the stream from m3u"
+        echo "  check_stream_all:"
+        echo "    calls check_stream for all m3u files"
         echo "  cleanup_genres <dir>:"
         echo "    cleanups the genres"
         echo "  create:"
@@ -955,9 +988,9 @@ case "$ACTION" in
         echo "    syncs the moode audio webradios to sources/moode-webradios, downloads"
         echo "    and converts the images to webp"
         echo "  update_format <m3u>:"
-        echo "    connects to the stream and updates the codec and bitrate"
+        echo "    if codec and bitrate is empty get it by connecting to stream"
         echo "  update_format_all:"
-        echo "    connects to all streams and updates the codec and bitrate"
+        echo "    calls update_format for all m3u files"
         echo ""
         ;;
 esac
