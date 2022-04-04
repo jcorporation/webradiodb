@@ -7,6 +7,6 @@
 #COUNTRY:Belgium
 #LANGUAGE:French
 #DESCRIPTION:Bel RTL est une station de radio généraliste privée du groupe RTL.
-#CODEC:
-#BITRATE:
+#CODEC:MP3
+#BITRATE:192
 https://belrtl.ice.infomaniak.ch/belrtl-mp3-192.mp3

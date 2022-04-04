@@ -796,7 +796,7 @@ update_format() {
     if [ "$rc" != "0" ]
     then
         echo "Error getting streaminfo for \"$M3U_FILE\""
-        ffprobe "$STREAM"
+        ffprobe -loglevel error "$STREAM"
         return 1
     fi
     NEW_BITRATE=$(jq -r ".format.tags.\"icy-br\"" <<< "$INFO")
