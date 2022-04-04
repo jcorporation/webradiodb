@@ -7,6 +7,6 @@
 #COUNTRY:Germany
 #LANGUAGE:German
 #DESCRIPTION:Ein Online Radio für den Bereich Science Fiction.
-#CODEC:
-#BITRATE:
+#CODEC:MP3
+#BITRATE:128
 http://stream.laut.fm/scifi
