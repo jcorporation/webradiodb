@@ -211,6 +211,14 @@ function showSearchResult(offset, limit) {
 		div.getElementsByClassName('addAlternate')[0].href =
 			issueUri + issueAddAlternate + '&title=' + encodeURIComponent('[Add alternate stream for webradio]: ' + obj.result.data[key].Name) +
 				'&modifyWebradio=' + encodeURIComponent(obj.result.data[key].StreamUri);
+
+		if (webradiodb.webradioStatus[obj.result.data[key].filename] !== undefined) {
+			const p = document.createElement('p');
+			p.classList.add('error');
+			p.textContent = 'Last check: ' + webradiodb.webradioStatus[obj.result.data[key].filename];
+			div.getElementsByClassName('description')[0].appendChild(p);
+		}
+
 		resultEl.appendChild(div);
 	}
 	const last = offset + obj.result.returnedEntities;

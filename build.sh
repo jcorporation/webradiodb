@@ -18,6 +18,8 @@ INDEXFILE="${PUBLISH_DIR}/index/webradios.min.json"
 INDEXFILE_COMBINED="${PUBLISH_DIR}/index/webradiodb-combined.min.json"
 INDEXFILE_JS="${PUBLISH_DIR}/index/webradiodb-combined.min.js"
 
+STATUSFILE="${PUBLISH_DIR}/index/status.min.json"
+
 LANGFILE="${PUBLISH_DIR}/index/languages.min.json"
 COUNTRYFILE="${PUBLISH_DIR}/index/countries.min.json"
 GENREFILE="${PUBLISH_DIR}/index/genres.min.json"
@@ -687,7 +689,10 @@ create() {
 
         printf "\"webradioGenres\":" >> "${INDEXFILE_COMBINED}.tmp"
         tr -d '\n' < "${GENREFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
-        printf ",\"totalWebradioGenres\":%s" "$GENRES_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+        printf ",\"totalWebradioGenres\":%s," "$GENRES_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+
+        printf "\"webradioStatus\":" >> "${INDEXFILE_COMBINED}.tmp"
+        tr -d '\n' < "${STATUSFILE}" >> "${INDEXFILE_COMBINED}.tmp"
 
         printf "}\n" >> "${INDEXFILE_COMBINED}.tmp"
         #create javascript index
@@ -861,21 +866,40 @@ check_stream() {
     STREAM=$(grep -v "#" "$M3U_FILE" | head -1)
     if ! ffprobe -loglevel error "$STREAM"
     then
-    echo "Error getting streaminfo for \"$M3U_FILE\""
+        echo "Error getting streaminfo for \"$M3U_FILE\""
         return 1
     fi
     return 0
 }
 
-check_stream_all() {
+check_stream_all_json() {
     rc=0
+    exec 3<> "${STATUSFILE}.tmp"
+    printf "{" >&3
+    ENTRY_COUNT=0
     for F in "$PLS_DIR/"*
     do
-        if ! check_stream "$F"
+        M3U=$(basename "$F")
+        if grep -q "$M3U" mappings/check-ignore
         then
+            echo "Skipping $M3U"
+            continue
+        fi
+        STREAM=$(grep -v "#" "$F" | head -1)
+        OUT=$(ffprobe -loglevel error "$STREAM" 2>&1)
+        if [ "$?" != "0" ]
+        then
+            OUT=$(jq -n --arg value "$OUT" '$value')
+            [ "$ENTRY_COUNT" -gt 0 ] && printf "," >&3
+            printf "\"%s\":%s" "$M3U" "$OUT" >&3
+            ENTRY_COUNT=$((ENTRY_COUNT+1))
+            echo "Error getting streaminfo for \"$F\": $OUT"
             rc=1
         fi
     done
+    printf "}" >&3
+    exec 3>&-
+    mv "${STATUSFILE}.tmp" "${STATUSFILE}"
     return $rc
 }
 
@@ -905,9 +929,15 @@ case "$ACTION" in
         ;;
     check_stream)
         check_stream "$2"
+        exit $?
         ;;
     check_stream_all)
         check_stream_all
+        exit $?
+        ;;
+    check_stream_all_json)
+        check_stream_all_json
+        exit $?
         ;;
     cleanup_genres)
         cleanup_genres "$2"
@@ -964,8 +994,8 @@ case "$ACTION" in
         echo "    checks for missing images"
         echo "  check_stream <m3u>:"
         echo "    checks the stream from m3u"
-        echo "  check_stream_all:"
-        echo "    calls check_stream for all m3u files"
+        echo "  check_stream_all_json:"
+        echo "    creates the status.json file"
         echo "  cleanup_genres <dir>:"
         echo "    cleanups the genres"
         echo "  create:"
