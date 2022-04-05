@@ -933,7 +933,7 @@ case "$ACTION" in
         ;;
     check_stream_all)
         check_stream_all
-        exit $?
+        exit 0
         ;;
     check_stream_all_json)
         check_stream_all_json
