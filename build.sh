@@ -933,11 +933,11 @@ case "$ACTION" in
         ;;
     check_stream_all)
         check_stream_all
-        exit 0
+        exit $?
         ;;
     check_stream_all_json)
         check_stream_all_json
-        exit $?
+        exit 0
         ;;
     cleanup_genres)
         cleanup_genres "$2"
