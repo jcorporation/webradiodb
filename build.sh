@@ -327,10 +327,10 @@ modify_radio_from_json() {
     then
         if [ -f "${MOODE_PLS_DIR}/${MODIFY_PLIST}.m3u" ]
         then
-            echo "Copy webradio from moode to mympd"
-            cp "${MOODE_PLS_DIR}/${MODIFY_PLIST}.m3u" "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u"
+            echo "Move webradio from moode to mympd"
+            mv "${MOODE_PLS_DIR}/${MODIFY_PLIST}.m3u" "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u"
             [ -f "${MOODE_PICS_DIR}/${MODIFY_PLIST}.webp" ] && \
-                cp "${MOODE_PICS_DIR}/${MODIFY_PLIST}.webp" "${MYMPD_PICS_DIR}/${MODIFY_PLIST}.webp"
+                mv "${MOODE_PICS_DIR}/${MODIFY_PLIST}.webp" "${MYMPD_PICS_DIR}/${MODIFY_PLIST}.webp"
             #add moode radio ignore
             echo "${MODIFY_PLIST}" >> mappings/moode-ignore
         else
