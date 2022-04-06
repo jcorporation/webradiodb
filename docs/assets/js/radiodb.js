@@ -183,6 +183,12 @@ function showSearchResult(offset, limit) {
 			del.classList.add('delAternateStream');
 			p.appendChild(del);
 			div.getElementsByClassName('alternativeStreams')[0].appendChild(p);
+			if (webradiodb.webradioStatus[filename] !== undefined) {
+				const error = document.createElement('p');
+				error.classList.add('error');
+				error.textContent = 'Last check: ' + webradiodb.webradioStatus[filename];
+				div.getElementsByClassName('alternativeStreams')[0].appendChild(error);
+			}
 			alternateCount++;
 		}
 		if (alternateCount === 0) {
