@@ -900,6 +900,7 @@ check_stream_all_json() {
     printf "}" >&3
     exec 3>&-
     mv "${STATUSFILE}.tmp" "${STATUSFILE}"
+    gzip -9 -c "${STATUSFILE}" > "${STATUSFILE}.gz"
     return $rc
 }
 
