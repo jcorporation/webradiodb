@@ -183,10 +183,11 @@ function showSearchResult(offset, limit) {
 			del.classList.add('delAternateStream');
 			p.appendChild(del);
 			div.getElementsByClassName('alternativeStreams')[0].appendChild(p);
-			if (webradiodb.webradioStatus[filename] !== undefined) {
+			if (webradiodb.webradioStatus[alternate + '.m3u'] !== undefined) {
 				const error = document.createElement('p');
 				error.classList.add('error');
-				error.textContent = 'Last check: ' + webradiodb.webradioStatus[filename];
+				error.textContent = 'Last check (' + webradiodb.webradioStatus[alternate + '.m3u'].date +
+					'): ' + webradiodb.webradioStatus[alternate + '.m3u'].error;
 				div.getElementsByClassName('alternativeStreams')[0].appendChild(error);
 			}
 			alternateCount++;
@@ -221,7 +222,8 @@ function showSearchResult(offset, limit) {
 		if (webradiodb.webradioStatus[obj.result.data[key].filename] !== undefined) {
 			const p = document.createElement('p');
 			p.classList.add('error');
-			p.textContent = 'Last check: ' + webradiodb.webradioStatus[obj.result.data[key].filename];
+			p.textContent = 'Last check (' + webradiodb.webradioStatus[obj.result.data[key].filename].date +
+				'): ' + webradiodb.webradioStatus[obj.result.data[key].filename].error;
 			div.getElementsByClassName('description')[0].appendChild(p);
 		}
 

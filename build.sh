@@ -889,9 +889,10 @@ check_stream_all_json() {
         OUT=$(ffprobe -loglevel error "$STREAM" 2>&1)
         if [ "$?" != "0" ]
         then
-            OUT=$(jq -n --arg value "$OUT" '$value')
             [ "$ENTRY_COUNT" -gt 0 ] && printf "," >&3
-            printf "\"%s\":%s" "$M3U" "$OUT" >&3
+            OUT=$(jq -n --arg value "$OUT" '$value')
+            DATE=$(date +%Y-%m-%d)
+            printf "\"%s\":{\"date\":\"%s\",\"error\":%s}" "$M3U" "$DATE" "$OUT" >&3
             ENTRY_COUNT=$((ENTRY_COUNT+1))
             echo "Error getting streaminfo for \"$F\": $OUT"
             rc=1
@@ -930,10 +931,6 @@ case "$ACTION" in
         ;;
     check_stream)
         check_stream "$2"
-        exit $?
-        ;;
-    check_stream_all)
-        check_stream_all
         exit $?
         ;;
     check_stream_all_json)
