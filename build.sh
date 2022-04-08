@@ -896,9 +896,12 @@ check_stream_all_json() {
             [ "$ERROR_COUNT" = "null" ] && ERROR_COUNT=0
             ERROR_COUNT=$((ERROR_COUNT+1))
             printf "\"%s\":{\"date\":\"%s\",\"count\":%s,\"error\":%s}" "$M3U" "$DATE" "$ERROR_COUNT" "$OUT" >&3
+            echo "Error getting streaminfo for \"$F\" ($ERROR_COUNT): $OUT"
+            if [ $ERROR_COUNT -ge 10 ]
+            then
+                rc=1
+            fi
             ENTRY_COUNT=$((ENTRY_COUNT+1))
-            echo "Error getting streaminfo for \"$F\": $OUT"
-            rc=1
         fi
     done
     printf "}" >&3
@@ -938,7 +941,7 @@ case "$ACTION" in
         ;;
     check_stream_all_json)
         check_stream_all_json
-        exit 0
+        exit $?
         ;;
     cleanup_genres)
         cleanup_genres "$2"
