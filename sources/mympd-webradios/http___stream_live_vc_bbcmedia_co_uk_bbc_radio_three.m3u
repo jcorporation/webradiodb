@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,BBC Radio 3
+#EXTGENRE:Classical, Jazz, World Music
+#PLAYLIST:BBC Radio 3
+#EXTIMG:http___stream_live_vc_bbcmedia_co_uk_bbc_radio_three.webp
+#HOMEPAGE:
+#COUNTRY:United Kingdom
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+http://stream.live.vc.bbcmedia.co.uk/bbc_radio_three
