@@ -892,7 +892,10 @@ check_stream_all_json() {
             [ "$ENTRY_COUNT" -gt 0 ] && printf "," >&3
             OUT=$(jq -n --arg value "$OUT" '$value')
             DATE=$(date +%Y-%m-%d)
-            printf "\"%s\":{\"date\":\"%s\",\"error\":%s}" "$M3U" "$DATE" "$OUT" >&3
+            ERROR_COUNT=$(jq ".\"$M3U\".count" docs/db/index/status.min.json)
+            [ "$ERROR_COUNT" = "null" ] && ERROR_COUNT=0
+            ERROR_COUNT=$((ERROR_COUNT+1))
+            printf "\"%s\":{\"date\":\"%s\",\"count\":%s,\"error\":%s}" "$M3U" "$DATE" "$ERROR_COUNT" "$OUT" >&3
             ENTRY_COUNT=$((ENTRY_COUNT+1))
             echo "Error getting streaminfo for \"$F\": $OUT"
             rc=1
