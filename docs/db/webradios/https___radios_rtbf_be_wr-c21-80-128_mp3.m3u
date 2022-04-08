@@ -1,12 +1,12 @@
 #EXTM3U
 #EXTINF:-1,RTBF - Classic 21 80's
-#EXTGENRE:80's, Rock'n'Pop, Rock, Pop
+#EXTGENRE:80's, Rock, Pop
 #PLAYLIST:RTBF - Classic 21 80's
 #EXTIMG:https___radios_rtbf_be_wr-c21-80-128_mp3.webp
 #HOMEPAGE:https://www.rtbf.be/classic21/
 #COUNTRY:Belgium
 #LANGUAGE:French
 #DESCRIPTION:Rock'n'Pop of the 80's
-#CODEC:
-#BITRATE:
+#CODEC:MP3
+#BITRATE:192
 https://radios.rtbf.be/wr-c21-80-128.mp3
