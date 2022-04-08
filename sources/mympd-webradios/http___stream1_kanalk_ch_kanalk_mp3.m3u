@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Kanal K
+#EXTGENRE:Indie
+#PLAYLIST:Kanal K
+#EXTIMG:http___stream1_kanalk_ch_kanalk_mp3.webp
+#HOMEPAGE:https://www.kanalk.ch/
+#COUNTRY:Switzerland
+#LANGUAGE:German
+#DESCRIPTION:Kanal K ist das Ausbildungs-, Community- und Musik-Radio aus Aarau. Sendungen und Musik fernab vom Mainstream.
+#CODEC:MP3
+#BITRATE:160
+http://stream1.kanalk.ch/kanalk.mp3
