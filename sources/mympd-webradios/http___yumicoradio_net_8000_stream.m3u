@@ -1,12 +1,12 @@
 #EXTM3U
 #EXTINF:-1,Yumi Co. Radio
-#EXTGENRE:FutureFunk, Future Funk, CityPop, City Pop, AnimeGroove, Anime Groove, Vaporwave, Nu Disco, Electronic
+#EXTGENRE:Future Funk, City Pop, Anime Groove, Vaporwave, Nu Disco, Electronic
 #PLAYLIST:Yumi Co. Radio
 #EXTIMG:http___yumicoradio_net_8000_stream.webp
 #HOMEPAGE:http://yumicoradio.net
 #COUNTRY:France
 #LANGUAGE:English
-#DESCRIPTION:24/7 webradio that plays Future funk, City Pop, Anime Groove, Nu Disco, Electronica, a little bit of Vaporwave and some of the sub-genres derived.
+#DESCRIPTION:24/7 webradio that plays Future Funk, City Pop, Anime Groove, Nu Disco, Electronica, a little bit of Vaporwave and some of the sub-genres derived.
 #CODEC:MP3
 #BITRATE:256
 http://yumicoradio.net:8000/stream
