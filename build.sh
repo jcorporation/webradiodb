@@ -452,7 +452,7 @@ delete_radio_from_json() {
         echo "Deleting webradio ${PLIST}"
         if rm "${MOODE_PLS_DIR}/${PLIST}.m3u"
         then
-            rm -f "${MOODE_PLS_DIR}/${PLIST}.webp"
+            rm -f "${MOODE_PICS_DIR}/${PLIST}.webp"
         else
             exit 1
         fi
