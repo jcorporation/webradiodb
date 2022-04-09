@@ -1,6 +1,6 @@
 # This workflow creates the publish files
 
-name: imageChecks
+name: checkImages
 
 # Controls when the workflow will run
 on:

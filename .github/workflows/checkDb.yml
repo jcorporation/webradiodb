@@ -1,6 +1,6 @@
 # This workflow creates the publish files
 
-name: dbChecks
+name: checkDb
 
 # Controls when the workflow will run
 on:
