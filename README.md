@@ -1,7 +1,7 @@
 # myMPD Webradio Database
 
 [![test](https://github.com/jcorporation/webradiodb/actions/workflows/test.yml/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/test.yml)
-[![checkDb](https://github.com/jcorporation/webradiodb/actions/workflows/checkDb.yml/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/dbCheck.yml)
+[![checkDb](https://github.com/jcorporation/webradiodb/actions/workflows/checkDb.yml/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/checkDb.yml)
 [![createWebradioIndex](https://github.com/jcorporation/webradiodb/actions/workflows/createWebradioIndex.yml/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/createWebradioIndex.yml)
 [![pages-build-deployment](https://github.com/jcorporation/webradiodb/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/pages/pages-build-deployment)
 
