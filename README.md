@@ -49,6 +49,14 @@ The create workflow runs once a day.
 
 After this workflow the `docs` folder is published to the GitHub page.
 
+#### Checks
+
+| **CHECK** | **DESCRIPTION** |
+| --------- | --------------- |
+| Stream| Checks the availability of the stream with ffprobe. Failed checks are written to the status.min.json file. The workflow fails if one streams failes 10 days throughout. |
+| Image | Checks for obsolet or missing images. It also checks if the image files are valid webp images. |
+| DB | Checks for duplicates in the index files. |
+
 ### Storage format
 
 Webradios are saved as extended m3u files with some custom fields. A coverimage could be specified as file in the pics folder or an url.
@@ -89,6 +97,7 @@ The final files are located in the `docs/db` folder, it is rebuild on each push 
 | [countries.min.json](https://jcorporation.github.io/webradiodb/db/index/countries.min.json) | Array of countries |
 | [genres.min.json](https://jcorporation.github.io/webradiodb/db/index/genres.min.json) | Array of genres |
 | [languages.min.json](https://jcorporation.github.io/webradiodb/db/index/languages.min.json) | Array of languages |
+| [status.min.json](https://jcorporation.github.io/webradiodb/db/index/status.min.json) | Array of failed stream checks |
 | [webradios.min.json](https://jcorporation.github.io/webradiodb/db/index/webradios.min.json) | JSON object of webradios |
 | [webradiodb-combined.min.json](https://jcorporation.github.io/webradiodb/db/index/webradiodb-combined.min.json) | JSON object file with all the above indexes |
 | [webradiodb-combined.min.js](https://jcorporation.github.io/webradiodb/db/index/webradiodb-combined.min.js) | JavaScript file with all the above indexes |
