@@ -84,9 +84,9 @@ The final files are located in the `docs/db` folder, it is rebuild on each push 
 
 | FOLDER | DESCRIPTION |
 | ------ | ----------- |
-| [docs/db/webradios](docs/db/webradios) | Playlists |
-| [docs/db/pics](docs/db/pics) | Station images |
 | [docs/db/index](docs/db/index) | Metadata as json and javascript |
+| [docs/db/pics](docs/db/pics) | Station images |
+| [docs/db/webradios](docs/db/webradios) | Playlists |
 
 ### Index files
 
@@ -151,9 +151,15 @@ The m3u fields are mapped for better readability.
 
 The script is used by GitHub actions.
 
-Dependencies: imagemagick, jq, csvkit, curl
-
 Type `./build.sh` for usage information.
+
+#### Dependencies
+
+- curl: download images
+- csvkit: sync moode webradios
+- ffmpeg: check streams with ffprobe
+- imagemagick: convert images to webp
+- jq: parse and create json
 
 ## Copyright
 
