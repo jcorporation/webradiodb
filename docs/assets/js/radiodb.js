@@ -55,6 +55,13 @@ function uriHostname(uri) {
 	return uri.replace(/^.+:\/\/([^/]+)\/.*$/, '$1');
 }
 
+function returnStreamError(m3u) {
+	const p = document.createElement('p');
+	p.classList.add('error');
+	p.textContent = 'Last check (' + m3u.date + ', #' + m3u.count  + '): ' + m3u.error;
+	return p;
+}
+
 function search(name, genre, country, language, codec, bitrate, sort, offset, limit) {
 	name = name.toLowerCase();
 	const obj = {
@@ -184,10 +191,7 @@ function showSearchResult(offset, limit) {
 			p.appendChild(del);
 			div.getElementsByClassName('alternativeStreams')[0].appendChild(p);
 			if (webradiodb.webradioStatus[alternate + '.m3u'] !== undefined) {
-				const error = document.createElement('p');
-				error.classList.add('error');
-				error.textContent = 'Last check (' + webradiodb.webradioStatus[alternate + '.m3u'].date +
-					'): ' + webradiodb.webradioStatus[alternate + '.m3u'].error;
+				const error = returnStreamError(webradiodb.webradioStatus[alternate + '.m3u']);
 				div.getElementsByClassName('alternativeStreams')[0].appendChild(error);
 			}
 			alternateCount++;
@@ -220,11 +224,8 @@ function showSearchResult(offset, limit) {
 				'&modifyWebradio=' + encodeURIComponent(obj.result.data[key].StreamUri);
 
 		if (webradiodb.webradioStatus[obj.result.data[key].filename] !== undefined) {
-			const p = document.createElement('p');
-			p.classList.add('error');
-			p.textContent = 'Last check (' + webradiodb.webradioStatus[obj.result.data[key].filename].date +
-				'): ' + webradiodb.webradioStatus[obj.result.data[key].filename].error;
-			div.getElementsByClassName('description')[0].appendChild(p);
+			const error = returnStreamError(webradiodb.webradioStatus[obj.result.data[key].filename]);
+			div.getElementsByClassName('description')[0].appendChild(error);
 		}
 
 		resultEl.appendChild(div);
