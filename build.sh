@@ -625,16 +625,6 @@ create() {
     done
     printf "}" >&3
     exec 3>&-
-    NEW_CHKSUM=$(md5sum "${INDEXFILE}.tmp" | cut -d" " -f1)
-    OLD_CHKSUM=""
-    [ -f "${INDEXFILE}" ] && OLD_CHKSUM=$(md5sum "${INDEXFILE}" | cut -d" " -f1)
-    echo ""
-    if [ "$NEW_CHKSUM" = "$OLD_CHKSUM" ]
-    then
-        echo "Index not changed."
-        rm "${INDEXFILE}.tmp"
-        exit 0
-    fi
     #validate the json file
     if jq < "${INDEXFILE}.tmp" > /dev/null
     then
