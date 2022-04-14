@@ -2,6 +2,8 @@
 
 [![test](https://github.com/jcorporation/webradiodb/actions/workflows/test.yml/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/test.yml)
 [![checkDb](https://github.com/jcorporation/webradiodb/actions/workflows/checkDb.yml/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/checkDb.yml)
+[![checkImages](https://github.com/jcorporation/webradiodb/actions/workflows/checkImages.yml/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/checkImages.yml)
+[![checkStreams](https://github.com/jcorporation/webradiodb/actions/workflows/checkStreams.yml/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/checkStreams.yml)
 [![createWebradioIndex](https://github.com/jcorporation/webradiodb/actions/workflows/createWebradioIndex.yml/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/createWebradioIndex.yml)
 [![pages-build-deployment](https://github.com/jcorporation/webradiodb/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/pages/pages-build-deployment)
 
