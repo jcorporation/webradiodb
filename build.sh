@@ -545,6 +545,24 @@ parse_alternative_streams() {
     rm "$S"
 }
 
+move_compress_changed() {
+    FILE=$1
+    SRC_CHKSUM=$(md5sum "${FILE}.tmp" | cut -d" " -f1)
+    if [ -f "$FILE" ]
+    then
+        DST_CHKSUM=$(md5sum "${FILE}" | cut -d" " -f1)
+    else
+        DST_CHKSUM=""
+    fi
+    if [ "$SRC_CHKSUM" != "$DST_CHKSUM" ]
+    then
+        mv "$FILE.tmp" "$FILE"
+        gzip -9 -c "$FILE" > "$FILE".gz
+    else
+        rm "$FILE.tmp"
+    fi
+}
+
 create() {
     echo "Cleaning up"
     rm -fr "$PLS_DIR"
@@ -625,6 +643,7 @@ create() {
     done
     printf "}" >&3
     exec 3>&-
+    echo ""
     #validate the json file
     if jq < "${INDEXFILE}.tmp" > /dev/null
     then
@@ -689,24 +708,14 @@ create() {
         tr -d '\n' < "${INDEXFILE_COMBINED}.tmp" >> "${INDEXFILE_JS}.tmp"
         printf ";\n" >> "${INDEXFILE_JS}.tmp"
         #finished, move all files in place
-        mv "${INDEXFILE}.tmp" "$INDEXFILE"
-        mv "${LANGFILE}.tmp" "$LANGFILE"
-        mv "${COUNTRYFILE}.tmp" "$COUNTRYFILE"
-        mv "${GENREFILE}.tmp" "$GENREFILE"
-        mv "${CODECFILE}.tmp" "$CODECFILE"
-        mv "${BITRATEFILE}.tmp" "$BITRATEFILE"
-        mv "${INDEXFILE_JS}.tmp" "$INDEXFILE_JS"
-        mv "${INDEXFILE_COMBINED}.tmp" "$INDEXFILE_COMBINED"
-        #add compressed index files
-        echo "Compressing index files"
-        gzip -9 -c "$INDEXFILE" > "${INDEXFILE}.gz"
-        gzip -9 -c "$LANGFILE" > "${LANGFILE}.gz"
-        gzip -9 -c "$COUNTRYFILE" > "${COUNTRYFILE}.gz"
-        gzip -9 -c "$GENREFILE" > "${GENREFILE}.gz"
-        gzip -9 -c "$CODECFILE" > "${CODECFILE}.gz"
-        gzip -9 -c "$BITRATEFILE" > "${BITRATEFILE}.gz"
-        gzip -9 -c "$INDEXFILE_JS" > "${INDEXFILE_JS}.gz"
-        gzip -9 -c "$INDEXFILE_COMBINED" > "${INDEXFILE_COMBINED}.gz"
+        move_compress_changed "$INDEXFILE"
+        move_compress_changed "$LANGFILE"
+        move_compress_changed "$COUNTRYFILE"
+        move_compress_changed "$GENREFILE"
+        move_compress_changed "$CODECFILE"
+        move_compress_changed "$BITRATEFILE"
+        move_compress_changed "$INDEXFILE_JS"
+        move_compress_changed "$INDEXFILE_COMBINED"
     else
         echo "Error creating index"
         rm "${INDEXFILE}.tmp"
@@ -904,8 +913,7 @@ check_stream_all_json() {
     done
     printf "}" >&3
     exec 3>&-
-    mv "${STATUSFILE}.tmp" "${STATUSFILE}"
-    gzip -9 -c "${STATUSFILE}" > "${STATUSFILE}.gz"
+    move_compress_changed "${STATUSFILE}"
     return $rc
 }
 
