@@ -880,6 +880,7 @@ check_stream() {
 }
 
 check_stream_all_json() {
+    printf "Checking all streams"
     rc=0
     exec 3<> "${STATUSFILE}.tmp"
     printf "{" >&3
@@ -893,28 +894,38 @@ check_stream_all_json() {
             continue
         fi
         STREAM=$(grep -v "#" "$F" | head -1)
-        OUT=$(ffprobe -loglevel error "$STREAM" 2>&1)
-        if [ "$?" != "0" ]
-        then
-            [ "$ENTRY_COUNT" -gt 0 ] && printf "," >&3
-            OUT=$(jq -n --arg value "$OUT" '$value')
-            DATE=$(date +%Y-%m-%d)
-            ERROR_COUNT=$(jq ".\"$M3U\".count" docs/db/index/status.min.json)
-            [ "$ERROR_COUNT" = "null" ] && ERROR_COUNT=0
-            ERROR_COUNT=$((ERROR_COUNT+1))
-            printf "\"%s\":{\"date\":\"%s\",\"count\":%s,\"error\":%s}" "$M3U" "$DATE" "$ERROR_COUNT" "$OUT" >&3
-            echo "Error getting streaminfo for \"$F\" ($ERROR_COUNT): $OUT"
-            if [ $ERROR_COUNT -ge 10 ]
+        RETRY_COUNT=0
+        while :
+        do
+            OUT=$(ffprobe -loglevel error -rw_timeout 5000000 "$STREAM" 2>&1)
+            if [ "$?" != "0" ]
             then
-                rc=1
+                RETRY_COUNT=$((RETRY_COUNT+1))
+                if [ $RETRY_COUNT -eq 4 ]
+                then
+                    [ "$ENTRY_COUNT" -gt 0 ] && printf "," >&3
+                    OUT=$(jq -n --arg value "$OUT" '$value')
+                    DATE=$(date +%Y-%m-%d)
+                    ERROR_COUNT=$(jq ".\"$M3U\".count" docs/db/index/status.min.json)
+                    [ "$ERROR_COUNT" = "null" ] && ERROR_COUNT=0
+                    ERROR_COUNT=$((ERROR_COUNT+1))
+                    printf "\"%s\":{\"date\":\"%s\",\"count\":%s,\"error\":%s}" "$M3U" "$DATE" "$ERROR_COUNT" "$OUT" >&3
+                    echo ""
+                    echo "Error getting streaminfo for \"$F\" ($ERROR_COUNT): $OUT"
+                    ENTRY_COUNT=$((ENTRY_COUNT+1))
+                    break
+                else
+                    printf "r"
+                fi
+            else
+                printf "."
+                break
             fi
-            ENTRY_COUNT=$((ENTRY_COUNT+1))
-        fi
+        done
     done
     printf "}" >&3
     exec 3>&-
     move_compress_changed "${STATUSFILE}"
-    return $rc
 }
 
 #get action
@@ -947,7 +958,6 @@ case "$ACTION" in
         ;;
     check_stream_all_json)
         check_stream_all_json
-        exit $?
         ;;
     cleanup_genres)
         cleanup_genres "$2"
