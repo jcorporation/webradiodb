@@ -871,7 +871,7 @@ rename_alternate_streams() {
 check_stream() {
     M3U_FILE="$1"
     STREAM=$(grep -v "#" "$M3U_FILE" | head -1)
-    if ! ffprobe -loglevel error "$STREAM"
+    if ! ffprobe -loglevel error -rw_timeout 10000000 "$STREAM"
     then
         echo "Error getting streaminfo for \"$M3U_FILE\""
         return 1
@@ -897,11 +897,10 @@ check_stream_all_json() {
         RETRY_COUNT=0
         while :
         do
-            OUT=$(ffprobe -loglevel error -rw_timeout 5000000 "$STREAM" 2>&1)
+            OUT=$(ffprobe -loglevel error -rw_timeout 10000000 "$STREAM" 2>&1)
             if [ "$?" != "0" ]
             then
-                RETRY_COUNT=$((RETRY_COUNT+1))
-                if [ $RETRY_COUNT -eq 4 ]
+                if [ $RETRY_COUNT -eq 5 ]
                 then
                     [ "$ENTRY_COUNT" -gt 0 ] && printf "," >&3
                     OUT=$(jq -n --arg value "$OUT" '$value')
@@ -916,7 +915,9 @@ check_stream_all_json() {
                     break
                 else
                     printf "r"
+                    sleep 5
                 fi
+                RETRY_COUNT=$((RETRY_COUNT+1))
             else
                 printf "."
                 break
