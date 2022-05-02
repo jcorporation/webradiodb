@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,WDR 5
+#EXTGENRE:Spoken Word
+#PLAYLIST:WDR 5
+#EXTIMG:http___wdr-wdr5-live_icecast_wdr_de_wdr_wdr5_live_mp3_128_stream_mp3.webp
+#HOMEPAGE:https://www1.wdr.de/radio/wdr5/index.html
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:
+#CODEC:mp3
+#BITRATE:128
+http://wdr-wdr5-live.icecast.wdr.de/wdr/wdr5/live/mp3/128/stream.mp3
