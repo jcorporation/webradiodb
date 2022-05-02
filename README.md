@@ -13,6 +13,8 @@ This is my attempt to create a curated webradio list for [myMPD](https://github.
 
 Contributions to the webradio database are very welcome. It should be a community driven database. You must only open an issue to add or modify a webradio. Your proposal will be reviewed and then merged, therefore it could take some time before the webradio is added.
 
+Please do not add geo-fenced streams.
+
 ## Add a new webradio
 
 Open an [issue](https://github.com/jcorporation/webradiodb/issues/new?template=add-webradio.yml).
@@ -53,9 +55,11 @@ After this workflow the `docs` folder is published to the GitHub page.
 
 #### Checks
 
+There are some nightly tasks to check the integrity of the database and the streams availablity.
+
 | **CHECK** | **DESCRIPTION** |
 | --------- | --------------- |
-| Stream| Checks the availability of the stream with ffprobe. Failed checks are written to the status.min.json file. The workflow fails if one streams failes 10 days throughout. |
+| Stream | Checks the availability of the stream with ffprobe. Failed checks are written to the status.min.json file. |
 | Image | Checks for obsolet or missing images. It also checks if the image files are valid webp images. |
 | DB | Checks for duplicates in the index files. |
 
