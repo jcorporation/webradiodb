@@ -73,41 +73,20 @@ download_image() {
 
 resize_image() {
     RESIZE_FILE="$1"
-    TO_WIDTH="400"
-    TO_HEIGHT="400"
-    TO_SIZE="${TO_WIDTH}x${TO_HEIGHT}"
+    TO_SIZE="400x400"
     [ -s "$RESIZE_FILE" ] || exit 1
     #get actual size
     CUR_SIZE=$(identify -format "%wx%h" "$RESIZE_FILE")
-    CUR_WIDTH=${CUR_SIZE%%x*}
-    CUR_HEIGHT=${CUR_SIZE#*x}
 
     if [ "${CUR_SIZE}" != "${TO_SIZE}" ]
     then
-        if [ "$CUR_WIDTH" != "$TO_WIDTH" ]
+        if convert "$RESIZE_FILE" -resize "$TO_SIZE^" -gravity center -extent "$TO_SIZE" "$RESIZE_FILE.resize"
         then
-            echo "Resizing $RESIZE_FILE from $CUR_SIZE to $TO_WIDTH width"
-            if convert "$RESIZE_FILE" -resize "$TO_WIDTH" "$RESIZE_FILE.resize"
-            then
-                mv "$RESIZE_FILE.resize" "$RESIZE_FILE"
-            else
-                echo "Error resizing $RESIZE_FILE"
-                rm -f "$RESIZE_FILE.resize"
-                return 1
-            fi
-        fi
-        CUR_HEIGHT=$(identify -format "%h" "$RESIZE_FILE")
-        if [ "$CUR_HEIGHT" -gt "$TO_HEIGHT" ]
-        then
-            echo "Croping $RESIZE_FILE to $TO_HEIGHT height"
-            if convert "$RESIZE_FILE" -crop "$TO_SIZE+0+0" "$RESIZE_FILE.crop"
-            then
-                mv "$RESIZE_FILE.crop" "$RESIZE_FILE"
-            else
-                rm -f "$RESIZE_FILE.crop"
-                echo "Error croping $RESIZE_FILE"
-                return 1
-            fi
+            mv "$RESIZE_FILE.resize" "$RESIZE_FILE"
+        else
+            echo "Error resizing $RESIZE_FILE"
+            rm -f "$RESIZE_FILE.resize"
+            return 1
         fi
     fi
     return 0
