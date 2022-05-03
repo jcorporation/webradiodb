@@ -75,12 +75,12 @@ resize_image() {
     RESIZE_FILE="$1"
     TO_WIDTH="400"
     TO_HEIGHT="400"
-    TO_SIZE="400x400"
+    TO_SIZE="${TO_WIDTH}x${TO_HEIGHT}"
     [ -s "$RESIZE_FILE" ] || exit 1
     #get actual size
-    CUR_SIZE=$(identify "$RESIZE_FILE" | cut -d' ' -f3)
-    CUR_WIDTH=$(cut -dx -f1 <<< "$CUR_SIZE")
-    CUR_HEIGHT=$(cut -dx -f2 <<< "$CUR_SIZE")
+    CUR_SIZE=$(identify -format "%wx%h" "$RESIZE_FILE")
+    CUR_WIDTH=${CUR_SIZE%%x*}
+    CUR_HEIGHT=${CUR_SIZE#*x}
 
     if [ "${CUR_SIZE}" != "${TO_SIZE}" ]
     then
@@ -96,8 +96,7 @@ resize_image() {
                 return 1
             fi
         fi
-        CUR_SIZE=$(identify "$RESIZE_FILE" | cut -d' ' -f3)
-        CUR_HEIGHT=$(cut -dx -f2 <<< "$CUR_SIZE")
+        CUR_HEIGHT=$(identify -format "%h" "$RESIZE_FILE")
         if [ "$CUR_HEIGHT" -gt "$TO_HEIGHT" ]
         then
             echo "Croping $RESIZE_FILE to $TO_HEIGHT height"
@@ -373,11 +372,11 @@ modify_radio_from_json() {
         mv "${MYMPD_PICS_DIR}/${MODIFY_PLIST}.webp" "${MYMPD_PICS_DIR}/${NEW_PLIST}.webp"
         NEW_IMAGE="${NEW_PLIST}.webp"
         #rename alternative streams
-        if [ "$(echo ${MYMPD_PLS_DIR}/$MODIFY_PLIST.*)" != "${MYMPD_PLS_DIR}/$MODIFY_PLIST.*" ]
+        if [ "$(echo "${MYMPD_PLS_DIR}/$MODIFY_PLIST."*)" != "${MYMPD_PLS_DIR}/$MODIFY_PLIST.*" ]
         then
             for S in "${MYMPD_PLS_DIR}/$MODIFY_PLIST."*
             do
-                G=$(sed "s/$MODIFY_PLIST/$NEW_PLIST/" <<< "$S")
+                G=${S//$MODIFY_PLIST/$NEW_PLIST}
                 mv -v "$S" "$G"
             done
         fi
@@ -608,7 +607,7 @@ create() {
         done < "$F"
         #alternative streams
         printf ",\"alternativeStreams\":{" >&3
-        if [ "$(echo $F.*)" != "$F.*" ]
+        if [ "$(echo "$F".*)" != "$F.*" ]
         then
             FILE_COUNT=0
             for S in "$F."*
@@ -651,27 +650,27 @@ create() {
         #create other index files
         jq -r '.[] | .Language' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$LANGFILE.tmp"
-        LANGUAGES_COUNT=$(jq -r '.[] | .Language' "${INDEXFILE}.tmp" | sort -u | wc -l)
+        LANGUAGES_COUNT=$(jq -r '.[]' "$LANGFILE.tmp" | wc -l)
         echo "${LANGUAGES_COUNT} languages in index"
 
         jq -r '.[] | .Country' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$COUNTRYFILE.tmp"
-        COUNTRIES_COUNT=$(jq -r '.[] | .Country' "${INDEXFILE}.tmp" | sort -u | wc -l)
+        COUNTRIES_COUNT=$(jq -r '.[]' "$COUNTRYFILE.tmp" | wc -l)
         echo "${COUNTRIES_COUNT} countries in index"
 
         jq -r '.[] | .Genre | .[]' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$GENREFILE.tmp"
-        GENRES_COUNT=$(jq -r '.[] | .Genre | .[]' "${INDEXFILE}.tmp" | sort -u | wc -l)
+        GENRES_COUNT=$(jq -r '.[]' "$GENREFILE.tmp" | wc -l)
         echo "${GENRES_COUNT} genres in index"
 
         jq -r '.[] | .Codec' "${INDEXFILE}.tmp" | sort -u | grep -v -P '^\s*$' | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$CODECFILE.tmp"
-        CODECS_COUNT=$(jq -r '.[] | .Codec' "${INDEXFILE}.tmp" | sort -u | grep -v -P '^\s*$' | wc -l)
+        CODECS_COUNT=$(jq -r '.[]' "$CODECFILE.tmp" | wc -l)
         echo "${CODECS_COUNT} codecs in index"
 
         jq -r '.[] | .Bitrate' "${INDEXFILE}.tmp" | sort -u -g | grep -v -P '^(\s*|0)$' | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$BITRATEFILE.tmp"
-        BITRATES_COUNT=$(jq -r '.[] | .Bitrate' "${INDEXFILE}.tmp" | sort -u | grep -v -P '^\s*$' | wc -l)
+        BITRATES_COUNT=$(jq -r '.[]' "$BITRATEFILE.tmp" | wc -l)
         echo "${BITRATES_COUNT} bitrates in index"
 
         #create combined json
@@ -992,7 +991,7 @@ case "$ACTION" in
         sync_moode
         ;;
     update_format)
-        update_format $2
+        update_format "$2"
         exit $?
         ;;
     update_format_all)
