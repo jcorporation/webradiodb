@@ -16,8 +16,10 @@ git checkout -b test
 
 echo "Adding new webradio"
 ./build.sh add_radio_from_json test/new-webradio.json
+./build.sh add_alternate_stream_from_json test/add-alternate-stream.json
 
 file sources/mympd-webradios/http___test_radio_teststream.m3u
+file sources/mympd-webradios/http___test_radio_teststream.m3u.AAC.256
 file sources/mympd-pics/http___test_radio_teststream.webp
 IMAGE_CHK=$(md5sum sources/mympd-pics/http___test_radio_teststream.webp)
 
@@ -32,14 +34,17 @@ echo "Change only the streamuri of the new webradio"
 ./build.sh modify_radio_from_json test/rename-webradio.json
 
 [ -f sources/mympd-webradios/http___test_radio_teststream.m3u ] && false
+[ -f sources/mympd-webradios/http___test_radio_teststream.m3u.AAC.256 ] && false
 [ -f sources/mympd-pics/http___test_radio_teststream.webp ] && false
 file sources/mympd-webradios/http___test_radio_teststream-modified.m3u
+file sources/mympd-webradios/http___test_radio_teststream-modified.m3u.AAC.256
 file sources/mympd-pics/http___test_radio_teststream-modified.webp
 
 echo "Delete the new webradio"
 ./build.sh delete_radio_from_json test/delete-webradio.json
 
 [ -f sources/mympd-webradios/http___test_radio_teststream-modified.m3u ] && false
+[ -f sources/mympd-webradios/http___test_radio_teststream-modified.m3u.AAC.256 ] && false
 [ -f sources/mympd-pics/http___test_radio_teststream-modified.webp ] && false
 
 echo "Check for changes"

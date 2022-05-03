@@ -1,0 +1,6 @@
+{
+    "modifyWebradio": "http://test.radio/teststream",
+    "streamuri": "http://test.radio/teststream-aac",
+    "codec": "AAC",
+    "bitrate": "256"
+}
