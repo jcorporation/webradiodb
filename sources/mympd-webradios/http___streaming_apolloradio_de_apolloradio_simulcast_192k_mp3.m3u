@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Apollo Radio
+#EXTGENRE:Jazz, Classic, Soul
+#PLAYLIST:Apollo Radio
+#EXTIMG:http___streaming_apolloradio_de_apolloradio_simulcast_192k_mp3.webp
+#HOMEPAGE:https://www.apolloradio.de/
+#COUNTRY:Deutschland
+#LANGUAGE:Deutsch
+#DESCRIPTION:Bleiben sie entspannt
+#CODEC:MP3
+#BITRATE:192k
+http://streaming.apolloradio.de/apolloradio_simulcast_192k_mp3
