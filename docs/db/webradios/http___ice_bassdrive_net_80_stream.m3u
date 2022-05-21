@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Bassdrive Radio
+#EXTGENRE:Drum'n'Bass
+#PLAYLIST:Bassdrive Radio
+#EXTIMG:http___ice_bassdrive_net_80_stream.webp
+#HOMEPAGE:https://www.bassdrive.com/
+#COUNTRY:UK
+#LANGUAGE:English
+#DESCRIPTION:24/7 drum&bass radio station featuring live shows with guest DJs, as well as broadcasts from venues all over the world representing the best of drum&bass and jungle music from around the globe.
+#CODEC:MP3
+#BITRATE:128
+http://ice.bassdrive.net:80/stream

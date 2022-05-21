@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Venice Classic Radio
+#EXTGENRE:Classic
+#PLAYLIST:Venice Classic Radio
+#EXTIMG:https___uk2_streamingpulse_com_ssl_vcr1.webp
+#HOMEPAGE:https://www.veniceclassicradio.eu/
+#COUNTRY:Italy
+#LANGUAGE:English
+#DESCRIPTION:Our repertoire ranges from ancient music of the Renaissance to that the '900, with particular attention to Italian composers and performers.
+#CODEC:MP3
+#BITRATE:128
+https://uk2.streamingpulse.com/ssl/vcr1
