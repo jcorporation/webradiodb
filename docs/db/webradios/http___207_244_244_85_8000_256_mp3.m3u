@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Limbik Frequencies
+#EXTGENRE:IDM
+#PLAYLIST:Limbik Frequencies
+#EXTIMG:http___207_244_244_85_8000_256_mp3.webp
+#HOMEPAGE:https://limbikfreq.com
+#COUNTRY:USA
+#LANGUAGE:English
+#DESCRIPTION:A tasty mix of downtempo electronica
+#CODEC:MP3
+#BITRATE:256
+http://207.244.244.85:8000/256.mp3

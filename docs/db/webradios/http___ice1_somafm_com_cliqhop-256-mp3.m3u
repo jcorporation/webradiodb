@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,cliqhop idm - SomaFM
+#EXTGENRE:IDM
+#PLAYLIST:cliqhop idm - SomaFM
+#EXTIMG:http___ice1_somafm_com_cliqhop-256-mp3.webp
+#HOMEPAGE:https://somafm.com/cliqhop/
+#COUNTRY:USA
+#LANGUAGE:English
+#DESCRIPTION:Blips'n'beeps backed mostly w/beats. Intelligent Dance Music.
+#CODEC:MP3
+#BITRATE:256
+http://ice1.somafm.com/cliqhop-256-mp3
