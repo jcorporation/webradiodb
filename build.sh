@@ -653,7 +653,7 @@ create() {
         echo "${BITRATES_COUNT} bitrates in index"
 
         #create combined json
-        printf "{\"timestamp\":%s, \"webradios\":" "$(date +%s)" > "${INDEXFILE_COMBINED}.tmp"
+        printf "{\"timestamp\":%s,\"webradios\":" "$(date +%s)" > "${INDEXFILE_COMBINED}.tmp"
         tr -d '\n' < "${INDEXFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
         printf ",\"totalWebradios\":%s," "$WEBRADIO_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
 
