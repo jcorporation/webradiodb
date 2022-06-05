@@ -37,7 +37,7 @@ jobs:
           pull: NO-PULL
           push: true
 
-      - uses: peter-evans/close-issue@v1
+      - uses: peter-evans/close-issue@v2
         with:
           comment: Merged!
 
@@ -70,7 +70,7 @@ jobs:
           pull: NO-PULL
           push: true
 
-      - uses: peter-evans/close-issue@v1
+      - uses: peter-evans/close-issue@v2
         with:
           comment: Merged!
 
@@ -103,7 +103,7 @@ jobs:
           pull: NO-PULL
           push: true
 
-      - uses: peter-evans/close-issue@v1
+      - uses: peter-evans/close-issue@v2
         with:
           comment: Merged!
 
@@ -136,7 +136,7 @@ jobs:
           pull: NO-PULL
           push: true
 
-      - uses: peter-evans/close-issue@v1
+      - uses: peter-evans/close-issue@v2
         with:
           comment: Merged!
 
@@ -169,6 +169,6 @@ jobs:
           pull: NO-PULL
           push: true
 
-      - uses: peter-evans/close-issue@v1
+      - uses: peter-evans/close-issue@v2
         with:
           comment: Merged!
