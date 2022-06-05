@@ -22,7 +22,7 @@ jobs:
         run: sudo apt-get install -y ffmpeg
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Check all streams
         run: ./build.sh check_stream_all_json
