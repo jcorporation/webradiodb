@@ -32,5 +32,4 @@ jobs:
         with:
           add: docs/db sources
           message: Update db index
-          pull: NO-PULL
           push: true
