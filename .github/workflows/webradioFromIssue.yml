@@ -34,7 +34,6 @@ jobs:
         with:
           add: sources docs/db
           message: "webradioFromIssue - addradio #${{ github.event.issue.number }}"
-          pull: NO-PULL
           push: true
 
       - uses: peter-evans/close-issue@v2
@@ -67,7 +66,6 @@ jobs:
         with:
           add: sources docs/db mappings
           message: "webradioFromIssue - modifyradio #${{ github.event.issue.number }}"
-          pull: NO-PULL
           push: true
 
       - uses: peter-evans/close-issue@v2
@@ -100,7 +98,6 @@ jobs:
         with:
           add: sources docs/db mappings
           message: "webradioFromIssue - deleteradio #${{ github.event.issue.number }}"
-          pull: NO-PULL
           push: true
 
       - uses: peter-evans/close-issue@v2
@@ -133,7 +130,6 @@ jobs:
         with:
           add: sources docs/db
           message: "webradioFromIssue - addAlternateStream #${{ github.event.issue.number }}"
-          pull: NO-PULL
           push: true
 
       - uses: peter-evans/close-issue@v2
@@ -166,7 +162,6 @@ jobs:
         with:
           add: sources docs/db
           message: "webradioFromIssue - deleteAlternateStream #${{ github.event.issue.number }}"
-          pull: NO-PULL
           push: true
 
       - uses: peter-evans/close-issue@v2
