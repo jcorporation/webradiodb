@@ -28,5 +28,4 @@ jobs:
         with:
           add: docs/db sources
           message: dbChecks
-          pull: NO-PULL
           push: true
