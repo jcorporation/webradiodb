@@ -86,7 +86,7 @@ The filename of the playlist and the coverimage are derived from the streamuri b
 
 You must not download the station images, instead you can prepend `https://jcorporation.github.io/webradiodb/db/pics/` to the image name, e.g. https://jcorporation.github.io/webradiodb/db/pics/http___119_15_96_188_stream2_mp3.webp.
 
-The final files are located in the `docs/db` folder, it is rebuild on each push request. The folder `docs` is published through [GitHub Pages](https://jcorporation.github.io/webradiodb/).
+The final files are located in the `docs/db` folder, it is rebuild daily. The folder `docs` is published through [GitHub Pages](https://jcorporation.github.io/webradiodb/).
 
 | FOLDER | DESCRIPTION |
 | ------ | ----------- |
