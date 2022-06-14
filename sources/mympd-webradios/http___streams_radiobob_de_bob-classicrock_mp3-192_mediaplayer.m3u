@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Radio BOB! Classic Rock
+#EXTGENRE:Classic Rock
+#PLAYLIST:Radio BOB! Classic Rock
+#EXTIMG:http___streams_radiobob_de_bob-classicrock_mp3-192_mediaplayer.webp
+#HOMEPAGE:https://www.radiobob.de/
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:192
+http://streams.radiobob.de/bob-classicrock/mp3-192/mediaplayer
