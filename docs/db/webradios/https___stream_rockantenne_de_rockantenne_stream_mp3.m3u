@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Rock Antenne
+#EXTGENRE:Rock
+#PLAYLIST:Rock Antenne
+#EXTIMG:https___stream_rockantenne_de_rockantenne_stream_mp3.webp
+#HOMEPAGE:https://www.rockantenne.de/
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+https://stream.rockantenne.de/rockantenne/stream/mp3

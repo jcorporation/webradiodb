@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Radio BOB! Christmas Rock
+#EXTGENRE:Rock
+#PLAYLIST:Radio BOB! Christmas Rock
+#EXTIMG:http___streams_radiobob_de_bob-christmas_mp3-192_mediaplayer_.webp
+#HOMEPAGE:https://www.radiobob.de/
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:192
+http://streams.radiobob.de/bob-christmas/mp3-192/mediaplayer/
