@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Kanal K
+#EXTGENRE:Indie
+#PLAYLIST:Kanal K
+#EXTIMG:http___castext1_kanalk_ch_8200_.webp
+#HOMEPAGE:
+#COUNTRY:Switzerland
+#LANGUAGE:German
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:160
+http://castext1.kanalk.ch:8200/
