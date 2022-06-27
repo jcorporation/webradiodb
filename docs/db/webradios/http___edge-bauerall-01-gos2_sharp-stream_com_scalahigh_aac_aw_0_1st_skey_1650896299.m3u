@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Scala Radio
+#EXTGENRE:Classical, News, Classical, Requests
+#PLAYLIST:Scala Radio
+#EXTIMG:http___edge-bauerall-01-gos2_sharp-stream_com_scalahigh_aac_aw_0_1st_skey_1650896299.webp
+#HOMEPAGE:
+#COUNTRY:United Kingdom
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+http://edge-bauerall-01-gos2.sharp-stream.com/scalahigh.aac?aw_0_1st.skey=1650896299
