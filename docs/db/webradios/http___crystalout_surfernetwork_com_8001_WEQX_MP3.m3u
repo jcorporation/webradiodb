@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,WEQX 102.7 Manchester, VT
+#EXTGENRE:alternative rock
+#PLAYLIST:WEQX 102.7 Manchester, VT
+#EXTIMG:http___crystalout_surfernetwork_com_8001_WEQX_MP3.webp
+#HOMEPAGE:http://www.weqx.com/
+#COUNTRY:United States
+#LANGUAGE:English
+#DESCRIPTION:The real alternative
+#CODEC:MP3
+#BITRATE:128
+http://crystalout.surfernetwork.com:8001/WEQX_MP3
