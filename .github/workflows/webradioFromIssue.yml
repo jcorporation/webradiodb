@@ -30,7 +30,7 @@ jobs:
           rm issue.json
 
       - name: Add, commit and push
-        uses: EndBug/add-and-commit@v9.0.1
+        uses: EndBug/add-and-commit@v9.1.0
         with:
           add: sources docs/db
           message: "webradioFromIssue - addradio #${{ github.event.issue.number }}"
@@ -62,7 +62,7 @@ jobs:
           rm issue.json
 
       - name: Add, commit and push
-        uses: EndBug/add-and-commit@v9.0.1
+        uses: EndBug/add-and-commit@v9.1.0
         with:
           add: sources docs/db mappings
           message: "webradioFromIssue - modifyradio #${{ github.event.issue.number }}"
@@ -94,7 +94,7 @@ jobs:
           rm issue.json
 
       - name: Add, commit and push
-        uses: EndBug/add-and-commit@v9.0.1
+        uses: EndBug/add-and-commit@v9.1.0
         with:
           add: sources docs/db mappings
           message: "webradioFromIssue - deleteradio #${{ github.event.issue.number }}"
@@ -126,7 +126,7 @@ jobs:
           rm issue.json
 
       - name: Add, commit and push
-        uses: EndBug/add-and-commit@v9.0.1
+        uses: EndBug/add-and-commit@v9.1.0
         with:
           add: sources docs/db
           message: "webradioFromIssue - addAlternateStream #${{ github.event.issue.number }}"
@@ -158,7 +158,7 @@ jobs:
           rm issue.json
 
       - name: Add, commit and push
-        uses: EndBug/add-and-commit@v9.0.1
+        uses: EndBug/add-and-commit@v9.1.0
         with:
           add: sources docs/db
           message: "webradioFromIssue - deleteAlternateStream #${{ github.event.issue.number }}"
