@@ -2,11 +2,11 @@
 #EXTINF:-1,Mad Music Asylum
 #EXTGENRE:Rock, Eclectic
 #PLAYLIST:Mad Music Asylum
-#EXTIMG:http___psn1_prostreaming_net_8095_stream.webp
+#EXTIMG:https___madmusicasylum_radioca_st_stream_type_http_nocache_36907.webp
 #HOMEPAGE:
 #COUNTRY:United States
 #LANGUAGE:English
 #DESCRIPTION:
 #CODEC:MP3
 #BITRATE:128
-http://psn1.prostreaming.net:8095/stream
+https://madmusicasylum.radioca.st/stream?type=http&nocache=36907
