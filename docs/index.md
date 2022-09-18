@@ -41,9 +41,10 @@ Search for the webradio and click on the modify link to open a prefilled GitHub 
         </select>
         <select id="sort">
             <option value="Name">Sort by name</option>
-            <option value="Genre">Sort by genre</option>
             <option value="Country">Sort by country</option>
             <option value="Language">Sort by language</option>
+            <option value="Codec">Sort by codec</option>
+            <option value="Bitrate">Sort by bitrate</option>
         </select>
     </div>
 </div>
