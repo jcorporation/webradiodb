@@ -239,7 +239,7 @@ function showSearchResult(offset, limit) {
 		a.addEventListener('click', function(event) {
 			event.preventDefault();
 			event.target.remove();
-			showSearchResult(last, limit);
+			showSearchResult(last + 1, limit);
 		}, false);
 		resultEl.appendChild(a);
 	}
