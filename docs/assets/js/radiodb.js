@@ -86,10 +86,12 @@ function search(name, genre, country, language, codec, bitrate, sort, offset, li
 		}
 	}
 	obj.result.data.sort(function(a, b) {
-		if (a[sort] < b[sort]) {
+		const lca = a[sort].toLowerCase();
+		const lcb = b[sort].toLowerCase();
+		if (lca < lcb) {
 			return -1;
 		}
-		if (a[sort] > b[sort]) {
+		if (lca > lcb) {
 			return 1;
 		}
 		return 0;

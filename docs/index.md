@@ -40,10 +40,10 @@ Search for the webradio and click on the modify link to open a prefilled GitHub 
             <option value="">Bitrate (min)</option>
         </select>
         <select id="sort">
-            <option value="PLAYLIST">Sort by name</option>
-            <option value="EXTGENRE">Sort by genre</option>
-            <option value="COUNTRY">Sort by country</option>
-            <option value="LANGUAGE">Sort by language</option>
+            <option value="Name">Sort by name</option>
+            <option value="Genre">Sort by genre</option>
+            <option value="Country">Sort by country</option>
+            <option value="Language">Sort by language</option>
         </select>
     </div>
 </div>
