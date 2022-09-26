@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Radio Popolare
+#EXTGENRE:Information, News, Culture, Talk
+#PLAYLIST:Radio Popolare
+#EXTIMG:https___livex_radiopopolare_it_radiopop_FLID_3.webp
+#HOMEPAGE:https://livex.radiopopolare.it
+#COUNTRY:Italy
+#LANGUAGE:Italian
+#DESCRIPTION:The radio who gives a voice to those who have not.
+#CODEC:MP3
+#BITRATE:64
+https://livex.radiopopolare.it/radiopop?FLID=3
