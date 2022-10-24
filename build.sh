@@ -698,9 +698,11 @@ create() {
         move_compress_changed "$BITRATEFILE" && CHANGED=1
         if [ "$CHANGED" -eq 1 ]
         then
+            echo "Index has changed"
             move_compress_changed "$INDEXFILE_JS"
             move_compress_changed "$INDEXFILE_COMBINED"
         else
+            echo "Index not changed"
             rm "${INDEXFILE_JS}.tmp"
             rm "${INDEXFILE_COMBINED}.tmp"
         fi
