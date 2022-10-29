@@ -916,7 +916,10 @@ check_stream_all_json() {
     done
     printf "}" >&3
     exec 3>&-
-    move_compress_changed "${STATUSFILE}"
+    if move_compress_changed "${STATUSFILE}"
+    then
+        echo "Streamstatus updated"
+    fi
 }
 
 #get action
