@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,KrainaFM
+#EXTGENRE:Pop, Rock, Techno
+#PLAYLIST:KrainaFM
+#EXTIMG:http___live_radioec_com_ua_8000_kiev.webp
+#HOMEPAGE:http://krainafm.com.ua/
+#COUNTRY:Ukraine
+#LANGUAGE:Ukrainian
+#DESCRIPTION:Ukraine's first all-Ukrainian-language radio
+#CODEC:MP3
+#BITRATE:128
+http://live.radioec.com.ua:8000/kiev
