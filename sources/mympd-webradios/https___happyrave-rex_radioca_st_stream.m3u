@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Happy Rave Radio
+#EXTGENRE:Rave, Breakbeat, Hardcore, Jungle, Oldschool
+#PLAYLIST:Happy Rave Radio
+#EXTIMG:https___happyrave-rex_radioca_st_stream.webp
+#HOMEPAGE:happyraveradio.com
+#COUNTRY:Netherlands
+#LANGUAGE:English
+#DESCRIPTION:Classic happy hardcore, rave, and breakbeat hardcore.
+#CODEC:MP3
+#BITRATE:320
+https://happyrave-rex.radioca.st/stream
