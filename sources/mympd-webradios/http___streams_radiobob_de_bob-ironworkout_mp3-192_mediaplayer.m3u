@@ -1,12 +1,12 @@
 #EXTM3U
 #EXTINF:-1,Radio BOB! Hardrock
-#EXTGENRE:Hardrock
+#EXTGENRE:Hard Rock
 #PLAYLIST:Radio BOB! Hardrock
 #EXTIMG:http___streams_radiobob_de_bob-ironworkout_mp3-192_mediaplayer.webp
 #HOMEPAGE:https://www.radiobob.de/
 #COUNTRY:Germany
 #LANGUAGE:German
-#DESCRIPTION:
+#DESCRIPTION:Wenn Rock, dann BOB! Deutschlands Rockradio
 #CODEC:MP3
 #BITRATE:192
 http://streams.radiobob.de/bob-ironworkout/mp3-192/mediaplayer
