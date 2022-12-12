@@ -230,7 +230,7 @@ function showSearchResult(offset, limit) {
                 '&modifyWebradio=' + encodeURIComponent(obj.result.data[key].StreamUri) +
                 '&name=' + encodeURIComponent(obj.result.data[key].Name) +
                 '&streamuri=' + encodeURIComponent(obj.result.data[key].StreamUri) +
-                '&genre=' + encodeURIComponent(obj.result.data[key].Genre) +
+                '&genre=' + encodeURIComponent(obj.result.data[key].Genre.join(',')) +
                 '&homepage=' + encodeURIComponent(obj.result.data[key].Homepage) +
                 '&image=' + encodeURIComponent(obj.result.data[key].Image) +
                 '&country=' + encodeURIComponent(obj.result.data[key].Country) +
