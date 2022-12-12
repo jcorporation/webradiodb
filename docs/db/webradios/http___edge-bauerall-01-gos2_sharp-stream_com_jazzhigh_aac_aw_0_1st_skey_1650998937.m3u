@@ -1,12 +1,12 @@
 #EXTM3U
 #EXTINF:-1,Jazz FM
-#EXTGENRE:Jazz, Blues. Soul
+#EXTGENRE:Jazz, Blues, Soul
 #PLAYLIST:Jazz FM
 #EXTIMG:http___edge-bauerall-01-gos2_sharp-stream_com_jazzhigh_aac_aw_0_1st_skey_1650998937.webp
-#HOMEPAGE:
+#HOMEPAGE:https://planetradio.co.uk/jazz-fm/
 #COUNTRY:United Kingdom
 #LANGUAGE:English
-#DESCRIPTION:
+#DESCRIPTION:Listen in Colour
 #CODEC:AAC
 #BITRATE:128
 http://edge-bauerall-01-gos2.sharp-stream.com/jazzhigh.aac?aw_0_1st.skey=1650998937
