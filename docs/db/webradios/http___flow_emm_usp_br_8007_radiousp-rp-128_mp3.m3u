@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Rádio USP - Ribeirão Preto
+#EXTGENRE:adult contemporary, university radio
+#PLAYLIST:Rádio USP - Ribeirão Preto
+#EXTIMG:http___flow_emm_usp_br_8007_radiousp-rp-128_mp3.webp
+#HOMEPAGE:https://jornal.usp.br/radiousp-sp-aovivo.html
+#COUNTRY:Brazil
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Rádio Universitária da USP (USP Ribeirão Preto)
+#CODEC:MP3
+#BITRATE:128
+http://flow.emm.usp.br:8007/radiousp-rp-128.mp3
