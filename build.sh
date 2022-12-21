@@ -761,10 +761,10 @@ check_images() {
         then 
             if [ -f "$I_DIR/${G}" ]
             then
-                echo "Invalid image for $G"
+                echo "Invalid image for $F"
                 rm -f "$I_DIR/${G}"
             else
-                echo "Missing image for $G"
+                echo "Missing image for $F"
             fi
             rc=1
         fi
