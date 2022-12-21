@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Rádio USP - São Paulo
+#EXTGENRE:mpb, news, university radio
+#PLAYLIST:Rádio USP - São Paulo
+#EXTIMG:
+#HOMEPAGE:https://jornal.usp.br/radiousp-sp-aovivo.html
+#COUNTRY:Brazil
+#LANGUAGE:brazilian portuguese
+#DESCRIPTION:Radio Universitária da USP (Universidade de São Paulo)
+#CODEC:MP3
+#BITRATE:128
+http://flow.emm.usp.br:8007/radiousp-128.mp3
