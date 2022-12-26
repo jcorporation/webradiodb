@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Rádio Bandeirantes - São Paulo
+#EXTGENRE:News
+#PLAYLIST:Rádio Bandeirantes - São Paulo
+#EXTIMG:https___playerservices_streamtheworld_com_api_livestream-redirect_RadioBandeirantesAAC_m3u8.webp
+#HOMEPAGE:https://www.band.uol.com.br/radios/radio-bandeirantes/sao-paulo
+#COUNTRY:Brazil
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Rádio Bandeirantes (São Paulo)
+#CODEC:AAC+
+#BITRATE:64
+https://playerservices.streamtheworld.com/api/livestream-redirect/RadioBandeirantesAAC.m3u8
