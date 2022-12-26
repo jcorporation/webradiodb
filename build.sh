@@ -52,7 +52,7 @@ download_image() {
     DOWNLOAD_URI="$1"
     DOWNLOAD_DST="$2"
     echo "Downloading image: \"$DOWNLOAD_URI\""
-    if ! curl -fsSL "$DOWNLOAD_URI" --output "${DOWNLOAD_DST}.image"
+    if ! curl -kfsSL "$DOWNLOAD_URI" --output "${DOWNLOAD_DST}.image"
     then
         rm -f "${DOWNLOAD_DST}.image"
         return 1
