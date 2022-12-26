@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Rádio Cidade
+#EXTGENRE:Brazilian music, Contemporary, Pop, Rock
+#PLAYLIST:Rádio Cidade
+#EXTIMG:http___playerservices_streamtheworld_com_api_livestream-redirect_RADIOCIDADEAAC_aac.webp
+#HOMEPAGE:https://radiocidade.fm/
+#COUNTRY:Brazil
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Rádio Cidade - Rio de Janeiro
+#CODEC:AAC+
+#BITRATE:48
+http://playerservices.streamtheworld.com/api/livestream-redirect/RADIOCIDADEAAC.aac
