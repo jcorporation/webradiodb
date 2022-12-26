@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Brasil de Fato
+#EXTGENRE:News, Music
+#PLAYLIST:Brasil de Fato
+#EXTIMG:https___s09_hstbr_net_8238_live_1514038524061.webp
+#HOMEPAGE:https://www.brasildefato.com.br/
+#COUNTRY:Brazil
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Brasil de Fato - Uma visão popular do Brasil e do mundo
+#CODEC:MP3
+#BITRATE:128
+https://s09.hstbr.net:8238/live?1514038524061
