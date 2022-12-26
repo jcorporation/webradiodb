@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Rádio FM O DIA
+#EXTGENRE:Samba, Pagode, Pop
+#PLAYLIST:Rádio FM O DIA
+#EXTIMG:http___streaming_livespanel_com_20000_live.webp
+#HOMEPAGE:http://www.fmodia.com.br/
+#COUNTRY:Brazil
+#LANGUAGE:Brazilian portuguese
+#DESCRIPTION:FM O Dia
+#CODEC:MP3
+#BITRATE:128
+http://streaming.livespanel.com:20000/live
