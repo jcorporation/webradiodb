@@ -1,4 +1,5 @@
 declare -A genre_map
+genre_map["2000er"]="2000's"
 genre_map["60s"]="60's"
 genre_map["70s"]="70's"
 genre_map["80er"]="80's"
