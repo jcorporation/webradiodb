@@ -101,6 +101,18 @@ trim() {
     printf '%s' "$var"
 }
 
+ucwords() {
+    local var="$*"
+    var=( $var ) # without quotes
+    var="${var[@]^}"
+    printf '%s' "$var"
+}
+
+ucstring() {
+    local var="$*"
+    printf '%s' "${var^^}"
+}
+
 normalize_fields() {
     DIR=$1
     for F in "$DIR"/*.m3u
@@ -115,8 +127,10 @@ normalize_fields() {
             NG="${genre_map[$GENRE]:-}"
             if [ "$NG" != "" ]
             then
+                NG=$(ucwords "$NG")
                 NEW_GENRE="$NEW_GENRE, $NG"
             else
+                GENRE=$(ucwords "$GENRE")
                 NEW_GENRE="$NEW_GENRE, $GENRE"
             fi
         done < <(sed 's/, /,/g' <<< "$GENRE_LINE,")
@@ -129,12 +143,32 @@ normalize_fields() {
         # codec
         CODEC=$(grep "^#CODEC" "$F")
         CODEC=${CODEC#*:}
-        CODEC_UPPER=$(tr '[:lower:]' '[:upper:]' <<< "$CODEC")
+        CODEC_UPPER=$(ucstring "$CODEC")
         CODEC_UPPER=$(trim "$CODEC_UPPER")
         if [ "$CODEC" != "$CODEC_UPPER" ]
         then
             echo "$F: $CODEC -> $CODEC_UPPER"
             sed -i -e "s/^#CODEC:.*/#CODEC:$CODEC_UPPER/" "$F"
+        fi
+        # country
+        COUNTRY=$(grep "^#COUNTRY" "$F")
+        COUNTRY=${COUNTRY#*:}
+        COUNTRY_UPPER=$(ucwords "$COUNTRY")
+        COUNTRY_UPPER=$(trim "$COUNTRY_UPPER")
+        if [ "$COUNTRY" != "$COUNTRY_UPPER" ]
+        then
+            echo "$F: $COUNTRY -> $COUNTRY_UPPER"
+            sed -i -e "s/^#COUNTRY:.*/#COUNTRY:$COUNTRY_UPPER/" "$F"
+        fi
+        # language
+        LANGUAGE=$(grep "^#LANGUAGE" "$F")
+        LANGUAGE=${LANGUAGE#*:}
+        LANGUAGE_UPPER=$(ucwords "$LANGUAGE")
+        LANGUAGE_UPPER=$(trim "$LANGUAGE_UPPER")
+        if [ "$LANGUAGE" != "$LANGUAGE_UPPER" ]
+        then
+            echo "$F: $LANGUAGE -> $LANGUAGE_UPPER"
+            sed -i -e "s/^#LANGUAGE:.*/#LANGUAGE:$LANGUAGE_UPPER/" "$F"
         fi
     done
 }
