@@ -92,10 +92,20 @@ resize_image() {
     return 0
 }
 
-cleanup_genres() {
+trim() {
+    local var="$*"
+    # remove leading whitespace characters
+    var="${var#"${var%%[![:space:]]*}"}"
+    # remove trailing whitespace characters
+    var="${var%"${var##*[![:space:]]}"}"
+    printf '%s' "$var"
+}
+
+normalize_fields() {
     DIR=$1
     for F in "$DIR"/*.m3u
     do
+        # genres
         GENRE_LINE=$(grep "^#EXTGENRE" "$F")
         GENRE_LINE=${GENRE_LINE#*:}
         NEW_GENRE=""
@@ -115,6 +125,16 @@ cleanup_genres() {
         then
             echo "$F: $GENRE_LINE -> $NEW_GENRE"
             sed -i -e "s/^#EXTGENRE:.*/#EXTGENRE:$NEW_GENRE/" "$F"
+        fi
+        # codec
+        CODEC=$(grep "^#CODEC" "$F")
+        CODEC=${CODEC#*:}
+        CODEC_UPPER=$(tr '[:lower:]' '[:upper:]' <<< "$CODEC")
+        CODEC_UPPER=$(trim "$CODEC_UPPER")
+        if [ "$CODEC" != "$CODEC_UPPER" ]
+        then
+            echo "$F: $CODEC -> $CODEC_UPPER"
+            sed -i -e "s/^#CODEC:.*/#CODEC:$CODEC_UPPER/" "$F"
         fi
     done
 }
@@ -208,7 +228,7 @@ EOL
     echo ""
     echo "$I webradios synced"
     echo "$S webradios skipped"
-    cleanup_genres "${MOODE_PLS_DIR}"
+    normalize_fields "${MOODE_PLS_DIR}"
 }
 
 add_radio() {
@@ -552,12 +572,12 @@ create() {
     mkdir "$PICS_DIR"
 
     echo "Copy moode webradios"
-    cleanup_genres "${MOODE_PLS_DIR}"
+    normalize_fields "${MOODE_PLS_DIR}"
     cp "${MOODE_PICS_DIR}"/* "${PICS_DIR}"
     cp "${MOODE_PLS_DIR}"/* "${PLS_DIR}"
 
     echo "Copy myMPD webradios"
-    cleanup_genres "${MYMPD_PLS_DIR}"
+    normalize_fields "${MYMPD_PLS_DIR}"
     cp "${MYMPD_PICS_DIR}"/* "${PICS_DIR}"
     cp "${MYMPD_PLS_DIR}"/* "${PLS_DIR}"
 
@@ -953,8 +973,8 @@ case "$ACTION" in
     check_stream_all_json)
         check_stream_all_json
         ;;
-    cleanup_genres)
-        cleanup_genres "$2"
+    normalize_fields)
+        normalize_fields "$2"
         ;;
     create)
         create
@@ -1010,8 +1030,8 @@ case "$ACTION" in
         echo "    checks the stream from m3u"
         echo "  check_stream_all_json:"
         echo "    creates the status.json file"
-        echo "  cleanup_genres <dir>:"
-        echo "    cleanups the genres"
+        echo "  normalize_fields <dir>:"
+        echo "    normalizes fields"
         echo "  create:"
         echo "    copies playlists and images from sources dir and creates an unified index"
         echo "  delete_alternate_stream_from_json <json file>:"
