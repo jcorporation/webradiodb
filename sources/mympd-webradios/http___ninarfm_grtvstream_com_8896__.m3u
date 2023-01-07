@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Ninar FM نينار اف ام
+#EXTGENRE:music, news
+#PLAYLIST:Ninar FM نينار اف ام
+#EXTIMG:http___ninarfm_grtvstream_com_8896__.webp
+#HOMEPAGE:http://ninarfm.com/
+#COUNTRY:Syria
+#LANGUAGE:Arabic
+#DESCRIPTION:Ninar FM نينار اف ام
+#CODEC:MP3
+#BITRATE:96
+http://ninarfm.grtvstream.com:8896/;
