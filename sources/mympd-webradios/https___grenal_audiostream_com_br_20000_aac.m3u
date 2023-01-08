@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Rádio Grenal
+#EXTGENRE:sports
+#PLAYLIST:Rádio Grenal
+#EXTIMG:https___grenal_audiostream_com_br_20000_aac.webp
+#HOMEPAGE:https://www.radiogrenal.com.br/
+#COUNTRY:Brazil
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Rádio Grenal
+#CODEC:AAC+
+#BITRATE:32
+https://grenal.audiostream.com.br:20000/aac
