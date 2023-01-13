@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Adroit Jazz Underground
+#EXTGENRE:Avantgarde, bebop, big band, bop, combos, contemporary, contemporary jazz, cool jazz, free jazz, fusion, hard bop, mainstream, mainstream jazz, modern big band, post-bop, straight-ahead, walm
+#PLAYLIST:Adroit Jazz Underground
+#EXTIMG:https___icecast_walmradio_com_8443_jazz.webp
+#HOMEPAGE:https://walmradio.com/jazz
+#COUNTRY:United States
+#LANGUAGE:english
+#DESCRIPTION:Real Jazz in HD
+#CODEC:MP3
+#BITRATE:320
+https://icecast.walmradio.com:8443/jazz
