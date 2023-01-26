@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Radio Ciudad del Granito
+#EXTGENRE:pop, rock, latin
+#PLAYLIST:Radio Ciudad del Granito
+#EXTIMG:https___emisoras_dip-badajoz_es_58062_stream.webp
+#HOMEPAGE:https://quintanadelaserena.org/
+#COUNTRY:Spain
+#LANGUAGE:Spanish
+#DESCRIPTION:Quintana de la Serena (Badajoz, Spain) local radio
+#CODEC:OPUS
+#BITRATE:VBR
+https://emisoras.dip-badajoz.es:58062/stream
