@@ -8,5 +8,5 @@
 #LANGUAGE:Spanish
 #DESCRIPTION:Quintana de la Serena (Badajoz, Spain) local radio
 #CODEC:OPUS
-#BITRATE:VBR
+#BITRATE:0
 https://emisoras.dip-badajoz.es:58062/stream
