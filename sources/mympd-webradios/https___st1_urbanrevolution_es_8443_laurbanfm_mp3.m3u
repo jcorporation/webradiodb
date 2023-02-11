@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,La Urban Radio
+#EXTGENRE:Electronic, Culture, House
+#PLAYLIST:La Urban Radio
+#EXTIMG:https___st1_urbanrevolution_es_8443_laurbanfm_mp3.webp
+#HOMEPAGE:https://www.urbanrevolution.es
+#COUNTRY:Spain
+#LANGUAGE:Spanish
+#DESCRIPTION:Nuevos talentos y grandes artistas se dan la mano en La Urban Radio.
+#CODEC:MP3
+#BITRATE:160
+https://st1.urbanrevolution.es:8443/laurbanfm.mp3
