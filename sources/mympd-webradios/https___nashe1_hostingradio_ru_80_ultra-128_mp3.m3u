@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Ultra
+#EXTGENRE:Alternative
+#PLAYLIST:Ultra
+#EXTIMG:https___nashe1_hostingradio_ru_80_ultra-128_mp3.webp
+#HOMEPAGE:https://radioultra.ru/
+#COUNTRY:Russia
+#LANGUAGE:Russian
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+https://nashe1.hostingradio.ru:80/ultra-128.mp3
