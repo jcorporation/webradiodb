@@ -36,7 +36,7 @@ jobs:
           message: "webradioFromIssue - addradio #${{ github.event.issue.number }}"
           push: true
 
-      - uses: peter-evans/close-issue@v2
+      - uses: peter-evans/close-issue@v3
         with:
           comment: Merged!
 
@@ -68,7 +68,7 @@ jobs:
           message: "webradioFromIssue - modifyradio #${{ github.event.issue.number }}"
           push: true
 
-      - uses: peter-evans/close-issue@v2
+      - uses: peter-evans/close-issue@v3
         with:
           comment: Merged!
 
@@ -100,7 +100,7 @@ jobs:
           message: "webradioFromIssue - deleteradio #${{ github.event.issue.number }}"
           push: true
 
-      - uses: peter-evans/close-issue@v2
+      - uses: peter-evans/close-issue@v3
         with:
           comment: Merged!
 
@@ -132,7 +132,7 @@ jobs:
           message: "webradioFromIssue - addAlternateStream #${{ github.event.issue.number }}"
           push: true
 
-      - uses: peter-evans/close-issue@v2
+      - uses: peter-evans/close-issue@v3
         with:
           comment: Merged!
 
@@ -164,6 +164,6 @@ jobs:
           message: "webradioFromIssue - deleteAlternateStream #${{ github.event.issue.number }}"
           push: true
 
-      - uses: peter-evans/close-issue@v2
+      - uses: peter-evans/close-issue@v3
         with:
           comment: Merged!
