@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Ze Rock Radio
+#EXTGENRE:Rock, Metal, Post Punk, Punk, Indy
+#PLAYLIST:Ze Rock Radio
+#EXTIMG:https___icecast_live_proxy_zerock_zerock.webp
+#HOMEPAGE:https://zerockradio.com/
+#COUNTRY:Israel
+#LANGUAGE:Hebrew, English
+#DESCRIPTION:
+#CODEC:HE-AAC
+#BITRATE:0
+https://icecast.live/proxy/zerock/zerock
