@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Czech Radio Classical
+#EXTGENRE:Classical
+#PLAYLIST:Czech Radio Classical
+#EXTIMG:https___rozhlas_stream_ddur_mp3_256_mp3.webp
+#HOMEPAGE:
+#COUNTRY:Czech Republic
+#LANGUAGE:Czech
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:256
+https://rozhlas.stream/ddur_mp3_256.mp3

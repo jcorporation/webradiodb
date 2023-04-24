@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,FluxFM - Hamburg
+#EXTGENRE:Pop, Culture
+#PLAYLIST:FluxFM - Hamburg
+#EXTIMG:https___streams_fluxfm_de_flux-hamburg_mp3-320_audio_.webp
+#HOMEPAGE:
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:320
+https://streams.fluxfm.de/flux-hamburg/mp3-320/audio/

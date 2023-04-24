@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,FluxFM - ChillHop
+#EXTGENRE:Chill Out, Laidback
+#PLAYLIST:FluxFM - ChillHop
+#EXTIMG:https___fluxmusic_api_radiosphere_io_channels_chillhop_stream_aac_quality_4.webp
+#HOMEPAGE:
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:
+#CODEC:AAC
+#BITRATE:64
+https://fluxmusic.api.radiosphere.io/channels/chillhop/stream.aac?quality=4
