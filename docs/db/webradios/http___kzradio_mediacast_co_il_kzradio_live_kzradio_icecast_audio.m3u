@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,KZradio הקצה
+#EXTGENRE:Indy, Rock, Pop, New Age, Punk, Post-Punk, Electoronic, Contemporary
+#PLAYLIST:KZradio הקצה
+#EXTIMG:http___kzradio_mediacast_co_il_kzradio_live_kzradio_icecast_audio.webp
+#HOMEPAGE:https://kzradio.net/
+#COUNTRY:Israel
+#LANGUAGE:Hebrew
+#DESCRIPTION:Independent Internet-radio based in Tel Aviv
+#CODEC:HE-AAC
+#BITRATE:128
+http://kzradio.mediacast.co.il/kzradio_live/kzradio/icecast.audio
