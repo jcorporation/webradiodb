@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Mémé dans les OrtiEs
+#EXTGENRE:Electronic, DrumNBass, techno, house, dance
+#PLAYLIST:Mémé dans les OrtiEs
+#EXTIMG:https___radio_sk8ter_org_8443_stream.webp
+#HOMEPAGE:https://memeradio.org
+#COUNTRY:France
+#LANGUAGE:French
+#DESCRIPTION:Web radio électro
+#CODEC:MP3
+#BITRATE:128
+https://radio.sk8ter.org:8443/stream
