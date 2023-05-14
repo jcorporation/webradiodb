@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,KNGI Network
+#EXTGENRE:Game, Various
+#PLAYLIST:KNGI Network
+#EXTIMG:https___stream128_kngi_org.webp
+#HOMEPAGE:https://kngi.org
+#COUNTRY:United States
+#LANGUAGE:English
+#DESCRIPTION:The KNGI Network is a variety network emphasizing the promotion and preservation of video game music and independent music communities, alongside other thought-provoking and entertaining topics of interest.
+#CODEC:MP3
+#BITRATE:128kbit
+https://stream128.kngi.org
