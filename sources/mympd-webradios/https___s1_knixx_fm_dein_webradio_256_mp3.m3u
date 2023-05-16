@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,knixx.fm
+#EXTGENRE:variety, adult contemporary, new country, non-commercial, non-profit, oldies, pop, rock
+#PLAYLIST:knixx.fm
+#EXTIMG:
+#HOMEPAGE:https://github.com/jcorporation/webradiodb/assets/765844/be4b6091-0261-4253-a10e-bd9ad27f7593
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:Musik von den 60ern bis heute.
+#CODEC:MP3
+#BITRATE:256
+https://s1.knixx.fm/dein_webradio_256.mp3
