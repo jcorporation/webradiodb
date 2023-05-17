@@ -171,4 +171,4 @@ Type `./build.sh` for usage information.
 
 Everyone is free to use the collected data in their works. I give all the rights I have at the accumulated data to the public domain.
 
-2021-2022 Juergen Mang <mail@jcgames.de>
+2021-2023 Juergen Mang <mail@jcgames.de>
