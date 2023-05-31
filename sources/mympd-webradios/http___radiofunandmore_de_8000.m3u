@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,RadioFunAndMore
+#EXTGENRE:Various
+#PLAYLIST:RadioFunAndMore
+#EXTIMG:http___radiofunandmore_de_8000.webp
+#HOMEPAGE:https://radiofunandmore.de
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:Dein Sender Deine Hits
+#CODEC:mp3
+#BITRATE:192
+http://radiofunandmore.de:8000
