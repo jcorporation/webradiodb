@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Hirschmilch Prog-House
+#EXTGENRE:Progressive House
+#PLAYLIST:Hirschmilch Prog-House
+#EXTIMG:http___hirschmilch_de_7000_prog-house_mp3.webp
+#HOMEPAGE:https://hirschmilch.de/prog-house
+#COUNTRY:Germany
+#LANGUAGE:English
+#DESCRIPTION:Progressive House on https://hirschmilch.de
+#CODEC:mp3
+#BITRATE:128
+http://hirschmilch.de:7000/prog-house.mp3
