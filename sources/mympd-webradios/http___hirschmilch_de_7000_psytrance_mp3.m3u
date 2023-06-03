@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Hirschmilch Psytrance
+#EXTGENRE:Psytrance
+#PLAYLIST:Hirschmilch Psytrance
+#EXTIMG:http___hirschmilch_de_7000_psytrance_mp3.webp
+#HOMEPAGE:https://hirschmilch.de/psytrance
+#COUNTRY:Germany
+#LANGUAGE:English
+#DESCRIPTION:Psytrance on https://hirschmilch.de
+#CODEC:mp3
+#BITRATE:128
+http://hirschmilch.de:7000/psytrance.mp3
