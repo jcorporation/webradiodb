@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Hirschmilch Techno
+#EXTGENRE:Techno
+#PLAYLIST:Hirschmilch Techno
+#EXTIMG:http___hirschmilch_de_7000_techno_mp3.webp
+#HOMEPAGE:https://hirschmilch.de/techno
+#COUNTRY:Germany
+#LANGUAGE:English
+#DESCRIPTION:Techno on https://hirschmilch.de
+#CODEC:mp3
+#BITRATE:123
+http://hirschmilch.de:7000/techno.mp3
