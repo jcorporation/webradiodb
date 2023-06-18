@@ -2,11 +2,11 @@
 #EXTINF:-1,Klassik Radio Movie
 #EXTGENRE:Classical
 #PLAYLIST:Klassik Radio Movie
-#EXTIMG:http___stream_klassikradio_de_movie_mp3-192.webp
+#EXTIMG:https___live_streams_klassikradio_de_klassikradio-movie.webp
 #HOMEPAGE:https://www.klassikradio.de/
 #COUNTRY:Germany
 #LANGUAGE:German
 #DESCRIPTION:
-#CODEC:MP3
-#BITRATE:192
-http://stream.klassikradio.de/movie/mp3-192
+#CODEC:HE-AAC
+#BITRATE:0
+https://live.streams.klassikradio.de/klassikradio-movie
