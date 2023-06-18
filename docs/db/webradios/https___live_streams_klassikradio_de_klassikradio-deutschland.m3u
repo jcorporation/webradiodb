@@ -2,11 +2,11 @@
 #EXTINF:-1,Klassik Radio Live
 #EXTGENRE:Classical
 #PLAYLIST:Klassik Radio Live
-#EXTIMG:http___stream_klassikradio_de_live_mp3-192.webp
+#EXTIMG:https___live_streams_klassikradio_de_klassikradio-deutschland.webp
 #HOMEPAGE:https://www.klassikradio.de/
 #COUNTRY:Germany
 #LANGUAGE:German
 #DESCRIPTION:
-#CODEC:MP3
-#BITRATE:192
-http://stream.klassikradio.de/live/mp3-192
+#CODEC:HE-AAC
+#BITRATE:0
+https://live.streams.klassikradio.de/klassikradio-deutschland
