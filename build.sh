@@ -838,10 +838,11 @@ check_images() {
 }
 
 update_format() {
-    M3U_FILE="$1"
+    local FORCE=$1
+    M3U_FILE="$2"
     CUR_BITRATE=$(grep "^#BITRATE:" "$M3U_FILE" | cut -d: -f2)
     CUR_CODEC=$(grep "^#CODEC:" "$M3U_FILE" | cut -d: -f2)
-    if [ -n "$CUR_BITRATE" ] && [ -n "$CUR_CODEC" ]
+    if [ "$FORCE" == "check" ] && [ -n "$CUR_BITRATE" ] && [ -n "$CUR_CODEC" ]
     then
         #only update if no format is defined
         return 0
@@ -1039,7 +1040,11 @@ case "$ACTION" in
         sync_moode
         ;;
     update_format)
-        update_format "$2"
+        update_format check "$2"
+        exit $?
+        ;;
+    update_format_force)
+        update_format force "$2"
         exit $?
         ;;
     update_format_all)
@@ -1087,6 +1092,8 @@ case "$ACTION" in
         echo "    and converts the images to webp"
         echo "  update_format <m3u>:"
         echo "    if codec and bitrate is empty get it by connecting to stream"
+        echo "  update_format_force <m3u>:"
+        echo "    update codec and bitrate unconditionally by connecting to stream"
         echo "  update_format_all:"
         echo "    calls update_format for all m3u files"
         echo ""
