@@ -7,6 +7,6 @@
 #COUNTRY:Wales
 #LANGUAGE:Welsh
 #DESCRIPTION:
-#CODEC:MP3
-#BITRATE:128
+#CODEC:HLS
+#BITRATE:0
 http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_radio_cymru.m3u8
