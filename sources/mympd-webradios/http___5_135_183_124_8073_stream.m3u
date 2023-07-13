@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Onda Torrente Radio
+#EXTGENRE:Dance, Pop, latino, Rock, House, Tecno,
+#PLAYLIST:Onda Torrente Radio
+#EXTIMG:http___5_135_183_124_8073_stream.webp
+#HOMEPAGE:https://www.ondatorrenteradio.com
+#COUNTRY:España
+#LANGUAGE:España
+#DESCRIPTION:Musical E informativa  (Somos Tu Radio)
+#CODEC:MP3
+#BITRATE:128kbps
+http://5.135.183.124:8073/stream
