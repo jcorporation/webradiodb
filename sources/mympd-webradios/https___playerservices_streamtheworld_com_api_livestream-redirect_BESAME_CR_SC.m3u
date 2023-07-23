@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Bésame - 89.9 FM
+#EXTGENRE:Romántico
+#PLAYLIST:Bésame - 89.9 FM
+#EXTIMG:https___playerservices_streamtheworld_com_api_livestream-redirect_BESAME_CR_SC.webp
+#HOMEPAGE:https://www.besame.cr/
+#COUNTRY:Costa Rica
+#LANGUAGE:Spanish
+#DESCRIPTION:Bésame 89.9 FM es una emisora costarricense que transmite desde San José contenido muy variado.
+#CODEC:
+#BITRATE:
+https://playerservices.streamtheworld.com/api/livestream-redirect/BESAME_CR_SC
