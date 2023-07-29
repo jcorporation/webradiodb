@@ -839,7 +839,7 @@ check_images() {
 
 update_format() {
     local FORCE=$1
-    M3U_FILE="$2"
+    local M3U_FILE=$2
     CUR_BITRATE=$(grep "^#BITRATE:" "$M3U_FILE" | cut -d: -f2)
     CUR_CODEC=$(grep "^#CODEC:" "$M3U_FILE" | cut -d: -f2)
     if [ "$FORCE" == "check" ] && [ -n "$CUR_BITRATE" ] && [ -n "$CUR_CODEC" ]
@@ -884,14 +884,14 @@ update_format_all() {
     rc=0
     for F in "$MYMPD_PLS_DIR/"*
     do
-        if ! update_format "$F"
+        if ! update_format check "$F"
         then
             rc=1
         fi
     done
     for F in "$MOODE_PLS_DIR/"*
     do
-        if ! update_format "$F"
+        if ! update_format check "$F"
         then
             rc=1
         fi
