@@ -7,6 +7,6 @@
 #COUNTRY:Costa Rica
 #LANGUAGE:Spanish
 #DESCRIPTION:Bésame 89.9 FM es una emisora costarricense que transmite desde San José contenido muy variado.
-#CODEC:
-#BITRATE:
+#CODEC:MP3
+#BITRATE:128
 https://playerservices.streamtheworld.com/api/livestream-redirect/BESAME_CR_SC

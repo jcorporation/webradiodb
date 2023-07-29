@@ -7,6 +7,6 @@
 #COUNTRY:Costa Rica
 #LANGUAGE:Spanish
 #DESCRIPTION:En La Mejor podrás encontrar una programación entretenida y variada que busca alegrar tu día a día.
-#CODEC:
-#BITRATE:
+#CODEC:HLS
+#BITRATE:0
 https://d1omaux5g7ow4v.cloudfront.net/lamejor.m3u8
