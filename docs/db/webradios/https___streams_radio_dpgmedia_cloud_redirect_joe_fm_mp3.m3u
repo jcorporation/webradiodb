@@ -2,11 +2,11 @@
 #EXTINF:-1,Joe FM
 #EXTGENRE:Various, 70's, 80's, 90's
 #PLAYLIST:Joe FM
-#EXTIMG:https___playerservices_streamtheworld_com_api_livestream-redirect_JOE_mp3.webp
+#EXTIMG:https___streams_radio_dpgmedia_cloud_redirect_joe_fm_mp3.webp
 #HOMEPAGE:https://joe.be/
 #COUNTRY:Belgium
 #LANGUAGE:Dutch
 #DESCRIPTION:
 #CODEC:MP3
 #BITRATE:128
-https://playerservices.streamtheworld.com/api/livestream-redirect/JOE.mp3
+https://streams.radio.dpgmedia.cloud/redirect/joe_fm/mp3
