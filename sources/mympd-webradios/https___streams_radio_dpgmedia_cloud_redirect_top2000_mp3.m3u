@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Joe Top 2000
+#EXTGENRE:2000's
+#PLAYLIST:Joe Top 2000
+#EXTIMG:https___streams_radio_dpgmedia_cloud_redirect_top2000_mp3.webp
+#HOMEPAGE:https://joe.be/
+#COUNTRY:Belgium
+#LANGUAGE:Dutch
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+https://streams.radio.dpgmedia.cloud/redirect/top2000/mp3
