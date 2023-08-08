@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Radio 98.4
+#EXTGENRE:News
+#PLAYLIST:Radio 98.4
+#EXTIMG:https___cast4_my-control-panel_com_proxy_anastas2_stream.webp
+#HOMEPAGE:https://www.radio984.gr/
+#COUNTRY:Greece
+#LANGUAGE:Greek
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:160
+https://cast4.my-control-panel.com/proxy/anastas2/stream

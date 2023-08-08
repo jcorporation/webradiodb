@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Sohos FM 88.7
+#EXTGENRE:International
+#PLAYLIST:Sohos FM 88.7
+#EXTIMG:http___217_20_116_68_32032_stream.webp
+#HOMEPAGE:http://sohosfm.gr/
+#COUNTRY:Greece
+#LANGUAGE:Greek
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+http://217.20.116.68:32032/stream
