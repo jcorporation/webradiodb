@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Antenne Schlager
+#EXTGENRE:German, Schlager
+#PLAYLIST:Antenne Schlager
+#EXTIMG:https___antnds_streamabc_net_ands-antenneschlager-mp3-192-8742257.webp
+#HOMEPAGE:https://www.antenne-schlager.de/
+#COUNTRY:Germany
+#LANGUAGE:German
+#DESCRIPTION:German Schlager music station from Hannover, Lower Saxony, Germany
+#CODEC:MP3
+#BITRATE:192
+https://antnds.streamabc.net/ands-antenneschlager-mp3-192-8742257
