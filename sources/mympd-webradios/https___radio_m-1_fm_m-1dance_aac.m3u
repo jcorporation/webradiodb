@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,M-1 Dance
+#EXTGENRE:Dance
+#PLAYLIST:M-1 Dance
+#EXTIMG:https___radio_m-1_fm_m-1dance_aac.webp
+#HOMEPAGE:https://m-1dance.fm
+#COUNTRY:Lithuania
+#LANGUAGE:Lithuanian
+#DESCRIPTION:
+#CODEC:AAC
+#BITRATE:128
+https://radio.m-1.fm/m-1dance/aac
