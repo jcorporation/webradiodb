@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,LRT Klasika
+#EXTGENRE:Classical, Talk, Culture
+#PLAYLIST:LRT Klasika
+#EXTIMG:https___stream-live_lrt_lt_klasika_stream04_streamPlaylist_m3u8.webp
+#HOMEPAGE:https://www.lrt.lt/mediateka/tiesiogiai/lrt-klasika
+#COUNTRY:Lithuania
+#LANGUAGE:Lithuanian
+#DESCRIPTION:
+#CODEC:AAC
+#BITRATE:
+https://stream-live.lrt.lt/klasika/stream04/streamPlaylist.m3u8
