@@ -7,6 +7,6 @@
 #COUNTRY:Lithuania
 #LANGUAGE:Lithuanian
 #DESCRIPTION:
-#CODEC:AAC
-#BITRATE:
+#CODEC:HLS
+#BITRATE:0
 https://stream-live.lrt.lt/klasika/stream04/streamPlaylist.m3u8

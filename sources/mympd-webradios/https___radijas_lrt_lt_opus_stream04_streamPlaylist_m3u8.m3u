@@ -7,6 +7,6 @@
 #COUNTRY:Lithuania
 #LANGUAGE:Lithuanian
 #DESCRIPTION:
-#CODEC:AAC
-#BITRATE:
+#CODEC:HLS
+#BITRATE:0
 https://radijas.lrt.lt/opus/stream04/streamPlaylist.m3u8
