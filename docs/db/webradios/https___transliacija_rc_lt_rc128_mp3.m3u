@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Radijo Centras
+#EXTGENRE:Pop, Charts
+#PLAYLIST:Radijo Centras
+#EXTIMG:https___transliacija_rc_lt_rc128_mp3.webp
+#HOMEPAGE:https://rc.lt
+#COUNTRY:Lithuania
+#LANGUAGE:Lithuanian
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+https://transliacija.rc.lt/rc128.mp3
