@@ -33,24 +33,71 @@ MYMPD_PLS_DIR="${SOURCES_DIR}/mympd-webradios"
 source ./mappings/genre_map.sh
 source ./mappings/m3ufields_map.sh
 
+# Checks if string starts with http:// or https://
 is_uri() {
-    CHECK_URI="$1"
+    local CHECK_URI="$1"
     [ "${CHECK_URI:0:7}" = "http://" ] && return 0
     [ "${CHECK_URI:0:8}" = "https://" ] && return 0
     return 1
 }
 
-get_m3u_field() {
-    M3U_FILE="$1"
-    M3U_FIELD="$2"
+# Upper cases the complete string
+ucstring() {
+    local var="$*"
+    printf '%s' "${var^^}"
+}
 
+# Upper cases the first character of each word
+ucwords() {
+    local var="$*"
+    #shellcheck disable=SC2206
+    array=( $var )
+    #shellcheck disable=SC2124
+    var="${array[@]^}"
+    printf '%s' "$var"
+}
+
+# Trims whitespaces from start and end of a string
+trim() {
+    local var="$*"
+    # remove leading whitespace characters
+    var="${var#"${var%%[![:space:]]*}"}"
+    # remove trailing whitespace characters
+    var="${var%"${var##*[![:space:]]}"}"
+    printf '%s' "$var"
+}
+
+# Trims the path from a filename
+trim_path() {
+    local var="$1"
+    printf '%s' "${var##*/}"
+}
+
+# Trims the extension from a filename
+trim_ext() {
+    local var="$1"
+    printf '%s' "${var%%.md*}"
+}
+
+# Generates a myMPD compatible m3u filename, by replacings special chars with underscore
+gen_m3u_name() {
+    sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$1"
+}
+
+# Gets a m3u field value
+get_m3u_field() {
+    local M3U_FILE="$1"
+    local M3U_FIELD="$2"
+
+    local LINE
     LINE=$(grep "^#${M3U_FIELD}:" "$M3U_FILE")
     echo "${LINE#*:}"
 }
 
+# Downloads an image from an uri, converts and resizes it
 download_image() {
-    DOWNLOAD_URI="$1"
-    DOWNLOAD_DST="$2"
+    local DOWNLOAD_URI="$1"
+    local DOWNLOAD_DST="$2"
     echo "Downloading image: \"$DOWNLOAD_URI\""
     if ! curl -kfsSL "$DOWNLOAD_URI" --output "${DOWNLOAD_DST}.image"
     then
@@ -71,11 +118,13 @@ download_image() {
     return 0
 }
 
+# Resize an image
 resize_image() {
-    RESIZE_FILE="$1"
-    TO_SIZE="400x400"
+    local RESIZE_FILE="$1"
+    local TO_SIZE="400x400"
     [ -s "$RESIZE_FILE" ] || exit 1
     #get actual size
+    local CUR_SIZE
     CUR_SIZE=$(identify -format "%wx%h" "$RESIZE_FILE")
 
     if [ "${CUR_SIZE}" != "${TO_SIZE}" ]
@@ -92,39 +141,21 @@ resize_image() {
     return 0
 }
 
-trim() {
-    local var="$*"
-    # remove leading whitespace characters
-    var="${var#"${var%%[![:space:]]*}"}"
-    # remove trailing whitespace characters
-    var="${var%"${var##*[![:space:]]}"}"
-    printf '%s' "$var"
-}
-
-ucwords() {
-    local var="$*"
-    var=( $var ) # without quotes
-    var="${var[@]^}"
-    printf '%s' "$var"
-}
-
-ucstring() {
-    local var="$*"
-    printf '%s' "${var^^}"
-}
-
+# Normalizes GENRE, CODEC, COUNTRY, LANGUAGE in all m3u's in specified folder
 normalize_fields() {
-    DIR=$1
+    local DIR=$1
+    local F
     for F in "$DIR"/*.m3u
     do
         # genres
-        GENRE_LINE=$(grep "^#EXTGENRE" "$F")
-        GENRE_LINE=${GENRE_LINE#*:}
-        NEW_GENRE=""
+        local GENRE_LINE
+        GENRE_LINE=$(get_m3u_field "$F" "EXTGENRE")
+        local NEW_GENRE=""
+        local GENRE
         while read -r -d, GENRE
         do
             [ "$GENRE" = "" ] && continue
-            NG="${genre_map[$GENRE]:-}"
+            local NG="${genre_map[$GENRE]:-}"
             if [ "$NG" != "" ]
             then
                 NG=$(ucwords "$NG")
@@ -141,8 +172,9 @@ normalize_fields() {
             sed -i -e "s/^#EXTGENRE:.*/#EXTGENRE:$NEW_GENRE/" "$F"
         fi
         # codec
-        CODEC=$(grep "^#CODEC" "$F")
-        CODEC=${CODEC#*:}
+        local CODEC
+        CODEC=$(get_m3u_field "$F" "CODEC")
+        local CODEC_UPPER
         CODEC_UPPER=$(ucstring "$CODEC")
         CODEC_UPPER=$(trim "$CODEC_UPPER")
         if [ "$CODEC" != "$CODEC_UPPER" ]
@@ -151,8 +183,9 @@ normalize_fields() {
             sed -i -e "s/^#CODEC:.*/#CODEC:$CODEC_UPPER/" "$F"
         fi
         # country
-        COUNTRY=$(grep "^#COUNTRY" "$F")
-        COUNTRY=${COUNTRY#*:}
+        local COUNTRY
+        COUNTRY=$(get_m3u_field "$F" "COUNTRY")
+        local COUNTRY_UPPER
         COUNTRY_UPPER=$(ucwords "$COUNTRY")
         COUNTRY_UPPER=$(trim "$COUNTRY_UPPER")
         if [ "$COUNTRY" != "$COUNTRY_UPPER" ]
@@ -161,8 +194,9 @@ normalize_fields() {
             sed -i -e "s/^#COUNTRY:.*/#COUNTRY:$COUNTRY_UPPER/" "$F"
         fi
         # language
-        LANGUAGE=$(grep "^#LANGUAGE" "$F")
-        LANGUAGE=${LANGUAGE#*:}
+        local LANGUAGE
+        LANGUAGE=$(get_m3u_field "$F" "LANGUAGE")
+        local LANGUAGE_UPPER
         LANGUAGE_UPPER=$(ucwords "$LANGUAGE")
         LANGUAGE_UPPER=$(trim "$LANGUAGE_UPPER")
         if [ "$LANGUAGE" != "$LANGUAGE_UPPER" ]
@@ -173,12 +207,13 @@ normalize_fields() {
     done
 }
 
+# Sync with moode audio webradio list
 sync_moode() {
     echo "Syncing moode audio webradios"
     # fields of cfg_radios are:
     # id, station, name, type, logo, genre, broadcaster, language, country, region, bitrate, codec, geo_fenced, home_page, reserved2
-    MOODE_DB="https://raw.githubusercontent.com/moode-player/moode/master/var/local/www/db/moode-sqlite3.db.sql"
-    MOODE_IMAGES="https://raw.githubusercontent.com/moode-player/moode/master/var/local/www/imagesw/radio-logos/"
+    local MOODE_DB="https://raw.githubusercontent.com/moode-player/moode/master/var/local/www/db/moode-sqlite3.db.sql"
+    local MOODE_IMAGES="https://raw.githubusercontent.com/moode-player/moode/master/var/local/www/imagesw/radio-logos/"
 
     # start with clean output dirs
     rm -fr "$MOODE_PLS_DIR" 
@@ -187,15 +222,17 @@ sync_moode() {
     mkdir "$MOODE_PICS_DIR"
 
     # fetch the sql file and grep the webradio stations and convert it to csv
-    I=0
-    S=0
+    local I=0
+    local S=0
+    local LINE
     while read -r LINE
     do
         # LINE is a csv: station, name, genre, language, country, bitrate, codec, homepage
 
         # create the same plist name as myMPD
-        PLIST=$(csvcut -c 1 <<< "$LINE" | \
-            sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g')
+        local PLIST
+        PLIST=$(csvcut -c 1 <<< "$LINE")
+        PLIST=$(gen_m3u_name "$PLIST")
 
         if grep -q "$PLIST" mappings/moode-ignore
         then
@@ -204,18 +241,28 @@ sync_moode() {
             continue
         fi
         # extract fields
+        local STATION
         STATION=$(csvcut -c 1 <<< "$LINE" | sed -e s/\"//g)
+        local NAME
         NAME=$(csvcut -c 2 <<< "$LINE" | sed -e s/\"//g)
+        local IMAGE
         IMAGE=$(csvcut -c 3 <<< "$LINE" | sed -e s/\"//g)
+        local GENRE
         GENRE=$(csvcut -c 4 <<< "$LINE" | sed -e s/\"//g)
+        local LANGUAGE
         LANGUAGE=$(csvcut -c 5 <<< "$LINE" | sed -e s/\"//g)
+        local COUNTRY
         COUNTRY=$(csvcut -c 6 <<< "$LINE" | sed -e s/\"//g)
+        local BITRATE
         BITRATE=$(csvcut -c 7 <<< "$LINE" | sed -e s/\"//g)
+        local CODEC
         CODEC=$(csvcut -c 8 <<< "$LINE" | sed -e s/\"//g)
+        local HOMEPAGE
         HOMEPAGE=$(csvcut -c 9 <<< "$LINE" | sed -e s/\"//g)
 
         # get images 
-        NAME_ENCODED=$(jq -rn --arg x "$NAME" '$x|@uri')
+        local NAME_ENCODED
+        NAME_ENCODED=$(jq -rn --arg x "$NAME" '$x | @uri')
         if [ "$IMAGE" = "local" ]
         then
             if [ -s "${MOODE_PICS_DIR}.old/${PLIST}.webp" ]
@@ -269,7 +316,8 @@ add_radio() {
     # get the uri and write out a skeletion file
     read -r -p "URI: " URI
     # create the same plist name as myMPD
-    PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$URI")
+    local PLIST
+    PLIST=$(gen_m3u_name "$URI")
     if [ -f "${MYMPD_PLS_DIR}/${PLIST}.m3u" ]
     then
         echo "This webradio already exists."
@@ -298,20 +346,32 @@ EOL
     echo ""
 }
 
+# Creates a m3u from an issue json file
 add_radio_from_json() {
-    INPUT="$1"
+    local INPUT="$1"
+    local URI
     URI=$(jq -r ".streamuri" < "$INPUT" | head -1 | tr -d '\n')
+    local NAME
     NAME=$(jq -r ".name" < "$INPUT" | head -1 | tr -d '\n')
+    local GENRE
     GENRE=$(jq -r ".genre" < "$INPUT" | head -1 | tr -d '\n' | sed -E -e 's/;\s?/, /g' -e 's/,(\S)/, \1/g')
+    local IMAGE
     IMAGE=$(jq -r ".image" < "$INPUT" | head -1 | tr -d '\n')
+    local HOMEPAGE
     HOMEPAGE=$(jq -r ".homepage" < "$INPUT" | head -1 | tr -d '\n')
+    local COUNTRY
     COUNTRY=$(jq -r ".country" < "$INPUT" | head -1 | tr -d '\n')
+    local LANGUAGE
     LANGUAGE=$(jq -r ".language" < "$INPUT" | head -1 | tr -d '\n')
+    local DESCRIPTION
     DESCRIPTION=$(jq -r ".description" < "$INPUT" | head -1 | tr -d '\n')
+    local CODEC
     CODEC=$(jq -r ".codec" < "$INPUT" | head -1 | tr -d '\n')
+    local BITRATE
     BITRATE=$(jq -r ".bitrate" < "$INPUT" | head -1 | tr -d '\n')
     # create the same plist name as myMPD
-    PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$URI")
+    local PLIST
+    PLIST=$(gen_m3u_name "$URI")
     echo "Adding webradio $PLIST"
     if [ -f "${MYMPD_PLS_DIR}/${PLIST}.m3u" ]
     then
@@ -326,7 +386,6 @@ add_radio_from_json() {
         else
             echo "Download of image has failed"
             exit 1
-            IMAGE=""
         fi
     else
         echo "Image is not an uri, skipping download"
@@ -349,11 +408,14 @@ $URI
 EOL
 }
 
+# Modifies a m3u from an issue json file
 modify_radio_from_json() {
-    INPUT="$1"
+    local INPUT="$1"
     #Webradio to modify
+    local MODIFY_URI
     MODIFY_URI=$(jq -r ".modifyWebradio" < "$INPUT")
-    MODIFY_PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$MODIFY_URI")
+    local MODIFY_PLIST
+    MODIFY_PLIST=$(gen_m3u_name "$MODIFY_URI")
     if [ ! -f "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" ]
     then
         if [ -f "${MOODE_PLS_DIR}/${MODIFY_PLIST}.m3u" ]
@@ -371,26 +433,46 @@ modify_radio_from_json() {
     fi
     echo "Modifying webradio $MODIFY_PLIST"
     #New values
+    local NEW_URI
     NEW_URI=$(jq -r ".streamuri" < "$INPUT" | head -1 | tr -d '\n')
+    local NEW_NAME
     NEW_NAME=$(jq -r ".name" < "$INPUT" | head -1 | tr -d '\n')
+    local NEW_GENRE
     NEW_GENRE=$(jq -r ".genre" < "$INPUT" | head -1 | tr -d '\n' | sed -E -e 's/;\s?/, /g' -e 's/,(\S)/, \1/g')
+    local NEW_IMAGE
     NEW_IMAGE=$(jq -r ".image" < "$INPUT" | head -1 | tr -d '\n')
+    local NEW_HOMEPAGE
     NEW_HOMEPAGE=$(jq -r ".homepage" < "$INPUT" | head -1 | tr -d '\n')
+    local NEW_COUNTRY
     NEW_COUNTRY=$(jq -r ".country" < "$INPUT" | head -1 | tr -d '\n')
+    local NEW_LANGUAGE
     NEW_LANGUAGE=$(jq -r ".language" < "$INPUT" | head -1 | tr -d '\n')
+    local NEW_DESCRIPTION
     NEW_DESCRIPTION=$(jq -r ".description" < "$INPUT" | head -1 | tr -d '\n')
+    local NEW_CODEC
     NEW_CODEC=$(jq -r ".codec" < "$INPUT" | head -1 | tr -d '\n')
+    local NEW_BITRATE
     NEW_BITRATE=$(jq -r ".bitrate" < "$INPUT" | head -1 | tr -d '\n')
-    NEW_PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$NEW_URI")
+    local NEW_PLIST
+    NEW_PLIST=$(gen_m3u_name "$NEW_URI")
     #Get old values
+    local OLD_NAME
     OLD_NAME=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "PLAYLIST")
+    local OLD_GENRE
     OLD_GENRE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "EXTGENRE")
+    local OLD_IMAGE
     OLD_IMAGE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "EXTIMG")
+    local OLD_HOMEPAGE
     OLD_HOMEPAGE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "HOMEPAGE")
+    local OLD_COUNTRY
     OLD_COUNTRY=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "COUNTRY")
+    local OLD_LANGUAGE
     OLD_LANGUAGE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "LANGUAGE")
+    local OLD_DESCRIPTION
     OLD_DESCRIPTION=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "DESCRIPTION")
+    local OLD_CODEC
     OLD_CODEC=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "CODEC")
+    local OLD_BITRATE
     OLD_BITRATE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "BITRATE")
     if [ "$MODIFY_PLIST" != "$NEW_PLIST" ] && [ -f "${MYMPD_PLS_DIR}/${NEW_PLIST}.m3u" ]
     then
@@ -427,7 +509,6 @@ modify_radio_from_json() {
             else
                 echo "Download of image has failed"
                 exit 1
-                NEW_IMAGE=""
             fi
         else
             echo "Image is not an uri, skipping download"
@@ -462,11 +543,13 @@ $NEW_URI
 EOL
 }
 
+# Deletes a m3u from an issue json file
 delete_radio_from_json() {
-    INPUT="$1"
+    local INPUT="$1"
+    local URI
     URI=$(jq -r ".deleteWebradio" < "$INPUT")
-    # create the same plist name as myMPD
-    PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$URI")
+    local PLIST
+    PLIST=$(gen_m3u_name "$URI")
 
     if [ -f "${MYMPD_PLS_DIR}/${PLIST}.m3u" ]
     then
@@ -492,14 +575,20 @@ delete_radio_from_json() {
     fi
 }
 
+# Adds an alternate stream m3u from a issue json file
 add_alternate_stream_from_json() {
-    INPUT="$1"
+    local INPUT="$1"
+    local WEBRADIO
     WEBRADIO=$(jq -r ".modifyWebradio" < "$INPUT")
     # create the same plist name as myMPD
-    PLIST=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$WEBRADIO")
+    local PLIST
+    PLIST=$(gen_m3u_name "$WEBRADIO")
 
+    local URI
     URI=$(jq -r ".streamuri" < "$INPUT" | head -1 | tr -d '\n')
+    local CODEC
     CODEC=$(jq -r ".codec" < "$INPUT" | head -1 | tr -d '\n')
+    local BITRATE
     BITRATE=$(jq -r ".bitrate" < "$INPUT" | head -1 | tr -d '\n')
 
     echo "Writing ${PLIST}.m3u.$CODEC.$BITRATE"
@@ -510,43 +599,48 @@ $URI
 EOL
 }
 
+# Deletes an alternate stream m3u from a issue json file
 delete_alternate_stream_from_json() {
-    INPUT="$1"
+    local INPUT="$1"
+    local TO_DELETE
     TO_DELETE=$(jq -r ".deleteAlternateStream" < "$INPUT")
     rm -f "${MYMPD_PLS_DIR}/${TO_DELETE}"
 }
 
+# Converts a m3u line to a json key/value pair
 m3u_to_json() {
-    LINE="$1"
+    local LINE="$1"
     if [ "${LINE:0:1}" = "#" ]
     then
-        INFO="${LINE:1}"
-        KEY=${INFO%%:*}
-        VALUE=${INFO#*:}
+        local INFO="${LINE:1}"
+        local KEY=${INFO%%:*}
+        local VALUE=${INFO#*:}
         if [ "$KEY" = "EXTGENRE" ]
         then
             VALUE=$(jq -c -R 'split(", ")' <<< "$VALUE")
         elif [ "$KEY" = "BITRATE" ]
         then
             #enforce bitrate value
-            [ "$VALUE" = "" ] && VALUE="0"
+            [ -z "$VALUE" ] && VALUE="0"
         else
             VALUE=$(jq -n --arg value "$VALUE" '$value')
         fi
-        printf "\"${m3ufields_map[$KEY]:-}\":%s" "$VALUE"
+        printf '"%s":%s' "${m3ufields_map[$KEY]:-}" "$VALUE"
     else
         VALUE=$(jq -n --arg value "$LINE" '$value')
-        printf "\"StreamUri\":%s" "$VALUE"
+        printf '"%s":%s' "StreamUri" "$VALUE"
     fi
 }
 
+# Parses an alternate stream m3u and outputs it as json
 parse_alternative_streams() {
-    S="$1"
-    RADIO="$2"
-    CODEC=""
-    BITRATE=""
-    URI=""
-    NAME=""
+    local S="$1"
+    local RADIO="$2"
+    local CODEC=""
+    local BITRATE=""
+    local URI=""
+    local NAME=""
+    local LINE
     while read -r LINE
     do
         if [ "${LINE:0:1}" = "#" ]
@@ -565,7 +659,7 @@ parse_alternative_streams() {
                     ;;
             esac
         else
-            NAME=$(sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$LINE")
+            NAME=$(gen_m3u_name "$LINE")
             URI=$(jq -n --arg value "$LINE" '$value')
         fi
     done < "$S"
@@ -577,9 +671,12 @@ parse_alternative_streams() {
     rm "$S"
 }
 
+# Move a file if it has changed
 move_compress_changed() {
-    FILE=$1
+    local FILE=$1
+    local SRC_CHKSUM
     SRC_CHKSUM=$(md5sum "${FILE}.tmp" | cut -d" " -f1)
+    local DST_CHKSUM
     if [ -f "$FILE" ]
     then
         DST_CHKSUM=$(md5sum "${FILE}" | cut -d" " -f1)
@@ -598,6 +695,7 @@ move_compress_changed() {
     fi
 }
 
+# Creates the webradioDB index
 create() {
     echo "Cleaning up"
     rm -fr "$PLS_DIR"
@@ -620,23 +718,25 @@ create() {
     exec 3<> "${INDEXFILE}.tmp"
     printf "{" >&3
     WEBRADIO_COUNT=0
+    local F
     for F in "$PLS_DIR"/*.m3u
     do
-        FILENAME=${F##*/}
+        local FILENAME=${F##*/}
         [ "$WEBRADIO_COUNT" -gt 0 ] && printf "," >&3
         printf "\"%s\":{" "$FILENAME" >&3
-        LINE_COUNT=0
+        local LINE_COUNT=0
         declare -A ALL_CODECS=()
         declare -A ALL_BITRATES=()
+        local LINE
         while read -r LINE
         do
-            KEY=${LINE%%:*}
+            local KEY=${LINE%%:*}
             [ "$LINE" = "#EXTM3U" ] && continue
             [ "$KEY" = "#EXTINF" ] && continue
             [ "$LINE" = "" ] && continue
             [ "$LINE_COUNT" -gt 0 ] && printf "," >&3
             m3u_to_json "$LINE" >&3
-            VALUE=${LINE#*:}
+            local VALUE=${LINE#*:}
             [ "$KEY" = "CODEC" ] && [ "$VALUE" != "" ] && ALL_CODECS["$VALUE"]="1"
             [ "$KEY" = "BITRATE" ] && [ "$VALUE" != "" ] && ALL_BITRATES["$VALUE"]="1"
             LINE_COUNT=$((LINE_COUNT+1))
@@ -654,7 +754,8 @@ create() {
             done
         fi
         printf "},\"allCodecs\":[" >&3
-        CODEC_COUNT=0
+        local CODEC_COUNT=0
+        local C
         for C in "${!ALL_CODECS[@]}"
         do
             [ "$CODEC_COUNT" -gt 0 ] && printf "," >&3
@@ -662,14 +763,15 @@ create() {
             CODEC_COUNT=$((CODEC_COUNT+1))
         done
         printf "],\"allBitrates\":[" >&3
-        BITRATE_COUNT=0
-        BITRATE_HIGHEST=0
+        local BITRATE_COUNT=0
+        local BITRATE_HIGHEST=0
+        local B
         for B in "${!ALL_BITRATES[@]}"
         do
             [ "$BITRATE_COUNT" -gt 0 ] && printf "," >&3
             printf "%s" "$B" >&3
             BITRATE_COUNT=$((BITRATE_COUNT+1))
-            [ $B -gt $BITRATE_HIGHEST ] && BITRATE_HIGHEST=$B
+            [ "$B" -gt "$BITRATE_HIGHEST" ] && BITRATE_HIGHEST=$B
         done
         printf "],\"highestBitrate\":%s" "$BITRATE_HIGHEST" >&3
         printf "}" >&3
@@ -686,26 +788,31 @@ create() {
         #create other index files
         jq -r '.[] | .Language' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$LANGFILE.tmp"
+        local LANGUAGES_COUNT
         LANGUAGES_COUNT=$(jq -r '.[]' "$LANGFILE.tmp" | wc -l)
         echo "${LANGUAGES_COUNT} languages in index"
 
         jq -r '.[] | .Country' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$COUNTRYFILE.tmp"
+        local COUNTRIES_COUNT
         COUNTRIES_COUNT=$(jq -r '.[]' "$COUNTRYFILE.tmp" | wc -l)
         echo "${COUNTRIES_COUNT} countries in index"
 
         jq -r '.[] | .Genre | .[]' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$GENREFILE.tmp"
+        local GENRES_COUNT
         GENRES_COUNT=$(jq -r '.[]' "$GENREFILE.tmp" | wc -l)
         echo "${GENRES_COUNT} genres in index"
 
         jq -r '.[] | .Codec' "${INDEXFILE}.tmp" | sort -u | grep -v -P '^\s*$' | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$CODECFILE.tmp"
+        local CODECS_COUNT
         CODECS_COUNT=$(jq -r '.[]' "$CODECFILE.tmp" | wc -l)
         echo "${CODECS_COUNT} codecs in index"
 
         jq -r '.[] | .Bitrate' "${INDEXFILE}.tmp" | sort -u -g | grep -v -P '^(\s*|0)$' | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$BITRATEFILE.tmp"
+        local BITRATES_COUNT
         BITRATES_COUNT=$(jq -r '.[]' "$BITRATEFILE.tmp" | wc -l)
         echo "${BITRATES_COUNT} bitrates in index"
 
@@ -743,7 +850,7 @@ create() {
         tr -d '\n' < "${INDEXFILE_COMBINED}.tmp" >> "${INDEXFILE_JS}.tmp"
         printf ";\n" >> "${INDEXFILE_JS}.tmp"
         #finished, move all files in place
-        CHANGED=0
+        local CHANGED=0
         move_compress_changed "$INDEXFILE" && CHANGED=1
         move_compress_changed "$LANGFILE" && CHANGED=1
         move_compress_changed "$COUNTRYFILE" && CHANGED=1
@@ -767,8 +874,10 @@ create() {
     fi
 }
 
+# Check for duplicate uris and names
 check_duplicates() {
     #duplicate uris
+    local DUP
     DUP=$(grep -h -v -P '^(#|s+)' docs/db/webradios/* | sort | uniq -d)
     if [ "$DUP" != "" ]
     then
@@ -784,9 +893,11 @@ check_duplicates() {
         echo "$DUP"
         exit 1
     fi
+    local F
     for F in sources/moode-webradios/*.m3u
     do
-        G=$(basename "$F")
+        local G
+        G=$(trim_path "$F")
         if [ -f "sources/mympd-webradios/$G.m3u" ]
         then
             echo "Duplicate m3u found"
@@ -797,26 +908,30 @@ check_duplicates() {
     exit 0
 }
 
+# Checks all images
 check_images_all() {
     check_images "$PLS_DIR" "$PICS_DIR"
     check_images "$MOODE_PLS_DIR" "$MOODE_PICS_DIR"
     check_images "$MYMPD_PLS_DIR" "$MYMPD_PICS_DIR"
 }
 
+# Checks images for m3u's in specified folder
 check_images() {
-    P_DIR=$1
-    I_DIR=$2
-    rc=0
+    local PLIST_DIR=$1
+    local IMAGE_DIR=$2
+    local rc=0
+    local F
+    local G
     #check images for playlists
-    for F in "$P_DIR/"*.m3u
+    for F in "$PLIST_DIR/"*.m3u
     do
         G=$(grep "#EXTIMG" "$F" | cut -d: -f2)
-        if [ "$(file --mime-type "$I_DIR/${G}")" != "$I_DIR/${G}: image/webp" ]
+        if [ "$(file --mime-type "$IMAGE_DIR/${G}")" != "$IMAGE_DIR/${G}: image/webp" ]
         then 
-            if [ -f "$I_DIR/${G}" ]
+            if [ -f "$IMAGE_DIR/${G}" ]
             then
-                echo "Invalid image: $I_DIR/${G}"
-                rm -f "$I_DIR/${G}"
+                echo "Invalid image: $IMAGE_DIR/${G}"
+                rm -f "$IMAGE_DIR/${G}"
             else
                 echo "Missing image for $F"
             fi
@@ -824,10 +939,11 @@ check_images() {
         fi
     done
     #check for obsolet images
-    for F in "$I_DIR/"*.webp
+    for F in "$IMAGE_DIR/"*.webp
     do
-        G=$(basename "$F" .webp)
-        if [ ! -f "$P_DIR/${G}.m3u" ]
+        G=$(trim_path "$F")
+        G=$(trim_ext "$G")
+        if [ ! -f "$PLIST_DIR/${G}.m3u" ]
         then
             echo "Obsolet image: $F"
             rm -f "$F"
@@ -837,25 +953,28 @@ check_images() {
     return "$rc"
 }
 
+# Updates the format and bitrate for a m3u
 update_format() {
     local FORCE=$1
     local M3U_FILE=$2
+    local CUR_BITRATE
     CUR_BITRATE=$(grep "^#BITRATE:" "$M3U_FILE" | cut -d: -f2)
+    local CUR_CODEC
     CUR_CODEC=$(grep "^#CODEC:" "$M3U_FILE" | cut -d: -f2)
     if [ "$FORCE" == "check" ] && [ -n "$CUR_BITRATE" ] && [ -n "$CUR_CODEC" ]
     then
         #only update if no format is defined
         return 0
     fi
+    local STREAM
     STREAM=$(grep -v "#" "$M3U_FILE" | head -1)
-    INFO=$(ffprobe -loglevel quiet -print_format json -show_format "$STREAM")
-    rc=$?
-    if [ "$rc" != "0" ]
+    if ! INFO=$(ffprobe -loglevel quiet -print_format json -show_format "$STREAM")
     then
         echo "Error getting streaminfo for \"$M3U_FILE\""
         ffprobe -loglevel error "$STREAM"
         return 1
     fi
+    local NEW_BITRATE
     NEW_BITRATE=$(jq -r ".format.tags.\"icy-br\"" <<< "$INFO")
     if [ "$NEW_BITRATE" = "null" ]
     then
@@ -866,6 +985,7 @@ update_format() {
     then
         NEW_BITRATE=0
     fi
+    local NEW_CODEC
     NEW_CODEC=$(jq -r ".format.format_name" <<< "$INFO" | tr '[:lower:]' '[:upper:]')
     if [ -z "$NEW_CODEC" ] || [ "$NEW_CODEC" = "NULL" ]
     then
@@ -880,6 +1000,7 @@ update_format() {
     return 0
 }
 
+# Updates audioformat for all m3u's
 update_format_all() {
     rc=0
     for F in "$MYMPD_PLS_DIR/"*
@@ -899,13 +1020,17 @@ update_format_all() {
     return $rc
 }
 
+# Renames an alternate stream m3u
 rename_alternate_streams() {
+    local F
     for F in "$MYMPD_PLS_DIR/"*.m3u.*
     do
-        BITRATE=$(grep "^#BITRATE:" "$F" | cut -d: -f2)
-        CODEC=$(grep "^#CODEC:" "$F" | cut -d: -f2)
-        BASE=${F%%.m3u*}
-        NEW_NAME="$BASE.m3u.$CODEC.$BITRATE"
+        local BITRATE
+        BITRATE=$(get_m3u_field "$F" "BITRATE")
+        local CODEC
+        CODEC=$(get_m3u_field "$F" "CODEC")
+        local BASE=${F%%.m3u*}
+        local NEW_NAME="$BASE.m3u.$CODEC.$BITRATE"
         if [ "$F" != "$NEW_NAME" ]
         then
             echo "$F -> $NEW_NAME"
@@ -913,8 +1038,10 @@ rename_alternate_streams() {
     done
 }
 
+# Checks a stream with ffprobe
 check_stream() {
-    M3U_FILE="$1"
+    local M3U_FILE="$1"
+    local STREAM
     STREAM=$(grep -v "#" "$M3U_FILE" | head -1)
     if ! ffprobe -loglevel error -rw_timeout 10000000 "$STREAM"
     then
@@ -924,32 +1051,38 @@ check_stream() {
     return 0
 }
 
+# Checks all streams and writes the status json file
 check_stream_all_json() {
     printf "Checking all streams"
-    rc=0
+    local rc=0
     exec 3<> "${STATUSFILE}.tmp"
     printf "{" >&3
-    ENTRY_COUNT=0
+    local ENTRY_COUNT=0
+    local F
     for F in "$PLS_DIR/"*
     do
-        M3U=$(basename "$F")
+        local M3U
+        M3U=$(trim_path "$F")
         if grep -q "$M3U" mappings/check-ignore
         then
             echo "Skipping $M3U"
             continue
         fi
+        local STREAM
         STREAM=$(grep -v "#" "$F" | head -1)
-        RETRY_COUNT=0
+        local RETRY_COUNT=0
         while :
         do
-            OUT=$(ffprobe -loglevel error -rw_timeout 10000000 "$STREAM" 2>&1)
-            if [ "$?" != "0" ]
+            local OUT
+            if ! OUT=$(ffprobe -loglevel error -rw_timeout 10000000 "$STREAM" 2>&1)
             then
                 if [ $RETRY_COUNT -eq 5 ]
                 then
                     [ "$ENTRY_COUNT" -gt 0 ] && printf "," >&3
                     OUT=$(jq -n --arg value "$OUT" '$value')
+                    local DATE
                     DATE=$(date +%Y-%m-%d)
+                    local ERROR_COUNT
                     ERROR_COUNT=$(jq ".\"$M3U\".count" docs/db/index/status.min.json)
                     [ "$ERROR_COUNT" = "null" ] && ERROR_COUNT=0
                     ERROR_COUNT=$((ERROR_COUNT+1))
