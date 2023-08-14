@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,European Hit Radio
+#EXTGENRE:Charts, Pop
+#PLAYLIST:European Hit Radio
+#EXTIMG:https___82_135_234_195_8443_ehr_mp3.webp
+#HOMEPAGE:https://www.europeanhitradio.lt
+#COUNTRY:Lithuania
+#LANGUAGE:Lithuanian
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:192
+https://82.135.234.195:8443/ehr.mp3
