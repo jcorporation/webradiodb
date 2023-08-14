@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Kelyje (Kaunas)
+#EXTGENRE:Pop, Rock
+#PLAYLIST:Kelyje (Kaunas)
+#EXTIMG:http___82_135_234_195_8000_kelyje_kaunas_mp3.webp
+#HOMEPAGE:https://www.radijaskelyje.lt
+#COUNTRY:Lithuania
+#LANGUAGE:Lithuanian
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:
+http://82.135.234.195:8000/kelyje_kaunas.mp3
