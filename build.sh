@@ -76,7 +76,8 @@ trim_path() {
 # Trims the extension from a filename
 trim_ext() {
     local var="$1"
-    printf '%s' "${var%%.md*}"
+    local ext="$2"
+    printf '%s' "${var%%.${ext}*}"
 }
 
 # Generates a myMPD compatible m3u filename, by replacings special chars with underscore
@@ -925,7 +926,7 @@ check_images() {
     #check images for playlists
     for F in "$PLIST_DIR/"*.m3u
     do
-        G=$(grep "#EXTIMG" "$F" | cut -d: -f2)
+        G=$(get_m3u_field "$F" "EXTIMG")
         if [ "$(file --mime-type "$IMAGE_DIR/${G}")" != "$IMAGE_DIR/${G}: image/webp" ]
         then 
             if [ -f "$IMAGE_DIR/${G}" ]
@@ -942,7 +943,7 @@ check_images() {
     for F in "$IMAGE_DIR/"*.webp
     do
         G=$(trim_path "$F")
-        G=$(trim_ext "$G")
+        G=$(trim_ext "$G" "webp")
         if [ ! -f "$PLIST_DIR/${G}.m3u" ]
         then
             echo "Obsolet image: $F"
