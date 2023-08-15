@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,BBC Radio 1Xtra
+#EXTGENRE:Hip-Hop, R&B, Soul, Gospel, Electronica
+#PLAYLIST:BBC Radio 1Xtra
+#EXTIMG:http___a_files_bbci_co_uk_media_live_manifesto_audio_simulcast_hls_nonuk_sbr_low_ak_bbc_1xtra_m3u8.webp
+#HOMEPAGE:https://www.bbc.co.uk/1xtra
+#COUNTRY:United Kingdom
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:
+#BITRATE:
+http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_1xtra.m3u8
