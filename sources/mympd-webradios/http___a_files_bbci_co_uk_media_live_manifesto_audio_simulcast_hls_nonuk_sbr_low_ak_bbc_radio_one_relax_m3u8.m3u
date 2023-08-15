@@ -7,6 +7,6 @@
 #COUNTRY:United Kingdom
 #LANGUAGE:English
 #DESCRIPTION:A mix of relaxing and meditating music.
-#CODEC:
-#BITRATE:
+#CODEC:HLS
+#BITRATE:0
 http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_radio_one_relax.m3u8

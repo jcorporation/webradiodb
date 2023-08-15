@@ -7,6 +7,6 @@
 #COUNTRY:United Kingdom
 #LANGUAGE:English
 #DESCRIPTION:Longwave broadcast of BBC Radio 4.
-#CODEC:
-#BITRATE:
+#CODEC:HLS
+#BITRATE:0
 http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_radio_fourlw.m3u8
