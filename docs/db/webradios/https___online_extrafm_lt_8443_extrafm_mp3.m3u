@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Extra FM
+#EXTGENRE:Pop, Talk, Folklore
+#PLAYLIST:Extra FM
+#EXTIMG:https___online_extrafm_lt_8443_extrafm_mp3.webp
+#HOMEPAGE:https://extrafm.lt
+#COUNTRY:Lithuania
+#LANGUAGE:Lithuanian
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:192
+https://online.extrafm.lt:8443/extrafm.mp3
