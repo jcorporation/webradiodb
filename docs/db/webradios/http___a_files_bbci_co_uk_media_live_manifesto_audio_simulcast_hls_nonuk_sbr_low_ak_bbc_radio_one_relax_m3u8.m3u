@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,BBC Radio 1 Relax
+#EXTGENRE:Meditation
+#PLAYLIST:BBC Radio 1 Relax
+#EXTIMG:http___a_files_bbci_co_uk_media_live_manifesto_audio_simulcast_hls_nonuk_sbr_low_ak_bbc_radio_one_relax_m3u8.webp
+#HOMEPAGE:https://www.bbc.co.uk/radio1relax
+#COUNTRY:United Kingdom
+#LANGUAGE:English
+#DESCRIPTION:A mix of relaxing and meditating music.
+#CODEC:HLS
+#BITRATE:0
+http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_radio_one_relax.m3u8
