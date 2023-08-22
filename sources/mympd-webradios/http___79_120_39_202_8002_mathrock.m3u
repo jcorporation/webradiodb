@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Caprice Radio Math Rock
+#EXTGENRE:math rock
+#PLAYLIST:Caprice Radio Math Rock
+#EXTIMG:http___79_120_39_202_8002_mathrock.webp
+#HOMEPAGE:http://radcap.ru/mathrock.html
+#COUNTRY:Russia
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:AAC
+#BITRATE:
+http://79.120.39.202:8002/mathrock
