@@ -1,6 +1,6 @@
 #EXTM3U
 #EXTINF:-1,Mittendrin ALT!NEU Radio der deutschen Minderheit
-#EXTGENRE:ALTernative, NEUe Musik, Deutsche Beats, Deutscher Pop, Pop, Rock
+#EXTGENRE:Alternative, Pop, Rock
 #PLAYLIST:Mittendrin ALT!NEU Radio der deutschen Minderheit
 #EXTIMG:http___s1_slotex_pl_7430_stream.webp
 #HOMEPAGE:https://mittendrin.pl/de/radio-altneu.html
@@ -8,5 +8,5 @@
 #LANGUAGE:German
 #DESCRIPTION:
 #CODEC:
-#BITRATE:
+#BITRATE:0
 http://s1.slotex.pl:7430/stream
