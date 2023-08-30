@@ -745,8 +745,8 @@ create_index() {
             [ "$LINE_COUNT" -gt 0 ] && printf "," >&3
             m3u_to_json "$LINE" >&3
             local VALUE=${LINE#*:}
-            [ "$KEY" = "CODEC" ] && [ "$VALUE" != "" ] && ALL_CODECS["$VALUE"]="1"
-            [ "$KEY" = "BITRATE" ] && [ "$VALUE" != "" ] && ALL_BITRATES["$VALUE"]="1"
+            [ "$KEY" = "#CODEC" ] && [ "$VALUE" != "" ] && ALL_CODECS["$VALUE"]="1"
+            [ "$KEY" = "#BITRATE" ] && [ "$VALUE" != "" ] && ALL_BITRATES["$VALUE"]="1"
             LINE_COUNT=$((LINE_COUNT+1))
         done < "$F"
         #alternative streams
@@ -794,7 +794,7 @@ create_index() {
     then
         echo "${WEBRADIO_COUNT} webradios in index"
         #create other index files
-        jq -r '.[] | .Language' "${INDEXFILE}.tmp" | sort -u | \
+        jq -r '.[] | .Languages[]' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$LANGFILE.tmp"
         local LANGUAGES_COUNT
         LANGUAGES_COUNT=$(jq -r '.[]' "$LANGFILE.tmp" | wc -l)
