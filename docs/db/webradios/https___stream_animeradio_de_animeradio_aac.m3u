@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,AnimeRadio.de
+#EXTGENRE:Anime, J-pop, J-rock, OST, Party, Rock
+#PLAYLIST:AnimeRadio.de
+#EXTIMG:https___stream_animeradio_de_animeradio96_ogg.webp
+#HOMEPAGE:https://www.animeradio.de/
+#COUNTRY:Germany
+#LANGUAGE:Japanese
+#DESCRIPTION:Wir spielen deine Lieblingsmusik aus Japan und das Beste aus dem Westen.
+#CODEC:AAC
+#BITRATE:32
+https://stream.animeradio.de/animeradio.aac
