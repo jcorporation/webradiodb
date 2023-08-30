@@ -616,7 +616,14 @@ m3u_to_json() {
         local INFO="${LINE:1}"
         local KEY=${INFO%%:*}
         local VALUE=${INFO#*:}
-        if [ "$KEY" = "EXTGENRE" ]
+        if [ "$KEY" = "LANGUAGE" ]
+        then
+            # new languages key
+            VALUES=$(jq -c -R 'split(", ")' <<< "$VALUE")
+            printf '"%s":%s,' "Languages" "$VALUES"
+            # old language key for backward compatibility
+            VALUE=$(jq -n --arg value "$VALUE" '$value')
+        elif [ "$KEY" = "EXTGENRE" ]
         then
             VALUE=$(jq -c -R 'split(", ")' <<< "$VALUE")
         elif [ "$KEY" = "BITRATE" ]
@@ -697,7 +704,7 @@ move_compress_changed() {
 }
 
 # Creates the webradioDB index
-create() {
+create_index() {
     echo "Cleaning up"
     rm -fr "$PLS_DIR"
     mkdir "$PLS_DIR"
@@ -1146,7 +1153,7 @@ case "$ACTION" in
         normalize_fields "$2"
         ;;
     create)
-        create
+        create_index
         ;;
     delete_alternate_stream_from_json)
         delete_alternate_stream_from_json "$2"
