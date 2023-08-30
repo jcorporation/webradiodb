@@ -157,6 +157,7 @@ function showSearchResult(offset, limit) {
                         '<td class="genre"></td>' +
                     '</tr>' +
                     '<tr><td>Country</td><td class="country"></td></tr>' +
+                    '<tr><td>Language</td><td class="language"></td></tr>' +
                     '<tr><td>Homepage</td><td><a class="homepage" target="_blank" href=""></a></td></tr>' +
                     '<tr><td>Stream URI</td><td><input type="text" value=""/></td></tr>' +
                     '<tr><td>Playlist</td><td><a class="playlist" target="_blank" href="">Get playlist</a></td></tr>' +
@@ -176,7 +177,8 @@ function showSearchResult(offset, limit) {
         div.getElementsByTagName('caption')[0].textContent = obj.result.data[key].Name;
         div.getElementsByTagName('img')[0].src = pic;
         div.getElementsByClassName('genre')[0].textContent = obj.result.data[key].Genre.join(', ');
-        div.getElementsByClassName('country')[0].textContent = obj.result.data[key].Country + ' / ' + obj.result.data[key].Language;
+        div.getElementsByClassName('country')[0].textContent = obj.result.data[key].Country;
+        div.getElementsByClassName('language')[0].textContent = obj.result.data[key].Languages.join(', ');
         let format = obj.result.data[key].Codec;
         if (format !== '' && obj.result.data[key].Bitrate !== '') {
             format += ' / ';
