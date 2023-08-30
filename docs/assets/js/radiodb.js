@@ -153,7 +153,7 @@ function showSearchResult(offset, limit) {
                 '<caption></caption>' +
                 '<tbody>' +
                     '<tr>' +
-                        '<td rowspan="8"><img src="" class="stationImage"/></td><td>Genre</td>' +
+                        '<td rowspan="9"><img src="" class="stationImage"/></td><td>Genre</td>' +
                         '<td class="genre"></td>' +
                     '</tr>' +
                     '<tr><td>Country</td><td class="country"></td></tr>' +
