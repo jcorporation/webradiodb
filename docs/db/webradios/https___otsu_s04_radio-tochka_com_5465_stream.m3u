@@ -7,6 +7,6 @@
 #COUNTRY:Russia
 #LANGUAGE:English, Japanese, Russian
 #DESCRIPTION:Founded since 2012 year. Audio broadcasting of electronic and instrumental music. Also compositions from Japanese animated series and films. The music library is regularly updated, so you won't get bored!
-#CODEC:MP3
-#BITRATE:192
-https://otsu.s04.radio-tochka.com:5475/stream
+#CODEC:AAC
+#BITRATE:64
+https://otsu.s04.radio-tochka.com:5465/stream
