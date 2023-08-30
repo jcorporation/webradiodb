@@ -76,7 +76,7 @@ function search(name, genre, country, language, codec, bitrate, sort, offset, li
         if (webradiodb.webradios[key].Name.toLowerCase().indexOf(name) > -1 &&
             (genre === ''    || webradiodb.webradios[key].Genre.includes(genre)) &&
             (country === ''  || country === webradiodb.webradios[key].Country) &&
-            (language === '' || language === webradiodb.webradios[key].Language) &&
+            (language === '' || webradiodb.webradios[key].Languages.includes(language)) &&
             (codec === ''    || webradiodb.webradios[key].allCodecs.includes(codec)) &&
             (bitrate === 0   || bitrate <= webradiodb.webradios[key].highestBitrate)
         ) {
