@@ -7,6 +7,6 @@
 #COUNTRY:Lithuania
 #LANGUAGE:Lithuanian, English
 #DESCRIPTION:
-#CODEC:MP3
-#BITRATE:192
+#CODEC:HE-AAC
+#BITRATE:96
 https://stream.ehr.lt:8443/ehr
