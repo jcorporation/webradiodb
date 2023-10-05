@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Radio Zet
+#EXTGENRE:rock, pop
+#PLAYLIST:Radio Zet
+#EXTIMG:
+#HOMEPAGE:https://www.radiozet.pl
+#COUNTRY:Poland
+#LANGUAGE:Polish
+#DESCRIPTION:
+#CODEC:mp3
+#BITRATE:128
+https://zt03.cdn.eurozet.pl/zet-tun.mp3
