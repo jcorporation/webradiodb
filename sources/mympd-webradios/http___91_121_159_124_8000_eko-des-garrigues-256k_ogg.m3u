@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,L'Eko des Garrigues
+#EXTGENRE:community, alternative, experimental, pop, rock, techno
+#PLAYLIST:L'Eko des Garrigues
+#EXTIMG:http___91_121_159_124_8000_eko-des-garrigues-256k_ogg.webp
+#HOMEPAGE:http://www.ekodesgarrigues.com/
+#COUNTRY:France
+#LANGUAGE:french
+#DESCRIPTION:
+#CODEC:OGG
+#BITRATE:320
+http://91.121.159.124:8000/eko-des-garrigues-256k.ogg
