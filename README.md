@@ -134,6 +134,9 @@ The m3u fields are mapped for better readability.
     "Homepage": "https://www.swr.de/swr1/",
     "Country": "Germany",
     "Language": "German",
+    "Languages": [
+        "German"
+    ],
     "Description": "SWR 1 Baden-Württemberg",
     "Codec": " MP3",
     "Bitrate": " 128",
