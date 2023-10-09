@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Skylab Radio
+#EXTGENRE:ambient, eclectic, experimental, hip-hop, house, rock, techno
+#PLAYLIST:Skylab Radio
+#EXTIMG:https___stream_skylab-radio_com_live.webp
+#HOMEPAGE:http://skylab-radio.com/
+#COUNTRY:Australia
+#LANGUAGE:english
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+https://stream.skylab-radio.com/live
