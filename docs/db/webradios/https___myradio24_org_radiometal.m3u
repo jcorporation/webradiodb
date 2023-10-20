@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Radio Metal
+#EXTGENRE:Metal
+#PLAYLIST:Radio Metal
+#EXTIMG:https___myradio24_org_radiometal.webp
+#HOMEPAGE:https://www.radio-metal.in.ua
+#COUNTRY:Ukraine
+#LANGUAGE:English
+#DESCRIPTION:First Metal Radio in Ukraine!
+#CODEC:https://myradio24.org/radiometal.m3u
+#BITRATE:128
+https://myradio24.org/radiometal
