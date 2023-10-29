@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Rádio CBN Rio 92.5 FM
+#EXTGENRE:Journalism, soccer, football, news
+#PLAYLIST:Rádio CBN Rio 92.5 FM
+#EXTIMG:https___26513_live_streamtheworld_com_CBN_RJAAC_aac.webp
+#HOMEPAGE:https://cbn.globoradio.globo.com
+#COUNTRY:Brazil
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:A rádio que toca notícia!
+#CODEC:AAC
+#BITRATE:32
+https://26513.live.streamtheworld.com/CBN_RJAAC.aac
