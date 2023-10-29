@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Rádio CBN São Paulo 90.5 FM
+#EXTGENRE:Journalism, soccer, football, news
+#PLAYLIST:Rádio CBN São Paulo 90.5 FM
+#EXTIMG:https___26493_live_streamtheworld_com_CBN_SPAAC_aac_dist_site.webp
+#HOMEPAGE:https://cbn.globoradio.globo.com
+#COUNTRY:Brazil
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:A rádio que toca notícia!
+#CODEC:AAC
+#BITRATE:32
+https://26493.live.streamtheworld.com/CBN_SPAAC.aac?dist=site
