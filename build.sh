@@ -489,7 +489,7 @@ modify_radio_from_json() {
     NEW_CODEC=$(jq -r ".codec" < "$INPUT" | head -1 | tr -d '\n')
     local NEW_BITRATE
     NEW_BITRATE=$(jq -r ".bitrate" < "$INPUT" | head -1 | tr -d '\n')
-    if [ -n "$BITRATE" ] && ! is_uint "$BITRATE"
+    if [ -n "$NEW_BITRATE" ] && ! is_uint "$NEW_BITRATE"
     then
         echo "Bitrate must be an unsigned value"
         exit 1
