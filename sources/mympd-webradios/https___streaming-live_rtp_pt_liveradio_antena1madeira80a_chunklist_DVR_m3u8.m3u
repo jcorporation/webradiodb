@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Rádio Antena 1 Madeira 104.6 FM
+#EXTGENRE:news, politics, sports, fado
+#PLAYLIST:Rádio Antena 1 Madeira 104.6 FM
+#EXTIMG:https___streaming-live_rtp_pt_liveradio_antena1madeira80a_chunklist_DVR_m3u8.webp
+#HOMEPAGE:http://www.rtp.pt/madeira
+#COUNTRY:Portugal
+#LANGUAGE:Portuguese
+#DESCRIPTION:Rádio Antena 1 Madeira 104.6 FM
+#CODEC:AAC
+#BITRATE:32
+https://streaming-live.rtp.pt/liveradio/antena1madeira80a/chunklist_DVR.m3u8
