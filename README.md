@@ -104,7 +104,7 @@ The final files are located in the `docs/db` folder, it is rebuild daily. The fo
 | [bitrates.min.json](https://jcorporation.github.io/webradiodb/db/index/bitrates.min.json) | Array of bitrates |
 | [codecs.min.json](https://jcorporation.github.io/webradiodb/db/index/codecs.min.json) | Array of codecs |
 | [countries.min.json](https://jcorporation.github.io/webradiodb/db/index/countries.min.json) | Array of countries |
-| [states.min.json](https://jcorporation.github.io/webradiodb/db/index/countries.min.json) | Array of countries and linked states |
+| [states.min.json](https://jcorporation.github.io/webradiodb/db/index/states.min.json) | Object of countries and linked states |
 | [genres.min.json](https://jcorporation.github.io/webradiodb/db/index/genres.min.json) | Array of genres |
 | [languages.min.json](https://jcorporation.github.io/webradiodb/db/index/languages.min.json) | Array of languages |
 | [status.min.json](https://jcorporation.github.io/webradiodb/db/index/status.min.json) | Array of failed stream checks |
