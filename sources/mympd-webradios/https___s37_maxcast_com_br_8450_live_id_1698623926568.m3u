@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Rádio Pop Goiaba UFF
+#EXTGENRE:mpb, college radio, university, independent music, pop
+#PLAYLIST:Rádio Pop Goiaba UFF
+#EXTIMG:https___s37_maxcast_com_br_8450_live_id_1698623926568.webp
+#HOMEPAGE:https://radiopopgoiaba.uff.br/pop-goiaba-uff/
+#COUNTRY:Brazil
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Rádio Pop Goiaba UFF
+#CODEC:MPEG
+#BITRATE:32
+https://s37.maxcast.com.br:8450/live?id=1698623926568
