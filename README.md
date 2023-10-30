@@ -27,6 +27,8 @@ Open an [issue](https://github.com/jcorporation/webradiodb/issues/new?template=a
 
 This project is designed as an easily integratable webradio database for music players. At the moment there is no api endpoint to query the database. An application should fetch the metadata json file and use it locally.
 
+- [Apps](Apps.md)
+
 ## Some internals
 
 At the moment there are two sources for webradio files:
