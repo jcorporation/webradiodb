@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Rádio CBN Campinas 99.1 FM
+#EXTGENRE:news, soccer, debate
+#PLAYLIST:Rádio CBN Campinas 99.1 FM
+#EXTIMG:https___streaming_empresaspioneiras_com_br_cbncampinas_stream_m3u8.webp
+#HOMEPAGE:https://portalcbncampinas.com.br
+#COUNTRY:Brazil
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Rádio CBN Campinas 99.1 FM
+#CODEC:ADTS
+#BITRATE:32
+https://streaming.empresaspioneiras.com.br/cbncampinas/stream.m3u8
