@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio Transamérica 100.1 FM (São Paulo)
+#EXTGENRE:soccer, news
+#PLAYLIST:Rádio Transamérica 100.1 FM (São Paulo)
+#EXTIMG:https___18003_live_streamtheworld_com_RT_SPAAC_aac.webp
+#HOMEPAGE:https://radiotransamerica.com.br
+#COUNTRY:Brazil
+#STATE:
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:A sua rádio onde você estiver!
+#CODEC:AAC
+#BITRATE:32
+https://18003.live.streamtheworld.com/RT_SPAAC.aac
