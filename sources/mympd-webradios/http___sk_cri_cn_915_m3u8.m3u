@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,CRI Radio EZFM 91.5 FM
+#EXTGENRE:world music
+#PLAYLIST:CRI Radio EZFM 91.5 FM
+#EXTIMG:http___sk_cri_cn_915_m3u8.webp
+#HOMEPAGE:http://ezfm.cri.cn/live
+#COUNTRY:China
+#LANGUAGE:English
+#DESCRIPTION:CRI Radio EZFM 91.5 FM
+#CODEC:ADTS
+#BITRATE:32
+http://sk.cri.cn/915.m3u8
