@@ -21,6 +21,7 @@ INDEXFILE_JS="${PUBLISH_DIR}/index/webradiodb-combined.min.js"
 STATUSFILE="${PUBLISH_DIR}/index/status.min.json"
 LANGFILE="${PUBLISH_DIR}/index/languages.min.json"
 COUNTRYFILE="${PUBLISH_DIR}/index/countries.min.json"
+STATEFILE="${PUBLISH_DIR}/index/states.min.json"
 GENREFILE="${PUBLISH_DIR}/index/genres.min.json"
 CODECFILE="${PUBLISH_DIR}/index/codecs.min.json"
 BITRATEFILE="${PUBLISH_DIR}/index/bitrates.min.json"
@@ -39,6 +40,16 @@ is_uri() {
     [ "${CHECK_URI:0:7}" = "http://" ] && return 0
     [ "${CHECK_URI:0:8}" = "https://" ] && return 0
     return 1
+}
+
+# Checks if string is an unsigned number
+is_uint() {
+    case "$1" in
+        "" | *[!0-9]*)
+        return 1
+        ;;
+    esac
+    return 0
 }
 
 # Upper cases the complete string
@@ -142,20 +153,21 @@ resize_image() {
     return 0
 }
 
-# Normalizes GENRE, CODEC, COUNTRY, LANGUAGE in all m3u's in specified folder
+# Normalizes GENRE, CODEC, COUNTRY, STATE, LANGUAGE in all m3u's in specified folder
 normalize_fields() {
     local DIR=$1
     local F
     for F in "$DIR"/*.m3u
     do
         # genres
-        local GENRE_LINE
+        local GENRE_LINE=""
         GENRE_LINE=$(get_m3u_field "$F" "EXTGENRE")
         local NEW_GENRE=""
-        local GENRE
+        local GENRE=""
         while read -r -d, GENRE
         do
             [ "$GENRE" = "" ] && continue
+            [ "$GENRE" = "&" ] && continue
             local NG="${genre_map[$GENRE]:-}"
             if [ "$NG" != "" ]
             then
@@ -173,7 +185,7 @@ normalize_fields() {
             sed -i -e "s/^#EXTGENRE:.*/#EXTGENRE:$NEW_GENRE/" "$F"
         fi
         # codec
-        local CODEC
+        local CODEC=""
         CODEC=$(get_m3u_field "$F" "CODEC")
         local CODEC_UPPER
         CODEC_UPPER=$(ucstring "$CODEC")
@@ -184,7 +196,7 @@ normalize_fields() {
             sed -i -e "s/^#CODEC:.*/#CODEC:$CODEC_UPPER/" "$F"
         fi
         # country
-        local COUNTRY
+        local COUNTRY=""
         COUNTRY=$(get_m3u_field "$F" "COUNTRY")
         local COUNTRY_UPPER
         COUNTRY_UPPER=$(ucwords "$COUNTRY")
@@ -194,8 +206,19 @@ normalize_fields() {
             echo "$F: $COUNTRY -> $COUNTRY_UPPER"
             sed -i -e "s/^#COUNTRY:.*/#COUNTRY:$COUNTRY_UPPER/" "$F"
         fi
+        # state
+        local STATE=""
+        STATE=$(get_m3u_field "$F" "STATE")
+        local STATE_UPPER
+        STATE_UPPER=$(ucwords "$STATE")
+        STATE_UPPER=$(trim "$STATE_UPPER")
+        if [ "$STATE" != "$STATE_UPPER" ]
+        then
+            echo "$F: $STATE -> $STATE_UPPER"
+            sed -i -e "s/^#STATE:.*/#STATE:$STATE_UPPER/" "$F"
+        fi
         # language
-        local LANGUAGE
+        local LANGUAGE=""
         LANGUAGE=$(get_m3u_field "$F" "LANGUAGE")
         local LANGUAGE_UPPER
         LANGUAGE_UPPER=$(ucwords "$LANGUAGE")
@@ -292,6 +315,7 @@ sync_moode() {
 #EXTIMG:$IMAGE
 #HOMEPAGE:$HOMEPAGE
 #COUNTRY:$COUNTRY
+#STATE:
 #LANGUAGE:$LANGUAGE
 #DESCRIPTION:
 #CODEC:$CODEC
@@ -333,6 +357,7 @@ add_radio() {
 #EXTIMG:${PLIST}.webp
 #HOMEPAGE:<homepage>
 #COUNTRY:<country>
+#STATE:<state>
 #LANGUAGE:<language>
 #DESCRIPTION:<description>
 #CODEC:<codec>
@@ -362,6 +387,8 @@ add_radio_from_json() {
     HOMEPAGE=$(jq -r ".homepage" < "$INPUT" | head -1 | tr -d '\n')
     local COUNTRY
     COUNTRY=$(jq -r ".country" < "$INPUT" | head -1 | tr -d '\n')
+    local STATE
+    STATE=$(jq -r ".state" < "$INPUT" | head -1 | tr -d '\n')
     local LANGUAGE
     LANGUAGE=$(jq -r ".language" < "$INPUT" | head -1 | tr -d '\n')
     local DESCRIPTION
@@ -370,6 +397,11 @@ add_radio_from_json() {
     CODEC=$(jq -r ".codec" < "$INPUT" | head -1 | tr -d '\n')
     local BITRATE
     BITRATE=$(jq -r ".bitrate" < "$INPUT" | head -1 | tr -d '\n')
+    if [ -n "$BITRATE" ] && ! is_uint "$BITRATE"
+    then
+        echo "Bitrate must be an unsigned value"
+        exit 1
+    fi
     # create the same plist name as myMPD
     local PLIST
     PLIST=$(gen_m3u_name "$URI")
@@ -401,6 +433,7 @@ add_radio_from_json() {
 #EXTIMG:$IMAGE
 #HOMEPAGE:$HOMEPAGE
 #COUNTRY:$COUNTRY
+#STATE:$STATE
 #LANGUAGE:$LANGUAGE
 #DESCRIPTION:$DESCRIPTION
 #CODEC:$CODEC
@@ -446,6 +479,8 @@ modify_radio_from_json() {
     NEW_HOMEPAGE=$(jq -r ".homepage" < "$INPUT" | head -1 | tr -d '\n')
     local NEW_COUNTRY
     NEW_COUNTRY=$(jq -r ".country" < "$INPUT" | head -1 | tr -d '\n')
+    local NEW_STATE
+    NEW_STATE=$(jq -r ".state" < "$INPUT" | head -1 | tr -d '\n')
     local NEW_LANGUAGE
     NEW_LANGUAGE=$(jq -r ".language" < "$INPUT" | head -1 | tr -d '\n')
     local NEW_DESCRIPTION
@@ -454,6 +489,11 @@ modify_radio_from_json() {
     NEW_CODEC=$(jq -r ".codec" < "$INPUT" | head -1 | tr -d '\n')
     local NEW_BITRATE
     NEW_BITRATE=$(jq -r ".bitrate" < "$INPUT" | head -1 | tr -d '\n')
+    if [ -n "$BITRATE" ] && ! is_uint "$BITRATE"
+    then
+        echo "Bitrate must be an unsigned value"
+        exit 1
+    fi
     local NEW_PLIST
     NEW_PLIST=$(gen_m3u_name "$NEW_URI")
     #Get old values
@@ -467,6 +507,8 @@ modify_radio_from_json() {
     OLD_HOMEPAGE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "HOMEPAGE")
     local OLD_COUNTRY
     OLD_COUNTRY=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "COUNTRY")
+    local OLD_STATE
+    OLD_STATE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "STATE")
     local OLD_LANGUAGE
     OLD_LANGUAGE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "LANGUAGE")
     local OLD_DESCRIPTION
@@ -523,6 +565,7 @@ modify_radio_from_json() {
     [ -z "$NEW_GENRE" ] && NEW_GENRE="$OLD_GENRE"
     [ -z "$NEW_HOMEPAGE" ] && NEW_HOMEPAGE="$OLD_HOMEPAGE"
     [ -z "$NEW_COUNTRY" ] && NEW_COUNTRY="$OLD_COUNTRY"
+    [ -z "$NEW_STATE" ] && NEW_STATE="$OLD_STATE"
     [ -z "$NEW_LANGUAGE" ] && NEW_LANGUAGE="$OLD_LANGUAGE"
     [ -z "$NEW_DESCRIPTION" ] && NEW_DESCRIPTION="$OLD_DESCRIPTION"
     [ -z "$NEW_CODEC" ] && NEW_CODEC="$OLD_CODEC"
@@ -536,6 +579,7 @@ modify_radio_from_json() {
 #EXTIMG:$NEW_IMAGE
 #HOMEPAGE:$NEW_HOMEPAGE
 #COUNTRY:$NEW_COUNTRY
+#STATE:$NEW_STATE
 #LANGUAGE:$NEW_LANGUAGE
 #DESCRIPTION:$NEW_DESCRIPTION
 #CODEC:$NEW_CODEC
@@ -794,30 +838,56 @@ create_index() {
     then
         echo "${WEBRADIO_COUNT} webradios in index"
         #create other index files
+        # languages
         jq -r '.[] | .Languages[]' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$LANGFILE.tmp"
         local LANGUAGES_COUNT
         LANGUAGES_COUNT=$(jq -r '.[]' "$LANGFILE.tmp" | wc -l)
         echo "${LANGUAGES_COUNT} languages in index"
 
+        # countries
         jq -r '.[] | .Country' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$COUNTRYFILE.tmp"
         local COUNTRIES_COUNT
         COUNTRIES_COUNT=$(jq -r '.[]' "$COUNTRYFILE.tmp" | wc -l)
         echo "${COUNTRIES_COUNT} countries in index"
 
+        # states
+        local COUNTRY
+        local I=0
+        {
+            printf "{"
+            while read -r COUNTRY
+            do
+                [ "$I" -eq 0 ] || printf ','
+                local STATES=""
+                STATES=$(jq -r ".[] | select(.Country == \"$COUNTRY\") | select(.State != \"\") | .State" "${INDEXFILE}.tmp" | \
+                    sort -u | jq -R -s -c 'split("\n") | .[0:-1]' | tr -d '\n')
+                [ -z "$STATES" ] && STATES="[]"
+                printf '"%s":%s' "$COUNTRY" "$STATES"
+                I=$((I+1))
+            done < <(jq -r '.[].Country' "${INDEXFILE}.tmp" | sort -u)
+            printf "}"
+        } > "$STATEFILE.tmp"
+        local STATES_COUNT
+        STATES_COUNT=$(jq -r '.[] | select(.State != "") | .State' "$INDEXFILE.tmp" | wc -l)
+        echo "${STATES_COUNT} states in index"
+
+        # genres
         jq -r '.[] | .Genre | .[]' "${INDEXFILE}.tmp" | sort -u | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$GENREFILE.tmp"
         local GENRES_COUNT
         GENRES_COUNT=$(jq -r '.[]' "$GENREFILE.tmp" | wc -l)
         echo "${GENRES_COUNT} genres in index"
 
+        # codecs
         jq -r '.[] | .Codec' "${INDEXFILE}.tmp" | sort -u | grep -v -P '^\s*$' | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$CODECFILE.tmp"
         local CODECS_COUNT
         CODECS_COUNT=$(jq -r '.[]' "$CODECFILE.tmp" | wc -l)
         echo "${CODECS_COUNT} codecs in index"
 
+        # bitrates
         jq -r '.[] | .Bitrate' "${INDEXFILE}.tmp" | sort -u -g | grep -v -P '^(\s*|0)$' | \
             jq -R -s -c 'split("\n") | .[0:-1]' > "$BITRATEFILE.tmp"
         local BITRATES_COUNT
@@ -836,6 +906,10 @@ create_index() {
         printf "\"webradioCountries\":" >> "${INDEXFILE_COMBINED}.tmp"
         tr -d '\n' < "${COUNTRYFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
         printf ",\"totalwebradioCountries\":%s," "$COUNTRIES_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+
+        printf "\"webradioStates\":" >> "${INDEXFILE_COMBINED}.tmp"
+        tr -d '\n' < "${STATEFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
+        printf ",\"totalwebradioStates\":%s," "$STATES_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
 
         printf "\"webradioCodecs\":" >> "${INDEXFILE_COMBINED}.tmp"
         tr -d '\n' < "${CODECFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
@@ -862,6 +936,7 @@ create_index() {
         move_compress_changed "$INDEXFILE" && CHANGED=1
         move_compress_changed "$LANGFILE" && CHANGED=1
         move_compress_changed "$COUNTRYFILE" && CHANGED=1
+        move_compress_changed "$STATEFILE" && CHANGED=1
         move_compress_changed "$GENREFILE" && CHANGED=1
         move_compress_changed "$CODECFILE" && CHANGED=1
         move_compress_changed "$BITRATEFILE" && CHANGED=1

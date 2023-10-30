@@ -1,10 +1,11 @@
 #EXTM3U
 #EXTINF:-1,FluxFM - Mini Flux
-#EXTGENRE:Various
+#EXTGENRE:Music
 #PLAYLIST:FluxFM - Mini Flux
 #EXTIMG:https___fluxmusic_api_radiosphere_io_channels_mini-flux_stream_aac_quality_4.webp
 #HOMEPAGE:
 #COUNTRY:Germany
+#STATE:
 #LANGUAGE:German
 #DESCRIPTION:
 #CODEC:AAC

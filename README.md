@@ -75,6 +75,7 @@ Webradios are saved as extended m3u files with some custom fields. A coverimage 
 #EXTIMG:<cover>
 #HOMEPAGE:<homepage>
 #COUNTRY:<country>
+#STATE:<state>
 #LANGUAGE:<language>
 #DESCRIPTION:<description>
 #CODEC:<codec>
@@ -101,6 +102,7 @@ The final files are located in the `docs/db` folder, it is rebuild daily. The fo
 | [bitrates.min.json](https://jcorporation.github.io/webradiodb/db/index/bitrates.min.json) | Array of bitrates |
 | [codecs.min.json](https://jcorporation.github.io/webradiodb/db/index/codecs.min.json) | Array of codecs |
 | [countries.min.json](https://jcorporation.github.io/webradiodb/db/index/countries.min.json) | Array of countries |
+| [states.min.json](https://jcorporation.github.io/webradiodb/db/index/countries.min.json) | Array of countries and linked states |
 | [genres.min.json](https://jcorporation.github.io/webradiodb/db/index/genres.min.json) | Array of genres |
 | [languages.min.json](https://jcorporation.github.io/webradiodb/db/index/languages.min.json) | Array of languages |
 | [status.min.json](https://jcorporation.github.io/webradiodb/db/index/status.min.json) | Array of failed stream checks |
@@ -110,20 +112,22 @@ The final files are located in the `docs/db` folder, it is rebuild daily. The fo
 
 The m3u fields are mapped for better readability.
 
-| M3U FIELD | JSON KEY |
-| --------- | -------- |
-| EXTGENRE | Genre |
-| PLAYLIST | Name |
-| EXTIMG | Image |
-| HOMEPAGE | Homepage |
-| COUNTRY | Country |
-| LANGUAGE | Language |
-| CODEC | Codec |
-| BITRATE | Bitrate |
-| DESCRIPTION | Description |
-| uri | StreamUri |
+| M3U FIELD | JSON KEY | VALUE TYPE |
+| --------- | -------- | ---------- |
+| EXTGENRE | Genre | Array |
+| PLAYLIST | Name | String |
+| EXTIMG | Image | String |
+| HOMEPAGE | Homepage | String |
+| COUNTRY | Country | String |
+| STATE | State | String |
+| LANGUAGE | Language | String |
+| LANGUAGE | Languages | Array |
+| CODEC | Codec | Array |
+| BITRATE | Bitrate | Integer |
+| DESCRIPTION | Description | String |
+| uri | StreamUri | String |
 
-```
+```json
 "https___liveradio_swr_de_sw282p3_swr1bw_play_mp3.m3u": {
     "Genre": [
         "Pop",
@@ -133,27 +137,28 @@ The m3u fields are mapped for better readability.
     "Image": "https___liveradio_swr_de_sw282p3_swr1bw_play_mp3.webp",
     "Homepage": "https://www.swr.de/swr1/",
     "Country": "Germany",
+    "State": "Baden-Württemberg",
     "Language": "German",
     "Languages": [
         "German"
     ],
     "Description": "SWR 1 Baden-Württemberg",
-    "Codec": " MP3",
-    "Bitrate": " 128",
+    "Codec": "MP3",
+    "Bitrate": 128,
     "StreamUri": "https://liveradio.swr.de/sw282p3/swr1bw/play.mp3",
     "alternativeStreams": {
         "https___liveradio_swr_de_sw890cl_swr1bw_": {
             "StreamUri": "https://liveradio.swr.de/sw890cl/swr1bw/",
             "Codec": "AAC",
-            "Bitrate": "48"
+            "Bitrate": 48
         },
         "https___liveradio_swr_de_sw331ch_swr1bw_": {
             "StreamUri": "https://liveradio.swr.de/sw331ch/swr1bw/",
             "Codec": "AAC",
-            "Bitrate": "96"
+            "Bitrate": 96
         }
     }
-},
+}
 ```
 
 ### Script usage

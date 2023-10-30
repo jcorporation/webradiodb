@@ -1,10 +1,11 @@
 #EXTM3U
 #EXTINF:-1,Nostalgie
-#EXTGENRE:Various
+#EXTGENRE:Music
 #PLAYLIST:Nostalgie
 #EXTIMG:https___streamingp_shoutcast_com_NostalgiePremium.webp
 #HOMEPAGE:https://www.nostalgie.be/
 #COUNTRY:Belgium
+#STATE:
 #LANGUAGE:French
 #DESCRIPTION:Nostalgie est une station de radio privée en Belgique créée à Namur
 #CODEC:AAC

@@ -46,9 +46,16 @@ body:
     id: country
     attributes:
       label: Country
-      description: The country e.g. Germany.
+      description: The country, e.g. Germany.
     validations:
       required: true
+  - type: input
+    id: state
+    attributes:
+      label: State
+      description: The state or region, e.g. Bayern.
+    validations:
+      required: false
   - type: input
     id: language
     attributes:

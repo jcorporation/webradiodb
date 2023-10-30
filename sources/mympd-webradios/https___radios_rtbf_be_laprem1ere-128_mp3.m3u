@@ -1,10 +1,11 @@
 #EXTM3U
 #EXTINF:-1,RTBF - La Première
-#EXTGENRE:Various, Variety, News
+#EXTGENRE:Music, Variety, News
 #PLAYLIST:RTBF - La Première
 #EXTIMG:https___radios_rtbf_be_laprem1ere-128_mp3.webp
 #HOMEPAGE:https://www.rtbf.be/lapremiere/
 #COUNTRY:Belgium
+#STATE:
 #LANGUAGE:French
 #DESCRIPTION:La Première (« La 1ère »), est la première station de radio publique de la Radio-télévision belge de la Communauté française (RTBF). Sa programmation est généraliste et axée sur l'information et la culture.
 #CODEC:MP3

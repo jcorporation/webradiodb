@@ -1,10 +1,11 @@
 #EXTM3U
 #EXTINF:-1,FluxFM - FluxForward
-#EXTGENRE:Various, Releases
+#EXTGENRE:Music, Releases
 #PLAYLIST:FluxFM - FluxForward
 #EXTIMG:http___streams_fluxfm_de_forward_mp3-320_audio_.webp
 #HOMEPAGE:https://www.fluxfm.de/flux-forward/
 #COUNTRY:Germany
+#STATE:
 #LANGUAGE:German
 #DESCRIPTION:Musikalische Neuvorstellungen und interessante Acts & Facts aus den Weiten der Musikblogs – das ist Flux Forward.
 #CODEC:MP3
