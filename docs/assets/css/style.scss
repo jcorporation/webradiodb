@@ -7,7 +7,7 @@
     font-family: 'Architects Daughter';
     font-style: normal;
     font-weight: 400;
-    src: url('/assets/ArchitectsDaughter.ttf') format('truetype');
+    src: url('{{site.baseurl}}/assets/ArchitectsDaughter.ttf') format('truetype');
 }
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
