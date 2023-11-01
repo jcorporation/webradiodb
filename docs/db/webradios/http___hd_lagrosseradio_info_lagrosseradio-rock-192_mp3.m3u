@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,La Grosse Radio Rock
+#EXTGENRE:Rock
+#PLAYLIST:La Grosse Radio Rock
+#EXTIMG:http___hd_lagrosseradio_info_lagrosseradio-rock-192_mp3.webp
+#HOMEPAGE:https://www.lagrosseradio.com/rock/
+#COUNTRY:France
+#STATE:
+#LANGUAGE:French
+#DESCRIPTION:Since 2003, La Grosse Radio's historic channel has been broadcasting an original program rich in hits, classic rock, alternative rock, electro, progressive rock, hard rock, indie rock, self-produced!
+#CODEC:MP3
+#BITRATE:192
+http://hd.lagrosseradio.info/lagrosseradio-rock-192.mp3
