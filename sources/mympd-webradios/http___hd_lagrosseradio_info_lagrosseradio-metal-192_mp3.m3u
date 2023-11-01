@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,La Grosse Radio Métal
+#EXTGENRE:Metal
+#PLAYLIST:La Grosse Radio Métal
+#EXTIMG:http___hd_lagrosseradio_info_lagrosseradio-metal-192_mp3.webp
+#HOMEPAGE:https://www.lagrosseradio.com/metal/
+#COUNTRY:France
+#STATE:
+#LANGUAGE:French
+#DESCRIPTION:Since September 2009, La Grosse Radio Métal has been offering an avalanche of big riffs, combining the experience of old-school legends with the audacity of new talent, all enriched by the must-have new releases of the moment.
+#CODEC:MP3
+#BITRATE:192
+http://hd.lagrosseradio.info/lagrosseradio-metal-192.mp3
