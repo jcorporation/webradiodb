@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio Senado Canal 2
+#EXTGENRE:mpb, news
+#PLAYLIST:Rádio Senado Canal 2
+#EXTIMG:http___radioaovivo_senado_gov_br_canal2_mp3.webp
+#HOMEPAGE:https://www12.senado.leg.br/radio
+#COUNTRY:Brazil
+#STATE:Brasilia
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Rádio Senado Canal 2
+#CODEC:MP3
+#BITRATE:32
+http://radioaovivo.senado.gov.br/canal2.mp3
