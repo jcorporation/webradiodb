@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio Senado
+#EXTGENRE:MPB, news
+#PLAYLIST:Rádio Senado
+#EXTIMG:http___radioaovivo_senado_leg_br_fm_mp3.webp
+#HOMEPAGE:https://www12.senado.leg.br/radio
+#COUNTRY:Brazil
+#STATE:Brasilia
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Rádio Senado 91.7 FM
+#CODEC:MP3
+#BITRATE:32
+http://radioaovivo.senado.leg.br/fm.mp3
