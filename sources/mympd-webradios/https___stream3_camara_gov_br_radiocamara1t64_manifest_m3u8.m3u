@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio Câmara 96.9 FM
+#EXTGENRE:MPB, news
+#PLAYLIST:Rádio Câmara 96.9 FM
+#EXTIMG:https___stream3_camara_gov_br_radiocamara1t64_manifest_m3u8.webp
+#HOMEPAGE:https://www.camara.leg.br/radio
+#COUNTRY:Brazil
+#STATE:Brasilia
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Rádio Câmara 96.9 FM
+#CODEC:ADTS
+#BITRATE:32
+https://stream3.camara.gov.br/radiocamara1t64/manifest.m3u8
