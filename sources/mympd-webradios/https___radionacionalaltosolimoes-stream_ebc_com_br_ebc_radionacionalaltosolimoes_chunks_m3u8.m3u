@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio Nacional do Alto Solimões
+#EXTGENRE:news, football, soccer, MPB
+#PLAYLIST:Rádio Nacional do Alto Solimões
+#EXTIMG:https___radionacionalaltosolimoes-stream_ebc_com_br_ebc_radionacionalaltosolimoes_chunks_m3u8.webp
+#HOMEPAGE:https://radios.ebc.com.br/nacionalaltosolimoes
+#COUNTRY:Brazil
+#STATE:Amazonas
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Rádio Nacional do Alto Solimões - EBC
+#CODEC:AAC
+#BITRATE:32
+https://radionacionalaltosolimoes-stream.ebc.com.br/ebc/radionacionalaltosolimoes/chunks.m3u8
