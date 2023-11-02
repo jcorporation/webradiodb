@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio Nacional de Brasília
+#EXTGENRE:news, soccer, football, MPB
+#PLAYLIST:Rádio Nacional de Brasília
+#EXTIMG:https___radionacionalbrasilia-stream_ebc_com_br_mux_video_ts_index-1_m3u8.webp
+#HOMEPAGE:https://radios.ebc.com.br/radionacional
+#COUNTRY:Brazil
+#STATE:Brasilia
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Rádio Nacional de Brasília - EBC
+#CODEC:ADTS
+#BITRATE:32
+https://radionacionalbrasilia-stream.ebc.com.br/mux_video_ts/index-1.m3u8
