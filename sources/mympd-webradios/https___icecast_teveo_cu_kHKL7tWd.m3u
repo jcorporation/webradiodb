@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Radio Rebelde AM
+#EXTGENRE:sports, news
+#PLAYLIST:Radio Rebelde AM
+#EXTIMG:https___icecast_teveo_cu_kHKL7tWd.webp
+#HOMEPAGE:https://www.radiorebelde.cu
+#COUNTRY:Cuba
+#STATE:Havana/Habana
+#LANGUAGE:Spanish
+#DESCRIPTION:La emisora de la Revolución
+#CODEC:MPEG
+#BITRATE:64
+https://icecast.teveo.cu/kHKL7tWd
