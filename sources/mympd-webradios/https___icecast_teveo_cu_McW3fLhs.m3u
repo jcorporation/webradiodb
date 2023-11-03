@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Radio Habana Cuba
+#EXTGENRE:news, music
+#PLAYLIST:Radio Habana Cuba
+#EXTIMG:
+#HOMEPAGE:www.radiohc.cu
+#COUNTRY:Cuba
+#STATE:Havana/Habana
+#LANGUAGE:Spanish
+#DESCRIPTION:Una voz de amistad que recorre el mundo
+#CODEC:MPEG
+#BITRATE:64
+https://icecast.teveo.cu/McW3fLhs
