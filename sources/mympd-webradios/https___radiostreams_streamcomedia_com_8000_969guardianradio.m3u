@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Guardian Radio 96.9 FM
+#EXTGENRE:news, sports
+#PLAYLIST:Guardian Radio 96.9 FM
+#EXTIMG:https___radiostreams_streamcomedia_com_8000_969guardianradio.webp
+#HOMEPAGE:https://guardiantalkradio.com
+#COUNTRY:Bahamas
+#STATE:Nassau
+#LANGUAGE:English
+#DESCRIPTION:Guardian Radio 96.9 FM
+#CODEC:MPEG
+#BITRATE:64
+https://radiostreams.streamcomedia.com:8000/969guardianradio
