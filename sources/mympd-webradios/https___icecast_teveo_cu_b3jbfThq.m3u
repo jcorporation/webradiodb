@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Radio Reloj
+#EXTGENRE:news
+#PLAYLIST:Radio Reloj
+#EXTIMG:https___icecast_teveo_cu_b3jbfThq.webp
+#HOMEPAGE:https://www.radioreloj.cu
+#COUNTRY:Cuba
+#STATE:Havana/Habana
+#LANGUAGE:Spanish
+#DESCRIPTION:Canal de Informacíon Continua
+#CODEC:MPEG
+#BITRATE:64
+https://icecast.teveo.cu/b3jbfThq
