@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio Universitária UFG
+#EXTGENRE:MPB, news
+#PLAYLIST:Rádio Universitária UFG
+#EXTIMG:https___streaming_ufg_br_8443_radiouniversitaria_xspf.webp
+#HOMEPAGE:https://radio.ufg.br/p/aovivo
+#COUNTRY:Brazil
+#STATE:Goiás
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Rádio Universitária UFG
+#CODEC:MPEG
+#BITRATE:128
+https://streaming.ufg.br:8443/radiouniversitaria.xspf
