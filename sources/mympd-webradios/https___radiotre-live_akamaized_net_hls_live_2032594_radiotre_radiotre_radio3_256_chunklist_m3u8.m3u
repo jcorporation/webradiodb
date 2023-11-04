@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rai Radio 3 93.7 FM
+#EXTGENRE:opera
+#PLAYLIST:Rai Radio 3 93.7 FM
+#EXTIMG:https___radiotre-live_akamaized_net_hls_live_2032594_radiotre_radiotre_radio3_256_chunklist_m3u8.webp
+#HOMEPAGE:https://www.raiplaysound.it/radio3
+#COUNTRY:Italy
+#STATE:Roma
+#LANGUAGE:Italian
+#DESCRIPTION:Rai Radio 3 93.7 FM
+#CODEC:AAC
+#BITRATE:32
+https://radiotre-live.akamaized.net/hls/live/2032594/radiotre/radiotre/radio3_256/chunklist.m3u8
