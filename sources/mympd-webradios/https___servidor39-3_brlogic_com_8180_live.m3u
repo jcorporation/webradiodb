@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio Uniso
+#EXTGENRE:music
+#PLAYLIST:Rádio Uniso
+#EXTIMG:https___servidor39-3_brlogic_com_8180_live.webp
+#HOMEPAGE:https://radiouniso.com
+#COUNTRY:Brazil
+#STATE:São Paulo
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:A Rádio Uniso mostra o trabalho dos universitários com suas produções durante o ano.
+#CODEC:MPEG
+#BITRATE:128
+https://servidor39-3.brlogic.com:8180/live
