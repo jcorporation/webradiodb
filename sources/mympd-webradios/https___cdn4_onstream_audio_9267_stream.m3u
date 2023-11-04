@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Radio Prensa Latina
+#EXTGENRE:news
+#PLAYLIST:Radio Prensa Latina
+#EXTIMG:https___cdn4_onstream_audio_9267_stream.webp
+#HOMEPAGE:https://radio.prensa-latina.cu
+#COUNTRY:Cuba
+#STATE:Havana/Habana
+#LANGUAGE:Spanish
+#DESCRIPTION:
+#CODEC:
+#BITRATE:
+https://cdn4.onstream.audio:9267/stream
