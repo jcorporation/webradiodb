@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Radio Sancti Spíritus 1210 AM 106.3 FM
+#EXTGENRE:variety
+#PLAYLIST:Radio Sancti Spíritus 1210 AM 106.3 FM
+#EXTIMG:https___icecast_teveo_cu_NqWrgw7j.webp
+#HOMEPAGE:https://www.radiosanctispiritus.cu/es/
+#COUNTRY:Cuba
+#STATE:Sancti Spíritus
+#LANGUAGE:Spanish
+#DESCRIPTION:Contemporánea en su tradición
+#CODEC:MPEG
+#BITRATE:64
+https://icecast.teveo.cu/NqWrgw7j
