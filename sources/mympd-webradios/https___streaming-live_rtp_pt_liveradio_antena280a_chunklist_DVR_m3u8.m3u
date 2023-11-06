@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio Antena 2 94.4 FM
+#EXTGENRE:classical, opera
+#PLAYLIST:Rádio Antena 2 94.4 FM
+#EXTIMG:https___streaming-live_rtp_pt_liveradio_antena280a_chunklist_DVR_m3u8.webp
+#HOMEPAGE:https://antena2.rtp.pt
+#COUNTRY:Portugal
+#STATE:
+#LANGUAGE:Portuguese
+#DESCRIPTION:A Arte que Toca
+#CODEC:AAC
+#BITRATE:32
+https://streaming-live.rtp.pt/liveradio/antena280a/chunklist_DVR.m3u8
