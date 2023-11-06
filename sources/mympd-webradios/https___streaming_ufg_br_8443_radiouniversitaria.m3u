@@ -2,7 +2,7 @@
 #EXTINF:-1,Rádio Universitária UFG
 #EXTGENRE:MPB, News
 #PLAYLIST:Rádio Universitária UFG
-#EXTIMG:https___streaming_ufg_br_8443_radiouniversitaria_xspf.webp
+#EXTIMG:https___streaming_ufg_br_8443_radiouniversitaria.webp
 #HOMEPAGE:https://radio.ufg.br/p/aovivo
 #COUNTRY:Brazil
 #STATE:Goiás
@@ -10,4 +10,4 @@
 #DESCRIPTION:Rádio Universitária UFG
 #CODEC:MPEG
 #BITRATE:128
-https://streaming.ufg.br:8443/radiouniversitaria.xspf
+https://streaming.ufg.br:8443/radiouniversitaria
