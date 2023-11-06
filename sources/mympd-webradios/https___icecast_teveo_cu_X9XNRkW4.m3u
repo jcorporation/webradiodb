@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Radio Minas 104.9 FM
+#EXTGENRE:music, news
+#PLAYLIST:Radio Minas 104.9 FM
+#EXTIMG:https___icecast_teveo_cu_X9XNRkW4.webp
+#HOMEPAGE:https://www.radiominas.icrt.cu
+#COUNTRY:Cuba
+#STATE:Minas de Matahambre
+#LANGUAGE:Spanish
+#DESCRIPTION:Radio Minas 104.9 FM
+#CODEC:MPEG
+#BITRATE:64
+https://icecast.teveo.cu/X9XNRkW4
