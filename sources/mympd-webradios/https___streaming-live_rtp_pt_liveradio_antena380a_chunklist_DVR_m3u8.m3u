@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio Antena 3 105.2 FM
+#EXTGENRE:pop, dance
+#PLAYLIST:Rádio Antena 3 105.2 FM
+#EXTIMG:https___streaming-live_rtp_pt_liveradio_antena380a_chunklist_DVR_m3u8.webp
+#HOMEPAGE:https://media.rtp.pt/antena3/
+#COUNTRY:Portugal
+#STATE:Lisboa
+#LANGUAGE:Portuguese
+#DESCRIPTION:A Alternativa Pop
+#CODEC:AAC
+#BITRATE:32
+https://streaming-live.rtp.pt/liveradio/antena380a/chunklist_DVR.m3u8
