@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio UESC
+#EXTGENRE:pop, mpb, news
+#PLAYLIST:Rádio UESC
+#EXTIMG:http___200_128_65_57_8000_live.webp
+#HOMEPAGE:http://radio.uesc.br/3.html
+#COUNTRY:Brazil
+#STATE:Bahia
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Inovação, conhecimento e música de qualidade!
+#CODEC:MPEG
+#BITRATE:128
+http://200.128.65.57:8000/live
