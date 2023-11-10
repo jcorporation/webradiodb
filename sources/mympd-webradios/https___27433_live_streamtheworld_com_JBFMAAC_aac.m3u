@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio JB 99.9 FM
+#EXTGENRE:MPB, pop, flashback
+#PLAYLIST:Rádio JB 99.9 FM
+#EXTIMG:https___27433_live_streamtheworld_com_JBFMAAC_aac.webp
+#HOMEPAGE:https://jb.fm
+#COUNTRY:Brazil
+#STATE:Rio de Janeiro
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Música e Informação!
+#CODEC:AAC
+#BITRATE:32
+https://27433.live.streamtheworld.com/JBFMAAC.aac
