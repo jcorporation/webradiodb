@@ -2,12 +2,12 @@
 #EXTINF:-1,Radio Balagne
 #EXTGENRE:Corse
 #PLAYLIST:Radio Balagne
-#EXTIMG:http___www_radiobalagne_com_player-radio-balagne_html.webp
+#EXTIMG:http___7878_go2stream_fr_8000_stream.webp
 #HOMEPAGE:http://www.radiobalagne.com/
 #COUNTRY:France
 #STATE:Corse
 #LANGUAGE:Corse, Francais
-#DESCRIPTION:
-#CODEC:
-#BITRATE:
-http://www.radiobalagne.com/player-radio-balagne.html
+#DESCRIPTION:A voce insulana
+#CODEC:MPEG
+#BITRATE:128
+http://7878.go2stream.fr:8000/stream
