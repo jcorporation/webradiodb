@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Sinfonola - 90.3 FM
+#EXTGENRE:Romántico
+#PLAYLIST:Sinfonola - 90.3 FM
+#EXTIMG:https___live_turadio_stream_7006__.webp
+#HOMEPAGE:https://radiosinfonola.com/
+#COUNTRY:Costa Rica
+#STATE:
+#LANGUAGE:Spanish
+#DESCRIPTION:Esta es una estación radial de origen costarricense, en donde puedes escuchar música para recordar esos momentos más importantes de tu vida.
+#CODEC:
+#BITRATE:
+https://live.turadio.stream:7006/;
