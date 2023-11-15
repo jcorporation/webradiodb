@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Musical - 97.5 FM
+#EXTGENRE:Romántico
+#PLAYLIST:Musical - 97.5 FM
+#EXTIMG:https___live_turadio_stream_7005_stream_type_http_nocache_596.webp
+#HOMEPAGE:https://radiomusical.com/
+#COUNTRY:Costa Rica
+#STATE:
+#LANGUAGE:Spanish
+#DESCRIPTION:Radio Musical es uno de los principales medios de comunicación de Costa Rica.
+#CODEC:MP3
+#BITRATE:64
+https://live.turadio.stream:7005/stream?type=http&nocache=596

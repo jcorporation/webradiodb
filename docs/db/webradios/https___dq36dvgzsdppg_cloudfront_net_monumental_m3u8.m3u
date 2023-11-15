@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Monumental - 93.5 FM
+#EXTGENRE:Noticiero
+#PLAYLIST:Monumental - 93.5 FM
+#EXTIMG:https___dq36dvgzsdppg_cloudfront_net_monumental_m3u8.webp
+#HOMEPAGE:https://www.monumental.co.cr/
+#COUNTRY:Costa Rica
+#STATE:
+#LANGUAGE:Spanish
+#DESCRIPTION:El concepto del programa es un servicio informativo y musical, con programas modernos, acceso urbano, respetando al mismo tiempo la forma tradicionalista.
+#CODEC:HLS
+#BITRATE:0
+https://dq36dvgzsdppg.cloudfront.net/monumental.m3u8
