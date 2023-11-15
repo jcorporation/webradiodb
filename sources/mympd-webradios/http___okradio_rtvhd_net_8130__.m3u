@@ -8,6 +8,6 @@
 #STATE:
 #LANGUAGE:Spanish
 #DESCRIPTION:Esta es una de las estaciones de radio más juveniles que existen con un enfoque especial en la música.
-#CODEC:
-#BITRATE:
+#CODEC:AAC
+#BITRATE:56
 http://okradio.rtvhd.net:8130/;

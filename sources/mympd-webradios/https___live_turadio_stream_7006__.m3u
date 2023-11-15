@@ -8,6 +8,6 @@
 #STATE:
 #LANGUAGE:Spanish
 #DESCRIPTION:Esta es una estación radial de origen costarricense, en donde puedes escuchar música para recordar esos momentos más importantes de tu vida.
-#CODEC:
-#BITRATE:
+#CODEC:MP3
+#BITRATE:64
 https://live.turadio.stream:7006/;
