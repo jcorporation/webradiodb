@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,BBC Radio 4 LW
+#EXTGENRE:Spoken Word
+#PLAYLIST:BBC Radio 4 LW
+#EXTIMG:http___as-hls-ww-live_akamaized_net_pool_904_live_ww_bbc_radio_fourlw_bbc_radio_fourlw_isml_bbc_radio_fourlw-audio%3d96000_norewind_m3u8.webp
+#HOMEPAGE:https://www.bbc.co.uk/radio4
+#COUNTRY:United Kingdom
+#STATE:
+#LANGUAGE:English
+#DESCRIPTION:Longwave broadcast of BBC Radio 4.
+#CODEC:HLS
+#BITRATE:0
+http://as-hls-ww-live.akamaized.net/pool_904/live/ww/bbc_radio_fourlw/bbc_radio_fourlw.isml/bbc_radio_fourlw-audio%3d96000.norewind.m3u8
