@@ -93,7 +93,7 @@ trim_ext() {
 
 # Generates a myMPD compatible m3u filename, by replacings special chars with underscore
 gen_m3u_name() {
-    sed -E -e 's/[<>/.:?&$!#\\|;=]/_/g' <<< "$1"
+    sed -E -e 's/[<>/.:?&$%!#\\|;=]/_/g' <<< "$1"
 }
 
 # Gets a m3u field value
