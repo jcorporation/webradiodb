@@ -2,7 +2,7 @@
 #EXTINF:-1,Radio 7
 #EXTGENRE:Pop
 #PLAYLIST:Radio 7
-#EXTIMG:https___frontend01_lb_streamonkey_net_radio7-dab_stream_mp3.webp
+#EXTIMG:https___streams_radio7_de_dab_mp3-192_web_.webp
 #HOMEPAGE:https://www.radio7.de/
 #COUNTRY:Germany
 #STATE:
@@ -10,4 +10,4 @@
 #DESCRIPTION:
 #CODEC:MP3
 #BITRATE:128
-https://frontend01.lb.streamonkey.net/radio7-dab/stream/mp3
+https://streams.radio7.de/dab/mp3-192/web/
