@@ -2,7 +2,7 @@
 #EXTINF:-1,Jazz24
 #EXTGENRE:Jazz
 #PLAYLIST:Jazz24
-#EXTIMG:http___live_wostreaming_net_direct_ppm-jazz24aac256-ibc1.webp
+#EXTIMG:https___live_amperwave_net_manifest_ppm-jazz24aac-hlsc1_m3u8.webp
 #HOMEPAGE:https://www.jazz24.org
 #COUNTRY:United States
 #STATE:
@@ -10,4 +10,4 @@
 #DESCRIPTION:
 #CODEC:AAC
 #BITRATE:256
-http://live.wostreaming.net/direct/ppm-jazz24aac256-ibc1
+https://live.amperwave.net/manifest/ppm-jazz24aac-hlsc1.m3u8
