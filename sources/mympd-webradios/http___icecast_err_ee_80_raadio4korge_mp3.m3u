@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Raadio 4
+#EXTGENRE:News, Pop, Jazz, Classic
+#PLAYLIST:Raadio 4
+#EXTIMG:http___icecast_err_ee_80_raadio4korge_mp3.webp
+#HOMEPAGE:https://r4.err.ee/
+#COUNTRY:Estonia
+#STATE:Tallinn
+#LANGUAGE:Russian
+#DESCRIPTION:Raadio 4 is part of the Estonian National Broadcasting Corporation and has the largest audience among the Russian-language media channels in Estonia
+#CODEC:MP3
+#BITRATE:320
+http://icecast.err.ee:80/raadio4korge.mp3
