@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio UFSCar 95.3 FM
+#EXTGENRE:news, music
+#PLAYLIST:Rádio UFSCar 95.3 FM
+#EXTIMG:http___200_136_219_172_8000_radioufscar96_mp3.webp
+#HOMEPAGE:http://radio.ufscar.br/
+#COUNTRY:Brazil
+#STATE:São Paulo
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Rádio UFSCar - Escute Diferente
+#CODEC:MP3
+#BITRATE:128
+http://200.136.219.172:8000/radioufscar96.mp3
