@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,FluxFM - B-Funk
+#EXTGENRE:Funk
+#PLAYLIST:FluxFM - B-Funk
+#EXTIMG:http___streams_fluxfm_de_event01_mp3-320_streams_fluxfm_de_.webp
+#HOMEPAGE:
+#COUNTRY:Germany
+#STATE:
+#LANGUAGE:German
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:320
+http://streams.fluxfm.de/event01/mp3-320/streams.fluxfm.de/
