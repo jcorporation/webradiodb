@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,BBC Radio 3 (320K)
+#EXTGENRE:Classical, Jazz, World Music
+#PLAYLIST:BBC Radio 3 (320K)
+#EXTIMG:http___as-hls-uk-live_akamaized_net_pool_904_live_uk_bbc_radio_three_bbc_radio_three_isml_bbc_radio_three-audio_3d320000_norewind_m3u8.webp
+#HOMEPAGE:
+#COUNTRY:United Kingdom
+#STATE:
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:AAC-LC
+#BITRATE:320
+http://as-hls-uk-live.akamaized.net/pool_904/live/uk/bbc_radio_three/bbc_radio_three.isml/bbc_radio_three-audio%3d320000.norewind.m3u8

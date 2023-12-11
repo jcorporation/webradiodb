@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,FluxFM - Radio Alternative
+#EXTGENRE:Indie
+#PLAYLIST:FluxFM - Radio Alternative
+#EXTIMG:http___streams_fluxfm_de_radioalt_mp3-320_streams_fluxfm_de_.webp
+#HOMEPAGE:
+#COUNTRY:Germany
+#STATE:
+#LANGUAGE:German
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:320
+http://streams.fluxfm.de/radioalt/mp3-320/streams.fluxfm.de/

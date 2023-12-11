@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,FluxFM - XJAZZ
+#EXTGENRE:Jazz
+#PLAYLIST:FluxFM - XJAZZ
+#EXTIMG:http___streams_fluxfm_de_xjazz_mp3-320_streams_fluxfm_de_.webp
+#HOMEPAGE:
+#COUNTRY:Germany
+#STATE:
+#LANGUAGE:German
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:320
+http://streams.fluxfm.de/xjazz/mp3-320/streams.fluxfm.de/

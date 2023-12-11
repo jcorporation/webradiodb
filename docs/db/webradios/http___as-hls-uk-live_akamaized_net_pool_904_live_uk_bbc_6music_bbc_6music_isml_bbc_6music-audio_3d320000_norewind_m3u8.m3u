@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,BBC Radio 6 music (320K)
+#EXTGENRE:Indie, Rock, Funk
+#PLAYLIST:BBC Radio 6 music (320K)
+#EXTIMG:http___as-hls-uk-live_akamaized_net_pool_904_live_uk_bbc_6music_bbc_6music_isml_bbc_6music-audio_3d320000_norewind_m3u8.webp
+#HOMEPAGE:
+#COUNTRY:United Kingdom
+#STATE:
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:AAC-LC
+#BITRATE:320
+http://as-hls-uk-live.akamaized.net/pool_904/live/uk/bbc_6music/bbc_6music.isml/bbc_6music-audio%3d320000.norewind.m3u8

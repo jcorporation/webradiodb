@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,FluxFM - 2000's Naughty
+#EXTGENRE:2000's
+#PLAYLIST:FluxFM - 2000's Naughty
+#EXTIMG:http___streams_fluxfm_de_flx_2000_mp3-320_streams_fluxfm_de_.webp
+#HOMEPAGE:
+#COUNTRY:Germany
+#STATE:
+#LANGUAGE:German
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:320
+http://streams.fluxfm.de/flx_2000/mp3-320/streams.fluxfm.de/
