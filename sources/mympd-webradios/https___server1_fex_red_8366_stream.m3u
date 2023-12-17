@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Radio Gente
+#EXTGENRE:Entretenimiento, Deportes, Noticias, Variedades
+#PLAYLIST:Radio Gente
+#EXTIMG:https___server1_fex_red_8366_stream.webp
+#HOMEPAGE:https://radiogentebol.com/
+#COUNTRY:Bolivia
+#STATE:
+#LANGUAGE:Español
+#DESCRIPTION:
+#CODEC:
+#BITRATE:
+https://server1.fex.red:8366/stream
