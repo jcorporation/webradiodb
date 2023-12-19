@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Ici Radio-Canada Premiere Montreal
+#EXTGENRE:News
+#PLAYLIST:Ici Radio-Canada Premiere Montreal
+#EXTIMG:https___rcavliveaudio_akamaized_net_hls_live_2006635_P-2QMTL0_MTL_playlist_m3u8.webp
+#HOMEPAGE:https://ici.radio-canada.ca/
+#COUNTRY:Canada
+#STATE:Montreal
+#LANGUAGE:French
+#DESCRIPTION:
+#CODEC:
+#BITRATE:
+https://rcavliveaudio.akamaized.net/hls/live/2006635/P-2QMTL0_MTL/playlist.m3u8
