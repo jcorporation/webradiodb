@@ -8,6 +8,6 @@
 #STATE:Montreal
 #LANGUAGE:French
 #DESCRIPTION:
-#CODEC:
-#BITRATE:
+#CODEC:HLS
+#BITRATE:465
 https://rcavliveaudio.akamaized.net/hls/live/2006635/P-2QMTL0_MTL/playlist.m3u8
