@@ -23,6 +23,14 @@ const resultLimit = 25;
 document.getElementById('lastUpdate').textContent = new Date(webradiodb.timestamp * 1000).toLocaleString('en-US');
 document.getElementById('stationCount').textContent = webradiodb.totalWebradios;
 
+const errorCount = Object.keys(webradiodb.webradioStatus).length;
+if (errorCount == 0) {
+    document.getElementById('stationErrors').style.display = 'none';
+}
+else {
+    document.getElementById('stationErrorCount').textContent = errorCount;
+}
+
 function appendOpt(el, value, text) {
     const opt = document.createElement('option');
     opt.text = text;
@@ -59,7 +67,7 @@ function getSelectValue(el) {
 
 searchInput.addEventListener('keyup', function(event) {
     if (event.key === 'Enter') {
-        showSearchResult(0, resultLimit);
+        showSearchResult(0, resultLimit, false);
     }
 }, false);
 
@@ -68,7 +76,12 @@ countrySelect.addEventListener('change', function() {
 }, false);
 
 document.getElementById('searchBtn').addEventListener('click', function() {
-    showSearchResult(0, resultLimit);
+    showSearchResult(0, resultLimit, false);
+}, false);
+
+document.getElementById('searchErrorLink').addEventListener('click', function(event) {
+    showSearchResult(0, 100, true);
+    event.preventDefault();
 }, false);
 
 function uriHostname(uri) {
@@ -82,7 +95,7 @@ function returnStreamError(m3u) {
     return p;
 }
 
-function search(name, genre, country, state, language, codec, bitrate, sort, offset, limit) {
+function search(name, genre, country, state, language, codec, bitrate, sort, offset, limit, error) {
     name = name.toLowerCase();
     const obj = {
         "result": {
@@ -101,9 +114,18 @@ function search(name, genre, country, state, language, codec, bitrate, sort, off
             (codec === ''    || webradiodb.webradios[key].allCodecs.includes(codec)) &&
             (bitrate === 0   || bitrate <= webradiodb.webradios[key].highestBitrate)
         ) {
-            webradiodb.webradios[key].filename = key;
-            obj.result.data.push(webradiodb.webradios[key]);
-            obj.result.totalEntities++;
+            if (error === true) {
+                if (webradiodb.webradioStatus[key]) {
+                    webradiodb.webradios[key].filename = key;
+                    obj.result.data.push(webradiodb.webradios[key]);
+                    obj.result.totalEntities++;
+                }
+            }
+            else {
+                webradiodb.webradios[key].filename = key;
+                obj.result.data.push(webradiodb.webradios[key]);
+                obj.result.totalEntities++;
+            }
         }
     }
     obj.result.data.sort(function(a, b) {
@@ -149,7 +171,18 @@ function search(name, genre, country, state, language, codec, bitrate, sort, off
     return obj;
 }
 
-function showSearchResult(offset, limit) {
+function showSearchResult(offset, limit, error) {
+    if (error === true) {
+        searchInput.value = '';
+        genreSelect.selectedIndex = 0;
+        countrySelect.selectedIndex = 0;
+        stateSelect.selectedIndex = 0;
+        languageSelect.selectedIndex = 0;
+        codecSelect.selectedIndex = 0;
+        bitrateSelect.selectedIndex = 0;
+        offset = 0;
+        limit = 100;
+    }
     const searchstr = searchInput.value.toLowerCase();
     const genreFilter = getSelectValue(genreSelect);
     const countryFilter = getSelectValue(countrySelect);
@@ -163,7 +196,7 @@ function showSearchResult(offset, limit) {
         resultEl.textContent = '';
     }
 
-    const obj = search(searchstr, genreFilter, countryFilter, stateFilter, languageFilter, codecFilter, bitrateFilter, sort, offset, limit);
+    const obj = search(searchstr, genreFilter, countryFilter, stateFilter, languageFilter, codecFilter, bitrateFilter, sort, offset, limit, error);
     document.getElementById('resultCount').textContent = obj.result.totalEntities;
     for (const key in obj.result.data) {
         const div = document.createElement('div');
@@ -289,7 +322,7 @@ function showSearchResult(offset, limit) {
         a.addEventListener('click', function(event) {
             event.preventDefault();
             event.target.remove();
-            showSearchResult(last + 1, limit);
+            showSearchResult(last + 1, limit, false);
         }, false);
         resultEl.appendChild(a);
     }

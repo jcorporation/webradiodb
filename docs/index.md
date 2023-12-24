@@ -8,6 +8,10 @@ Contributions to the webradio database are very welcome. It should be a communit
 
 Currently there are <span id="stationCount"></span> stations in the database and the last update was on <span id="lastUpdate"></span>.
 
+<div id="stationErrors">
+There are <span id="stationErrorCount"></span> not working stations in the database: <a id="searchErrorLink" href="#">Help fixing it</a>
+</div>
+
 ### Add a webradio
 
 - Open a [GitHub Issue](https://github.com/jcorporation/webradiodb/issues/new?labels=AddWebradio&template=add-webradio.yml&title=%5BAdd+Webradio%5D%3A+)
