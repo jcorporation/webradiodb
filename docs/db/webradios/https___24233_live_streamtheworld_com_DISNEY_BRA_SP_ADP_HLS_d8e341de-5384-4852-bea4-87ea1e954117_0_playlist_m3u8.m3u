@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio Disney 91.3 FM
+#EXTGENRE:Pop-Rock, Sertanejo, Youth
+#PLAYLIST:Rádio Disney 91.3 FM
+#EXTIMG:https___24233_live_streamtheworld_com_DISNEY_BRA_SP_ADP_HLS_d8e341de-5384-4852-bea4-87ea1e954117_0_playlist_m3u8.webp
+#HOMEPAGE:https://radiodisney.com.br/
+#COUNTRY:Brazil
+#STATE:São Paulo
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:A rádio que te ouve
+#CODEC:AAC
+#BITRATE:320
+https://24233.live.streamtheworld.com/DISNEY_BRA_SP_ADP/HLS/d8e341de-5384-4852-bea4-87ea1e954117/0/playlist.m3u8
