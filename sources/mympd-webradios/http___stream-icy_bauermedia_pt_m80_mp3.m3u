@@ -1,13 +1,13 @@
 #EXTM3U
-#EXTINF:-1,m80
+#EXTINF:-1,M80 Rádio
 #EXTGENRE:70's, 80's, 90's, 2000's
-#PLAYLIST:m80
+#PLAYLIST:M80 Rádio
 #EXTIMG:http___stream-icy_bauermedia_pt_m80_mp3.webp
 #HOMEPAGE:https://m80.pt/
 #COUNTRY:Portugal
 #STATE:Lisbon
 #LANGUAGE:Portuguese
-#DESCRIPTION:If your life have a music, it is played here on m80
+#DESCRIPTION:Se a sua vida tem uma música, ela passa na M80
 #CODEC:MP3
 #BITRATE:128
 http://stream-icy.bauermedia.pt/m80.mp3
