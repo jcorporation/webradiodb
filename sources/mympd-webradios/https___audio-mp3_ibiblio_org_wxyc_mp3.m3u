@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,WXYC Chapel Hill 89.3FM
+#EXTGENRE:college radio, music
+#PLAYLIST:WXYC Chapel Hill 89.3FM
+#EXTIMG:https___audio-mp3_ibiblio_org_wxyc_mp3.webp
+#HOMEPAGE:https://wxyc.org/
+#COUNTRY:United States
+#STATE:North Carolina
+#LANGUAGE:English
+#DESCRIPTION:UNC-Chapel Hill's student-run, freeform radio station
+#CODEC:MP3
+#BITRATE:128
+https://audio-mp3.ibiblio.org/wxyc.mp3
