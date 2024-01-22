@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio FERJ
+#EXTGENRE:Eclectic, Football
+#PLAYLIST:Rádio FERJ
+#EXTIMG:https___servidor35-1_brlogic_com_8062_live.webp
+#HOMEPAGE:https://www.fferj.com.br/radio
+#COUNTRY:Brazil
+#STATE:Rio de Janeiro
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Rádio FERJ
+#CODEC:MP3
+#BITRATE:128
+https://servidor35-1.brlogic.com:8062/live
