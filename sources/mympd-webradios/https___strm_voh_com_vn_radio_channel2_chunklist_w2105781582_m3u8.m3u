@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Radio VOH 610 AM
+#EXTGENRE:news, debate
+#PLAYLIST:Radio VOH 610 AM
+#EXTIMG:https___strm_voh_com_vn_radio_channel2_chunklist_w2105781582_m3u8.webp
+#HOMEPAGE:https://voh.com.vn/radio-kenh-am-610-am610khz.html
+#COUNTRY:Vietnam
+#STATE:Ho Chi Minh City
+#LANGUAGE:Vietnamese/tiếng Việt
+#DESCRIPTION:Radio VOH 610 AM
+#CODEC:AAC
+#BITRATE:320
+https://strm.voh.com.vn/radio/channel2/chunklist_w2105781582.m3u8
