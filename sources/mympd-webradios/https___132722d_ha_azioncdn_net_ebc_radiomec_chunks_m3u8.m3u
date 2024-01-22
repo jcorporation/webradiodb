@@ -2,12 +2,12 @@
 #EXTINF:-1,Rádio MEC AM
 #EXTGENRE:MPB
 #PLAYLIST:Rádio MEC AM
-#EXTIMG:https___radio2_lflr_com_br_ebc-live_radio-mec_chunks_m3u8.webp
+#EXTIMG:https___132722d_ha_azioncdn_net_ebc_radiomec_chunks_m3u8.webp
 #HOMEPAGE:https://radios.ebc.com.br/mecamrio
 #COUNTRY:Brazil
 #STATE:Rio De Janeiro
 #LANGUAGE:Brazilian Portuguese
 #DESCRIPTION:Rádio MEC AM - EBC
-#CODEC:ADTS
+#CODEC:AAC
 #BITRATE:32
-https://radio2.lflr.com.br/ebc-live/radio-mec/chunks.m3u8
+https://132722d.ha.azioncdn.net/ebc/radiomec/chunks.m3u8
