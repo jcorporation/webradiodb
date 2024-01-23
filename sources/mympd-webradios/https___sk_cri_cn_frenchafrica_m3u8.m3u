@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,CGTN Radio Français
+#EXTGENRE:news, debate
+#PLAYLIST:CGTN Radio Français
+#EXTIMG:https___sk_cri_cn_frenchafrica_m3u8.webp
+#HOMEPAGE:https://radio.cgtn.com/
+#COUNTRY:China
+#STATE:
+#LANGUAGE:French
+#DESCRIPTION:CGTN Radio Français
+#CODEC:ADTS
+#BITRATE:128
+https://sk.cri.cn/frenchafrica.m3u8
