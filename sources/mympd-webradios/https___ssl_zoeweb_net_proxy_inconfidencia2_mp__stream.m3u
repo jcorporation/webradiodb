@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio Inconfidência AM 880
+#EXTGENRE:news, music
+#PLAYLIST:Rádio Inconfidência AM 880
+#EXTIMG:https___ssl_zoeweb_net_proxy_inconfidencia2_mp__stream.webp
+#HOMEPAGE:https://www.inconfidencia.com.br/
+#COUNTRY:Brazil
+#STATE:Minas Gerais
+#LANGUAGE:Brazilian Portuguese
+#DESCRIPTION:Uma Rádio Para Todos e Todas!
+#CODEC:AAC
+#BITRATE:128
+https://ssl.zoeweb.net/proxy/inconfidencia2?mp=/stream
