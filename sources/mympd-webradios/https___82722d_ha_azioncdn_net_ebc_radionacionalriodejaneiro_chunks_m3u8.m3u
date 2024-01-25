@@ -8,6 +8,6 @@
 #STATE:Rio de Janeiro
 #LANGUAGE:Brazilian Portuguesetemplates
 #DESCRIPTION:Rádio Nacional 87.1 FM 1130 AM
-#CODEC:
-#BITRATE:
+#CODEC:HLS
+#BITRATE:99
 https://82722d.ha.azioncdn.net/ebc/radionacionalriodejaneiro/chunks.m3u8
