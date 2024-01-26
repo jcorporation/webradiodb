@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,KBS WORLD Radio Ch2 (English)
+#EXTGENRE:Talk News, Asian, Ethnic, Music
+#PLAYLIST:KBS WORLD Radio Ch2 (English)
+#EXTIMG:https___worldradio_gscdn_kbs_co_kr_worldradio_192_4_m3u8.webp
+#HOMEPAGE:https://world.kbs.co.kr/service/index.htm
+#COUNTRY:South Korea
+#STATE:Seul
+#LANGUAGE:Korean, English
+#DESCRIPTION:English broadcast streaming
+#CODEC:AAC
+#BITRATE:64
+https://worldradio.gscdn.kbs.co.kr/worldradio_192_4.m3u8
