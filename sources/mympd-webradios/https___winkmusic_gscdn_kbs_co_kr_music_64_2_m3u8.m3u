@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,KBS WORLD Radio Music
+#EXTGENRE:Music, K-POP
+#PLAYLIST:KBS WORLD Radio Music
+#EXTIMG:https___winkmusic_gscdn_kbs_co_kr_music_64_2_m3u8.webp
+#HOMEPAGE:https://world.kbs.co.kr/service/index.htm
+#COUNTRY:South Korea
+#STATE:Seul
+#LANGUAGE:Multilanguage
+#DESCRIPTION:Multi-language music streaming
+#CODEC:AAC
+#BITRATE:64
+https://winkmusic.gscdn.kbs.co.kr/music_64_2.m3u8
