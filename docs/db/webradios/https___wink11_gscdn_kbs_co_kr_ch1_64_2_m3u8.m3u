@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,KBS WORLD Radio Ch1
+#EXTGENRE:Talk News, Asian, Ethnic, Music
+#PLAYLIST:KBS WORLD Radio Ch1
+#EXTIMG:https___wink11_gscdn_kbs_co_kr_ch1_64_2_m3u8.webp
+#HOMEPAGE:https://world.kbs.co.kr/service/index.htm
+#COUNTRY:South Korea
+#STATE:Seul
+#LANGUAGE:Multilanguage
+#DESCRIPTION:Multi-language streaming
+#CODEC:AAC
+#BITRATE:64
+https://wink11.gscdn.kbs.co.kr/ch1_64_2.m3u8
