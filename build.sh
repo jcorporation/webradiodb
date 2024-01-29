@@ -218,12 +218,19 @@ normalize_fields() {
             sed -i -e "s/^#STATE:.*/#STATE:$STATE_UPPER/" "$F"
         fi
         # language
+        local LANGUAGE_LINE=""
+        LANGUAGE_LINE=$(get_m3u_field "$F" "LANGUAGE")
+        local NEW_LANGUAGE=""
         local LANGUAGE=""
-        LANGUAGE=$(get_m3u_field "$F" "LANGUAGE")
-        local LANGUAGE_UPPER
-        LANGUAGE_UPPER=$(ucwords "$LANGUAGE")
-        LANGUAGE_UPPER=$(trim "$LANGUAGE_UPPER")
-        if [ "$LANGUAGE" != "$LANGUAGE_UPPER" ]
+        while read -r -d, LANGUAGE
+        do
+            [ "$LANGUAGE" = "" ] && continue
+            [ "$LANGUAGE" = "&" ] && continue
+            LANGUAGE=$(ucwords "$LANGUAGE")
+            NEW_LANGUAGE="$NEW_LANGUAGE, $LANGUAGE"
+        done < <(sed 's/, /,/g' <<< "$LANGUAGE_LINE,")
+        NEW_LANGUAGE="${NEW_LANGUAGE:2}"
+        if [ "$LANGUAGE_LINE" != "$NEW_LANGUAGE" ]
         then
             echo "$F: $LANGUAGE -> $LANGUAGE_UPPER"
             sed -i -e "s/^#LANGUAGE:.*/#LANGUAGE:$LANGUAGE_UPPER/" "$F"
