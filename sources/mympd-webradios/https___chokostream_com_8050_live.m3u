@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,La Vaina Hits
+#EXTGENRE:Urbana
+#PLAYLIST:La Vaina Hits
+#EXTIMG:https___chokostream_com_8050_live.webp
+#HOMEPAGE:https://lavainahits.net/
+#COUNTRY:Republica Dominicana
+#STATE:San Pedro De Macoris
+#LANGUAGE:español
+#DESCRIPTION:Detonando Hits!
+#CODEC:AAC
+#BITRATE:128
+https://chokostream.com:8050/live
