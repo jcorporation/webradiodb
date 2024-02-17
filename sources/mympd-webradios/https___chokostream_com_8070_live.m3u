@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,ExaltacionFM
+#EXTGENRE:Musica Cristiana
+#PLAYLIST:ExaltacionFM
+#EXTIMG:https___chokostream_com_8070_live.webp
+#HOMEPAGE:https://exaltacionfm.com/
+#COUNTRY:Republica Dominicana
+#STATE:San Pedro De Macoris
+#LANGUAGE:español
+#DESCRIPTION:Ondas De Avivamiento!
+#CODEC:AAC
+#BITRATE:128
+https://chokostream.com:8070/live
