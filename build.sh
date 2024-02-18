@@ -232,8 +232,8 @@ normalize_fields() {
         NEW_LANGUAGE="${NEW_LANGUAGE:2}"
         if [ "$LANGUAGE_LINE" != "$NEW_LANGUAGE" ]
         then
-            echo "$F: $LANGUAGE -> $LANGUAGE_UPPER"
-            sed -i -e "s/^#LANGUAGE:.*/#LANGUAGE:$LANGUAGE_UPPER/" "$F"
+            echo "$F: $LANGUAGE_LINE -> $NEW_LANGUAGE"
+            sed -i -e "s/^#LANGUAGE:.*/#LANGUAGE:$NEW_LANGUAGE/" "$F"
         fi
     done
 }
