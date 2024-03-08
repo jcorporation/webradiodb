@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,RDL Radio Diffusione Libera
+#EXTGENRE:commercial, pop, rock, top hits
+#PLAYLIST:RDL Radio Diffusione Libera
+#EXTIMG:https___asvradiostream_asvstudios_it_radio_8000_radio_mp3.webp
+#HOMEPAGE:https://www.radiodiffusionelibera.com
+#COUNTRY:Italy
+#STATE:Salerno
+#LANGUAGE:Italian
+#DESCRIPTION:RDL Radio Diffusione Libera powered by RPIGroup
+#CODEC:MP3
+#BITRATE:192
+https://asvradiostream.asvstudios.it/radio/8000/radio.mp3
