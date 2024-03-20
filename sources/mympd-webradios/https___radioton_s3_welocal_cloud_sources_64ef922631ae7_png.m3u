@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Radioton
+#EXTGENRE:80s
+#PLAYLIST:Radioton
+#EXTIMG:https___radioton_s3_welocal_cloud_sources_64ef922631ae7_png.webp
+#HOMEPAGE:https://www.radioton.de/
+#COUNTRY:Germany
+#STATE:Baden-Württemberg
+#LANGUAGE:German
+#DESCRIPTION:Lang leben die 80er.
+#CODEC:MP3
+#BITRATE:192
+https://radioton.s3.welocal.cloud/sources/64ef922631ae7.png
