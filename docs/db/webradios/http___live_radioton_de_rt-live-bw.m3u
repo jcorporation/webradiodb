@@ -2,7 +2,7 @@
 #EXTINF:-1,Radioton
 #EXTGENRE:80's
 #PLAYLIST:Radioton
-#EXTIMG:https___radioton_s3_welocal_cloud_sources_64ef922631ae7_png.webp
+#EXTIMG:http___live_radioton_de_rt-live-bw.webp
 #HOMEPAGE:https://www.radioton.de/
 #COUNTRY:Germany
 #STATE:Baden-Württemberg
@@ -10,4 +10,4 @@
 #DESCRIPTION:Lang leben die 80er.
 #CODEC:MP3
 #BITRATE:192
-https://radioton.s3.welocal.cloud/sources/64ef922631ae7.png
+http://live.radioton.de/rt-live-bw
