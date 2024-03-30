@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Radio One 91FM
+#EXTGENRE:Indie, Student Radio
+#PLAYLIST:Radio One 91FM
+#EXTIMG:https___play_r1_co_nz_live.webp
+#HOMEPAGE:https://r1.co.nz
+#COUNTRY:New Zealand
+#STATE:Dunedin
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+https://play.r1.co.nz/live
