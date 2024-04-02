@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Radio BOB! Blues
+#EXTGENRE:Rock, Blues
+#PLAYLIST:Radio BOB! Blues
+#EXTIMG:https___streams_radiobob_de_blues_mp3-192_streams_radiobob_de_.webp
+#HOMEPAGE:https://www.radiobob.de/
+#COUNTRY:Germany
+#STATE:Hesse
+#LANGUAGE:German
+#DESCRIPTION:RADIO BOB!s neuer Blues Stream
+#CODEC:MP3
+#BITRATE:192
+https://streams.radiobob.de/blues/mp3-192/streams.radiobob.de/

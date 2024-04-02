@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Radio BOB! Rock Oldies
+#EXTGENRE:Rock
+#PLAYLIST:Radio BOB! Rock Oldies
+#EXTIMG:https___streams_radiobob_de_rockoldies_mp3-192_streams_radiobob_de_.webp
+#HOMEPAGE:https://www.radiobob.de/
+#COUNTRY:Germany
+#STATE:Hesse
+#LANGUAGE:German
+#DESCRIPTION:Some say they are out-of-date, we call them timeless and celebrate their legacy! This stream is packed with the best rock oldies!
+#CODEC:MP3
+#BITRATE:192
+https://streams.radiobob.de/rockoldies/mp3-192/streams.radiobob.de/

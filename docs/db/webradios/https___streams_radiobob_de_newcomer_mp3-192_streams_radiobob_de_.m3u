@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Radio BOB! Newcomer
+#EXTGENRE:Rock
+#PLAYLIST:Radio BOB! Newcomer
+#EXTIMG:https___streams_radiobob_de_newcomer_mp3-192_streams_radiobob_de_.webp
+#HOMEPAGE:https://www.radiobob.de/
+#COUNTRY:Germany
+#STATE:Hesse
+#LANGUAGE:German
+#DESCRIPTION:Listen to the hottest new rockbands – nonstop.
+#CODEC:MP3
+#BITRATE:192
+https://streams.radiobob.de/newcomer/mp3-192/streams.radiobob.de/
