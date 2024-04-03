@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Radio BOB! Rock Oldies
+#EXTGENRE:Rock
+#PLAYLIST:Radio BOB! Rock Oldies
+#EXTIMG:https___streams_radiobob_de_rockoldies_mp3-192_streams_radiobob_de_.webp
+#HOMEPAGE:https://www.radiobob.de/
+#COUNTRY:Germany
+#STATE:Hesse
+#LANGUAGE:German
+#CODEC:AAC
+#BITRATE:64
+https://streams.radiobob.de/rockoldies/aac-64/streams.radiobob.de/

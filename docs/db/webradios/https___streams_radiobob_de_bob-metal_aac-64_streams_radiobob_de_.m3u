@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Radio BOB! Metal
+#EXTGENRE:Metal
+#PLAYLIST:Radio BOB! Metal
+#EXTIMG:http___streams_radiobob_de_bob-metal_mp3-192_mediaplayer.webp
+#HOMEPAGE:https://www.radiobob.de/
+#COUNTRY:Germany
+#STATE:
+#LANGUAGE:German
+#CODEC:AAC
+#BITRATE:64
+https://streams.radiobob.de/bob-metal/aac-64/streams.radiobob.de/

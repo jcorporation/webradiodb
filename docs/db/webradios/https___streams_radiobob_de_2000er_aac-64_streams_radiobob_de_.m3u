@@ -1,0 +1,12 @@
+#EXTM3U
+#EXTINF:-1,Radio BOB! 2000s Rock
+#EXTGENRE:Rock
+#PLAYLIST:Radio BOB! 2000s Rock
+#EXTIMG:http___streams_radiobob_de_2000er_mp3-192_mediaplayer_.webp
+#HOMEPAGE:https://www.radiobob.de/
+#COUNTRY:Germany
+#STATE:
+#LANGUAGE:German
+#CODEC:AAC
+#BITRATE:64
+https://streams.radiobob.de/2000er/aac-64/streams.radiobob.de/
