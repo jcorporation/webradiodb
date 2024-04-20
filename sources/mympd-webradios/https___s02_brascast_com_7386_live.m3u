@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Rádio Foco Livre
+#EXTGENRE:entrevistas, interviews, news, news talk, notícias
+#PLAYLIST:Rádio Foco Livre
+#EXTIMG:https___s02_brascast_com_7386_live.webp
+#HOMEPAGE:https://www.focolivre.com.br/
+#COUNTRY:Brazil
+#STATE:Santa Catarina
+#LANGUAGE:portuguese
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+https://s02.brascast.com:7386/live
