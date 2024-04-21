@@ -8,6 +8,6 @@
 #STATE:
 #LANGUAGE:Hebrew
 #DESCRIPTION:
-#CODEC:
-#BITRATE:192
+#CODEC:HLS
+#BITRATE:384
 https://kangimmel.media.kan.org.il/hls/live/2024813/2024813/playlist.m3u8
