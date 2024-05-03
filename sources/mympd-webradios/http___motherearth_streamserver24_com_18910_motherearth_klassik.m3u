@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Mother Earth Klassik
+#EXTGENRE:classical
+#PLAYLIST:Mother Earth Klassik
+#EXTIMG:http___motherearth_streamserver24_com_18910_motherearth_klassik.webp
+#HOMEPAGE:https://motherearthradio.de/index.html
+#COUNTRY:Germany
+#STATE:
+#LANGUAGE:German
+#DESCRIPTION:HiRes Radio
+#CODEC:FLAC
+#BITRATE:
+http://motherearth.streamserver24.com:18910/motherearth.klassik
