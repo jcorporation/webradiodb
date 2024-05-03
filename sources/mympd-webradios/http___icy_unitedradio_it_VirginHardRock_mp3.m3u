@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Virgin Radio Hard Rock
+#EXTGENRE:hard rock, mediaset
+#PLAYLIST:Virgin Radio Hard Rock
+#EXTIMG:
+#HOMEPAGE:http://www.virginradio.it/sezioni/1218/virgin-radio-hard-rock
+#COUNTRY:Italy
+#STATE:
+#LANGUAGE:italian
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+http://icy.unitedradio.it/VirginHardRock.mp3
