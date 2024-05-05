@@ -1,12 +1,12 @@
 #EXTM3U
 #EXTINF:-1,Virgin Radio Italia
-#EXTGENRE:mediaset, pop rock
+#EXTGENRE:Mediaset, Pop Rock
 #PLAYLIST:Virgin Radio Italia
 #EXTIMG:http___icecast_unitedradio_it_Virgin_mp3.webp
 #HOMEPAGE:http://www.virginradio.it/
 #COUNTRY:Italy
 #STATE:
-#LANGUAGE:italian
+#LANGUAGE:Italian
 #DESCRIPTION:
 #CODEC:MP3
 #BITRATE:128
