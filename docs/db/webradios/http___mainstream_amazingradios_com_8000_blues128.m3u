@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Amazing Blues
+#EXTGENRE:Blues
+#PLAYLIST:Amazing Blues
+#EXTIMG:http___mainstream_amazingradios_com_8000_blues128.webp
+#HOMEPAGE:https://amazingradios.com/
+#COUNTRY:USA
+#STATE:
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+http://mainstream.amazingradios.com:8000/blues128
