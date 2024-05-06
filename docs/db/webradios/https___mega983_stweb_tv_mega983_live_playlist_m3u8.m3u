@@ -8,6 +8,6 @@
 #STATE:
 #LANGUAGE:Spanish
 #DESCRIPTION:
-#CODEC:
-#BITRATE:
+#CODEC:HLS
+#BITRATE:66
 https://mega983.stweb.tv/mega983/live/playlist.m3u8
