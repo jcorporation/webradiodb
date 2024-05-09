@@ -2,7 +2,7 @@
 #EXTINF:-1,SuperStereo 1
 #EXTGENRE:Rock
 #PLAYLIST:SuperStereo 1
-#EXTIMG:http___ingest-mia_radiomast_io_8a760c25-fb95-4fcb-9c0e-ca0f269a7360.webp
+#EXTIMG:http___icecast_centaury_cl_7570_SuperStereoHiRes1.webp
 #HOMEPAGE:https://www.hiresaudio.online/superstereo-1/
 #COUNTRY:Chile
 #STATE:
@@ -10,4 +10,4 @@
 #DESCRIPTION:YACHT ROCK – ‘THE STATION FOR THE AUDIOPHILE’
 #CODEC:OGG
 #BITRATE:48
-http://ingest-mia.radiomast.io/8a760c25-fb95-4fcb-9c0e-ca0f269a7360
+http://icecast.centaury.cl:7570/SuperStereoHiRes1
