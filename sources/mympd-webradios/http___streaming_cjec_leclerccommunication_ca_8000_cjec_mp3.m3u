@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,WKND 91,9
+#EXTGENRE:alternative, alternative rock, canada, commercial, montreal, mp3, pop rock
+#PLAYLIST:WKND 91,9
+#EXTIMG:http___streaming_cjec_leclerccommunication_ca_8000_cjec_mp3.webp
+#HOMEPAGE:http://quebec.wknd.fm/
+#COUNTRY:Canada
+#STATE:Québec
+#LANGUAGE:Français
+#DESCRIPTION:WKND FM 91,9
+#CODEC:mp3
+#BITRATE:
+http://streaming.cjec.leclerccommunication.ca:8000/cjec.mp3
