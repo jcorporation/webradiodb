@@ -208,7 +208,7 @@ function showSearchResult(offset, limit, error) {
                 '<caption></caption>' +
                 '<tbody>' +
                     '<tr>' +
-                        '<td rowspan="9"><img src="" class="stationImage"/></td><td>Genre</td>' +
+                        '<td rowspan="8"><img src="" class="stationImage"/></td><td>Genre</td>' +
                         '<td class="genre"></td>' +
                     '</tr>' +
                     '<tr><td>Country</td><td class="country"></td></tr>' +
@@ -218,7 +218,7 @@ function showSearchResult(offset, limit, error) {
                     '<tr><td>Playlist</td><td><a class="playlist" target="_blank" href="">Get playlist</a></td></tr>' +
                     '<tr><td>Format</td><td class="format"></td></tr>' +
                     '<tr><td>Alternate streams</td><td class="alternativeStreams"></td></tr>' +
-                    '<tr><td colspan="2" class="description"></td></tr>' +
+                    '<tr><td colspan="3" class="description"></td></tr>' +
                 '</tbody>' +
                 '<tfoot>' +
                     '<tr>' +
