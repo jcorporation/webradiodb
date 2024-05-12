@@ -23,8 +23,18 @@ const resultLimit = 25;
 document.getElementById('lastUpdate').textContent = new Date(webradiodb.timestamp * 1000).toLocaleString('en-US');
 document.getElementById('stationCount').textContent = webradiodb.totalWebradios;
 
-const errorCount = Object.keys(webradiodb.webradioStatus).length;
-if (errorCount == 0) {
+function countStationsWithErrors() {
+    let errors = 0;
+    for (const key in webradiodb.webradioStatus) {
+        if (webradiodb.webradios[key]) {
+            errors++;
+        }
+    }
+    return errors;
+}
+
+const errorCount = countStationsWithErrors();
+if ( errorCount === 0) {
     document.getElementById('stationErrors').style.display = 'none';
 }
 else {
