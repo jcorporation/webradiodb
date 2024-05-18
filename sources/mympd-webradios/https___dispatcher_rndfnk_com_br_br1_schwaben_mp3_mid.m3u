@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Bayern 1
+#EXTGENRE:Adult Contemporary, News, Sport
+#PLAYLIST:Bayern 1
+#EXTIMG:https___dispatcher_rndfnk_com_br_br1_schwaben_mp3_mid.webp
+#HOMEPAGE:https://www.br.de/radio/bayern1/index.html
+#COUNTRY:Germany
+#STATE:Bayern
+#LANGUAGE:German
+#DESCRIPTION:The station is aimed at a middle-aged audience and, in addition to the music format in the Adult Contemporary category (listenable format radio for adults), also offers more recent pop music as well as information and comprehensive regional reporting.
+#CODEC:MP3
+#BITRATE:128
+https://dispatcher.rndfnk.com/br/br1/schwaben/mp3/mid
