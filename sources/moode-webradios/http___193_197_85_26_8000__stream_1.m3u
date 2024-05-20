@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Kanal K
+#EXTGENRE:Indie
+#PLAYLIST:Kanal K
+#EXTIMG:http___193_197_85_26_8000__stream_1.webp
+#HOMEPAGE:
+#COUNTRY:Switzerland
+#STATE:
+#LANGUAGE:German
+#DESCRIPTION:
+#CODEC:AAC
+#BITRATE:256
+http://193.197.85.26:8000/;stream/1
