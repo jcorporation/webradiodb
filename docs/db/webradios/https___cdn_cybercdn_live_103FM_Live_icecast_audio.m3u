@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,103FM
+#EXTGENRE:News, Talk, Pop
+#PLAYLIST:103FM
+#EXTIMG:https___cdn_cybercdn_live_103FM_Live_icecast_audio.webp
+#HOMEPAGE:https://103fm.maariv.co.il/
+#COUNTRY:Israel
+#STATE:
+#LANGUAGE:Hebrew
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:320
+https://cdn.cybercdn.live/103FM/Live/icecast.audio
