@@ -740,7 +740,8 @@ parse_alternative_streams() {
             VALUE=${INFO#*:}
             case "$KEY" in
                 CODEC)
-                    CODEC=$(jq -n --arg value "$VALUE" '$value')
+                    #CODEC=$(jq -n --arg value "$VALUE" '$value')
+                    CODEC=$(json_quote "$VALUE")
                     ALL_CODECS["$VALUE"]="1"
                     ;;
                 BITRATE)
@@ -750,7 +751,8 @@ parse_alternative_streams() {
             esac
         else
             NAME=$(gen_m3u_name "$LINE")
-            URI=$(jq -n --arg value "$LINE" '$value')
+            #URI=$(jq -n --arg value "$LINE" '$value')
+            URI=$(json_quote "$LINE")
         fi
     done < "$S"
     #print to index
