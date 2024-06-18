@@ -659,6 +659,31 @@ delete_alternate_stream_from_json() {
     rm -f "${MYMPD_PLS_DIR}/${TO_DELETE}"
 }
 
+# Quotes supplied string as json
+# This is faster as calling jq but does not handle all cases
+json_quote() {
+    local V="${1//\"/\\\"}"
+    V="${V//[$'\t\r\n\v']/ }"
+    V=$(trim "$V")
+    printf '"%s"' "$V"
+}
+
+# Splits supplied string by comma in an json array
+json_quote_array() {
+    printf "["
+    local VALUES
+    local V
+    local I=0
+    mapfile -t -d, VALUES <<< "$1"
+    for V in "${VALUES[@]}"
+    do
+        [ "$I" -gt 0 ] && printf ","
+        printf '%s' "$(json_quote "$V")"
+        I=$((I+1))
+    done
+    printf "]"
+}
+
 # Converts a m3u line to a json key/value pair
 m3u_to_json() {
     local LINE="$1"
@@ -670,23 +695,29 @@ m3u_to_json() {
         if [ "$KEY" = "LANGUAGE" ]
         then
             # new languages key
-            VALUES=$(jq -c -R 'split(", ")' <<< "$VALUE")
+            local VALUES
+            #VALUES=$(jq -c -R 'split(", ")' <<< "$VALUE")
+            VALUES=$(json_quote_array "$VALUE")
             printf '"%s":%s,' "Languages" "$VALUES"
             # old language key for backward compatibility
-            VALUE=$(jq -n --arg value "$VALUE" '$value')
+            #VALUE=$(jq -n --arg value "$VALUE" '$value')
+            VALUE=$(json_quote "$VALUE")
         elif [ "$KEY" = "EXTGENRE" ]
         then
-            VALUE=$(jq -c -R 'split(", ")' <<< "$VALUE")
+            #VALUE=$(jq -c -R 'split(", ")' <<< "$VALUE")
+            VALUE=$(json_quote_array "$VALUE")
         elif [ "$KEY" = "BITRATE" ]
         then
             #enforce bitrate value
             [ -z "$VALUE" ] && VALUE="0"
         else
-            VALUE=$(jq -n --arg value "$VALUE" '$value')
+            #VALUE=$(jq -n --arg value "$VALUE" '$value')
+            VALUE=$(json_quote "$VALUE")
         fi
         printf '"%s":%s' "${m3ufields_map[$KEY]:-}" "$VALUE"
     else
-        VALUE=$(jq -n --arg value "$LINE" '$value')
+        #VALUE=$(jq -n --arg value "$LINE" '$value')
+        VALUE=$(json_quote "$VALUE")
         printf '"%s":%s' "StreamUri" "$VALUE"
     fi
 }
@@ -959,7 +990,7 @@ create_index() {
         fi
     else
         echo "Error creating index"
-        rm "${INDEXFILE}.tmp"
+        #rm "${INDEXFILE}.tmp"
         exit 1
     fi
 }
