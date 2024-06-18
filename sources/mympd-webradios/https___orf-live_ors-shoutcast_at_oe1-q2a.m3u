@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,Ö1
+#EXTGENRE:Classical, Information, Culture
+#PLAYLIST:Ö1
+#EXTIMG:https___orf-live_ors-shoutcast_at_oe1-q2a.webp
+#HOMEPAGE:https://oe1.orf.at/
+#COUNTRY:Austria
+#STATE:Vienna
+#LANGUAGE:German
+#DESCRIPTION:Österreichischer Rundfunk, Stiftung öffentlichen Rechts
+#CODEC:MP3
+#BITRATE:192
+https://orf-live.ors-shoutcast.at/oe1-q2a
