@@ -717,7 +717,7 @@ m3u_to_json() {
         printf '"%s":%s' "${m3ufields_map[$KEY]:-}" "$VALUE"
     else
         #VALUE=$(jq -n --arg value "$LINE" '$value')
-        VALUE=$(json_quote "$VALUE")
+        VALUE=$(json_quote "$LINE")
         printf '"%s":%s' "StreamUri" "$VALUE"
     fi
 }
