@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1,IQ Radio - 93.9 FM
+#EXTGENRE:Rock, Baladas
+#PLAYLIST:IQ Radio - 93.9 FM
+#EXTIMG:http___rtvhd_net_9942__.webp
+#HOMEPAGE:http://www.iqmedios.com/
+#COUNTRY:Costa Rica
+#STATE:
+#LANGUAGE:English
+#DESCRIPTION:IQ La Radio Inteligente 93.9fm es un medio de comunicación radial que brinda a los oyentes contenido de calidad como reportes de tránsito, salud, finanzas, tecnología y más.
+#CODEC:
+#BITRATE:
+http://rtvhd.net:9942/;
