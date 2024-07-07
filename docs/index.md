@@ -34,8 +34,8 @@ Search for the webradio and click on the modify link to open a prefilled GitHub 
         <select id="countries">
             <option value="">Country</option>
         </select>
-        <select id="states">
-            <option value="">State</option>
+        <select id="regions">
+            <option value="">Region</option>
         </select>
         <select id="languages">
             <option value="">Language</option>

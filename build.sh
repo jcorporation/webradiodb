@@ -22,6 +22,7 @@ STATUSFILE="${PUBLISH_DIR}/index/status.min.json"
 LANGFILE="${PUBLISH_DIR}/index/languages.min.json"
 COUNTRYFILE="${PUBLISH_DIR}/index/countries.min.json"
 STATEFILE="${PUBLISH_DIR}/index/states.min.json"
+REGIONFILE="${PUBLISH_DIR}/index/regions.min.json"
 GENREFILE="${PUBLISH_DIR}/index/genres.min.json"
 CODECFILE="${PUBLISH_DIR}/index/codecs.min.json"
 BITRATEFILE="${PUBLISH_DIR}/index/bitrates.min.json"
@@ -153,7 +154,7 @@ resize_image() {
     return 0
 }
 
-# Normalizes GENRE, CODEC, COUNTRY, STATE, LANGUAGE in all m3u's in specified folder
+# Normalizes GENRE, CODEC, COUNTRY, REGION, LANGUAGE in all m3u's in specified folder
 normalize_fields() {
     local DIR=$1
     local F
@@ -216,6 +217,17 @@ normalize_fields() {
         then
             echo "$F: $STATE -> $STATE_UPPER"
             sed -i -e "s/^#STATE:.*/#STATE:$STATE_UPPER/" "$F"
+        fi
+        # region
+        local REGION=""
+        REGION=$(get_m3u_field "$F" "REGION")
+        local REGION_UPPER
+        REGION_UPPER=$(ucwords "$REGION")
+        REGION_UPPER=$(trim "$REGION_UPPER")
+        if [ "$REGION" != "$REGION_UPPER" ]
+        then
+            echo "$F: $REGION -> $REGION_UPPER"
+            sed -i -e "s/^#REGION:.*/#REGION:$REGION_UPPER/" "$F"
         fi
         # language
         local LANGUAGE_LINE=""
@@ -323,6 +335,7 @@ sync_moode() {
 #HOMEPAGE:$HOMEPAGE
 #COUNTRY:$COUNTRY
 #STATE:
+#REGION:
 #LANGUAGE:$LANGUAGE
 #DESCRIPTION:
 #CODEC:$CODEC
@@ -365,6 +378,7 @@ add_radio() {
 #HOMEPAGE:<homepage>
 #COUNTRY:<country>
 #STATE:<state>
+#REGION:<region>
 #LANGUAGE:<language>
 #DESCRIPTION:<description>
 #CODEC:<codec>
@@ -394,8 +408,8 @@ add_radio_from_json() {
     HOMEPAGE=$(jq -r ".homepage" < "$INPUT" | head -1 | tr -d '\n')
     local COUNTRY
     COUNTRY=$(jq -r ".country" < "$INPUT" | head -1 | tr -d '\n')
-    local STATE
-    STATE=$(jq -r ".state" < "$INPUT" | head -1 | tr -d '\n')
+    local REGION
+    REGION=$(jq -r ".region" < "$INPUT" | head -1 | tr -d '\n')
     local LANGUAGE
     LANGUAGE=$(jq -r ".language" < "$INPUT" | head -1 | tr -d '\n')
     local DESCRIPTION
@@ -440,7 +454,8 @@ add_radio_from_json() {
 #EXTIMG:$IMAGE
 #HOMEPAGE:$HOMEPAGE
 #COUNTRY:$COUNTRY
-#STATE:$STATE
+#STATE:$REGION
+#REGION:$REGION
 #LANGUAGE:$LANGUAGE
 #DESCRIPTION:$DESCRIPTION
 #CODEC:$CODEC
@@ -486,8 +501,8 @@ modify_radio_from_json() {
     NEW_HOMEPAGE=$(jq -r ".homepage" < "$INPUT" | head -1 | tr -d '\n')
     local NEW_COUNTRY
     NEW_COUNTRY=$(jq -r ".country" < "$INPUT" | head -1 | tr -d '\n')
-    local NEW_STATE
-    NEW_STATE=$(jq -r ".state" < "$INPUT" | head -1 | tr -d '\n')
+    local NEW_REGION
+    NEW_REGION=$(jq -r ".region" < "$INPUT" | head -1 | tr -d '\n')
     local NEW_LANGUAGE
     NEW_LANGUAGE=$(jq -r ".language" < "$INPUT" | head -1 | tr -d '\n')
     local NEW_DESCRIPTION
@@ -514,8 +529,8 @@ modify_radio_from_json() {
     OLD_HOMEPAGE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "HOMEPAGE")
     local OLD_COUNTRY
     OLD_COUNTRY=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "COUNTRY")
-    local OLD_STATE
-    OLD_STATE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "STATE")
+    local OLD_REGION
+    OLD_REGION=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "REGION")
     local OLD_LANGUAGE
     OLD_LANGUAGE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "LANGUAGE")
     local OLD_DESCRIPTION
@@ -572,7 +587,7 @@ modify_radio_from_json() {
     [ -z "$NEW_GENRE" ] && NEW_GENRE="$OLD_GENRE"
     [ -z "$NEW_HOMEPAGE" ] && NEW_HOMEPAGE="$OLD_HOMEPAGE"
     [ -z "$NEW_COUNTRY" ] && NEW_COUNTRY="$OLD_COUNTRY"
-    [ -z "$NEW_STATE" ] && NEW_STATE="$OLD_STATE"
+    [ -z "$NEW_REGION" ] && NEW_REGION="$OLD_REGION"
     [ -z "$NEW_LANGUAGE" ] && NEW_LANGUAGE="$OLD_LANGUAGE"
     [ -z "$NEW_DESCRIPTION" ] && NEW_DESCRIPTION="$OLD_DESCRIPTION"
     [ -z "$NEW_CODEC" ] && NEW_CODEC="$OLD_CODEC"
@@ -586,7 +601,8 @@ modify_radio_from_json() {
 #EXTIMG:$NEW_IMAGE
 #HOMEPAGE:$NEW_HOMEPAGE
 #COUNTRY:$NEW_COUNTRY
-#STATE:$NEW_STATE
+#STATE:$NEW_REGION
+#REGION:$NEW_REGION
 #LANGUAGE:$NEW_LANGUAGE
 #DESCRIPTION:$NEW_DESCRIPTION
 #CODEC:$NEW_CODEC
@@ -892,7 +908,7 @@ create_index() {
         COUNTRIES_COUNT=$(jq -r '.[]' "$COUNTRYFILE.tmp" | wc -l)
         echo "${COUNTRIES_COUNT} countries in index"
 
-        # states
+        # regions
         local COUNTRY
         local I=0
         {
@@ -900,18 +916,19 @@ create_index() {
             while read -r COUNTRY
             do
                 [ "$I" -eq 0 ] || printf ','
-                local STATES=""
-                STATES=$(jq -r ".[] | select(.Country == \"$COUNTRY\") | select(.State != \"\") | .State" "${INDEXFILE}.tmp" | \
+                local REGIONS=""
+                REGIONS=$(jq -r ".[] | select(.Country == \"$COUNTRY\") | select(.Region != \"\") | .Region" "${INDEXFILE}.tmp" | \
                     sort -u | jq -R -s -c 'split("\n") | .[0:-1]' | tr -d '\n')
-                [ -z "$STATES" ] && STATES="[]"
-                printf '"%s":%s' "$COUNTRY" "$STATES"
+                [ -z "$REGIONS" ] && REGIONS="[]"
+                printf '"%s":%s' "$COUNTRY" "$REGIONS"
                 I=$((I+1))
             done < <(jq -r '.[].Country' "${INDEXFILE}.tmp" | sort -u)
             printf "}"
-        } > "$STATEFILE.tmp"
-        local STATES_COUNT
-        STATES_COUNT=$(jq -r '.[] | select(.State != "") | .State' "$INDEXFILE.tmp" | wc -l)
-        echo "${STATES_COUNT} states in index"
+        } > "$REGIONFILE.tmp"
+        cp "$REGIONFILE.tmp" "$STATEFILE.tmp"
+        local REGIONS_COUNT
+        REGIONS_COUNT=$(jq -r '.[] | select(.Region != "") | .Region' "$INDEXFILE.tmp" | wc -l)
+        echo "${REGIONS_COUNT} regions in index"
 
         # genres
         jq -r '.[] | .Genre | .[]' "${INDEXFILE}.tmp" | sort -u | \
@@ -949,7 +966,11 @@ create_index() {
 
         printf "\"webradioStates\":" >> "${INDEXFILE_COMBINED}.tmp"
         tr -d '\n' < "${STATEFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
-        printf ",\"totalwebradioStates\":%s," "$STATES_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+        printf ",\"totalwebradioStates\":%s," "$REGIONS_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+
+        printf "\"webradioRegions\":" >> "${INDEXFILE_COMBINED}.tmp"
+        tr -d '\n' < "${REGIONFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
+        printf ",\"totalwebradioRegions\":%s," "$REGIONS_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
 
         printf "\"webradioCodecs\":" >> "${INDEXFILE_COMBINED}.tmp"
         tr -d '\n' < "${CODECFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
@@ -977,6 +998,7 @@ create_index() {
         move_compress_changed "$LANGFILE" && CHANGED=1
         move_compress_changed "$COUNTRYFILE" && CHANGED=1
         move_compress_changed "$STATEFILE" && CHANGED=1
+        move_compress_changed "$REGIONFILE" && CHANGED=1
         move_compress_changed "$GENREFILE" && CHANGED=1
         move_compress_changed "$CODECFILE" && CHANGED=1
         move_compress_changed "$BITRATEFILE" && CHANGED=1

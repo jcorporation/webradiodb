@@ -50,10 +50,10 @@ body:
     validations:
       required: true
   - type: input
-    id: state
+    id: region
     attributes:
-      label: State
-      description: The state or region, e.g. Bayern.
+      label: Region
+      description: The region, e.g. Bayern.
     validations:
       required: false
   - type: input

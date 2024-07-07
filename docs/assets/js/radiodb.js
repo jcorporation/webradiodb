@@ -13,7 +13,7 @@ const issueDeleteAlternate = '?labels=DeleteAlternateStream&template=delete-alte
 const searchInput = document.getElementById('searchStr');
 const genreSelect = document.getElementById('genres');
 const countrySelect = document.getElementById('countries');
-const stateSelect = document.getElementById('states');
+const regionSelect = document.getElementById('regions');
 const languageSelect = document.getElementById('languages');
 const codecSelect = document.getElementById('codecs');
 const bitrateSelect = document.getElementById('bitrates');
@@ -54,12 +54,12 @@ function populateSelect(el, options) {
     }
 }
 
-function populateStates() {
-    stateSelect.options.length = 0;
-    appendOpt(stateSelect, '', 'State');
+function populateRegions() {
+    regionSelect.options.length = 0;
+    appendOpt(regionSelect, '', 'Region');
     const country = getSelectValue(countrySelect);
     if (country !== '') {
-        populateSelect(stateSelect, webradiodb.webradioStates[country]);
+        populateSelect(regionSelect, webradiodb.webradioRegions[country]);
     }
 }
 
@@ -82,7 +82,7 @@ searchInput.addEventListener('keyup', function(event) {
 }, false);
 
 countrySelect.addEventListener('change', function() {
-    populateStates();
+    populateRegions();
 }, false);
 
 document.getElementById('searchBtn').addEventListener('click', function() {
@@ -105,7 +105,7 @@ function returnStreamError(m3u) {
     return p;
 }
 
-function search(name, genre, country, state, language, codec, bitrate, sort, offset, limit, error) {
+function search(name, genre, country, region, language, codec, bitrate, sort, offset, limit, error) {
     name = name.toLowerCase();
     const obj = {
         "result": {
@@ -119,7 +119,7 @@ function search(name, genre, country, state, language, codec, bitrate, sort, off
         if (webradiodb.webradios[key].Name.toLowerCase().indexOf(name) > -1 &&
             (genre === ''    || webradiodb.webradios[key].Genre.includes(genre)) &&
             (country === ''  || country === webradiodb.webradios[key].Country) &&
-            (state === ''    || state === webradiodb.webradios[key].State) &&
+            (region === ''   || region === webradiodb.webradios[key].Region) &&
             (language === '' || webradiodb.webradios[key].Languages.includes(language)) &&
             (codec === ''    || webradiodb.webradios[key].allCodecs.includes(codec)) &&
             (bitrate === 0   || bitrate <= webradiodb.webradios[key].highestBitrate)
@@ -186,7 +186,7 @@ function showSearchResult(offset, limit, error) {
         searchInput.value = '';
         genreSelect.selectedIndex = 0;
         countrySelect.selectedIndex = 0;
-        stateSelect.selectedIndex = 0;
+        regionSelect.selectedIndex = 0;
         languageSelect.selectedIndex = 0;
         codecSelect.selectedIndex = 0;
         bitrateSelect.selectedIndex = 0;
@@ -196,7 +196,7 @@ function showSearchResult(offset, limit, error) {
     const searchstr = searchInput.value.toLowerCase();
     const genreFilter = getSelectValue(genreSelect);
     const countryFilter = getSelectValue(countrySelect);
-    const stateFilter = getSelectValue(stateSelect);
+    const regionFilter = getSelectValue(regionSelect);
     const languageFilter = getSelectValue(languageSelect);
     const codecFilter = getSelectValue(codecSelect);
     const bitrateFilter = getSelectValue(bitrateSelect);
@@ -206,7 +206,7 @@ function showSearchResult(offset, limit, error) {
         resultEl.textContent = '';
     }
 
-    const obj = search(searchstr, genreFilter, countryFilter, stateFilter, languageFilter, codecFilter, bitrateFilter, sort, offset, limit, error);
+    const obj = search(searchstr, genreFilter, countryFilter, regionFilter, languageFilter, codecFilter, bitrateFilter, sort, offset, limit, error);
     document.getElementById('resultCount').textContent = obj.result.totalEntities;
     for (const key in obj.result.data) {
         const div = document.createElement('div');
@@ -243,9 +243,9 @@ function showSearchResult(offset, limit, error) {
         div.getElementsByTagName('img')[0].src = pic;
         div.getElementsByClassName('genre')[0].textContent = obj.result.data[key].Genre.join(', ');
         div.getElementsByClassName('country')[0].textContent = obj.result.data[key].Country +
-            (obj.result.data[key].State === ''
+            (obj.result.data[key].Region === ''
                 ? ''
-                : ' / ' + obj.result.data[key].State);
+                : ' / ' + obj.result.data[key].Region);
         div.getElementsByClassName('language')[0].textContent = obj.result.data[key].Languages.join(', ');
         let format = obj.result.data[key].Codec;
         if (format !== '' && obj.result.data[key].Bitrate !== '') {
@@ -304,6 +304,7 @@ function showSearchResult(offset, limit, error) {
                 '&homepage=' + encodeURIComponent(obj.result.data[key].Homepage) +
                 '&image=' + encodeURIComponent(obj.result.data[key].Image) +
                 '&country=' + encodeURIComponent(obj.result.data[key].Country) +
+                '&region=' + encodeURIComponent(obj.result.data[key].Region) +
                 '&language=' + encodeURIComponent(obj.result.data[key].Language) +
                 '&codec=' + encodeURIComponent(obj.result.data[key].Codec) +
                 '&bitrate=' + encodeURIComponent(obj.result.data[key].Bitrate) +
