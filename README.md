@@ -78,7 +78,7 @@ Webradios are saved as extended m3u files with some custom fields. A coverimage 
 #HOMEPAGE:<homepage>
 #COUNTRY:<country>
 #STATE:<state>
-#Region:<region>
+#REGION:<region>
 #LANGUAGE:<language>
 #DESCRIPTION:<description>
 #CODEC:<codec>
