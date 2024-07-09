@@ -77,7 +77,7 @@ Webradios are saved as extended m3u files with some custom fields. A coverimage 
 #EXTIMG:<cover>
 #HOMEPAGE:<homepage>
 #COUNTRY:<country>
-#STATE:<state>
+#STATE:<state (deprecated)>
 #REGION:<region>
 #LANGUAGE:<language>
 #DESCRIPTION:<description>
@@ -116,21 +116,21 @@ The final files are located in the `docs/db` folder, it is rebuild daily. The fo
 
 The m3u fields are mapped for better readability.
 
-| M3U FIELD | JSON KEY | VALUE TYPE |
-| --------- | -------- | ---------- |
-| EXTGENRE | Genre | Array |
-| PLAYLIST | Name | String |
-| EXTIMG | Image | String |
-| HOMEPAGE | Homepage | String |
-| COUNTRY | Country | String |
-| STATE | State | String |
-| REGION | Region | String |
-| LANGUAGE | Language | String |
-| LANGUAGE | Languages | Array |
-| CODEC | Codec | Array |
-| BITRATE | Bitrate | Integer |
-| DESCRIPTION | Description | String |
-| uri | StreamUri | String |
+| M3U FIELD | JSON KEY | VALUE TYPE | DESCRIPTION |
+| --------- | -------- | ---------- | ----------- |
+| EXTGENRE | Genre | Array | |
+| PLAYLIST | Name | String | |
+| EXTIMG | Image | String | |
+| HOMEPAGE | Homepage | String | |
+| COUNTRY | Country | String | |
+| STATE | State | String | Deprecated |
+| REGION | Region | String | |
+| LANGUAGE | Language | String | Deprecated |
+| LANGUAGE | Languages | Array | |
+| CODEC | Codec | Array | |
+| BITRATE | Bitrate | Integer | |
+| DESCRIPTION | Description | String | |
+| uri | StreamUri | String | |
 
 ```json
 "https___liveradio_swr_de_sw282p3_swr1bw_play_mp3.m3u": {
