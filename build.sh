@@ -788,6 +788,9 @@ m3u_to_json() {
         then
             #enforce bitrate value
             [ -z "$VALUE" ] && VALUE="0"
+        elif [ "$KEY" = "ADDED" ] || [ "$KEY" = "LASTMODIFIED" ]
+        then
+            [ -z "$VALUE" ] && VALUE="-1"
         else
             #VALUE=$(jq -n --arg value "$VALUE" '$value')
             VALUE=$(json_quote "$VALUE")
