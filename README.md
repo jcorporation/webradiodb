@@ -83,6 +83,8 @@ Webradios are saved as extended m3u files with some custom fields. A coverimage 
 #DESCRIPTION:<description>
 #CODEC:<codec>
 #BITRATE:<bitrate>
+#ADDED:<timestamp>
+#LASTMODIFIED:<timestamp>
 <streamuri>
 ```
 
@@ -130,6 +132,8 @@ The m3u fields are mapped for better readability.
 | CODEC | Codec | Array | |
 | BITRATE | Bitrate | Integer | |
 | DESCRIPTION | Description | String | |
+| ADDED | Added | Number | |
+| LASTMODIFIED | Last-Modified | Number | |
 | uri | StreamUri | String | |
 
 ```json
@@ -149,6 +153,8 @@ The m3u fields are mapped for better readability.
         "German"
     ],
     "Description": "SWR 1 Baden-Württemberg",
+    "Added": 1720344242,
+    "Last-Modified": 1720344242,
     "Codec": "MP3",
     "Bitrate": 128,
     "StreamUri": "https://liveradio.swr.de/sw282p3/swr1bw/play.mp3",

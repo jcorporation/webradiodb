@@ -19,6 +19,7 @@ const codecSelect = document.getElementById('codecs');
 const bitrateSelect = document.getElementById('bitrates');
 const sortSelect = document.getElementById('sort');
 const resultLimit = 25;
+const locale = navigator.language || navigator.userLanguage;
 
 document.getElementById('lastUpdate').textContent = new Date(webradiodb.timestamp * 1000).toLocaleString('en-US');
 document.getElementById('stationCount').textContent = webradiodb.totalWebradios;
@@ -98,6 +99,10 @@ function uriHostname(uri) {
     return uri.replace(/^.+:\/\/([^/]+)\/.*$/, '$1');
 }
 
+function fmtDate(ts) {
+    return new Date(ts * 1000).toLocaleString(locale);
+}
+
 function returnStreamError(m3u) {
     const p = document.createElement('p');
     p.classList.add('error');
@@ -106,6 +111,8 @@ function returnStreamError(m3u) {
 }
 
 function search(name, genre, country, region, language, codec, bitrate, sort, offset, limit, error) {
+    const desc = document.getElementById('sort_desc').checked;
+    console.log(desc);
     name = name.toLowerCase();
     const obj = {
         "result": {
@@ -151,20 +158,20 @@ function search(name, genre, country, region, language, codec, bitrate, sort, of
         }
         //primary sort by defined tag
         if (lca < lcb) {
-            return -1;
+            return desc == false ? -1 : 1;
         }
         if (lca > lcb) {
-            return 1;
+            return desc == false ? 1 : -1;
         }
         //secondary sort by Name
         if (sort !== 'Name') {
             lca = a.Name.toLowerCase();
             lcb = b.Name.toLowerCase();
             if (lca < lcb) {
-                return -1;
+                return desc == false ? -1 : 1;
             }
             if (lca > lcb) {
-                return 1;
+                return desc == false ? 1 : -1;
             }
         }
         //equal
@@ -218,7 +225,7 @@ function showSearchResult(offset, limit, error) {
                 '<caption></caption>' +
                 '<tbody>' +
                     '<tr>' +
-                        '<td rowspan="8"><img src="" class="stationImage"/></td><td>Genre</td>' +
+                        '<td rowspan="10"><img src="" class="stationImage"/></td><td>Genre</td>' +
                         '<td class="genre"></td>' +
                     '</tr>' +
                     '<tr><td>Country</td><td class="country"></td></tr>' +
@@ -227,6 +234,8 @@ function showSearchResult(offset, limit, error) {
                     '<tr><td>Stream URI</td><td><input type="text" value=""/></td></tr>' +
                     '<tr><td>Playlist</td><td><a class="playlist" target="_blank" href="">Get playlist</a></td></tr>' +
                     '<tr><td>Format</td><td class="format"></td></tr>' +
+                    '<tr><td>Added</td><td class="added"></td></tr>' +
+                    '<tr><td>Last-Modified</td><td class="last-modified"></td></tr>' +
                     '<tr><td>Alternate streams</td><td class="alternativeStreams"></td></tr>' +
                     '<tr><td colspan="3" class="description"></td></tr>' +
                 '</tbody>' +
@@ -258,6 +267,8 @@ function showSearchResult(offset, limit, error) {
             format = 'unknown';
         }
         div.getElementsByClassName('format')[0].textContent = format;
+        div.getElementsByClassName('added')[0].textContent = fmtDate(obj.result.data[key].Added);
+        div.getElementsByClassName('last-modified')[0].textContent = fmtDate(obj.result.data[key]["Last-Modified"]);
         div.getElementsByClassName('homepage')[0].href = obj.result.data[key].Homepage;
         div.getElementsByClassName('homepage')[0].textContent = uriHostname(obj.result.data[key].Homepage);
         div.getElementsByTagName('input')[0].value = obj.result.data[key].StreamUri;

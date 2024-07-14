@@ -303,6 +303,20 @@ sync_moode() {
         local HOMEPAGE
         HOMEPAGE=$(csvcut -c 9 <<< "$LINE" | sed -e s/\"//g)
 
+        # get dates
+        local ADDED
+        local LASTMODIFIED
+        if [ -f "$PLS_DIR/$PLIST.m3u" ]
+        then
+            ADDED=$(get_m3u_field "$PLS_DIR/$PLIST.m3u" "ADDED")
+            [ -z "$ADDED" ] && ADDED=$(date +%s)
+            LASTMODIFIED=$(get_m3u_field "$PLS_DIR/$PLIST.m3u" "LASTMODIFIED")
+            [ -z "$LASTMODIFIED" ] && LASTMODIFIED=$(date +%s)
+        else
+            ADDED=$(date +%s)
+            LASTMODIFIED=$ADDED
+        fi
+
         # get images 
         local NAME_ENCODED
         NAME_ENCODED=$(jq -rn --arg x "$NAME" '$x | @uri')
@@ -340,6 +354,8 @@ sync_moode() {
 #DESCRIPTION:
 #CODEC:$CODEC
 #BITRATE:$BITRATE
+#ADDED:$ADDED
+#LASTMODIFIED:$LASTMODIFIED
 $STATION
 EOL
         printf "."
@@ -355,6 +371,18 @@ EOL
     echo "$I webradios synced"
     echo "$S webradios skipped"
     normalize_fields "${MOODE_PLS_DIR}"
+
+    for F in "${MOODE_PLS_DIR}/"*.m3u
+    do
+        if [ -f "$PLS_DIR/$F.m3u" ]
+        then
+            if ! diff "${MOODE_PLS_DIR}/$F" "$PLS_DIR/$F" > /dev/null
+            then
+                TS=$(get_lastmodified_git "$PLS_DIR/$F")
+                sed -i -E "s/#LASTMODIFIED:.*/#LASTMODIFIED:$TS/" "$PLS_DIR/$F"
+            fi
+        fi
+    done
 }
 
 add_radio() {
@@ -368,6 +396,9 @@ add_radio() {
         echo "This webradio already exists."
         exit 1
     fi
+    local ADDED
+    ADDED=$(date +%s)
+    local LASTMODIFIED=$ADDED
     # write ext m3u with custom myMPD fields
     cat > "${MYMPD_PLS_DIR}/${PLIST}.m3u" << EOL
 #EXTM3U
@@ -383,6 +414,8 @@ add_radio() {
 #DESCRIPTION:<description>
 #CODEC:<codec>
 #BITRATE:<bitrate>
+#ADDED:$ADDED
+#LASTMODIFIED:$LASTMODIFIED
 $URI
 EOL
     echo ""
@@ -445,6 +478,9 @@ add_radio_from_json() {
         echo "Image is not an uri, skipping download"
         IMAGE=""
     fi
+    local ADDED
+    ADDED=$(date +%s)
+    local LASTMODIFIED=$ADDED
     echo "Writing ${PLIST}.m3u"
     cat > "${MYMPD_PLS_DIR}/${PLIST}.m3u" << EOL
 #EXTM3U
@@ -460,6 +496,8 @@ add_radio_from_json() {
 #DESCRIPTION:$DESCRIPTION
 #CODEC:$CODEC
 #BITRATE:$BITRATE
+#ADDED:$ADDED
+#LASTMODIFIED:$LASTMODIFIED
 $URI
 EOL
 }
@@ -539,6 +577,8 @@ modify_radio_from_json() {
     OLD_CODEC=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "CODEC")
     local OLD_BITRATE
     OLD_BITRATE=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "BITRATE")
+    local ADDED
+    ADDED=$(get_m3u_field "${MYMPD_PLS_DIR}/${MODIFY_PLIST}.m3u" "ADDED")
     if [ "$MODIFY_PLIST" != "$NEW_PLIST" ] && [ -f "${MYMPD_PLS_DIR}/${NEW_PLIST}.m3u" ]
     then
         echo "A webradio for the new streamuri already exists."
@@ -579,6 +619,9 @@ modify_radio_from_json() {
             echo "Image is not an uri, skipping download"
         fi
     fi
+    #dates
+    local LASTMODIFIED
+    LASTMODIFIED=$(date +%s)
     echo "Setting new values"
     #merge other values
     [ -z "$NEW_URI" ] && NEW_URI="$MODIFY_URI"
@@ -607,6 +650,8 @@ modify_radio_from_json() {
 #DESCRIPTION:$NEW_DESCRIPTION
 #CODEC:$NEW_CODEC
 #BITRATE:$NEW_BITRATE
+#ADDED:$ADDED
+#LASTMODIFIED:$LASTMODIFIED
 $NEW_URI
 EOL
 }
@@ -643,7 +688,7 @@ delete_radio_from_json() {
     fi
 }
 
-# Adds an alternate stream m3u from a issue json file
+# Adds an alternate stream m3u from an issue json file
 add_alternate_stream_from_json() {
     local INPUT="$1"
     local WEBRADIO
@@ -665,14 +710,31 @@ add_alternate_stream_from_json() {
 #BITRATE:$BITRATE
 $URI
 EOL
+    # Update last-modified
+    set_lastmodified "${MYMPD_PLS_DIR}/${PLIST}.m3u"
 }
 
-# Deletes an alternate stream m3u from a issue json file
+# Deletes an alternate stream m3u from an issue json file
 delete_alternate_stream_from_json() {
     local INPUT="$1"
     local TO_DELETE
     TO_DELETE=$(jq -r ".deleteAlternateStream" < "$INPUT")
     rm -f "${MYMPD_PLS_DIR}/${TO_DELETE}"
+    local PARENT=${TO_DELETE%%.m3u*}
+    # Update last-modified
+    set_lastmodified "${MYMPD_PLS_DIR}/${PARENT}.m3u"
+}
+
+# Updates the last-modified field
+set_lastmodified() {
+    local LASTMODIFIED
+    LASTMODIFIED=$(date +%s)
+    sed -i -E "s/#LASTMODIFIED:.*/#LASTMODIFIED:$LASTMODIFIED/" "$1"
+}
+
+# Gets the last-modified from git
+get_lastmodified_git() {
+    git log -1 --pretty="format:%ct" "$1"
 }
 
 # Quotes supplied string as json
@@ -1141,6 +1203,7 @@ update_format() {
     then
         echo "Codec or bitrate changed, updating \"$M3U_FILE\""
         sed -i -e "s/^#CODEC:.*/#CODEC:$NEW_CODEC/" -e "s/^#BITRATE:.*/#BITRATE:$NEW_BITRATE/" "$M3U_FILE"
+        set_lastmodified "$M3U_FILE"
     fi
     return 0
 }

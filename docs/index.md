@@ -52,7 +52,12 @@ Search for the webradio and click on the modify link to open a prefilled GitHub 
             <option value="Language">Sort by language</option>
             <option value="Codec">Sort by codec</option>
             <option value="Bitrate">Sort by bitrate</option>
+            <option value="Last-Modified">Sort by last modified</option>
+            <option value="Added">Sort by added timestamp</option>
         </select>
+        <div>
+            <input id="sort_desc" type="checkbox" value="1"> <label for="sort_desc">Desc</label>
+        </div>
     </div>
 </div>
 <div class="resultCountRow">
