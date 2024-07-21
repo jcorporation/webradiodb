@@ -664,7 +664,7 @@ delete_radio_from_json() {
     URI=$(jq -r ".deleteWebradio" < "$INPUT")
     local PLIST
     PLIST=$(gen_m3u_name "$URI")
-    delete_radio_by_m3u "$URI"
+    delete_radio_by_m3u "$PLIST"
 }
 
 # Deletes a m3u by uri
