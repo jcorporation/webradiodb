@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,Classical California KUSC
+#EXTGENRE:Classical
+#PLAYLIST:Classical California KUSC
+#EXTIMG:https___27223_live_streamtheworld_com_443_KUSCMP256_SC.webp
+#HOMEPAGE:https://www.kusc.org/
+#COUNTRY:United States
+#STATE:California
+#REGION:California
+#LANGUAGE:English
+#DESCRIPTION:Listener Supported Classical Music Radio Station in Southern California
+#CODEC:MP3
+#BITRATE:256
+#ADDED:1721546353
+#LASTMODIFIED:1721546353
+https://27223.live.streamtheworld.com:443/KUSCMP256_SC
