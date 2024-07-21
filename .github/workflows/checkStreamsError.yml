@@ -32,6 +32,6 @@ jobs:
       - name: Add, commit and push
         uses: EndBug/add-and-commit@v9.1.4
         with:
-          add: docs/db
+          add: docs/db sources trash
           message: Update webradio status file
           push: true

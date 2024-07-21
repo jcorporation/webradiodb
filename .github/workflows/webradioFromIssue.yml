@@ -96,7 +96,7 @@ jobs:
       - name: Add, commit and push
         uses: EndBug/add-and-commit@v9.1.4
         with:
-          add: sources docs/db mappings
+          add: sources docs/db mappings trash
           message: "webradioFromIssue - deleteradio #${{ github.event.issue.number }}"
           push: true
 
