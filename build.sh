@@ -11,6 +11,7 @@ set -uo pipefail
 
 PUBLISH_DIR="docs/db"
 SOURCES_DIR="sources"
+TRASH_DIR="trash"
 PICS_DIR="${PUBLISH_DIR}/pics"
 PLS_DIR="${PUBLISH_DIR}/webradios"
 
@@ -663,13 +664,18 @@ delete_radio_from_json() {
     URI=$(jq -r ".deleteWebradio" < "$INPUT")
     local PLIST
     PLIST=$(gen_m3u_name "$URI")
+    delete_radio_by_m3u "$URI"
+}
 
+# Deletes a m3u by uri
+delete_radio_by_m3u() {
+    local PLIST=$1
     if [ -f "${MYMPD_PLS_DIR}/${PLIST}.m3u" ]
     then
         echo "Deleting webradio ${PLIST}"
-        if rm "${MYMPD_PLS_DIR}/${PLIST}.m3u"*
+        if mv "${MYMPD_PLS_DIR}/${PLIST}.m3u"* "${TRASH_DIR}"
         then
-            rm -f "${MYMPD_PICS_DIR}/${PLIST}.webp"
+            [ -f "${MYMPD_PICS_DIR}/${PLIST}.webp" ] && mv "${MYMPD_PICS_DIR}/${PLIST}.webp" "${TRASH_DIR}"
         else
             exit 1
         fi
@@ -677,9 +683,9 @@ delete_radio_from_json() {
     if [ -f "${MOODE_PLS_DIR}/${PLIST}.m3u" ]
     then
         echo "Deleting webradio ${PLIST}"
-        if rm "${MOODE_PLS_DIR}/${PLIST}.m3u"
+        if mv "${MOODE_PLS_DIR}/${PLIST}.m3u" "${TRASH_DIR}"
         then
-            rm -f "${MOODE_PICS_DIR}/${PLIST}.webp"
+            [ -f "${MOODE_PICS_DIR}/${PLIST}.webp" ] && mv "${MOODE_PICS_DIR}/${PLIST}.webp" "${TRASH_DIR}"
         else
             exit 1
         fi
@@ -719,7 +725,7 @@ delete_alternate_stream_from_json() {
     local INPUT="$1"
     local TO_DELETE
     TO_DELETE=$(jq -r ".deleteAlternateStream" < "$INPUT")
-    rm -f "${MYMPD_PLS_DIR}/${TO_DELETE}"
+    mv "${MYMPD_PLS_DIR}/${TO_DELETE}" "${TRASH_DIR}"
     local PARENT=${TO_DELETE%%.m3u*}
     # Update last-modified
     set_lastmodified "${MYMPD_PLS_DIR}/${PARENT}.m3u"
@@ -1307,10 +1313,15 @@ check_stream_all_json() {
                     local DATE
                     DATE=$(date +%Y-%m-%d)
                     ERROR_COUNT=$((ERROR_COUNT+1))
-                    printf "\"%s\":{\"date\":\"%s\",\"count\":%s,\"error\":%s}" "$M3U" "$DATE" "$ERROR_COUNT" "$OUT" >&3
+                    if [ "$ERROR_COUNT" -gt 31 ]
+                    then
+                        delete_radio_by_m3u "$M3U"
+                    else
+                        printf "\"%s\":{\"date\":\"%s\",\"count\":%s,\"error\":%s}" "$M3U" "$DATE" "$ERROR_COUNT" "$OUT" >&3
+                        ENTRY_COUNT=$((ENTRY_COUNT+1))
+                    fi
                     echo ""
                     echo "Error getting streaminfo for \"$F\" ($ERROR_COUNT): $OUT"
-                    ENTRY_COUNT=$((ENTRY_COUNT+1))
                     break
                 else
                     printf "r"
