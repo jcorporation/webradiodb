@@ -26,7 +26,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      - name: Check all streams
+      - name: Check streams with errors
         run: ./build.sh check_stream_error_json
 
       - name: Add, commit and push
