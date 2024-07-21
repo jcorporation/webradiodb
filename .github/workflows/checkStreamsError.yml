@@ -1,6 +1,6 @@
 # This workflow checks the streams with ffprobe
 
-name: checkStreams
+name: checkStreamsError
 
 # Controls when the workflow will run
 on:
