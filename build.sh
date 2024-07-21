@@ -1264,7 +1264,13 @@ check_stream() {
 
 # Checks all streams and writes the status json file
 check_stream_all_json() {
-    printf "Checking all streams"
+    local CHECK_ALL=$1
+    if [ "$CHECK_ALL" -eq 1 ]
+    then
+        echo "Checking all streams"
+    else
+        echo "Checking streams with errors"
+    fi
     local rc=0
     exec 3<> "${STATUSFILE}.tmp"
     printf "{" >&3
@@ -1281,6 +1287,13 @@ check_stream_all_json() {
         fi
         local STREAM
         STREAM=$(grep -v "#" "$F" | head -1)
+        local ERROR_COUNT
+        ERROR_COUNT=$(jq ".\"$M3U\".count" docs/db/index/status.min.json)
+        [ "$ERROR_COUNT" = "null" ] && ERROR_COUNT=0
+        if [ "$CHECK_ALL" -eq 0 ] && [ "$ERROR_COUNT" -eq 0 ]
+        then
+            continue
+        fi
         local RETRY_COUNT=0
         while :
         do
@@ -1293,9 +1306,6 @@ check_stream_all_json() {
                     OUT=$(jq -n --arg value "$OUT" '$value')
                     local DATE
                     DATE=$(date +%Y-%m-%d)
-                    local ERROR_COUNT
-                    ERROR_COUNT=$(jq ".\"$M3U\".count" docs/db/index/status.min.json)
-                    [ "$ERROR_COUNT" = "null" ] && ERROR_COUNT=0
                     ERROR_COUNT=$((ERROR_COUNT+1))
                     printf "\"%s\":{\"date\":\"%s\",\"count\":%s,\"error\":%s}" "$M3U" "$DATE" "$ERROR_COUNT" "$OUT" >&3
                     echo ""
@@ -1350,7 +1360,10 @@ case "$ACTION" in
         exit $?
         ;;
     check_stream_all_json)
-        check_stream_all_json
+        check_stream_all_json 1
+        ;;
+    check_stream_error_json)
+        check_stream_all_json 0
         ;;
     normalize_fields)
         normalize_fields "$2"
@@ -1413,6 +1426,8 @@ case "$ACTION" in
         echo "    checks the stream from m3u"
         echo "  check_stream_all_json:"
         echo "    creates the status.json file"
+        echo "  check_stream_error_json:"
+        echo "    re-checks the streams with errors form status.json file"
         echo "  normalize_fields <dir>:"
         echo "    normalizes fields"
         echo "  create:"

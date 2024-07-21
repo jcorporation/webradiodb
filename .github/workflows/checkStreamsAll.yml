@@ -4,7 +4,7 @@ name: checkStreams
 
 # Controls when the workflow will run
 on:
-  #run it daily
+  #run it each wednesday
   schedule:
   - cron: "6 1 * * 3"
 
