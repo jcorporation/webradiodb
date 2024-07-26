@@ -1064,28 +1064,19 @@ create_index() {
         tr -d '\n' < "${INDEXFILE_COMBINED}.tmp" >> "${INDEXFILE_JS}.tmp"
         printf ";\n" >> "${INDEXFILE_JS}.tmp"
         #finished, move all files in place
-        local CHANGED=0
-        move_compress_changed "$INDEXFILE" && CHANGED=1
-        move_compress_changed "$LANGFILE" && CHANGED=1
-        move_compress_changed "$COUNTRYFILE" && CHANGED=1
-        move_compress_changed "$STATEFILE" && CHANGED=1
-        move_compress_changed "$REGIONFILE" && CHANGED=1
-        move_compress_changed "$GENREFILE" && CHANGED=1
-        move_compress_changed "$CODECFILE" && CHANGED=1
-        move_compress_changed "$BITRATEFILE" && CHANGED=1
-        if [ "$CHANGED" -eq 1 ]
-        then
-            echo "Index has changed"
-            move_compress_changed "$INDEXFILE_JS"
-            move_compress_changed "$INDEXFILE_COMBINED"
-        else
-            echo "Index not changed"
-            rm "${INDEXFILE_JS}.tmp"
-            rm "${INDEXFILE_COMBINED}.tmp"
-        fi
+        move_compress_changed "$INDEXFILE"
+        move_compress_changed "$LANGFILE"
+        move_compress_changed "$COUNTRYFILE"
+        move_compress_changed "$STATEFILE"
+        move_compress_changed "$REGIONFILE"
+        move_compress_changed "$GENREFILE"
+        move_compress_changed "$CODECFILE"
+        move_compress_changed "$BITRATEFILE"
+        move_compress_changed "$INDEXFILE_JS"
+        move_compress_changed "$INDEXFILE_COMBINED"
     else
         echo "Error creating index"
-        #rm "${INDEXFILE}.tmp"
+        rm "${INDEXFILE}.tmp"
         exit 1
     fi
 }
