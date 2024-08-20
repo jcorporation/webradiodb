@@ -2,7 +2,7 @@
 #EXTINF:-1,Universitária FM
 #EXTGENRE:MPB, News, Educational
 #PLAYLIST:Universitária FM
-#EXTIMG:http___200_129_35_230_8081_aovivo_ogg_m3u.webp
+#EXTIMG:http___200_129_35_230_8081_ouvir.webp
 #HOMEPAGE:http://www.radiouniversitariafm.com.br/
 #COUNTRY:Brazil
 #STATE:Ceará
@@ -12,5 +12,5 @@
 #CODEC:MP3
 #BITRATE:96
 #ADDED:1699100849
-#LASTMODIFIED:1720344242
-http://200.129.35.230:8081/aovivo.ogg.m3u
+#LASTMODIFIED:1724186379
+http://200.129.35.230:8081/ouvir
