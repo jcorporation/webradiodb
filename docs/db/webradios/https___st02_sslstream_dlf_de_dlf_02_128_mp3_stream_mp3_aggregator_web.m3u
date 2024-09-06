@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,Deutschlandfunk Kultur
+#EXTGENRE:Talk, News
+#PLAYLIST:Deutschlandfunk Kultur
+#EXTIMG:https___st02_sslstream_dlf_de_dlf_02_128_mp3_stream_mp3_aggregator_web.webp
+#HOMEPAGE:https://www.deutschlandfunkkultur.de/
+#COUNTRY:Germany
+#STATE:
+#REGION:
+#LANGUAGE:German
+#DESCRIPTION:Kultur und Politik.
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1725516684
+#LASTMODIFIED:1725592962
+https://st02.sslstream.dlf.de/dlf/02/128/mp3/stream.mp3?aggregator=web
