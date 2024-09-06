@@ -9,8 +9,8 @@
 #REGION:
 #LANGUAGE:German
 #DESCRIPTION:Deutschlandfunk Nova ist das jüngste Programm der Deutschlandradio-Familie. Seit 2010 bietet es ein unterhaltendes Informationsprogramm mit anspruchsvoller Popmusik fernab von Mainstreamberieselung.
-#CODEC:
-#BITRATE:
+#CODEC:MP3
+#BITRATE:128
 #ADDED:1725516652
-#LASTMODIFIED:1725516652
+#LASTMODIFIED:1725592964
 https://st03.sslstream.dlf.de/dlf/03/128/mp3/stream.mp3?aggregator=web

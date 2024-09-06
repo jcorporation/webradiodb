@@ -9,8 +9,8 @@
 #REGION:
 #LANGUAGE:German
 #DESCRIPTION:Der Deutschlandfunk steht für Qualitätsjournalismus und bietet Informationen, Hintergründe und Analysen aus Politik und Gesellschaft.
-#CODEC:
-#BITRATE:
+#CODEC:MP3
+#BITRATE:128
 #ADDED:1725516324
-#LASTMODIFIED:1725516324
+#LASTMODIFIED:1725592960
 https://st01.sslstream.dlf.de/dlf/01/128/mp3/stream.mp3?aggregator=web
