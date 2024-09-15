@@ -1,16 +1,16 @@
 #EXTM3U
-#EXTINF:-1,Resonance Radio 104.4 FM
-#EXTGENRE:Eclectic
-#PLAYLIST:Resonance Radio 104.4 FM
+#EXTINF:-1,Resonance Radio
+#EXTGENRE:Eclectic, Experimental, Electronic
+#PLAYLIST:Resonance Radio
 #EXTIMG:http___stream_resonance_fm_resonance.webp
-#HOMEPAGE:
+#HOMEPAGE:https://www.resonancefm.com/
 #COUNTRY:United Kingdom
-#STATE:
-#REGION:
+#STATE:London
+#REGION:London
 #LANGUAGE:English
 #DESCRIPTION:
 #CODEC:MP3
 #BITRATE:192
 #ADDED:1640904262
-#LASTMODIFIED:1720985717
+#LASTMODIFIED:1726434706
 http://stream.resonance.fm/resonance
