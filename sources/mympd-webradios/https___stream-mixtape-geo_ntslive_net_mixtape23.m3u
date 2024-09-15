@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,NTS Field Recordings
+#EXTGENRE:Field Recordings, Ambient
+#PLAYLIST:NTS Field Recordings
+#EXTIMG:https___stream-mixtape-geo_ntslive_net_mixtape23.webp
+#HOMEPAGE:https://www.nts.live/infinite-mixtapes/field-recordings
+#COUNTRY:United Kingdom
+#STATE:London
+#REGION:London
+#LANGUAGE:English
+#DESCRIPTION:Natural ambience from NTS listeners around the world.
+#CODEC:MP3
+#BITRATE:256
+#ADDED:1726435589
+#LASTMODIFIED:1726435589
+https://stream-mixtape-geo.ntslive.net/mixtape23
