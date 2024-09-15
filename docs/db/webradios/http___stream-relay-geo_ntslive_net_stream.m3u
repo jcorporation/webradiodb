@@ -1,16 +1,16 @@
 #EXTM3U
-#EXTINF:-1,NTS Live London - Don't Assume
+#EXTINF:-1,NTS 1
 #EXTGENRE:Indie, Underground, Club, Live
-#PLAYLIST:NTS Live London - Don't Assume
+#PLAYLIST:NTS 1
 #EXTIMG:http___stream-relay-geo_ntslive_net_stream.webp
-#HOMEPAGE:
+#HOMEPAGE:https://www.nts.live/schedule
 #COUNTRY:United Kingdom
-#STATE:
-#REGION:
+#STATE:London
+#REGION:London
 #LANGUAGE:English
 #DESCRIPTION:
 #CODEC:MP3
 #BITRATE:256
 #ADDED:1640904262
-#LASTMODIFIED:1720985678
+#LASTMODIFIED:1726431905
 http://stream-relay-geo.ntslive.net/stream

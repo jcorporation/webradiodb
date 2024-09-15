@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,Balamii
+#EXTGENRE:Club, Underground, Live
+#PLAYLIST:Balamii
+#EXTIMG:http___balamii_out_airtime_pro_8000_balamii_a.webp
+#HOMEPAGE:https://www.balamii.com/
+#COUNTRY:United Kingdom
+#STATE:London
+#REGION:London
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1726431988
+#LASTMODIFIED:1726431988
+http://balamii.out.airtime.pro:8000/balamii_a
