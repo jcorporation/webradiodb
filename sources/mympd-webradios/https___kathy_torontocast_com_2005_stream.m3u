@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,DKFM
+#EXTGENRE:Shoegaze
+#PLAYLIST:DKFM
+#EXTIMG:https___kathy_torontocast_com_2005_stream.webp
+#HOMEPAGE:https://decayfm.com/
+#COUNTRY:USA
+#STATE:California
+#REGION:California
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1726434778
+#LASTMODIFIED:1726434778
+https://kathy.torontocast.com:2005/stream
