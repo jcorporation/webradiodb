@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,∏ano
+#EXTGENRE:Piano, Classical
+#PLAYLIST:∏ano
+#EXTIMG:http___stream_p-node_org_piano.webp
+#HOMEPAGE:https://p-node.org/piano/
+#COUNTRY:France
+#STATE:
+#REGION:
+#LANGUAGE:French
+#DESCRIPTION:An endless hi-resolution stream of piano.
+#CODEC:FLAC
+#BITRATE:1000
+#ADDED:1726694698
+#LASTMODIFIED:1726694698
+http://stream.p-node.org/piano
