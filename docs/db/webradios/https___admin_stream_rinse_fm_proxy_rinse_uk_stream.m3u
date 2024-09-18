@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,Rinse FM
+#EXTGENRE:Electronic, Grime, Hip-Hop, House, Drum & Bass
+#PLAYLIST:Rinse FM
+#EXTIMG:https___admin_stream_rinse_fm_proxy_rinse_uk_stream.webp
+#HOMEPAGE:https://rinse.fm/
+#COUNTRY:United Kingdom
+#STATE:London
+#REGION:London
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:AAC+
+#BITRATE:128
+#ADDED:1696661688
+#LASTMODIFIED:1726678039
+https://admin.stream.rinse.fm/proxy/rinse_uk/stream

@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,Radio Centraal
+#EXTGENRE:Eclectic, Experimental, Electronic, Underground
+#PLAYLIST:Radio Centraal
+#EXTIMG:http___streams_movemedia_eu_8530.webp
+#HOMEPAGE:https://www.radiocentraal.be/Realescape/
+#COUNTRY:Belgium
+#STATE:Antwerp
+#REGION:Antwerp
+#LANGUAGE:Dutch
+#DESCRIPTION:Radio Centraal wants not only to explore the boundaries of radio making, but also to widen it.
+#CODEC:MP3
+#BITRATE:320
+#ADDED:1726684543
+#LASTMODIFIED:1726684543
+http://streams.movemedia.eu:8530

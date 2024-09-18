@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,The Lot Radio
+#EXTGENRE:Club, House, Rock
+#PLAYLIST:The Lot Radio
+#EXTIMG:https___playback_livepeer_studio_hls_85c28sa2o8wppm58_index_m3u8.webp
+#HOMEPAGE:https://www.thelotradio.com/
+#COUNTRY:USA
+#STATE:New York City
+#REGION:New York City
+#LANGUAGE:English
+#DESCRIPTION:Expect a continuous stream of the best and most varied music New York City has to offer.
+#CODEC:
+#BITRATE:
+#ADDED:1726684455
+#LASTMODIFIED:1726684455
+https://playback.livepeer.studio/hls/85c28sa2o8wppm58/index.m3u8
