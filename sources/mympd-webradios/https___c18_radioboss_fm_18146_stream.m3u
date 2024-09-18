@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,20ft Radio
+#EXTGENRE:Experimental, Electronic
+#PLAYLIST:20ft Radio
+#EXTIMG:https___c18_radioboss_fm_18146_stream.webp
+#HOMEPAGE:https://20ftradio.net/
+#COUNTRY:Ukraine
+#STATE:Kyiv
+#REGION:Kyiv
+#LANGUAGE:Ukranian
+#DESCRIPTION:Community radio in a 20ft port container. Founded in 2016.
+#CODEC:MP3
+#BITRATE:320
+#ADDED:1726692237
+#LASTMODIFIED:1726692237
+https://c18.radioboss.fm:18146/stream
