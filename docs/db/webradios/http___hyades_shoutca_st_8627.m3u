@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,The Lake Radio
+#EXTGENRE:Experimental, Eclectic, Electronic, Underground
+#PLAYLIST:The Lake Radio
+#EXTIMG:http___hyades_shoutca_st_8627.webp
+#HOMEPAGE:https://thelakeradio.com/
+#COUNTRY:Denmark
+#STATE:Copenhagen
+#REGION:Copenhagen
+#LANGUAGE:Danish
+#DESCRIPTION:The Lake is a place for music and sounds. The radio stream runs at all hours of the day and is randomized. No one knows what The Lake plays next.
+#CODEC:MP3
+#BITRATE:320
+#ADDED:1726691515
+#LASTMODIFIED:1726691515
+http://hyades.shoutca.st:8627

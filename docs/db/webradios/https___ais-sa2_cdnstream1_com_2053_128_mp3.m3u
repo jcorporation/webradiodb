@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,BFF.fm
+#EXTGENRE:Underground, Indie
+#PLAYLIST:BFF.fm
+#EXTIMG:https___ais-sa2_cdnstream1_com_2053_128_mp3.webp
+#HOMEPAGE:https://bff.fm/
+#COUNTRY:USA
+#STATE:San Francisco
+#REGION:San Francisco
+#LANGUAGE:English
+#DESCRIPTION:BFF.fm is a San Francisco-based community radio station. Our mission is to support emerging and underground artists and bring the Bay Area music scene to the world through the magic of Internet radio.
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1726691454
+#LASTMODIFIED:1726691454
+https://ais-sa2.cdnstream1.com/2053_128.mp3

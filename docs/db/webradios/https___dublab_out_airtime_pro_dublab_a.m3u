@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,dublab
+#EXTGENRE:Experimental
+#PLAYLIST:dublab
+#EXTIMG:https___dublab_out_airtime_pro_dublab_a.webp
+#HOMEPAGE:https://www.dublab.com/
+#COUNTRY:USA
+#STATE:California
+#REGION:California
+#LANGUAGE:English
+#DESCRIPTION:dublab is a Los Angeles-based, community-supported internet radio station and creative collective dedicated to the growth of positive music, arts, and culture.
+#CODEC:MP3
+#BITRATE:160
+#ADDED:1726691563
+#LASTMODIFIED:1726691563
+https://dublab.out.airtime.pro/dublab_a
