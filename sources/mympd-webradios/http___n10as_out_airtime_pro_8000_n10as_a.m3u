@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,n10.as
+#EXTGENRE:Groove, Dance, House, Disco, Electronic, Experimental, Techno, Reggae, Dub, Indie, Soul, Classical, Pop, World, Jazz, Blues, R&B, Ambient, Country, Rock, Heavy, Post-Punk, Psych, Hip-Hop, Rap, Talk, Discussion, Lifestyle
+#PLAYLIST:n10.as
+#EXTIMG:http___n10as_out_airtime_pro_8000_n10as_a.webp
+#HOMEPAGE:https://n10.as/
+#COUNTRY:Canada
+#STATE:Montréal
+#REGION:Montréal
+#LANGUAGE:English
+#DESCRIPTION:Pronounced "antennas". A non-profit & volunteer-run online radio station.
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1726684596
+#LASTMODIFIED:1726684596
+http://n10as.out.airtime.pro:8000/n10as_a
