@@ -9,8 +9,8 @@
 #REGION:New York City
 #LANGUAGE:English
 #DESCRIPTION:Expect a continuous stream of the best and most varied music New York City has to offer.
-#CODEC:
-#BITRATE:
+#CODEC:HLS
+#BITRATE:0
 #ADDED:1726684455
-#LASTMODIFIED:1726684455
+#LASTMODIFIED:1726716232
 https://playback.livepeer.studio/hls/85c28sa2o8wppm58/index.m3u8

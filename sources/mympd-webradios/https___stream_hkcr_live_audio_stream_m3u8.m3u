@@ -9,8 +9,8 @@
 #REGION:Hong Kong
 #LANGUAGE:Chinese
 #DESCRIPTION:Founded in 2016, Hong Kong Community Radio (HKCR) is a community platform and independent radio station comprised of creators, musicians, artists and fans with aims to broadcast and support independent works as an open platform.
-#CODEC:
-#BITRATE:
+#CODEC:HLS
+#BITRATE:0
 #ADDED:1726692532
-#LASTMODIFIED:1726692532
+#LASTMODIFIED:1726716236
 https://stream.hkcr.live/audio/stream.m3u8
