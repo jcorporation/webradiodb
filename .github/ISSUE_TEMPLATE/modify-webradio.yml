@@ -11,7 +11,7 @@ body:
     id: modifyWebradio
     attributes:
       label: Webradio to modify
-      description: The stream uri, e.g. http://119.15.96.188/stream2.mp3
+      description: The stream uri as it currently exists in the database
     validations:
       required: true
   - type: textarea
