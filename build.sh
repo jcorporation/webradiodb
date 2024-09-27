@@ -1310,6 +1310,8 @@ check_stream_all_json() {
                     if [ "$ERROR_COUNT" -gt 31 ]
                     then
                         local M3U_NAME=$(trim_ext "$M3U")
+                        echo ""
+                        echo "Error count too high, removing $M3U_NAME"
                         delete_radio_by_m3u "$M3U_NAME"
                     else
                         printf "\"%s\":{\"date\":\"%s\",\"count\":%s,\"error\":%s}" "$M3U" "$DATE" "$ERROR_COUNT" "$OUT" >&3
