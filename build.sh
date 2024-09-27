@@ -680,7 +680,7 @@ delete_radio_by_m3u() {
             exit 1
         fi
     fi
-    if [ -f "${MOODE_PLS_DIR}/${PLIST}.m3u" ]
+    elif [ -f "${MOODE_PLS_DIR}/${PLIST}.m3u" ]
     then
         echo "Deleting webradio ${PLIST}"
         if mv "${MOODE_PLS_DIR}/${PLIST}.m3u" "${TRASH_DIR}"
@@ -691,6 +691,9 @@ delete_radio_by_m3u() {
         fi
         echo "Adding webradio $PLIST to moode-ignore"
         echo "${PLIST}" >> mappings/moode-ignore
+    else
+        echo "Webradio ${PLIST} not found"
+        exit 1
     fi
 }
 
@@ -1306,7 +1309,8 @@ check_stream_all_json() {
                     ERROR_COUNT=$((ERROR_COUNT+1))
                     if [ "$ERROR_COUNT" -gt 31 ]
                     then
-                        delete_radio_by_m3u "$M3U"
+                        local M3U_NAME=$(trim_ext "$M3U")
+                        delete_radio_by_m3u "$M3U_NAME"
                     else
                         printf "\"%s\":{\"date\":\"%s\",\"count\":%s,\"error\":%s}" "$M3U" "$DATE" "$ERROR_COUNT" "$OUT" >&3
                         ENTRY_COUNT=$((ENTRY_COUNT+1))
