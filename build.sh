@@ -679,7 +679,6 @@ delete_radio_by_m3u() {
         else
             exit 1
         fi
-    fi
     elif [ -f "${MOODE_PLS_DIR}/${PLIST}.m3u" ]
     then
         echo "Deleting webradio ${PLIST}"
