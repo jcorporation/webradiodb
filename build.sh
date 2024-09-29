@@ -1306,7 +1306,7 @@ check_stream_all_json() {
                     local DATE
                     DATE=$(date +%Y-%m-%d)
                     ERROR_COUNT=$((ERROR_COUNT+1))
-                    if [ "$ERROR_COUNT" -gt 31 ]
+                    if [ "$ERROR_COUNT" -gt 14 ]
                     then
                         local M3U_NAME=$(trim_ext "$M3U")
                         echo ""
