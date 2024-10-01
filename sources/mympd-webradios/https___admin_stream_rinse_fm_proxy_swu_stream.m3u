@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,SWU FM
+#EXTGENRE:Club, Underground, Live
+#PLAYLIST:SWU FM
+#EXTIMG:https___admin_stream_rinse_fm_proxy_swu_stream.webp
+#HOMEPAGE:https://www.rinse.fm/channels/swu/
+#COUNTRY:United Kingdom
+#STATE:Bristol
+#REGION:Bristol
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1727801877
+#LASTMODIFIED:1727801877
+https://admin.stream.rinse.fm/proxy/swu/stream
