@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,Kool FM
+#EXTGENRE:Jungle, Drum & Bass
+#PLAYLIST:Kool FM
+#EXTIMG:https___admin_stream_rinse_fm_proxy_kool_stream.webp
+#HOMEPAGE:https://www.rinse.fm/channels/kool/
+#COUNTRY:United Kingdom
+#STATE:London
+#REGION:London
+#LANGUAGE:English
+#DESCRIPTION:Kool FM is a former London pirate radio station that now broadcasts on DAB and online, playing jungle, drum and bass, and old skool. Kool is generally regarded as being instrumental in the development of the jungle music scene.
+#CODEC:AAC
+#BITRATE:128
+#ADDED:1727802416
+#LASTMODIFIED:1727802416
+https://admin.stream.rinse.fm/proxy/kool/stream
