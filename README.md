@@ -7,7 +7,7 @@
 [![createWebradioIndex](https://github.com/jcorporation/webradiodb/actions/workflows/createWebradioIndex.yml/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/createWebradioIndex.yml)
 [![pages-build-deployment](https://github.com/jcorporation/webradiodb/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/jcorporation/webradiodb/actions/workflows/pages/pages-build-deployment)
 
-This is my attempt to create a curated webradio list for [myMPD](https://github.com/jcorporation/myMPD).
+This is my attempt to create a curated webradio database for [myMPD](https://github.com/jcorporation/myMPD).
 
 - [Station search](https://jcorporation.github.io/webradiodb/)
 
