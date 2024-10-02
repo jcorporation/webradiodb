@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,Radio Carbono
+#EXTGENRE:Community Radio, Underground
+#PLAYLIST:Radio Carbono
+#EXTIMG:https___stm_livecastradio_com_7046_stream.webp
+#HOMEPAGE:https://carbonoproyecto.net/radio-carbono-online/
+#COUNTRY:Argentina
+#STATE:La Pampa
+#REGION:La Pampa
+#LANGUAGE:Spanish
+#DESCRIPTION:Radio Carbono is part of the Carbonoproyecto, an independent and self-managed space that has existed since 1999 between Santa Rosa and Toay in the province of La Pampa. It works both as an on-demand podcast system and live broadcast dedicated to sharing a wide spectrum of music and sound adventures. Although our main interests in the Carbonoproyecto revolve around sound art, experimental music, free improvisation, among others, it seems essential for us to locate these practices as integrated in a context of diversity of styles and musical and sound expressions (such as soundscapes, ethnographic records, jazz , blues, folk, rock, electronic, world music, progressive, among other genres).
+#CODEC:AAC
+#BITRATE:128
+#ADDED:1727891310
+#LASTMODIFIED:1727891310
+https://stm.livecastradio.com:7046/stream
