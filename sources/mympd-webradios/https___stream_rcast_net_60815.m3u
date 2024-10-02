@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,Radio Aparat
+#EXTGENRE:Community Radio, Underground
+#PLAYLIST:Radio Aparat
+#EXTIMG:https___stream_rcast_net_60815.webp
+#HOMEPAGE:https://radioaparat.rs
+#COUNTRY:Serbia
+#STATE:Belgrade
+#REGION:Belgrade
+#LANGUAGE:Serbian
+#DESCRIPTION:Radio Aparat is an internet radio station created in November 2016. The programming consists of socially-engaged, music, cultural-educational and entertainment shows.
+#CODEC:MP3
+#BITRATE:192
+#ADDED:1727891660
+#LASTMODIFIED:1727891660
+https://stream.rcast.net/60815
