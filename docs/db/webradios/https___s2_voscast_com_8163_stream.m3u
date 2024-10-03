@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,NoFM Radio
+#EXTGENRE:Underground
+#PLAYLIST:NoFM Radio
+#EXTIMG:https___s2_voscast_com_8163_stream.webp
+#HOMEPAGE:https://nofm-radio.com/
+#COUNTRY:Mexico
+#STATE:CDMX
+#REGION:CDMX
+#LANGUAGE:Spanish
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1727888153
+#LASTMODIFIED:1727888153
+https://s2.voscast.com:8163/stream

@@ -1,16 +1,16 @@
 #EXTM3U
-#EXTINF:-1,Radio 80000 Munich, Germany
+#EXTINF:-1,Radio 80000
 #EXTGENRE:Community Radio, Freeform, Variety
-#PLAYLIST:Radio 80000 Munich, Germany
+#PLAYLIST:Radio 80000
 #EXTIMG:http___radio80k_out_airtime_pro_8000_radio80k_a.webp
 #HOMEPAGE:http://www.radio80k.de/
 #COUNTRY:Germany
-#STATE:
-#REGION:
+#STATE:Munich
+#REGION:Munich
 #LANGUAGE:English, German
-#DESCRIPTION:
+#DESCRIPTION:Radio 80000 is a non-commercial online radio from Munich and was founded in April 2015.
 #CODEC:MP3
 #BITRATE:192
 #ADDED:1696661537
-#LASTMODIFIED:1720344242
+#LASTMODIFIED:1727891268
 http://radio80k.out.airtime.pro:8000/radio80k_a

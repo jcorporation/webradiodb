@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,Súbela Radio
+#EXTGENRE:Underground
+#PLAYLIST:Súbela Radio
+#EXTIMG:https___us-b4-p-e-zs14-audio_cdn_mdstrm_com_live-audio_5bd87d7218803235c2120d39_5d013e4bc8a64d0da420ced6_chunks_m3u8.webp
+#HOMEPAGE:https://www.subela.cl/
+#COUNTRY:Chile
+#STATE:
+#REGION:
+#LANGUAGE:Spanish
+#DESCRIPTION:Súbela Radio nace el 2011 con la intención de proponer nuevas voces y contenidos. Somos un medio independiente que nace y vive en internet, ocupando herramientas de interacción, que nos permiten tener un diálogo directo con nuestra comunidad.
+#CODEC:AAC
+#BITRATE:128
+#ADDED:1727888200
+#LASTMODIFIED:1727888200
+https://us-b4-p-e-zs14-audio.cdn.mdstrm.com/live-audio/5bd87d7218803235c2120d39/5d013e4bc8a64d0da420ced6/chunks.m3u8

@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,IDA Radio
+#EXTGENRE:Community Radio, Experimental
+#PLAYLIST:IDA Radio
+#EXTIMG:https___broadcast_idaidaida_net_8000_stream.webp
+#HOMEPAGE:https://idaidaida.net/
+#COUNTRY:Finland
+#STATE:Helsinki
+#REGION:Helsinki
+#LANGUAGE:Finnish
+#DESCRIPTION:IDA is an online radio located in Tallinn & Helsinki.
+#CODEC:AAC
+#BITRATE:320
+#ADDED:1727891818
+#LASTMODIFIED:1727891818
+https://broadcast.idaidaida.net:8000/stream
