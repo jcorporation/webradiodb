@@ -1293,6 +1293,10 @@ check_stream_all_json() {
         then
             continue
         fi
+        if [ ! -f "$PLS_DIR/$M3U" ]
+        then
+            continue
+        fi
         local RETRY_COUNT=0
         while :
         do
