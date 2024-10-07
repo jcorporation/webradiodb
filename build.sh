@@ -33,8 +33,11 @@ MOODE_PLS_DIR="${SOURCES_DIR}/moode-webradios"
 MYMPD_PICS_DIR="${SOURCES_DIR}/mympd-pics"
 MYMPD_PLS_DIR="${SOURCES_DIR}/mympd-webradios"
 
+source ./mappings/country_map.sh
 source ./mappings/genre_map.sh
+source ./mappings/language_map.sh
 source ./mappings/m3ufields_map.sh
+source ./mappings/region_map.sh
 
 # Checks if string starts with http:// or https://
 is_uri() {
@@ -168,13 +171,13 @@ normalize_fields() {
         local GENRE=""
         while read -r -d, GENRE
         do
-            [ "$GENRE" = "" ] && continue
+            [ -z "$GENRE" ] && continue
             [ "$GENRE" = "&" ] && continue
-            local NG="${genre_map[$GENRE]:-}"
-            if [ "$NG" != "" ]
+            local REPLACE_GENRE="${genre_map[$GENRE]:-}"
+            if [ -n "$REPLACE_GENRE" ]
             then
-                NG=$(ucwords "$NG")
-                NEW_GENRE="$NEW_GENRE, $NG"
+                REPLACE_GENRE=$(ucwords "$REPLACE_GENRE")
+                NEW_GENRE="$NEW_GENRE, $REPLACE_GENRE"
             else
                 GENRE=$(ucwords "$GENRE")
                 NEW_GENRE="$NEW_GENRE, $GENRE"
@@ -203,7 +206,12 @@ normalize_fields() {
         local COUNTRY_UPPER
         COUNTRY_UPPER=$(ucwords "$COUNTRY")
         COUNTRY_UPPER=$(trim "$COUNTRY_UPPER")
-        if [ "$COUNTRY" != "$COUNTRY_UPPER" ]
+        local REPLACE_COUNTRY="${country_map[$COUNTRY_UPPER]:-}"
+        if [ -n "$REPLACE_COUNTRY" ]
+        then
+            echo "$F: $COUNTRY -> $REPLACE_COUNTRY"
+            sed -i -e "s/^#COUNTRY:.*/#COUNTRY:$REPLACE_COUNTRY/" "$F"
+        elif [ "$COUNTRY" != "$COUNTRY_UPPER" ]
         then
             echo "$F: $COUNTRY -> $COUNTRY_UPPER"
             sed -i -e "s/^#COUNTRY:.*/#COUNTRY:$COUNTRY_UPPER/" "$F"
@@ -211,24 +219,40 @@ normalize_fields() {
         # state
         local STATE=""
         STATE=$(get_m3u_field "$F" "STATE")
-        local STATE_UPPER
-        STATE_UPPER=$(ucwords "$STATE")
-        STATE_UPPER=$(trim "$STATE_UPPER")
-        if [ "$STATE" != "$STATE_UPPER" ]
+        if [ -n "$STATE" ]
         then
-            echo "$F: $STATE -> $STATE_UPPER"
-            sed -i -e "s/^#STATE:.*/#STATE:$STATE_UPPER/" "$F"
+            local STATE_UPPER
+            STATE_UPPER=$(ucwords "$STATE")
+            STATE_UPPER=$(trim "$STATE_UPPER")
+            local REPLACE_STATE="${region_map[$STATE_UPPER]:-}"
+            if [ -n "$REPLACE_STATE" ]
+            then
+                echo "$F: $STATE -> $REPLACE_STATE"
+                sed -i -e "s/^#STATE:.*/#STATE:$REPLACE_STATE/" "$F"
+            elif [ "$STATE" != "$STATE_UPPER" ]
+            then
+                echo "$F: $STATE -> $STATE_UPPER"
+                sed -i -e "s/^#STATE:.*/#STATE:$STATE_UPPER/" "$F"
+            fi
         fi
         # region
         local REGION=""
         REGION=$(get_m3u_field "$F" "REGION")
-        local REGION_UPPER
-        REGION_UPPER=$(ucwords "$REGION")
-        REGION_UPPER=$(trim "$REGION_UPPER")
-        if [ "$REGION" != "$REGION_UPPER" ]
+        if [ -n "$REGION" ]
         then
-            echo "$F: $REGION -> $REGION_UPPER"
-            sed -i -e "s/^#REGION:.*/#REGION:$REGION_UPPER/" "$F"
+            local REGION_UPPER
+            REGION_UPPER=$(ucwords "$REGION")
+            REGION_UPPER=$(trim "$REGION_UPPER")
+            local REPLACE_REGION="${region_map[$REGION_UPPER]:-}"
+            if [ -n "$REPLACE_REGION" ]
+            then
+                echo "$F: $REGION -> $REPLACE_REGION"
+                sed -i -e "s/^#REGION:.*/#REGION:$REPLACE_REGION/" "$F"
+            elif [ "$REGION" != "$REGION_UPPER" ]
+            then
+                echo "$F: $REGION -> $REGION_UPPER"
+                sed -i -e "s/^#REGION:.*/#REGION:$REGION_UPPER/" "$F"
+            fi
         fi
         # language
         local LANGUAGE_LINE=""
@@ -237,9 +261,14 @@ normalize_fields() {
         local LANGUAGE=""
         while read -r -d, LANGUAGE
         do
-            [ "$LANGUAGE" = "" ] && continue
+            [ -z "$LANGUAGE" ] && continue
             [ "$LANGUAGE" = "&" ] && continue
             LANGUAGE=$(ucwords "$LANGUAGE")
+            local REPLACE_LANGUAGE="${language_map[$LANGUAGE]:-}"
+            if [ -n "$REPLACE_LANGUAGE" ]
+            then
+                LANGUAGE="$REPLACE_LANGUAGE"
+            fi
             NEW_LANGUAGE="$NEW_LANGUAGE, $LANGUAGE"
         done < <(sed 's/, /,/g' <<< "$LANGUAGE_LINE,")
         NEW_LANGUAGE="${NEW_LANGUAGE:2}"
