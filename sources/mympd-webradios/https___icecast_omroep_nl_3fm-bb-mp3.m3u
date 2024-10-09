@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,NPO 3FM
+#EXTGENRE:Pop
+#PLAYLIST:NPO 3FM
+#EXTIMG:https___icecast_omroep_nl_3fm-bb-mp3.webp
+#HOMEPAGE:https://www.npo3fm.nl/
+#COUNTRY:Netherlands
+#STATE:
+#REGION:
+#LANGUAGE:Dutch
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:192
+#ADDED:1728493047
+#LASTMODIFIED:1728493047
+https://icecast.omroep.nl/3fm-bb-mp3
