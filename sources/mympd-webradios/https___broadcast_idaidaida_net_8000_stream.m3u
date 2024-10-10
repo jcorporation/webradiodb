@@ -1,7 +1,7 @@
 #EXTM3U
-#EXTINF:-1,IDA Radio
+#EXTINF:-1,IDA Radio 1
 #EXTGENRE:Community Radio, Experimental
-#PLAYLIST:IDA Radio
+#PLAYLIST:IDA Radio 1
 #EXTIMG:https___broadcast_idaidaida_net_8000_stream.webp
 #HOMEPAGE:https://idaidaida.net/
 #COUNTRY:Finland
@@ -12,5 +12,5 @@
 #CODEC:AAC
 #BITRATE:320
 #ADDED:1727891818
-#LASTMODIFIED:1727891818
+#LASTMODIFIED:1728569385
 https://broadcast.idaidaida.net:8000/stream
