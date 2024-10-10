@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,Maus Radio
+#EXTGENRE:Kids
+#PLAYLIST:Maus Radio
+#EXTIMG:https___wdr_de_wdrlive_media_diemaus_m3u.webp
+#HOMEPAGE:https://www.wdrmaus.de/hoeren/
+#COUNTRY:Germany
+#STATE:North Rhine-Westphalia
+#REGION:North Rhine-Westphalia
+#LANGUAGE:German
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1728565159
+#LASTMODIFIED:1728565159
+https://wdr.de/wdrlive/media/diemaus.m3u
