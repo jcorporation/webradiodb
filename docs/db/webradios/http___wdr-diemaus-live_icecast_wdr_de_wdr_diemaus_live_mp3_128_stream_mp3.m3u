@@ -2,7 +2,7 @@
 #EXTINF:-1,Maus Radio
 #EXTGENRE:Kids
 #PLAYLIST:Maus Radio
-#EXTIMG:https___wdr_de_wdrlive_media_diemaus_m3u.webp
+#EXTIMG:http___wdr-diemaus-live_icecast_wdr_de_wdr_diemaus_live_mp3_128_stream_mp3.webp
 #HOMEPAGE:https://www.wdrmaus.de/hoeren/
 #COUNTRY:Germany
 #STATE:North Rhine-Westphalia
@@ -12,5 +12,5 @@
 #CODEC:MP3
 #BITRATE:128
 #ADDED:1728565159
-#LASTMODIFIED:1728565159
-https://wdr.de/wdrlive/media/diemaus.m3u
+#LASTMODIFIED:1729186364
+http://wdr-diemaus-live.icecast.wdr.de/wdr/diemaus/live/mp3/128/stream.mp3
