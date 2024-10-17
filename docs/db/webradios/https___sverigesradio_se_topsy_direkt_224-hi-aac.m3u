@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,SR Sameradion
+#EXTGENRE:News, Weather, Sport, Culture
+#PLAYLIST:SR Sameradion
+#EXTIMG:https___sverigesradio_se_topsy_direkt_224-hi-aac.webp
+#HOMEPAGE:https://sverigesradio.se/sameradion
+#COUNTRY:Sweden
+#STATE:Sápmi
+#REGION:Sápmi
+#LANGUAGE:Sámi, Swedish
+#DESCRIPTION:News, weather, sport, and culture from Sápmi (North Sweden)
+#CODEC:AAC
+#BITRATE:192
+#ADDED:1729105137
+#LASTMODIFIED:1729105137
+https://sverigesradio.se/topsy/direkt/224-hi-aac
