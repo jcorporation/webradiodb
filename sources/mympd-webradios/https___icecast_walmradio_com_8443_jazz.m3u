@@ -1,6 +1,6 @@
 #EXTM3U
 #EXTINF:-1,Adroit Jazz Underground
-#EXTGENRE:Avantgarde, Bebop, Big Band, Bop, Combos, Contemporary, Contemporary Jazz, Cool Jazz, Free Jazz, Fusion, Hard Bop, Mainstream, Mainstream Jazz, Modern Big Band, Post-bop, Straight-ahead, Walm
+#EXTGENRE:Avantgarde, Bebop, Big Band, Bop, Combos, Contemporary, Contemporary Jazz, Cool Jazz, Free Jazz, Fusion, Hard Bop, Mainstream, Mainstream Jazz, Modern Big Band, Post-Pob, Straight-ahead, Walm
 #PLAYLIST:Adroit Jazz Underground
 #EXTIMG:https___icecast_walmradio_com_8443_jazz.webp
 #HOMEPAGE:https://walmradio.com/jazz
@@ -12,5 +12,5 @@
 #CODEC:MP3
 #BITRATE:320
 #ADDED:1673644457
-#LASTMODIFIED:1720344242
+#LASTMODIFIED:1729617754
 https://icecast.walmradio.com:8443/jazz
