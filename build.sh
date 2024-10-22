@@ -1114,8 +1114,8 @@ create_index() {
             move_compress_changed "$INDEXFILE_COMBINED"
         else
             echo "Index not changed"
-            rm "$INDEXFILE_JS"
-            rm "$INDEXFILE_COMBINED"
+            rm "$INDEXFILE_JS.tmp"
+            rm "$INDEXFILE_COMBINED.tmp"
         fi
     else
         echo "Error creating index"
