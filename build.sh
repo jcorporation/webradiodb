@@ -1098,6 +1098,8 @@ create_index() {
         local CHANGED=0
         local STATUS_TS=$(get_lastmodified_git "$STATUSFILE")
         local INDEX_TS=$(get_lastmodified_git "$INDEXFILE_COMBINED")
+        echo "Status timestamp: $STATUS_TS"
+        echo "Index timestamp:  $INDEX_TS"
         if [ "$STATUS_TS" -gt "$INDEX_TS" ]; then CHANGED=1; fi
         if move_compress_changed "$INDEXFILE"; then CHANGED=1; fi
         if move_compress_changed "$LANGFILE"; then CHANGED=1; fi
