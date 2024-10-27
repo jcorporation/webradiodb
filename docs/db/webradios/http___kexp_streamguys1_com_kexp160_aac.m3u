@@ -7,10 +7,6 @@
 #COUNTRY:USA
 #STATE:
 #REGION:
-#LANGUAGE:English
-#DESCRIPTION:
-#CODEC:AAC
-#BITRATE:64
-#ADDED:1641601681
-#LASTMODIFIED:1729974295
-http://live-aacplus-64.kexp.org/kexp64.aac
+#CODEC:aac
+#BITRATE:160
+http://kexp.streamguys1.com/kexp160.aac
