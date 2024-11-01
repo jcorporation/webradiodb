@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,DR P4 Copenhagen
+#EXTGENRE:Pop, Regional news
+#PLAYLIST:DR P4 Copenhagen
+#EXTIMG:http___live-icy_dr_dk_A_A08H_mp3.webp
+#HOMEPAGE:https://www.dr.dk/lyd/p4kbh
+#COUNTRY:Denmark
+#STATE:Copenhagen
+#REGION:Copenhagen
+#LANGUAGE:Danish
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:192
+#ADDED:1648148173
+#LASTMODIFIED:1730450924
+http://live-icy.dr.dk/A/A08H.mp3
