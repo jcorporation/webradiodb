@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,DR P5 Copenhagen
+#EXTGENRE:Music, Talk, Senior (60+) content
+#PLAYLIST:DR P5 Copenhagen
+#EXTIMG:
+#HOMEPAGE:https://www.dr.dk/lyd/p5
+#COUNTRY:Denmark
+#STATE:Copenhagen
+#REGION:Copenhagen
+#LANGUAGE:Danish
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:192
+#ADDED:1730483873
+#LASTMODIFIED:1730483873
+http://live-icy.dr.dk:80/A/A28H.mp3
