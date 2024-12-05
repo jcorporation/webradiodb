@@ -1,0 +1,16 @@
+#EXTM3U
+#EXTINF:-1,syg.ma radio Σ
+#EXTGENRE:experimental, community
+#PLAYLIST:syg.ma radio Σ
+#EXTIMG:https___radio_syg_ma_audio_ogg.webp
+#HOMEPAGE:https://radio.syg.ma/
+#COUNTRY:The Russian Federation
+#STATE:
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:radio.syg.ma is a community platform for mixes, podcasts, live recordings and releases by independent musicians, sound artists and collectives.
+#CODEC:ogg
+#BITRATE:128
+#ADDED:1733402533
+#LASTMODIFIED:1733402533
+https://radio.syg.ma/audio.ogg
