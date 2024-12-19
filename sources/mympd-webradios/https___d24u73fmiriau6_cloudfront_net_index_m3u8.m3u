@@ -9,8 +9,8 @@
 #REGION:
 #LANGUAGE:Spanish
 #DESCRIPTION:Esta estación radial es una de las más antiguas de Costa Rica, dotada con un sabor caribeño y tropical característico de la música latina.
-#CODEC:
-#BITRATE:
+#CODEC:HLS
+#BITRATE:0
 #ADDED:1734630643
-#LASTMODIFIED:1734630643
+#LASTMODIFIED:1734635444
 https://d24u73fmiriau6.cloudfront.net/index.m3u8
