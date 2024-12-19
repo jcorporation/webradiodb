@@ -77,7 +77,6 @@ Webradios are saved as extended m3u files with some custom fields. A coverimage 
 #EXTIMG:<cover>
 #HOMEPAGE:<homepage>
 #COUNTRY:<country>
-#STATE:<state (deprecated)>
 #REGION:<region>
 #LANGUAGE:<language>
 #DESCRIPTION:<description>
@@ -107,7 +106,6 @@ The final files are located in the `docs/db` folder, it is rebuild daily. The fo
 | [bitrates.min.json](https://jcorporation.github.io/webradiodb/db/index/bitrates.min.json) | Array of bitrates |
 | [codecs.min.json](https://jcorporation.github.io/webradiodb/db/index/codecs.min.json) | Array of codecs |
 | [countries.min.json](https://jcorporation.github.io/webradiodb/db/index/countries.min.json) | Array of countries |
-| [states.min.json](https://jcorporation.github.io/webradiodb/db/index/states.min.json) | Object of countries and linked states. Deprecated, use regions. |
 | [regions.min.json](https://jcorporation.github.io/webradiodb/db/index/regions.min.json) | Object of countries and linked regions |
 | [genres.min.json](https://jcorporation.github.io/webradiodb/db/index/genres.min.json) | Array of genres |
 | [languages.min.json](https://jcorporation.github.io/webradiodb/db/index/languages.min.json) | Array of languages |
@@ -125,9 +123,7 @@ The m3u fields are mapped for better readability.
 | EXTIMG | Image | String | |
 | HOMEPAGE | Homepage | String | |
 | COUNTRY | Country | String | |
-| STATE | State | String | Deprecated |
 | REGION | Region | String | |
-| LANGUAGE | Language | String | Deprecated |
 | LANGUAGE | Languages | Array | |
 | CODEC | Codec | Array | |
 | BITRATE | Bitrate | Integer | |
@@ -146,9 +142,7 @@ The m3u fields are mapped for better readability.
     "Image": "https___liveradio_swr_de_sw282p3_swr1bw_play_mp3.webp",
     "Homepage": "https://www.swr.de/swr1/",
     "Country": "Germany",
-    "State": "Baden-Württemberg",
     "Region": "Baden-Württemberg",
-    "Language": "German",
     "Languages": [
         "German"
     ],
@@ -191,4 +185,4 @@ Type `./build.sh` for usage information.
 
 Everyone is free to use the collected data in their works. I give all the rights I have at the accumulated data to the public domain.
 
-2021-2023 Juergen Mang <mail@jcgames.de>
+2021-2024 Juergen Mang <mail@jcgames.de>
