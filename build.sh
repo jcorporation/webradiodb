@@ -1316,7 +1316,7 @@ check_stream_all_json() {
     local rc=0
     exec 3<> "${STATUSFILE}.tmp"
     printf "{" >&3
-    local ENTRY_COUNT=0
+    local PRINT_COMMA=0
     local F
     for F in "$PLS_DIR/"*
     do
@@ -1348,7 +1348,7 @@ check_stream_all_json() {
             then
                 if [ $RETRY_COUNT -eq 5 ]
                 then
-                    [ "$ENTRY_COUNT" -gt 0 ] && printf "," >&3
+                    [ "$PRINT_COMMA" -eq 1 ] && printf "," >&3
                     OUT=$(jq -n --arg value "$OUT" '$value')
                     local DATE
                     DATE=$(date +%Y-%m-%d)
@@ -1359,9 +1359,10 @@ check_stream_all_json() {
                         echo ""
                         echo "Error count too high, removing $M3U_NAME"
                         delete_radio_by_m3u "$M3U_NAME"
+                        PRINT_COMMA=0
                     else
                         printf "\"%s\":{\"date\":\"%s\",\"count\":%s,\"error\":%s}" "$M3U" "$DATE" "$ERROR_COUNT" "$OUT" >&3
-                        ENTRY_COUNT=$((ENTRY_COUNT+1))
+                        PRINT_COMMA=1
                     fi
                     echo ""
                     echo "Error getting streaminfo for \"$F\" ($ERROR_COUNT): $OUT"
@@ -1379,6 +1380,11 @@ check_stream_all_json() {
     done
     printf "}" >&3
     exec 3>&-
+    if ! jq < "${STATUSFILE}" > /dev/null
+    then
+        echo "Invalid statusfile: ${STATUSFILE}"
+        exit 1
+    fi
     if move_compress_changed "${STATUSFILE}"
     then
         echo "Streamstatus updated"
