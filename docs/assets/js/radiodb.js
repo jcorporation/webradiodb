@@ -315,7 +315,7 @@ function showSearchResult(offset, limit, error) {
                 '&image=' + encodeURIComponent(obj.result.data[key].Image) +
                 '&country=' + encodeURIComponent(obj.result.data[key].Country) +
                 '&region=' + encodeURIComponent(obj.result.data[key].Region) +
-                '&language=' + encodeURIComponent(obj.result.data[key].Language) +
+                '&language=' + encodeURIComponent(obj.result.data[key].Languages.join(',')) +
                 '&codec=' + encodeURIComponent(obj.result.data[key].Codec) +
                 '&bitrate=' + encodeURIComponent(obj.result.data[key].Bitrate) +
                 '&description=' + encodeURIComponent(obj.result.data[key].Description);
