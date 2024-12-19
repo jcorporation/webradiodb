@@ -112,7 +112,6 @@ function returnStreamError(m3u) {
 
 function search(name, genre, country, region, language, codec, bitrate, sort, offset, limit, error) {
     const desc = document.getElementById('sort_desc').checked;
-    console.log(desc);
     name = name.toLowerCase();
     const obj = {
         "result": {
