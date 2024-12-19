@@ -1355,7 +1355,7 @@ check_stream_all_json() {
                     ERROR_COUNT=$((ERROR_COUNT+1))
                     if [ "$ERROR_COUNT" -gt 14 ]
                     then
-                        local M3U_NAME=$(trim_ext "$M3U")
+                        local M3U_NAME=$(trim_ext "$M3U" "m3u")
                         echo ""
                         echo "Error count too high, removing $M3U_NAME"
                         delete_radio_by_m3u "$M3U_NAME"
