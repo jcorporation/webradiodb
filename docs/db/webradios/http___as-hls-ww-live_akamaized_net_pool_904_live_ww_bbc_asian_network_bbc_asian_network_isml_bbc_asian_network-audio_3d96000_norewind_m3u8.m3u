@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,BBC Asian Network
+#EXTGENRE:Contemporary, Bollywood, Bhangra, Pop, Urbain
+#PLAYLIST:BBC Asian Network
+#EXTIMG:
+#HOMEPAGE:
+#COUNTRY:United Kingdom
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:AAC-LC
+#BITRATE:96
+#ADDED:1734918848
+#LASTMODIFIED:1734918848
+http://as-hls-ww-live.akamaized.net/pool_904/live/ww/bbc_asian_network/bbc_asian_network.isml/bbc_asian_network-audio%3d96000.norewind.m3u8
