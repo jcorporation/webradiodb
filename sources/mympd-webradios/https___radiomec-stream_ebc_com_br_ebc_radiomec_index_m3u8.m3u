@@ -2,7 +2,7 @@
 #EXTINF:-1,Rádio MEC AM
 #EXTGENRE:MPB
 #PLAYLIST:Rádio MEC AM
-#EXTIMG:https___132722d_ha_azioncdn_net_ebc_radiomec_chunks_m3u8.webp
+#EXTIMG:https___radiomec-stream_ebc_com_br_ebc_radiomec_index_m3u8.webp
 #HOMEPAGE:https://radios.ebc.com.br/mecamrio
 #COUNTRY:Brazil
 #REGION:Rio De Janeiro
@@ -11,5 +11,5 @@
 #CODEC:AAC
 #BITRATE:32
 #ADDED:1705909762
-#LASTMODIFIED:1720344242
-https://132722d.ha.azioncdn.net/ebc/radiomec/chunks.m3u8
+#LASTMODIFIED:1735313673
+https://radiomec-stream.ebc.com.br/ebc/radiomec/index.m3u8
