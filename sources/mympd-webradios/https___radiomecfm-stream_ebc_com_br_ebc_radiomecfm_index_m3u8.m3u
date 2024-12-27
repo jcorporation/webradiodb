@@ -2,7 +2,7 @@
 #EXTINF:-1,Rádio MEC FM
 #EXTGENRE:Classical, Classical Music
 #PLAYLIST:Rádio MEC FM
-#EXTIMG:https___122722d_ha_azioncdn_net_ebc_radiomecfm_chunks_m3u8.webp
+#EXTIMG:https___radiomecfm-stream_ebc_com_br_ebc_radiomecfm_index_m3u8.webp
 #HOMEPAGE:https://radios.ebc.com.br/mecfmrio
 #COUNTRY:Brazil
 #REGION:
@@ -11,5 +11,5 @@
 #CODEC:AAC
 #BITRATE:32
 #ADDED:1705909687
-#LASTMODIFIED:1720344242
-https://122722d.ha.azioncdn.net/ebc/radiomecfm/chunks.m3u8
+#LASTMODIFIED:1735313629
+https://radiomecfm-stream.ebc.com.br/ebc/radiomecfm/index.m3u8
