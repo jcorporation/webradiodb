@@ -1,15 +1,15 @@
 #EXTM3U
-#EXTINF:-1,WDCB Chicago FM 90.9 - Jazz & Blues
-#EXTGENRE:Blues, Jazz
-#PLAYLIST:WDCB Chicago FM 90.9 - Jazz & Blues
+#EXTINF:-1,WDCB Jazz
+#EXTGENRE:Jazz, Blues
+#PLAYLIST:WDCB Jazz
 #EXTIMG:http___wdcb-ice_streamguys_org_80_wdcb128.webp
-#HOMEPAGE:
+#HOMEPAGE:https://wdcb.org/
 #COUNTRY:USA
-#REGION:
+#REGION:Chicago, IL
 #LANGUAGE:English
-#DESCRIPTION:
-#CODEC:MP3
-#BITRATE:128
-#ADDED:1640904262
-#LASTMODIFIED:1720985822
+#DESCRIPTION:Chicago's Home for Jazz!
+#CODEC:
+#BITRATE:
+#ADDED:1735841562
+#LASTMODIFIED:1735841562
 http://wdcb-ice.streamguys.org:80/wdcb128

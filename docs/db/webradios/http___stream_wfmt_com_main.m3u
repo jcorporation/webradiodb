@@ -1,15 +1,15 @@
 #EXTM3U
-#EXTINF:-1,WFMT Chicago 98.7 - Classical
-#EXTGENRE:Classical
-#PLAYLIST:WFMT Chicago 98.7 - Classical
+#EXTINF:-1,WFMT
+#EXTGENRE:Classical, Folk
+#PLAYLIST:WFMT
 #EXTIMG:http___stream_wfmt_com_main.webp
-#HOMEPAGE:
+#HOMEPAGE:https://www.wfmt.com/
 #COUNTRY:USA
-#REGION:
+#REGION:Chicago, IL
 #LANGUAGE:English
-#DESCRIPTION:
-#CODEC:MP3
-#BITRATE:128
-#ADDED:1640904262
-#LASTMODIFIED:1720985827
+#DESCRIPTION:Chicago's Classical & Folk Music
+#CODEC:
+#BITRATE:
+#ADDED:1735841731
+#LASTMODIFIED:1735841731
 http://stream.wfmt.com/main
