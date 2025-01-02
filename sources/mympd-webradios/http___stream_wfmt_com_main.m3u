@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,WFMT
+#EXTGENRE:Classical, Folk
+#PLAYLIST:WFMT
+#EXTIMG:http___stream_wfmt_com_main.webp
+#HOMEPAGE:https://www.wfmt.com/
+#COUNTRY:USA
+#REGION:Chicago, IL
+#LANGUAGE:English
+#DESCRIPTION:Chicago's Classical & Folk Music
+#CODEC:
+#BITRATE:
+#ADDED:1735841731
+#LASTMODIFIED:1735841731
+http://stream.wfmt.com/main
