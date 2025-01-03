@@ -8,8 +8,8 @@
 #REGION:
 #LANGUAGE:Santa Rosa, CA
 #DESCRIPTION:Today's Country
-#CODEC:
-#BITRATE:
+#CODEC:HLS
+#BITRATE:255
 #ADDED:1735841607
-#LASTMODIFIED:1735841607
+#LASTMODIFIED:1735874769
 https://live.amperwave.net/manifest/sonoma-kfgyfmaac-hls3.m3u8
