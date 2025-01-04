@@ -1122,9 +1122,11 @@ check_duplicates() {
 
 # Checks all images
 check_images_all() {
-    check_images "$PLS_DIR" "$PICS_DIR"
-    check_images "$MOODE_PLS_DIR" "$MOODE_PICS_DIR"
-    check_images "$MYMPD_PLS_DIR" "$MYMPD_PICS_DIR"
+    local rc=0
+    check_images "$PLS_DIR" "$PICS_DIR" || rc=1
+    check_images "$MOODE_PLS_DIR" "$MOODE_PICS_DIR" || rc=1
+    check_images "$MYMPD_PLS_DIR" "$MYMPD_PICS_DIR" || rc=1
+    return "$rc"
 }
 
 # Checks images for m3u's in specified folder
