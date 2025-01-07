@@ -3,7 +3,7 @@
 #EXTGENRE:Contemporary, Bollywood, Bhangra, Pop, Urbain
 #PLAYLIST:BBC Asian Network
 #EXTIMG:http___as-hls-ww-live_akamaized_net_pool_900_live_ww_bbc_asian_network_bbc_asian_network_isml_bbc_asian_network-audio_3d96000_norewind_m3u8.webp
-#HOMEPAGE:
+#HOMEPAGE:https://www.bbc.co.uk/sounds
 #COUNTRY:United Kingdom
 #REGION:
 #LANGUAGE:English
@@ -11,5 +11,5 @@
 #CODEC:HLS
 #BITRATE:0
 #ADDED:1700753196
-#LASTMODIFIED:1734631201
+#LASTMODIFIED:1736159864
 http://as-hls-ww-live.akamaized.net/pool_900/live/ww/bbc_asian_network/bbc_asian_network.isml/bbc_asian_network-audio%3d96000.norewind.m3u8
