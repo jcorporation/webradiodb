@@ -1310,7 +1310,6 @@ check_stream_all_json() {
             then
                 if [ $RETRY_COUNT -eq 5 ]
                 then
-                    [ "$PRINT_COMMA" -eq 1 ] && printf "," >&3
                     OUT=$(jq -n --arg value "$OUT" '$value')
                     local DATE
                     DATE=$(date +%Y-%m-%d)
@@ -1321,8 +1320,8 @@ check_stream_all_json() {
                         echo ""
                         echo "Error count too high, removing $M3U_NAME"
                         delete_radio_by_m3u "$M3U_NAME"
-                        PRINT_COMMA=0
                     else
+                        [ "$PRINT_COMMA" -eq 1 ] && printf "," >&3
                         printf "\"%s\":{\"date\":\"%s\",\"count\":%s,\"error\":%s}" "$M3U" "$DATE" "$ERROR_COUNT" "$OUT" >&3
                         PRINT_COMMA=1
                     fi
