@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,BBC Asian Network
+#EXTGENRE:Contemporary, Bollywood, Bhangra, Pop, Urbain
+#PLAYLIST:BBC Asian Network
+#EXTIMG:http___lstn_lv_bbcradio_m3u8_station_bbc_asian_network_bitrate_96000.webp
+#HOMEPAGE:https://www.bbc.co.uk/sounds
+#COUNTRY:United Kingdom
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:HLS
+#BITRATE:0
+#ADDED:1700753196
+#LASTMODIFIED:1737135986
+http://lstn.lv/bbcradio.m3u8?station=bbc_asian_network&bitrate=96000
