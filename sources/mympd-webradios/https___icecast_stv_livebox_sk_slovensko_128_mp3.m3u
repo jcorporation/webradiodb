@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Rádio Slovensko
+#EXTGENRE:mainstream music, news, reportage
+#PLAYLIST:Rádio Slovensko
+#EXTIMG:https___icecast_stv_livebox_sk_slovensko_128_mp3.webp
+#HOMEPAGE:https://slovensko.stvr.sk/
+#COUNTRY:Slovakia
+#REGION:
+#LANGUAGE:slovak
+#DESCRIPTION:
+#CODEC:
+#BITRATE:
+#ADDED:1737830728
+#LASTMODIFIED:1737830728
+https://icecast.stv.livebox.sk/slovensko_128.mp3
