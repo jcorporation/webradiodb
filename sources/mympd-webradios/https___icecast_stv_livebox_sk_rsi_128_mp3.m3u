@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Rádio Slovakia International
+#EXTGENRE:international radio
+#PLAYLIST:Rádio Slovakia International
+#EXTIMG:https___icecast_stv_livebox_sk_rsi_128_mp3.webp
+#HOMEPAGE:https://rsi.stvr.sk/
+#COUNTRY:Slovakia
+#REGION:
+#LANGUAGE:english, french, german, russian, slovak, spain
+#DESCRIPTION:
+#CODEC:
+#BITRATE:
+#ADDED:1737830625
+#LASTMODIFIED:1737830625
+https://icecast.stv.livebox.sk/rsi_128.mp3
