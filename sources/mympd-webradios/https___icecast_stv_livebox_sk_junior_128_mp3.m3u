@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Rádio Junior
+#EXTGENRE:children
+#PLAYLIST:Rádio Junior
+#EXTIMG:https___icecast_stv_livebox_sk_junior_128_mp3.webp
+#HOMEPAGE:https://junior.stvr.sk/
+#COUNTRY:Slovakia
+#REGION:
+#LANGUAGE:slovak
+#DESCRIPTION:
+#CODEC:
+#BITRATE:
+#ADDED:1737830844
+#LASTMODIFIED:1737830844
+https://icecast.stv.livebox.sk/junior_128.mp3
