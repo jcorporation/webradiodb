@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Rádio_FM
+#EXTGENRE:alternative, blues, dance, dubstep, electronic music, hip-hop, indie, jazz, metal, pop, rock, world music
+#PLAYLIST:Rádio_FM
+#EXTIMG:https___icecast_stv_livebox_sk_fm_128_mp3.webp
+#HOMEPAGE:https://fm.stvr.sk/
+#COUNTRY:Slovakia
+#REGION:
+#LANGUAGE:slovak
+#DESCRIPTION:
+#CODEC:
+#BITRATE:
+#ADDED:1737831011
+#LASTMODIFIED:1737831011
+https://icecast.stv.livebox.sk/fm_128.mp3
