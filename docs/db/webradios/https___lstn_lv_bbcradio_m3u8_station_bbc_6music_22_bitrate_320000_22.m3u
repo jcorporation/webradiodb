@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,BBC Radio 6 Music
+#EXTGENRE:Indie, Rock, Funk
+#PLAYLIST:BBC Radio 6 Music
+#EXTIMG:https___lstn_lv_bbcradio_m3u8_station_bbc_6music_22_bitrate_320000_22.webp
+#HOMEPAGE:https://www.bbc.co.uk/sounds
+#COUNTRY:United Kingdom
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:HLS
+#BITRATE:0
+#ADDED:1700753196
+#LASTMODIFIED:1737832089
+https://lstn.lv/bbcradio.m3u8?station=bbc_6music%22&bitrate=320000%22

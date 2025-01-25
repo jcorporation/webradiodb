@@ -1,15 +1,15 @@
 #EXTM3U
-#EXTINF:-1,BBC Radio 5 Live
-#EXTGENRE:News, Discussion, Sport, Interviews
-#PLAYLIST:BBC Radio 5 Live
+#EXTINF:-1,BBC Radio 5 live
+#EXTGENRE:News, Discussion, Sport, Interviews, Phone-ins
+#PLAYLIST:BBC Radio 5 live
 #EXTIMG:http___as-hls-ww-live_akamaized_net_pool_904_live_ww_bbc_radio_five_live_bbc_radio_five_live_isml_bbc_radio_five_live-audio_3d96000_norewind_m3u8.webp
-#HOMEPAGE:https://www.bbc.co.uk/programmes/b0070hx6
+#HOMEPAGE:
 #COUNTRY:United Kingdom
 #REGION:
 #LANGUAGE:English
-#DESCRIPTION:The latest sport with coverage and debate, featuring commentaries on the big games and sporting events.
-#CODEC:HLS
-#BITRATE:0
+#DESCRIPTION:
+#CODEC:AAC-LC
+#BITRATE:96
 #ADDED:1700753196
 #LASTMODIFIED:1720344242
 http://as-hls-ww-live.akamaized.net/pool_904/live/ww/bbc_radio_five_live/bbc_radio_five_live.isml/bbc_radio_five_live-audio%3d96000.norewind.m3u8

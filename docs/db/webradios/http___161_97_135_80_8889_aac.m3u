@@ -7,6 +7,9 @@
 #COUNTRY:Canada
 #REGION:
 #LANGUAGE:English
-#CODEC:FLAC
-#BITRATE:0
-https://maggie.torontocast.com:8076/flac
+#DESCRIPTION:JB Radio is an alternative,non-commercial,web radio station.
+#CODEC:AAC
+#BITRATE:320
+#ADDED:1706566110
+#LASTMODIFIED:1737832754
+http://161.97.135.80:8889/aac
