@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Rádio Litera
+#EXTGENRE:art, documentary journalism,  poetry, radio play
+#PLAYLIST:Rádio Litera
+#EXTIMG:https___icecast_stv_livebox_sk_litera_128_mp3.webp
+#HOMEPAGE:https://litera.stvr.sk/
+#COUNTRY:Slovakia
+#REGION:
+#LANGUAGE:slovak
+#DESCRIPTION:
+#CODEC:
+#BITRATE:
+#ADDED:1737829864
+#LASTMODIFIED:1737829864
+https://icecast.stv.livebox.sk/litera_128.mp3
