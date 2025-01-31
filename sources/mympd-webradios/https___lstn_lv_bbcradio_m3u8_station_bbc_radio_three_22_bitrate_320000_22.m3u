@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,BBC Radio 3
+#EXTGENRE:Classical, Jazz, World Music
+#PLAYLIST:BBC Radio 3
+#EXTIMG:https___lstn_lv_bbcradio_m3u8_station_bbc_radio_three_22_bitrate_320000_22.webp
+#HOMEPAGE:https://www.bbc.co.uk/sounds
+#COUNTRY:United Kingdom
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:HLS
+#BITRATE:0
+#ADDED:1700753196
+#LASTMODIFIED:1738339502
+https://lstn.lv/bbcradio.m3u8?station=bbc_radio_three%22&bitrate=320000%22
