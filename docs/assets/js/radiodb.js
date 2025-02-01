@@ -286,7 +286,7 @@ function showSearchResult(offset, limit, error) {
             const filename = obj.result.data[key].filename + '.' + obj.result.data[key].alternativeStreams[alternate].Codec + '.' +
                 obj.result.data[key].alternativeStreams[alternate].Bitrate;
             const del = document.createElement('a');
-            del.href = issueUri + issueDeleteAlternate + '&title=' + encodeURIComponent('[Delete alternate stream for webradio]: ' + obj.result.data[key].Name) +
+            del.href = issueUri + issueDeleteAlternate + '&title=' + encodeURIComponent(obj.result.data[key].Name) +
                 '&deleteAlternateStream=' + encodeURIComponent(filename);
             del.textContent = '(X)'
             del.title = 'Delete';
@@ -306,7 +306,7 @@ function showSearchResult(offset, limit, error) {
         }
 
         div.getElementsByClassName('modify')[0].href =
-            issueUri + issueModify + '&title=' + encodeURIComponent('[Modify Webradio]: ' + obj.result.data[key].Name) +
+            issueUri + issueModify + '&title=' + encodeURIComponent(obj.result.data[key].Name) +
                 '&modifyWebradio=' + encodeURIComponent(obj.result.data[key].StreamUri) +
                 '&name=' + encodeURIComponent(obj.result.data[key].Name) +
                 '&streamuri=' + encodeURIComponent(obj.result.data[key].StreamUri) +
@@ -321,10 +321,10 @@ function showSearchResult(offset, limit, error) {
                 '&description=' + encodeURIComponent(obj.result.data[key].Description);
 
         div.getElementsByClassName('delete')[0].href =
-            issueUri + issueDelete + '&title=' + encodeURIComponent('[Delete Webradio]: ' + obj.result.data[key].Name) +
+            issueUri + issueDelete + '&title=' + encodeURIComponent(obj.result.data[key].Name) +
                 '&deleteWebradio=' + encodeURIComponent(obj.result.data[key].StreamUri);
         div.getElementsByClassName('addAlternate')[0].href =
-            issueUri + issueAddAlternate + '&title=' + encodeURIComponent('[Add alternate stream for webradio]: ' + obj.result.data[key].Name) +
+            issueUri + issueAddAlternate + '&title=' + encodeURIComponent(obj.result.data[key].Name) +
                 '&modifyWebradio=' + encodeURIComponent(obj.result.data[key].StreamUri);
 
         if (webradiodb.webradioStatus[obj.result.data[key].filename] !== undefined) {
@@ -353,7 +353,7 @@ function showSearchResult(offset, limit, error) {
         div.innerHTML = '<p>No search result.</p>' +
             '<p><a href="#">Add this webradio to the database</a></p>';
         div.getElementsByTagName('a')[0].href =
-            issueUri + issueNew + '&title=' + encodeURIComponent('[Add Webradio]: ' + searchstr) +
+            issueUri + issueNew + '&title=' + encodeURIComponent(searchstr) +
                 '&name=' + encodeURIComponent(searchstr);
         resultEl.appendChild(div);
     }
