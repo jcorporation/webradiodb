@@ -2,7 +2,7 @@
 #EXTINF:-1,America's Country
 #EXTGENRE:Country
 #PLAYLIST:America's Country
-#EXTIMG:https___ais-sa2_cdnstream1_com_1976_128_mp3.webp
+#EXTIMG:https___ais-sa2_cdnstream1_com_1976_128_mp3__aac.webp
 #HOMEPAGE:https://americascountry.us/
 #COUNTRY:USA
 #REGION:Utah
@@ -11,5 +11,5 @@
 #CODEC:MP3
 #BITRATE:128
 #ADDED:1739993037
-#LASTMODIFIED:1739993037
-https://ais-sa2.cdnstream1.com/1976_128.mp3
+#LASTMODIFIED:1739997761
+https://ais-sa2.cdnstream1.com/1976_128.mp3#.aac
