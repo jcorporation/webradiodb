@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: sudo apt-get install -y --no-install-recommends imagemagick
+        run: sudo apt-get install -y --no-install-recommends imagemagick librsvg2-bin
 
       - uses: stefanbuck/github-issue-parser@v3
         id: issue-parser
@@ -49,7 +49,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: sudo apt-get install -y --no-install-recommends imagemagick
+        run: sudo apt-get install -y --no-install-recommends imagemagick librsvg2-bin
 
       - uses: stefanbuck/github-issue-parser@v3
         id: issue-parser
