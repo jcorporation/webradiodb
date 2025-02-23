@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,BBC World Service
+#EXTGENRE:Various
+#PLAYLIST:BBC World Service
+#EXTIMG:http___a_files_bbci_co_uk_ms6_live_3441A116-B12E-4D2F-ACA8-C1984642FA4B_audio_simulcast_hls_nonuk_pc_hd_abr_v2_ak_bbc_world_service_m3u8.webp
+#HOMEPAGE:https://www.bbc.co.uk/sounds/play/live:bbc_world_service
+#COUNTRY:United Kingdom
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:HE-AAC
+#BITRATE:0
+#ADDED:1689192122
+#LASTMODIFIED:1740347904
+http://a.files.bbci.co.uk/ms6/live/3441A116-B12E-4D2F-ACA8-C1984642FA4B/audio/simulcast/hls/nonuk/pc_hd_abr_v2/ak/bbc_world_service.m3u8

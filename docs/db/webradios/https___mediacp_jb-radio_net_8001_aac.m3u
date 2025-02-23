@@ -1,8 +1,8 @@
 #EXTM3U
-#EXTINF:-1,JB Radio2 (320K)
+#EXTINF:-1,JB Radio2
 #EXTGENRE:Indie, Rock, Eclectic
-#PLAYLIST:JB Radio2 (320K)
-#EXTIMG:http___161_97_135_80_8889_aac.webp
+#PLAYLIST:JB Radio2
+#EXTIMG:https___mediacp_jb-radio_net_8001_aac.webp
 #HOMEPAGE:https://jb-radio.net/
 #COUNTRY:Canada
 #REGION:
@@ -11,5 +11,5 @@
 #CODEC:AAC
 #BITRATE:320
 #ADDED:1706566110
-#LASTMODIFIED:1738398098
-http://161.97.135.80:8889/aac
+#LASTMODIFIED:1740348093
+https://mediacp.jb-radio.net:8001/aac
