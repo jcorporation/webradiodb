@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,NPO Radio 5
+#EXTGENRE:Oldies
+#PLAYLIST:NPO Radio 5
+#EXTIMG:http___icecast_omroep_nl_radio5-bb-aac.webp
+#HOMEPAGE:https://www.nporadio5.nl
+#COUNTRY:Netherlands
+#REGION:
+#LANGUAGE:Dutch
+#DESCRIPTION:De beste Evergreens
+#CODEC:AAC
+#BITRATE:64
+#ADDED:1740327799
+#LASTMODIFIED:1740327799
+http://icecast.omroep.nl/radio5-bb-aac
