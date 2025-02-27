@@ -2,14 +2,14 @@
 #EXTINF:-1,lainzine radio
 #EXTGENRE:Electronic
 #PLAYLIST:lainzine radio
-#EXTIMG:https___radio_lainzine_org_music_m3u.webp
+#EXTIMG:https___radio_lainzine_org_8443_music.webp
 #HOMEPAGE:https://radio.lainzine.org/
 #COUNTRY:USA
 #REGION:
 #LANGUAGE:English
 #DESCRIPTION:
 #CODEC:
-#BITRATE:
+#BITRATE:0
 #ADDED:1740347587
-#LASTMODIFIED:1740347587
-https://radio.lainzine.org/music.m3u
+#LASTMODIFIED:1740663632
+https://radio.lainzine.org:8443/music
