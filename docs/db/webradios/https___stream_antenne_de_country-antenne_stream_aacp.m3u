@@ -7,9 +7,6 @@
 #COUNTRY:Germany
 #REGION:Bayern
 #LANGUAGE:German
-#DESCRIPTION:Country Musik nonstop im Hier und Jetzt!
-#CODEC:MP3
-#BITRATE:128
-#ADDED:1740663411
-#LASTMODIFIED:1740663445
-https://stream.antenne.de/country-antenne/stream/mp3
+#CODEC:AAC
+#BITRATE:64
+https://stream.antenne.de/country-antenne/stream/aacp
