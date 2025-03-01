@@ -1181,7 +1181,7 @@ update_format() {
         return 0
     fi
     local STREAM
-    STREAM=$(grep -v "#" "$M3U_FILE" | head -1)
+    STREAM=$(grep -v "^#" "$M3U_FILE" | head -1)
     if ! INFO=$(ffprobe -loglevel quiet -print_format json -show_format "$STREAM")
     then
         echo "Error getting streaminfo for \"$M3U_FILE\""
@@ -1257,7 +1257,7 @@ rename_alternate_streams() {
 check_stream() {
     local M3U_FILE="$1"
     local STREAM
-    STREAM=$(grep -v "#" "$M3U_FILE" | head -1)
+    STREAM=$(grep -v "^#" "$M3U_FILE" | head -1)
     if ! ffprobe -loglevel error -rw_timeout 10000000 "$STREAM"
     then
         echo "Error getting streaminfo for \"$M3U_FILE\""
@@ -1290,7 +1290,7 @@ check_stream_all_json() {
             continue
         fi
         local STREAM
-        STREAM=$(grep -v "#" "$F" | head -1)
+        STREAM=$(grep -v "^#" "$F" | head -1)
         local ERROR_COUNT
         ERROR_COUNT=$(jq ".\"$M3U\".count" docs/db/index/status.min.json)
         [ "$ERROR_COUNT" = "null" ] && ERROR_COUNT=0
