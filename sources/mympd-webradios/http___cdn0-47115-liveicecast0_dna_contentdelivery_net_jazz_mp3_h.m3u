@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,NRK Jazz
+#EXTGENRE:jazz, smooth jazz
+#PLAYLIST:NRK Jazz
+#EXTIMG:http___cdn0-47115-liveicecast0_dna_contentdelivery_net_jazz_mp3_h.webp
+#HOMEPAGE:https://radio.nrk.no/direkte/jazz
+#COUNTRY:Norway
+#REGION:
+#LANGUAGE:norwegian
+#DESCRIPTION:Playing Jazz Music 24/7. News Break at the full hour (in norwegian).
+#CODEC:MP3
+#BITRATE:192
+#ADDED:1744907908
+#LASTMODIFIED:1744907908
+http://cdn0-47115-liveicecast0.dna.contentdelivery.net/jazz_mp3_h
