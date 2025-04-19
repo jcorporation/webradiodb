@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Downtuned Radio
+#EXTGENRE:Psychedelic Rock, Noise Rock, Space Rock
+#PLAYLIST:Downtuned Radio
+#EXTIMG:http___195_242_237_14_8020_stream.webp
+#HOMEPAGE:https://www.downtunedmag.com/p/downtuned-radio.html
+#COUNTRY:Greece
+#REGION:
+#LANGUAGE:English, Greek
+#DESCRIPTION:Heavy Pzyk Radio
+#CODEC:AAC+
+#BITRATE:128
+#ADDED:1745041294
+#LASTMODIFIED:1745041294
+http://195.242.237.14:8020/stream
