@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Radio Sunrise 202
+#EXTGENRE:Krautrock, Progressive Rock
+#PLAYLIST:Radio Sunrise 202
+#EXTIMG:http___streams_radiosunrise_de_8006_mp3_.webp
+#HOMEPAGE:https://radiosunrise.de/
+#COUNTRY:Germany
+#REGION:
+#LANGUAGE:German, English
+#DESCRIPTION:
+#CODEC:mp3
+#BITRATE:192
+#ADDED:1745189604
+#LASTMODIFIED:1745189604
+http://streams.radiosunrise.de:8006/mp3/
