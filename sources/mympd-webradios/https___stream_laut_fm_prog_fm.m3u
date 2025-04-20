@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Prog FM
+#EXTGENRE:Progressive Rock, Artrock, Postrock, Krautrock, Progressive Metal
+#PLAYLIST:Prog FM
+#EXTIMG:https___stream_laut_fm_prog_fm.webp
+#HOMEPAGE:https://laut.fm/prog_fm
+#COUNTRY:Germany
+#REGION:Frankfurt a.M.
+#LANGUAGE:English, German
+#DESCRIPTION:„Experimentelle Rockmusik von 1969 bis heute“
+#CODEC:mp3
+#BITRATE:128
+#ADDED:1745189740
+#LASTMODIFIED:1745189740
+https://stream.laut.fm/prog_fm
