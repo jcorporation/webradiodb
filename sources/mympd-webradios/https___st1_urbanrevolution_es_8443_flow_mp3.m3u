@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,FLOW Radio
+#EXTGENRE:latin, reggaeton, urban
+#PLAYLIST:FLOW Radio
+#EXTIMG:https___st1_urbanrevolution_es_8443_flow_mp3.webp
+#HOMEPAGE:https://flowradio.es
+#COUNTRY:Spain
+#REGION:Madrid
+#LANGUAGE:Spanish
+#DESCRIPTION:La radio con +FLOW del país
+#CODEC:MP3
+#BITRATE:320
+#ADDED:1748012565
+#LASTMODIFIED:1748012565
+https://st1.urbanrevolution.es:8443/flow.mp3
