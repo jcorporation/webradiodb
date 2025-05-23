@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,HOUSE Radio Spain
+#EXTGENRE:house, clubbing
+#PLAYLIST:HOUSE Radio Spain
+#EXTIMG:https___st1_urbanrevolution_es_8443_housedab.webp
+#HOMEPAGE:https://houseradio.es
+#COUNTRY:Spain
+#REGION:Madrid
+#LANGUAGE:Spanish
+#DESCRIPTION:Our house is your HOUSE
+#CODEC:MP3
+#BITRATE:256
+#ADDED:1748012443
+#LASTMODIFIED:1748012443
+https://st1.urbanrevolution.es:8443/housedab
