@@ -7,9 +7,6 @@
 #COUNTRY:Spain
 #REGION:
 #LANGUAGE:Spanish
-#DESCRIPTION:Nuevos talentos y grandes artistas se dan la mano en La Urban Radio.
-#CODEC:MP3
-#BITRATE:160
-#ADDED:1676158094
-#LASTMODIFIED:1748012697
-https://st1.urbanrevolution.es:8443/laurbanfm.mp3
+#CODEC:AAC
+#BITRATE:128
+https://st1.urbanrevolution.es:8443/hispano
