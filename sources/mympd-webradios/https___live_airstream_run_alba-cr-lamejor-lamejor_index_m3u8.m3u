@@ -2,14 +2,14 @@
 #EXTINF:-1,La Mejor FM - 99.1 FM
 #EXTGENRE:Cumbia, Salsa, Merengue, Música Latina
 #PLAYLIST:La Mejor FM - 99.1 FM
-#EXTIMG:https___alba-cr-lamejor-lamejor_stream_mediatiquestream_com_chunks_m3u8.webp
+#EXTIMG:https___live_airstream_run_alba-cr-lamejor-lamejor_index_m3u8.webp
 #HOMEPAGE:https://www.lamejor.co.cr/
 #COUNTRY:Costa Rica
 #REGION:
 #LANGUAGE:Spanish
 #DESCRIPTION:n La Mejor podrás encontrar una programación entretenida y variada que busca alegrar tu día a día.
-#CODEC:HLS
-#BITRATE:0
+#CODEC:MP3
+#BITRATE:128
 #ADDED:1719579905
-#LASTMODIFIED:1720344242
-https://alba-cr-lamejor-lamejor.stream.mediatiquestream.com/chunks.m3u8
+#LASTMODIFIED:1749750915
+https://live.airstream.run/alba-cr-lamejor-lamejor/index.m3u8
