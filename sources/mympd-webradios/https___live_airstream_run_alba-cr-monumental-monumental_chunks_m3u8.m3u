@@ -2,7 +2,7 @@
 #EXTINF:-1,Monumental - 93.5 FM
 #EXTGENRE:Noticiero
 #PLAYLIST:Monumental - 93.5 FM
-#EXTIMG:https___alba-cr-monumental-monumental_stream_mediatiquestream_com_chunks_m3u8.webp
+#EXTIMG:https___live_airstream_run_alba-cr-monumental-monumental_chunks_m3u8.webp
 #HOMEPAGE:https://www.monumental.co.cr/
 #COUNTRY:Costa Rica
 #REGION:
@@ -11,5 +11,5 @@
 #CODEC:HLS
 #BITRATE:0
 #ADDED:1719579845
-#LASTMODIFIED:1720344242
-https://alba-cr-monumental-monumental.stream.mediatiquestream.com/chunks.m3u8
+#LASTMODIFIED:1749750793
+https://live.airstream.run/alba-cr-monumental-monumental/chunks.m3u8
