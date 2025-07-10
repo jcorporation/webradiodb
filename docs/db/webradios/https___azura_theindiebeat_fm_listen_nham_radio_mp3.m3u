@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,NHAM Radio
+#EXTGENRE:Indie, Fediverse
+#PLAYLIST:NHAM Radio
+#EXTIMG:https___azura_theindiebeat_fm_listen_nham_radio_mp3.webp
+#HOMEPAGE:https://nham.co.uk/listen/
+#COUNTRY:United Kingdom
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:NHAM curate mixtapes of brilliant sounds from The Fediverse every month.  The NHAM channel on The Indie Beat Radio mixes tracks from these mixtapes with more music from artists featured on NHAM.
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1752163604
+#LASTMODIFIED:1752163604
+https://azura.theindiebeat.fm/listen/nham/radio.mp3
