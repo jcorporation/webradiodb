@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Audio Interface
+#EXTGENRE:Indie, Fediverse, Ambient, Electronica, Experimental, Techno
+#PLAYLIST:Audio Interface
+#EXTIMG:https___azura_theindiebeat_fm_listen_audiointerface_radio_mp3.webp
+#HOMEPAGE:https://www.audiointerface.org/radio/
+#COUNTRY:United Kingdom
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:We make must-hear radio shows for fans of underground electronic music. Audio Interface is home to independent electronic music podcasts that span electronica, ambient, experimental, techno and guest mixes.
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1752162993
+#LASTMODIFIED:1752162993
+https://azura.theindiebeat.fm/listen/audiointerface/radio.mp3
