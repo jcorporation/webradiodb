@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,SceneSat SJ-1
+#EXTGENRE:chiptune, 8bit, techno, electronica
+#PLAYLIST:SceneSat SJ-1
+#EXTIMG:http___sc_scenesat_com_8000.webp
+#HOMEPAGE:https://scenesat.com/
+#COUNTRY:Sweden
+#REGION:
+#LANGUAGE:english, swedish
+#DESCRIPTION:reference webradio for demosceners
+#CODEC:
+#BITRATE:
+#ADDED:1752144071
+#LASTMODIFIED:1752144071
+http://sc.scenesat.com:8000
