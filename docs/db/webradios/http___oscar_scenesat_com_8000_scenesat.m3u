@@ -1,6 +1,6 @@
 #EXTM3U
 #EXTINF:-1,SceneSat Oscar
-#EXTGENRE:Chiptune, 8bit, Techno, Electronica
+#EXTGENRE:Chiptune, 8bit, Techno, Electronic
 #PLAYLIST:SceneSat Oscar
 #EXTIMG:http___oscar_scenesat_com_8000_scenesat.webp
 #HOMEPAGE:https://scenesat.com/
@@ -8,8 +8,8 @@
 #REGION:
 #LANGUAGE:English, Swedish
 #DESCRIPTION:reference webradio for demosceners
-#CODEC:
-#BITRATE:
+#CODEC:MP3
+#BITRATE:128
 #ADDED:1752144195
-#LASTMODIFIED:1752144195
+#LASTMODIFIED:1752206425
 http://oscar.scenesat.com:8000/scenesat
