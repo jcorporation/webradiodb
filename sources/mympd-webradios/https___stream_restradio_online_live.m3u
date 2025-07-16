@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,.restradio
+#EXTGENRE:electronic, drum'n'bass, house, rap, hip-hop
+#PLAYLIST:.restradio
+#EXTIMG:https___stream_restradio_online_live.webp
+#HOMEPAGE:https://restradio.ru
+#COUNTRY:Russia
+#REGION:Republic of Tatarstan
+#LANGUAGE:english, russian
+#DESCRIPTION:Break the silence.
+#CODEC:MP3
+#BITRATE:320
+#ADDED:1752671589
+#LASTMODIFIED:1752671589
+https://stream.restradio.online/live
