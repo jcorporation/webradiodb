@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Иваново FM
+#EXTGENRE:Rock
+#PLAYLIST:Иваново FM
+#EXTIMG:http___stream_ivpromedia_ru_8000_IvanovoFM_mp3.webp
+#HOMEPAGE:http://stream.ivpromedia.ru:8000/IvanovoFM.mp3
+#COUNTRY:Россия
+#REGION:Иваново
+#LANGUAGE:Русский
+#DESCRIPTION:Иваново FM
+#CODEC:
+#BITRATE:128
+#ADDED:1753468563
+#LASTMODIFIED:1753468563
+http://stream.ivpromedia.ru:8000/IvanovoFM.mp3
