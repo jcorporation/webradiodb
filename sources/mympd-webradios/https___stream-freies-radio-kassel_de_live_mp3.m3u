@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Freie Radio Kassel
+#EXTGENRE:null
+#PLAYLIST:Freie Radio Kassel
+#EXTIMG:https___stream-freies-radio-kassel_de_live_mp3.webp
+#HOMEPAGE:https://www.freies-radio-kassel.de
+#COUNTRY:Germany
+#REGION:Hessen
+#LANGUAGE:German
+#DESCRIPTION:Das Freie Radio Kassel (kurz FRK) ist ein nichtkommerzieller lokaler Hörfunksender
+#CODEC:MP3
+#BITRATE:
+#ADDED:1753809535
+#LASTMODIFIED:1753809535
+https://stream-freies-radio-kassel.de/live.mp3
