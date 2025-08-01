@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,BBC Radio 1 Dance
+#EXTGENRE:Dance
+#PLAYLIST:BBC Radio 1 Dance
+#EXTIMG:http___as-hls-ww-live_akamaized_net_pool_62063831_live_ww_bbc_radio_one_dance_bbc_radio_one_dance_isml_bbc_radio_one_dance-audio_3d96000_norewind_m3u8.webp
+#HOMEPAGE:https://www.bbc.co.uk/radio1dance
+#COUNTRY:United Kingdom
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:A mix of classic, current and future dance music.
+#CODEC:HLS
+#BITRATE:0
+#ADDED:1700753196
+#LASTMODIFIED:1754071585
+http://as-hls-ww-live.akamaized.net/pool_62063831/live/ww/bbc_radio_one_dance/bbc_radio_one_dance.isml/bbc_radio_one_dance-audio%3d96000.norewind.m3u8
