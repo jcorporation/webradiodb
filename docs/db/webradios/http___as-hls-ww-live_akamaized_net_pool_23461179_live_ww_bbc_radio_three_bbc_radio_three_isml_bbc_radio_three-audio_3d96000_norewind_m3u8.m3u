@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,BBC Radio 3
+#EXTGENRE:Classical, Jazz, World Music
+#PLAYLIST:BBC Radio 3
+#EXTIMG:http___as-hls-ww-live_akamaized_net_pool_23461179_live_ww_bbc_radio_three_bbc_radio_three_isml_bbc_radio_three-audio_3d96000_norewind_m3u8.webp
+#HOMEPAGE:https://www.bbc.co.uk/sounds
+#COUNTRY:United Kingdom
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:HLS
+#BITRATE:0
+#ADDED:1700753196
+#LASTMODIFIED:1754071957
+http://as-hls-ww-live.akamaized.net/pool_23461179/live/ww/bbc_radio_three/bbc_radio_three.isml/bbc_radio_three-audio%3d96000.norewind.m3u8

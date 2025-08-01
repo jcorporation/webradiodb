@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,BBC Radio 4 Extra
+#EXTGENRE:Archive
+#PLAYLIST:BBC Radio 4 Extra
+#EXTIMG:http___as-hls-ww-live_akamaized_net_pool_26173715_live_ww_bbc_radio_four_extra_bbc_radio_four_extra_isml_bbc_radio_four_extra-audio_3d96000_norewind_m3u8.webp
+#HOMEPAGE:https://www.bbc.co.uk/radio4extra
+#COUNTRY:United Kingdom
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:HLS
+#BITRATE:0
+#ADDED:1700753196
+#LASTMODIFIED:1754071998
+http://as-hls-ww-live.akamaized.net/pool_26173715/live/ww/bbc_radio_four_extra/bbc_radio_four_extra.isml/bbc_radio_four_extra-audio%3d96000.norewind.m3u8
