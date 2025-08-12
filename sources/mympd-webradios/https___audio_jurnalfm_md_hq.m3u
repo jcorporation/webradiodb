@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Jurnal FM
+#EXTGENRE:News, Information, Pop
+#PLAYLIST:Jurnal FM
+#EXTIMG:https___audio_jurnalfm_md_hq.webp
+#HOMEPAGE:https://jurnalfm.md
+#COUNTRY:Moldova
+#REGION:Chisinau
+#LANGUAGE:Romanian
+#DESCRIPTION:Jurnal FM is a local radio station from Republic of Moldova, with an informational and musical format. Its program includes news, talk shows, culture and civilization programs, entertainment, interactive segments, sports segments, and music.
+#CODEC:HE-AAC
+#BITRATE:96
+#ADDED:1755018337
+#LASTMODIFIED:1755018337
+https://audio.jurnalfm.md/hq
