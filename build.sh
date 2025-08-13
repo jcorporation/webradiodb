@@ -697,7 +697,6 @@ delete_radio_by_m3u() {
         echo "${PLIST}" >> mappings/moode-ignore
     else
         echo "Webradio ${PLIST} not found"
-        exit 1
     fi
 }
 
