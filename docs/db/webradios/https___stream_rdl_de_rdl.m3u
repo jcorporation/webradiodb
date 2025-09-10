@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Radio Dreyeckland
+#EXTGENRE:Indie Rock, Jazz, Pop, Experimental
+#PLAYLIST:Radio Dreyeckland
+#EXTIMG:https___stream_rdl_de_rdl.webp
+#HOMEPAGE:https://rdl.de/
+#COUNTRY:Germany
+#REGION:
+#LANGUAGE:German
+#DESCRIPTION:Alternative community radio from Freiburg
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1757408640
+#LASTMODIFIED:1757408640
+https://stream.rdl.de/rdl
