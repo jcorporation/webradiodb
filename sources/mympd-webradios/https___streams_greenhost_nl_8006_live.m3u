@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Concertzender Live
+#EXTGENRE:Classical music, Jazz, World
+#PLAYLIST:Concertzender Live
+#EXTIMG:https___streams_greenhost_nl_8006_live.webp
+#HOMEPAGE:https://www.concertzender.nl/
+#COUNTRY:Netherlands
+#REGION:
+#LANGUAGE:Dutch
+#DESCRIPTION:A musical stage without frontiers, for music lovers by music lovers
+#CODEC:MP3
+#BITRATE:256
+#ADDED:1760027415
+#LASTMODIFIED:1760027415
+https://streams.greenhost.nl:8006/live
