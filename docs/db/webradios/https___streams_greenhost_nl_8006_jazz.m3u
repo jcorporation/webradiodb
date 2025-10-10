@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,World of Jazz
+#EXTGENRE:Jazz
+#PLAYLIST:World of Jazz
+#EXTIMG:https___streams_greenhost_nl_8006_jazz.webp
+#HOMEPAGE:https://www.worldofjazz.nl/
+#COUNTRY:Netherlands
+#REGION:
+#LANGUAGE:Dutch
+#DESCRIPTION:A musical stage without frontiers, for jazz lovers by jazz lovers
+#CODEC:MP3
+#BITRATE:256
+#ADDED:1760026918
+#LASTMODIFIED:1760026918
+https://streams.greenhost.nl:8006/jazz
