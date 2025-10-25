@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Radio 24
+#EXTGENRE:talk
+#PLAYLIST:Radio 24
+#EXTIMG:http___shoutcast_radio24_it_8000_.webp
+#HOMEPAGE:https://www.radio24.ilsole24ore.com/
+#COUNTRY:Italy
+#REGION:Lombardia
+#LANGUAGE:italian
+#DESCRIPTION:La radio del sole 24 ore
+#CODEC:
+#BITRATE:
+#ADDED:1761404854
+#LASTMODIFIED:1761404854
+http://shoutcast.radio24.it:8000/
