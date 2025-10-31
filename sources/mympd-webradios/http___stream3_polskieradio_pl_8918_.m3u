@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Polskie Radio Kierowców
+#EXTGENRE:News, Traffic Information, Adult Contemporary
+#PLAYLIST:Polskie Radio Kierowców
+#EXTIMG:http___stream3_polskieradio_pl_8918_.webp
+#HOMEPAGE:https://radiokierowcow.pl/
+#COUNTRY:Poland
+#REGION:
+#LANGUAGE:Polish
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:192
+#ADDED:1761912462
+#LASTMODIFIED:1761912462
+http://stream3.polskieradio.pl:8918/
