@@ -723,7 +723,15 @@ add_alternate_stream_from_json() {
 $URI
 EOL
     # Update last-modified
-    set_lastmodified "${MYMPD_PLS_DIR}/${PLIST}.m3u"
+    if [ -f "${MYMPD_PLS_DIR}/${PLIST}.m3u" ]
+    then
+        set_lastmodified "${MYMPD_PLS_DIR}/${PLIST}.m3u"
+    elif [ -f "${MOODE_PLS_DIR}/${PLIST}.m3u" ]
+    then
+        set_lastmodified "${MOODE_PLS_DIR}/${PLIST}.m3u"
+    else
+        echo "Failure setting last modified date for ${PLIST}.m3u"
+    fi
 }
 
 # Deletes an alternate stream m3u from an issue json file
@@ -734,7 +742,15 @@ delete_alternate_stream_from_json() {
     mv "${MYMPD_PLS_DIR}/${TO_DELETE}" "${TRASH_DIR}"
     local PARENT=${TO_DELETE%%.m3u*}
     # Update last-modified
-    set_lastmodified "${MYMPD_PLS_DIR}/${PARENT}.m3u"
+    if [ -f "${MYMPD_PLS_DIR}/${PARENT}.m3u" ]
+    then
+        set_lastmodified "${MYMPD_PLS_DIR}/${PARENT}.m3u"
+    elif [ -f "${MOODE_PLS_DIR}/${PARENT}.m3u" ]
+    then
+        set_lastmodified "${MOODE_PLS_DIR}/${PARENT}.m3u"
+    else
+        echo "Failure setting last modified date for ${PARENT}.m3u"
+    fi
 }
 
 # Updates the last-modified field
