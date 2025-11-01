@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,BNR Nieuwsradio
+#EXTGENRE:News, News Talk
+#PLAYLIST:BNR Nieuwsradio
+#EXTIMG:https___stream_bnr_nl_bnr_aac_96_20.webp
+#HOMEPAGE:https://www.bnr.nl
+#COUNTRY:Netherlands
+#REGION:
+#LANGUAGE:Dutch
+#DESCRIPTION:Dutch Newsradio for (inter-)national business and politics
+#CODEC:AAC
+#BITRATE:96
+#ADDED:1761902177
+#LASTMODIFIED:1761902177
+https://stream.bnr.nl/bnr_aac_96_20
