@@ -7,9 +7,6 @@
 #COUNTRY:France
 #REGION:
 #LANGUAGE:French
-#DESCRIPTION:
-#CODEC:MP3
-#BITRATE:128
-#ADDED:1640904262
-#LASTMODIFIED:1762025696
-http://direct.fipradio.fr/live/fip-midfi.mp3
+#CODEC:AAC
+#BITRATE:192
+https://icecast.radiofrance.fr/fip-hifi.aac
