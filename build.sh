@@ -1,8 +1,10 @@
 #!/bin/bash
-#
+
 #SPDX-License-Identifier: GPL-3.0-or-later
 #myMPD (c) 2021-2022 Juergen Mang <mail@jcgames.de>
 #https://github.com/jcorporation/radiodb
+
+#shellcheck disable=SC1091
 
 set -uo pipefail
 
@@ -92,7 +94,7 @@ trim_path() {
 trim_ext() {
     local var="$1"
     local ext="$2"
-    printf '%s' "${var%%.${ext}*}"
+    printf '%s' "${var%%."${ext}"*}"
 }
 
 # Generates a myMPD compatible m3u filename, by replacings special chars with underscore
@@ -168,6 +170,7 @@ normalize_fields() {
         GENRE_LINE=$(get_m3u_field "$F" "EXTGENRE")
         local NEW_GENRE=""
         local GENRE=""
+        #shellcheck disable=SC2001
         while read -r -d, GENRE
         do
             [ -z "$GENRE" ] && continue
@@ -239,6 +242,7 @@ normalize_fields() {
         LANGUAGE_LINE=$(get_m3u_field "$F" "LANGUAGE")
         local NEW_LANGUAGE=""
         local LANGUAGE=""
+        #shellcheck disable=SC2001
         while read -r -d, LANGUAGE
         do
             [ -z "$LANGUAGE" ] && continue
@@ -397,6 +401,12 @@ EOL
 add_radio() {
     # get the uri and write out a skeletion file
     read -r -p "URI: " URI
+
+    if ! check_stream_uri "$URI"
+    then
+        exit 1
+    fi
+
     # create the same plist name as myMPD
     local PLIST
     PLIST=$(gen_m3u_name "$URI")
@@ -462,6 +472,10 @@ add_radio_from_json() {
     if [ -n "$BITRATE" ] && ! is_uint "$BITRATE"
     then
         echo "Bitrate must be an unsigned value"
+        exit 1
+    fi
+    if ! check_stream_uri "$URI"
+    then
         exit 1
     fi
     # create the same plist name as myMPD
@@ -559,6 +573,10 @@ modify_radio_from_json() {
     if [ -n "$NEW_BITRATE" ] && ! is_uint "$NEW_BITRATE"
     then
         echo "Bitrate must be an unsigned value"
+        exit 1
+    fi
+    if ! check_stream_uri "$NEW_URI"
+    then
         exit 1
     fi
     local NEW_PLIST
@@ -715,6 +733,11 @@ add_alternate_stream_from_json() {
     CODEC=$(jq -r ".codec" < "$INPUT" | head -1 | tr -d '\n')
     local BITRATE
     BITRATE=$(jq -r ".bitrate" < "$INPUT" | head -1 | tr -d '\n')
+
+    if ! check_stream_uri "$URI"
+    then
+        exit 1
+    fi
 
     echo "Writing ${PLIST}.m3u.$CODEC.$BITRATE"
     cat > "${MYMPD_PLS_DIR}/${PLIST}.m3u.$CODEC.$BITRATE" << EOL
@@ -1034,46 +1057,52 @@ create_index() {
         echo "${BITRATES_COUNT} bitrates in index"
 
         #create combined json
-        printf "{\"timestamp\":%s,\"webradios\":" "$(date +%s)" > "${INDEXFILE_COMBINED}.tmp"
-        tr -d '\n' < "${INDEXFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
-        printf ",\"totalWebradios\":%s," "$WEBRADIO_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+        {
+            printf "{\"timestamp\":%s,\"webradios\":" "$(date +%s)"
+            tr -d '\n' < "${INDEXFILE}.tmp"
+            printf ",\"totalWebradios\":%s," "$WEBRADIO_COUNT"
 
-        printf "\"webradioLanguages\":" >> "${INDEXFILE_COMBINED}.tmp"
-        tr -d '\n' < "${LANGFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
-        printf ",\"totalWebradioLanguages\":%s," "$LANGUAGES_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+            printf "\"webradioLanguages\":"
+            tr -d '\n' < "${LANGFILE}.tmp"
+            printf ",\"totalWebradioLanguages\":%s," "$LANGUAGES_COUNT"
 
-        printf "\"webradioCountries\":" >> "${INDEXFILE_COMBINED}.tmp"
-        tr -d '\n' < "${COUNTRYFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
-        printf ",\"totalwebradioCountries\":%s," "$COUNTRIES_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+            printf "\"webradioCountries\":"
+            tr -d '\n' < "${COUNTRYFILE}.tmp"
+            printf ",\"totalwebradioCountries\":%s," "$COUNTRIES_COUNT"
 
-        printf "\"webradioRegions\":" >> "${INDEXFILE_COMBINED}.tmp"
-        tr -d '\n' < "${REGIONFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
-        printf ",\"totalwebradioRegions\":%s," "$REGIONS_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+            printf "\"webradioRegions\":"
+            tr -d '\n' < "${REGIONFILE}.tmp"
+            printf ",\"totalwebradioRegions\":%s," "$REGIONS_COUNT"
 
-        printf "\"webradioCodecs\":" >> "${INDEXFILE_COMBINED}.tmp"
-        tr -d '\n' < "${CODECFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
-        printf ",\"totalwebradioCodecs\":%s," "$CODECS_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+            printf "\"webradioCodecs\":"
+            tr -d '\n' < "${CODECFILE}.tmp"
+            printf ",\"totalwebradioCodecs\":%s," "$CODECS_COUNT"
 
-        printf "\"webradioBitrates\":" >> "${INDEXFILE_COMBINED}.tmp"
-        tr -d '\n' < "${BITRATEFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
-        printf ",\"totalwebradioBitrates\":%s," "$BITRATES_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+            printf "\"webradioBitrates\":"
+            tr -d '\n' < "${BITRATEFILE}.tmp"
+            printf ",\"totalwebradioBitrates\":%s," "$BITRATES_COUNT"
 
-        printf "\"webradioGenres\":" >> "${INDEXFILE_COMBINED}.tmp"
-        tr -d '\n' < "${GENREFILE}.tmp" >> "${INDEXFILE_COMBINED}.tmp"
-        printf ",\"totalWebradioGenres\":%s," "$GENRES_COUNT" >> "${INDEXFILE_COMBINED}.tmp"
+            printf "\"webradioGenres\":"
+            tr -d '\n' < "${GENREFILE}.tmp"
+            printf ",\"totalWebradioGenres\":%s," "$GENRES_COUNT"
 
-        printf "\"webradioStatus\":" >> "${INDEXFILE_COMBINED}.tmp"
-        tr -d '\n' < "${STATUSFILE}" >> "${INDEXFILE_COMBINED}.tmp"
+            printf "\"webradioStatus\":"
+            tr -d '\n' < "${STATUSFILE}"
 
-        printf "}\n" >> "${INDEXFILE_COMBINED}.tmp"
+            printf "}\n"
+        } > "${INDEXFILE_COMBINED}.tmp"
         #create javascript index
-        printf "const webradiodb=" > "${INDEXFILE_JS}.tmp"
-        tr -d '\n' < "${INDEXFILE_COMBINED}.tmp" >> "${INDEXFILE_JS}.tmp"
-        printf ";\n" >> "${INDEXFILE_JS}.tmp"
+        {
+            printf "const webradiodb="
+            tr -d '\n' < "${INDEXFILE_COMBINED}.tmp"
+            printf ";\n"
+        } > "${INDEXFILE_JS}.tmp"
         #finished, move all files in place
         local CHANGED=0
-        local STATUS_TS=$(get_lastmodified_git "$STATUSFILE")
-        local INDEX_TS=$(get_lastmodified_git "$INDEXFILE_COMBINED")
+        local STATUS_TS
+        STATUS_TS=$(get_lastmodified_git "$STATUSFILE")
+        local INDEX_TS
+        INDEX_TS=$(get_lastmodified_git "$INDEXFILE_COMBINED")
         echo "Status timestamp: $STATUS_TS"
         echo "Index timestamp:  $INDEX_TS"
         if [ "$STATUS_TS" -gt "$INDEX_TS" ]; then CHANGED=1; fi
@@ -1268,14 +1297,23 @@ rename_alternate_streams() {
     done
 }
 
+check_stream_uri() {
+    local URI=$1
+    if ! ffprobe -loglevel error -rw_timeout 10000000 "$URI"
+    then
+        echo "Error getting streaminfo for \"$M3U_FILE\""
+        return 1
+    fi
+    return 0
+}
+
 # Checks a stream with ffprobe
 check_stream() {
     local M3U_FILE="$1"
-    local STREAM
-    STREAM=$(grep -v "^#" "$M3U_FILE" | head -1)
-    if ! ffprobe -loglevel error -rw_timeout 10000000 "$STREAM"
+    local URI
+    URI=$(grep -v "^#" "$M3U_FILE" | head -1)
+    if ! check_stream_uri "$URI"
     then
-        echo "Error getting streaminfo for \"$M3U_FILE\""
         return 1
     fi
     return 0
@@ -1331,7 +1369,8 @@ check_stream_all_json() {
                     ERROR_COUNT=$((ERROR_COUNT+1))
                     if [ "$ERROR_COUNT" -gt 14 ]
                     then
-                        local M3U_NAME=$(trim_ext "$M3U" "m3u")
+                        local M3U_NAME
+                        M3U_NAME=$(trim_ext "$M3U" "m3u")
                         echo ""
                         echo "Error count too high, removing $M3U_NAME"
                         delete_radio_by_m3u "$M3U_NAME"
