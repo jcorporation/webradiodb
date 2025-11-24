@@ -30,7 +30,7 @@ jobs:
           sudo apt-get install -y ffmpeg
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Update audio format
         run: ./build.sh update_format_all
