@@ -18,7 +18,7 @@ jobs:
         run: sudo apt install -y csvkit
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Syncs the moode audio webradio files
         run: ./build.sh sync_moode
