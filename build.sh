@@ -1301,7 +1301,7 @@ check_stream_uri() {
     local URI=$1
     if ! ffprobe -loglevel error -rw_timeout 10000000 "$URI"
     then
-        echo "Error getting streaminfo for \"$M3U_FILE\""
+        echo "Error getting streaminfo for \"$URI\""
         return 1
     fi
     return 0
