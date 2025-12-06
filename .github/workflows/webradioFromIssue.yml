@@ -115,6 +115,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Install dependencies
+        run: sudo apt-get install -y --no-install-recommends ffmpeg
+
       - uses: stefanbuck/github-issue-parser@v3
         id: issue-parser
         with:
