@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,WDR 2
+#EXTGENRE:Pop, Information
+#PLAYLIST:WDR 2
+#EXTIMG:http___wdr-wdr2-rheinland_icecast_wdr_de_wdr_wdr2_rheinland_mp3_128_stream_mp3.webp
+#HOMEPAGE:https://www1.wdr.de/radio/wdr2/index.html
+#COUNTRY:Germany
+#REGION:NRW
+#LANGUAGE:Deutsch
+#DESCRIPTION:WDR 2 ist die Pop- und Infowelle des Westdeutschen Rundfunks, Zielgruppe  sind die 25- bis 59-jährigen Hörer
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1765719830
+#LASTMODIFIED:1765719830
+http://wdr-wdr2-rheinland.icecast.wdr.de/wdr/wdr2/rheinland/mp3/128/stream.mp3

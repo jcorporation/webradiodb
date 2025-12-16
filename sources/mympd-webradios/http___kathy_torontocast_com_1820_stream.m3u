@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,CineMix
+#EXTGENRE:Soundtrack, Instrumental
+#PLAYLIST:CineMix
+#EXTIMG:http___kathy_torontocast_com_1820_stream.webp
+#HOMEPAGE:https://www.cinemix.us/
+#COUNTRY:France
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:Film Music Station
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1765487673
+#LASTMODIFIED:1765487673
+http://kathy.torontocast.com:1820/stream
