@@ -7,9 +7,6 @@
 #COUNTRY:Poland
 #REGION:
 #LANGUAGE:Polish
-#DESCRIPTION:
-#CODEC:MP3
+#CODEC:AAC
 #BITRATE:192
-#ADDED:1761912462
-#LASTMODIFIED:1765912072
-http://stream3.polskieradio.pl:8918/
+https://stream10.polskieradio.pl/prk/rdk.sdp/playlist.m3u8
