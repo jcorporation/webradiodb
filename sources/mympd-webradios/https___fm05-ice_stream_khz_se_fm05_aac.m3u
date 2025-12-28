@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,STAR FM
+#EXTGENRE:Pop
+#PLAYLIST:STAR FM
+#EXTIMG:https___fm05-ice_stream_khz_se_fm05_aac.webp
+#HOMEPAGE:https://www.viaplayradio.se/starfm/
+#COUNTRY:Sweden
+#REGION:
+#LANGUAGE:Swedish
+#DESCRIPTION:
+#CODEC:AAC
+#BITRATE:
+#ADDED:1766929463
+#LASTMODIFIED:1766929463
+https://fm05-ice.stream.khz.se/fm05_aac
