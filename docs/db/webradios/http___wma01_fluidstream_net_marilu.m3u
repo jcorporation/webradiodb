@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Radio Marilù
+#EXTGENRE:Rock
+#PLAYLIST:Radio Marilù
+#EXTIMG:http___wma01_fluidstream_net_marilu.webp
+#HOMEPAGE:http://www.marilu.it
+#COUNTRY:Italy
+#REGION:Veneto
+#LANGUAGE:Italian
+#DESCRIPTION:La radio che suona solo Rock!
+#CODEC:AAC
+#BITRATE:64
+#ADDED:1767287883
+#LASTMODIFIED:1767326719
+http://wma01.fluidstream.net/marilu
