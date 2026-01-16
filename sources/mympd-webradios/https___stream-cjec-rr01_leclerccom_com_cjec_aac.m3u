@@ -2,7 +2,7 @@
 #EXTINF:-1,WKND 91,9
 #EXTGENRE:Indie, Indie Rock, Commercial, Montreal, Mp3, Pop-Rock
 #PLAYLIST:WKND 91,9
-#EXTIMG:http___streaming_cjec_leclerccommunication_ca_8000_cjec_mp3.webp
+#EXTIMG:https___stream-cjec-rr01_leclerccom_com_cjec_aac.webp
 #HOMEPAGE:http://quebec.wknd.fm/
 #COUNTRY:Canada
 #REGION:Québec
@@ -11,5 +11,5 @@
 #CODEC:MP3
 #BITRATE:96
 #ADDED:1715246079
-#LASTMODIFIED:1731885085
-http://streaming.cjec.leclerccommunication.ca:8000/cjec.mp3
+#LASTMODIFIED:1768601983
+https://stream-cjec-rr01.leclerccom.com/cjec.aac
