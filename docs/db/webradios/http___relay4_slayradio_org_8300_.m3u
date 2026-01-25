@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,SLAY Radio
+#EXTGENRE:Electronic
+#PLAYLIST:SLAY Radio
+#EXTIMG:http___relay4_slayradio_org_8300_.webp
+#HOMEPAGE:https://www.slayradio.org
+#COUNTRY:Sweden
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:An internet radio station dedicated to playing remixes and tunes based on music from the Commodore 64 computer as well as the Amiga
+#CODEC:AAC
+#BITRATE:128
+#ADDED:1769260028
+#LASTMODIFIED:1769260028
+http://relay4.slayradio.org:8300/
