@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Radio Kraków
+#EXTGENRE:News, Pop, Rock
+#PLAYLIST:Radio Kraków
+#EXTIMG:http___stream3_nadaje_com_9116_radiokrakow.webp
+#HOMEPAGE:https://www.radiokrakow.pl/
+#COUNTRY:Poland
+#REGION:
+#LANGUAGE:Polish
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:256
+#ADDED:1772198465
+#LASTMODIFIED:1772198465
+http://stream3.nadaje.com:9116/radiokrakow
