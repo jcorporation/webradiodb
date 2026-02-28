@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Polskie Radio 24
+#EXTGENRE:News
+#PLAYLIST:Polskie Radio 24
+#EXTIMG:http___stream3_polskieradio_pl_8080___mp3.webp
+#HOMEPAGE:https://www.polskieradio.pl/
+#COUNTRY:Poland
+#REGION:
+#LANGUAGE:Polish
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:192
+#ADDED:1772198974
+#LASTMODIFIED:1772198974
+http://stream3.polskieradio.pl:8080/;.mp3

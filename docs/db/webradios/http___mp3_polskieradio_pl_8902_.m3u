@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Polskie Radio 2
+#EXTGENRE:Classical Music, Jazz, Contemporary Classical, Avant-garde
+#PLAYLIST:Polskie Radio 2
+#EXTIMG:http___mp3_polskieradio_pl_8902_.webp
+#HOMEPAGE:https://www.polskieradio.pl/
+#COUNTRY:Poland
+#REGION:
+#LANGUAGE:Polish
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:192
+#ADDED:1772198769
+#LASTMODIFIED:1772198769
+http://mp3.polskieradio.pl:8902/

@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Polskie Radio 1
+#EXTGENRE:News, Pop, Adult CHR
+#PLAYLIST:Polskie Radio 1
+#EXTIMG:http___mp3_polskieradio_pl_8900___mp3.webp
+#HOMEPAGE:https://www.polskieradio.pl/
+#COUNTRY:Poland
+#REGION:
+#LANGUAGE:Polish
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:192
+#ADDED:1772198698
+#LASTMODIFIED:1772198698
+http://mp3.polskieradio.pl:8900/;.mp3
