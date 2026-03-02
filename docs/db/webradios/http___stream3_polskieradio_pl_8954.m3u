@@ -7,9 +7,6 @@
 #COUNTRY:Poland
 #REGION:
 #LANGUAGE:Polish
-#DESCRIPTION:
-#CODEC:MP3
+#CODEC:AAC
 #BITRATE:192
-#ADDED:1772198824
-#LASTMODIFIED:1772391856
-http://mp3.polskieradio.pl:8904
+http://stream3.polskieradio.pl:8954
