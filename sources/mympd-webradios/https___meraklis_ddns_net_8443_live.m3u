@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Radio Meraklis
+#EXTGENRE:Greece, rebetico, folk, laika, rock
+#PLAYLIST:Radio Meraklis
+#EXTIMG:https___meraklis_ddns_net_8443_live.webp
+#HOMEPAGE:https://meraklis.ddns.net
+#COUNTRY:Greece
+#REGION:Agrinio
+#LANGUAGE:gr
+#DESCRIPTION:https://meraklis.ddns.net:8443/live
+#CODEC:ogg
+#BITRATE:118
+#ADDED:1774035487
+#LASTMODIFIED:1774035487
+https://meraklis.ddns.net:8443/live
