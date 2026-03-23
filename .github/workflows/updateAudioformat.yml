@@ -36,7 +36,7 @@ jobs:
         run: ./build.sh update_format_all
 
       - name: Add, commit and push
-        uses: EndBug/add-and-commit@v9.1.4
+        uses: EndBug/add-and-commit@v10.0.0
         with:
           add: docs/db sources
           message: Update audio format
