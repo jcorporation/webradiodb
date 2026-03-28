@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Café 80s FM
+#EXTGENRE:80s Pop, 80s Rock
+#PLAYLIST:Café 80s FM
+#EXTIMG:http___cafe80s_de_8100_.webp
+#HOMEPAGE:https://www.cafe80s.de/
+#COUNTRY:Germany
+#REGION:
+#LANGUAGE:German
+#DESCRIPTION:partly moderated radio with a good 80s mix and funny jingles
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1774608430
+#LASTMODIFIED:1774608430
+http://cafe80s.de:8100/
