@@ -698,7 +698,10 @@ delete_radio_by_m3u() {
         echo "Deleting webradio ${PLIST}"
         if mv "${MYMPD_PLS_DIR}/${PLIST}.m3u"* "${TRASH_DIR}"
         then
-            [ -f "${MYMPD_PICS_DIR}/${PLIST}.webp" ] && mv "${MYMPD_PICS_DIR}/${PLIST}.webp" "${TRASH_DIR}"
+            if [ -f "${MYMPD_PICS_DIR}/${PLIST}.webp" ]
+            then
+                mv "${MYMPD_PICS_DIR}/${PLIST}.webp" "${TRASH_DIR}"
+            fi
         else
             exit 1
         fi
@@ -707,7 +710,10 @@ delete_radio_by_m3u() {
         echo "Deleting webradio ${PLIST}"
         if mv "${MOODE_PLS_DIR}/${PLIST}.m3u" "${TRASH_DIR}"
         then
-            [ -f "${MOODE_PICS_DIR}/${PLIST}.webp" ] && mv "${MOODE_PICS_DIR}/${PLIST}.webp" "${TRASH_DIR}"
+            if [ -f "${MOODE_PICS_DIR}/${PLIST}.webp" ]
+            then
+                mv "${MOODE_PICS_DIR}/${PLIST}.webp" "${TRASH_DIR}"
+            fi
         else
             exit 1
         fi
