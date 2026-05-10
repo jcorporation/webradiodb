@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Radio Macuto
+#EXTGENRE:Talk, African
+#PLAYLIST:Radio Macuto
+#EXTIMG:http___s2_voscast_com_8098___1771345485366.webp
+#HOMEPAGE:https://radiomacuto.org/
+#COUNTRY:Equatorial Guinea
+#REGION:
+#LANGUAGE:Spanish
+#DESCRIPTION:Nuestro propósito es ser la voz de aquellos que a menudo son silenciados, ignorados o marginados. Queremos ser un faro de esperanza y justicia, luchando incansablemente por los derechos fundamentales de todas las personas en Guinea Ecuatorial.
+#CODEC:MP3
+#BITRATE:64
+#ADDED:1778441298
+#LASTMODIFIED:1778441298
+http://s2.voscast.com:8098/;?1771345485366
