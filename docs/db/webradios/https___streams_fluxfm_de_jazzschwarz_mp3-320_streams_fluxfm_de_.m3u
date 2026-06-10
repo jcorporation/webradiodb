@@ -2,14 +2,11 @@
 #EXTINF:-1,FluxFM - Jazzradio Schwarzenstein
 #EXTGENRE:Jazz
 #PLAYLIST:FluxFM - Jazzradio Schwarzenstein
-#EXTIMG:https___streams_fluxfm_de_jazzschwarz_mp3-320_streams_fluxfm_de_.webp
-#HOMEPAGE:
+#EXTIMG:https___channels_fluxfm_de_jazz-schwarzenstein_stream_mp3.webp
+#HOMEPAGE:https://www.fluxfm.de/
 #COUNTRY:Germany
 #REGION:
 #LANGUAGE:German
-#DESCRIPTION:
 #CODEC:MP3
 #BITRATE:320
-#ADDED:1702258629
-#LASTMODIFIED:1720985595
 https://streams.fluxfm.de/jazzschwarz/mp3-320/streams.fluxfm.de/
