@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,SwissGroove
+#EXTGENRE:Jazz, Funk, Soul, World Music, Latin, Lounge, Nu Grooves
+#PLAYLIST:SwissGroove
+#EXTIMG:http___relay1_swissgroove_ch_80.webp
+#HOMEPAGE:https://swissgroove.ch/
+#COUNTRY:Switzerland
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1781092689
+#LASTMODIFIED:1781092689
+http://relay1.swissgroove.ch:80
