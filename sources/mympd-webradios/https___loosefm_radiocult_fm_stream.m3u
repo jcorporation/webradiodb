@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,LOOSE.fm
+#EXTGENRE:indie, electronic, community
+#PLAYLIST:LOOSE.fm
+#EXTIMG:https___loosefm_radiocult_fm_stream.webp
+#HOMEPAGE:https://www.loose.fm/
+#COUNTRY:United Kingdom
+#REGION:London
+#LANGUAGE:English
+#DESCRIPTION:LOOSE.fm is a sound + culture community, here for any joy, with a live radio HQ located at Design District London on the Greenwich Peninsula.
+#CODEC:MP3
+#BITRATE:320
+#ADDED:1783144879
+#LASTMODIFIED:1783144879
+https://loosefm.radiocult.fm/stream
