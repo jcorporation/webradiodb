@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,ABC Classic FM
+#EXTGENRE:Classical
+#PLAYLIST:ABC Classic FM
+#EXTIMG:https___abc_streamguys1_com_live_classicfmsa_icecast_audio.webp
+#HOMEPAGE:https://www.abc.net.au/listen/classic
+#COUNTRY:Australia
+#REGION:New South Wales
+#LANGUAGE:English
+#DESCRIPTION:ABC Classic FM
+#CODEC:
+#BITRATE:
+#ADDED:1783756227
+#LASTMODIFIED:1783756227
+https://abc.streamguys1.com/live/classicfmsa/icecast.audio
