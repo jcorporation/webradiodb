@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,101 Fresh
+#EXTGENRE:pop
+#PLAYLIST:101 Fresh
+#EXTIMG:https___srv01_gpmradio_ru_stream_pro_aac_64_148.webp
+#HOMEPAGE:https://101.ru/radio/channel/148
+#COUNTRY:Russia
+#REGION:
+#LANGUAGE:Russian
+#DESCRIPTION:Moscow Internet radio station, providing indie pop rock and city music.
+#CODEC:ACC
+#BITRATE:128
+#ADDED:1783756519
+#LASTMODIFIED:1783756519
+https://srv01.gpmradio.ru/stream/pro/aac/64/148
