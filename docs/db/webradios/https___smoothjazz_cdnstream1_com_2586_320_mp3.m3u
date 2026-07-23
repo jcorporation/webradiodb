@@ -1,15 +1,15 @@
 #EXTM3U
-#EXTINF:-1,SmoothLounge Global
-#EXTGENRE:Lounge, Smooth Lounge
-#PLAYLIST:SmoothLounge Global
+#EXTINF:-1,SmoothLounge.com
+#EXTGENRE:Jazz, Lounge
+#PLAYLIST:SmoothLounge.com
 #EXTIMG:https___smoothjazz_cdnstream1_com_2586_320_mp3.webp
-#HOMEPAGE:
+#HOMEPAGE:https://www.smoothlounge.com
 #COUNTRY:USA
 #REGION:
 #LANGUAGE:English
 #DESCRIPTION:
 #CODEC:MP3
-#BITRATE:320
+#BITRATE:128
 #ADDED:1640904262
-#LASTMODIFIED:1720985737
+#LASTMODIFIED:1784749098
 https://smoothjazz.cdnstream1.com/2586_320.mp3
