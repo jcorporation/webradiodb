@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,FIP Electro
+#EXTGENRE:Electro
+#PLAYLIST:FIP Electro
+#EXTIMG:http___direct_fipradio_fr_live_fipelectro-hifi_aac.webp
+#HOMEPAGE:https://www.radiofrance.fr/fip/radio-electro
+#COUNTRY:France
+#REGION:
+#LANGUAGE:France
+#DESCRIPTION:
+#CODEC:
+#BITRATE:0
+#ADDED:1786823147
+#LASTMODIFIED:1786823147
+http://direct.fipradio.fr/live/fipelectro-hifi.aac
