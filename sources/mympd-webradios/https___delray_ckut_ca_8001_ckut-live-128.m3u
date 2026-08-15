@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,CKUT 90.3
+#EXTGENRE:Campus-community radio
+#PLAYLIST:CKUT 90.3
+#EXTIMG:https___delray_ckut_ca_8001_ckut-live-128.webp
+#HOMEPAGE:https://ckut.ca/
+#COUNTRY:Canada
+#REGION:
+#LANGUAGE:Québec
+#DESCRIPTION:
+#CODEC:
+#BITRATE:0
+#ADDED:1786822935
+#LASTMODIFIED:1786822935
+https://delray.ckut.ca:8001/ckut-live-128
