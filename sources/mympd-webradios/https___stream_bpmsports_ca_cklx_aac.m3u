@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,BPM Sports Montréal
+#EXTGENRE:Sport
+#PLAYLIST:BPM Sports Montréal
+#EXTIMG:https___stream_bpmsports_ca_cklx_aac.webp
+#HOMEPAGE:https://bpmsports.ca/
+#COUNTRY:Canada
+#REGION:
+#LANGUAGE:Québécois
+#DESCRIPTION:
+#CODEC:
+#BITRATE:0
+#ADDED:1786869551
+#LASTMODIFIED:1786869551
+https://stream.bpmsports.ca/cklx.aac
