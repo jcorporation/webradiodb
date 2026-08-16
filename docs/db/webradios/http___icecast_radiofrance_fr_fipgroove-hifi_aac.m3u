@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,FIP Groove
+#EXTGENRE:Groovy
+#PLAYLIST:FIP Groove
+#EXTIMG:http___icecast_radiofrance_fr_fipgroove-hifi_aac.webp
+#HOMEPAGE:https://www.radiofrance.fr/fip/radio-groove
+#COUNTRY:France
+#REGION:
+#LANGUAGE:France
+#DESCRIPTION:
+#CODEC:AAC
+#BITRATE:192
+#ADDED:1786823092
+#LASTMODIFIED:1786852330
+http://icecast.radiofrance.fr/fipgroove-hifi.aac

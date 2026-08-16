@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,FIP Reggae
+#EXTGENRE:Reggae
+#PLAYLIST:FIP Reggae
+#EXTIMG:http___icecast_radiofrance_fr_fipreggae-hifi_aac.webp
+#HOMEPAGE:https://www.radiofrance.fr/fip/radio-reggae
+#COUNTRY:France
+#REGION:
+#LANGUAGE:France
+#DESCRIPTION:
+#CODEC:AAC
+#BITRATE:192
+#ADDED:1786822551
+#LASTMODIFIED:1786852331
+http://icecast.radiofrance.fr/fipreggae-hifi.aac

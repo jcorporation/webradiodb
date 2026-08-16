@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,The Beat 92.5
+#EXTGENRE:Mix
+#PLAYLIST:The Beat 92.5
+#EXTIMG:https___playerservices_streamtheworld_com_api_livestream-redirect_CKBEFMAAC_m3u8.webp
+#HOMEPAGE:https://www.thebeat925.ca/
+#COUNTRY:Canada
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:HLS
+#BITRATE:0
+#ADDED:1786822316
+#LASTMODIFIED:1786852344
+https://playerservices.streamtheworld.com/api/livestream-redirect/CKBEFMAAC.m3u8
