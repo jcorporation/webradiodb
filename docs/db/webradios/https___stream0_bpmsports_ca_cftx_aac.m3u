@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,BPM Sports Gatineau
+#EXTGENRE:Sport
+#PLAYLIST:BPM Sports Gatineau
+#EXTIMG:https___stream0_bpmsports_ca_cftx_aac.webp
+#HOMEPAGE:https://bpmsports.ca/
+#COUNTRY:Canada
+#REGION:
+#LANGUAGE:Québécois
+#DESCRIPTION:
+#CODEC:
+#BITRATE:0
+#ADDED:1786869609
+#LASTMODIFIED:1786869609
+https://stream0.bpmsports.ca/cftx.aac
