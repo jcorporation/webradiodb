@@ -1247,7 +1247,10 @@ update_format() {
         NEW_BITRATE=$(jq -r ".format.bit_rate" <<< "$INFO")
         if [ "$NEW_BITRATE" != "null" ] && [ -n "$NEW_BITRATE" ]
         then
-            NEW_BITRATE=${NEW_BITRATE::-3}
+            if [ "$NEW_BITRATE" -gt 100000 ]
+            then
+                NEW_BITRATE=${NEW_BITRATE::-3}
+            fi
         fi
     fi
     if [ -z "$NEW_BITRATE" ] || [ "$NEW_BITRATE" = "null" ]
