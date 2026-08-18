@@ -1238,19 +1238,25 @@ update_format() {
         ffprobe -loglevel error "$STREAM"
         return 1
     fi
+    echo "Streaminfo for \"${M3U_FILE}\":"
+    jq "." <<< "$INFO"
     local NEW_BITRATE
     NEW_BITRATE=$(jq -r ".format.tags.\"icy-br\"" <<< "$INFO")
-    if [ "$NEW_BITRATE" = "null" ]
+    if [ "$NEW_BITRATE" = "null" ] || [ -z "$NEW_BITRATE" ]
     then
         NEW_BITRATE=$(jq -r ".format.bit_rate" <<< "$INFO")
-        [ "$NEW_BITRATE" != "null" ] && NEW_BITRATE=${NEW_BITRATE::-3}
+        if [ "$NEW_BITRATE" != "null" ] && [ -n "$NEW_BITRATE" ]
+        then
+            NEW_BITRATE=${NEW_BITRATE::-3}
+        fi
     fi
     if [ -z "$NEW_BITRATE" ] || [ "$NEW_BITRATE" = "null" ]
     then
         NEW_BITRATE=0
     fi
     local NEW_CODEC
-    NEW_CODEC=$(jq -r ".format.format_name" <<< "$INFO" | tr '[:lower:]' '[:upper:]')
+    NEW_CODEC=$(jq -r ".format.format_name" <<< "$INFO")
+    NEW_CODEC="${NEW_CODEC^^}"
     if [ -z "$NEW_CODEC" ] || [ "$NEW_CODEC" = "NULL" ]
     then
         echo "Empty codec for \"$M3U_FILE\""
