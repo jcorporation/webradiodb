@@ -2,14 +2,14 @@
 #EXTINF:-1,RMC Sport
 #EXTGENRE:Sport
 #PLAYLIST:RMC Sport
-#EXTIMG:
+#EXTIMG:https___audio_bfmtv_com_rmcradio_128_mp3.webp
 #HOMEPAGE:https://rmc.bfmtv.com/en-direct/
 #COUNTRY:France
 #REGION:https://github.com/user-attachments/assets/b07be08e-d000-4a16-ae80-4c73eef5dad8
 #LANGUAGE:French
 #DESCRIPTION:
-#CODEC:
-#BITRATE:0
+#CODEC:MP3
+#BITRATE:128
 #ADDED:1786869209
-#LASTMODIFIED:1786869209
+#LASTMODIFIED:1787075406
 https://audio.bfmtv.com/rmcradio_128.mp3
