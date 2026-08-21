@@ -8,5 +8,7 @@
     "country": "",
     "language": "",
     "description": "",
-    "region": ""
+    "region": "",
+    "codec": "FLAC",
+    "bitrate": "256"
 }

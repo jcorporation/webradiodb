@@ -15,12 +15,22 @@ set -eEuo pipefail
 # Do not check stream uris
 export DRY_RUN=1
 
+# Print commands
+set -x
+
 echo "Branching test"
+git checkout master
 git branch -D test 2>/dev/null || true
 git checkout -b test
 
 cleanup(){
     echo "Remove test branch"
+    rm -f sources/mympd-pics/http___test_radio_teststream.webp
+    rm -f sources/mympd-webradios/http___test_radio_teststream.m3u
+    rm -f sources/mympd-webradios/http___test_radio_teststream.m3u.AAC.256
+    rm -f trash/http___test_radio_teststream-modified.m3u
+    rm -f trash/http___test_radio_teststream-modified.m3u.AAC.256
+    rm -f trash/http___test_radio_teststream-modified.webp
     git checkout master
     git branch -D test
 }
