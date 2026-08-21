@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SPDX-License-Identifier: GPL-3.0-or-later
-#myMPD (c) 2021-2022 Juergen Mang <mail@jcgames.de>
+#myMPD (c) 2021-2026 Juergen Mang <mail@jcgames.de>
 #https://github.com/jcorporation/radiodb
 
 #shellcheck disable=SC1091
@@ -1331,6 +1331,10 @@ rename_alternate_streams() {
 }
 
 check_stream_uri() {
+    if [ "$DRY_RUN" -eq 1 ]
+    then
+        return 0
+    fi
     local URI=$1
     if ! ffprobe -loglevel error -rw_timeout 10000000 "$URI"
     then
