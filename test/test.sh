@@ -1,18 +1,30 @@
 #!/bin/bash
-#
+
 #SPDX-License-Identifier: GPL-3.0-or-later
-#myMPD (c) 2021-2022 Juergen Mang <mail@jcgames.de>
+#myMPD (c) 2021-2026 Juergen Mang <mail@jcgames.de>
 #https://github.com/jcorporation/radiodb
 
-# simple testsuite
+# Simple testsuite
 
-set -uo pipefail
+# Strict error checking
+set -eEuo pipefail
 
 # print out commands
 [ -z "${DEBUG+x}" ] || set -x
 
+# Do not check stream uris
+export DRY_RUN=1
+
 echo "Branching test"
+git branch -D test 2>/dev/null || true
 git checkout -b test
+
+cleanup(){
+    echo "Remove test branch"
+    git checkout master
+    git branch -D test
+}
+trap cleanup EXIT
 
 echo "Adding new webradio"
 ./build.sh add_radio_from_json test/new-webradio.json
@@ -53,9 +65,4 @@ echo "Check for changes"
 echo "Create index"
 ./build.sh create
 
-echo "Remove test branch"
-git checkout master
-git branch -D test
-
-echo "All tests finished sucessfull"
-exit 0
+echo "All tests finished successful"
