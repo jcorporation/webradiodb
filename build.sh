@@ -8,6 +8,8 @@
 
 set -uo pipefail
 
+[ -z "${DRY_RUN:-}" ] && DRY_RUN=0
+
 #print out commands
 [ -z "${DEBUG+x}" ] || set -x
 
