@@ -97,7 +97,7 @@ trim_ext() {
     printf '%s' "${var%%."${ext}"*}"
 }
 
-# Generates a myMPD compatible m3u filename, by replacings special chars with underscore
+# Generates a myMPD compatible m3u filename, by replacing special chars with underscore
 gen_m3u_name() {
     sed -E -e 's/[<>/.:?&$%!#\\|;=]/_/g' <<< "$1"
 }
@@ -108,8 +108,32 @@ get_m3u_field() {
     local M3U_FIELD="$2"
 
     local LINE
-    LINE=$(grep "^#${M3U_FIELD}:" "$M3U_FILE")
-    echo "${LINE#*:}"
+    while IFS= read -r LINE
+    do
+        if [[ $LINE == "#${M3U_FIELD}:"* ]]; then
+            echo "${LINE#*:}"
+            break
+        fi
+    done < "$M3U_FILE"
+}
+
+# Replaces a m3u field value
+replace_m3u_field() {
+    local M3U_FILE="$1"
+    local M3U_FIELD="$2"
+    local NEW_VALUE="$3"
+
+    local LINE
+    while IFS= read -r LINE
+    do
+        if [[ $LINE == "#${M3U_FIELD}:"* ]]
+        then
+            echo "$M3U_FILE: $LINE -> $NEW_VALUE" 1>&2
+            echo "#${M3U_FIELD}:$NEW_VALUE"
+        else
+            echo "$LINE"
+        fi
+    done < "$M3U_FILE" > "${M3U_FILE}.tmp" && mv "${M3U_FILE}.tmp" "$M3U_FILE"
 }
 
 # Downloads an image from an uri, converts and resizes it
@@ -188,8 +212,7 @@ normalize_fields() {
         NEW_GENRE="${NEW_GENRE:2}"
         if [ "$GENRE_LINE" != "$NEW_GENRE" ]
         then
-            echo "$F: $GENRE_LINE -> $NEW_GENRE"
-            sed -i -e "s/^#EXTGENRE:.*/#EXTGENRE:$NEW_GENRE/" "$F"
+            replace_m3u_field "$F" "EXTGENRE" "$NEW_GENRE"
         fi
         # codec
         local CODEC=""
@@ -199,8 +222,7 @@ normalize_fields() {
         CODEC_UPPER=$(trim "$CODEC_UPPER")
         if [ "$CODEC" != "$CODEC_UPPER" ]
         then
-            echo "$F: $CODEC -> $CODEC_UPPER"
-            sed -i -e "s/^#CODEC:.*/#CODEC:$CODEC_UPPER/" "$F"
+            replace_m3u_field "$F" "CODEC" "$CODEC_UPPER"
         fi
         # country
         local COUNTRY=""
@@ -211,12 +233,11 @@ normalize_fields() {
         local REPLACE_COUNTRY="${country_map[$COUNTRY_UPPER]:-}"
         if [ -n "$REPLACE_COUNTRY" ]
         then
-            echo "$F: $COUNTRY -> $REPLACE_COUNTRY"
-            sed -i -e "s/^#COUNTRY:.*/#COUNTRY:$REPLACE_COUNTRY/" "$F"
+            replace_m3u_field "$F" "COUNTRY" "$REPLACE_COUNTRY"
         elif [ "$COUNTRY" != "$COUNTRY_UPPER" ]
         then
             echo "$F: $COUNTRY -> $COUNTRY_UPPER"
-            sed -i -e "s/^#COUNTRY:.*/#COUNTRY:$COUNTRY_UPPER/" "$F"
+            replace_m3u_field "$F" "COUNTRY" "$COUNTRY_UPPER"
         fi
         # region
         local REGION=""
@@ -229,12 +250,10 @@ normalize_fields() {
             local REPLACE_REGION="${region_map[$REGION_UPPER]:-}"
             if [ -n "$REPLACE_REGION" ]
             then
-                echo "$F: $REGION -> $REPLACE_REGION"
-                sed -i -e "s/^#REGION:.*/#REGION:$REPLACE_REGION/" "$F"
+                replace_m3u_field "$F" "REGION" "$REPLACE_REGION"
             elif [ "$REGION" != "$REGION_UPPER" ]
             then
-                echo "$F: $REGION -> $REGION_UPPER"
-                sed -i -e "s/^#REGION:.*/#REGION:$REGION_UPPER/" "$F"
+                replace_m3u_field "$F" "REGION" "$REGION_UPPER"
             fi
         fi
         # language
@@ -258,8 +277,7 @@ normalize_fields() {
         NEW_LANGUAGE="${NEW_LANGUAGE:2}"
         if [ "$LANGUAGE_LINE" != "$NEW_LANGUAGE" ]
         then
-            echo "$F: $LANGUAGE_LINE -> $NEW_LANGUAGE"
-            sed -i -e "s/^#LANGUAGE:.*/#LANGUAGE:$NEW_LANGUAGE/" "$F"
+            replace_m3u_field "$F" "LANGUAGE" "$NEW_LANGUAGE"
         fi
     done
 }
@@ -1267,8 +1285,8 @@ update_format() {
     fi
     if [ "$CUR_BITRATE" != "$NEW_BITRATE" ] || [ "$CUR_CODEC" != "$NEW_CODEC" ]
     then
-        echo "Codec or bitrate changed, updating \"$M3U_FILE\""
-        sed -i -e "s/^#CODEC:.*/#CODEC:$NEW_CODEC/" -e "s/^#BITRATE:.*/#BITRATE:$NEW_BITRATE/" "$M3U_FILE"
+        replace_m3u_field "$M3U_FILE" "CODEC" "$NEW_CODEC"
+        replace_m3u_field "$M3U_FILE" "BITRATE" "$NEW_BITRATE"
         set_lastmodified "$M3U_FILE"
     fi
     return 0
