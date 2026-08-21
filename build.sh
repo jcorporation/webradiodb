@@ -489,7 +489,7 @@ add_radio_from_json() {
     BITRATE=$(jq -r ".bitrate" < "$INPUT" | head -1 | tr -d '\n')
     if [ -n "$BITRATE" ] && ! is_uint "$BITRATE"
     then
-        echo "Bitrate must be an unsigned value"
+        echo "Bitrate must be an unsigned value, value is \"$BITRATE\""
         exit 1
     fi
     if ! check_stream_uri "$URI"
@@ -590,7 +590,7 @@ modify_radio_from_json() {
     NEW_BITRATE=$(jq -r ".bitrate" < "$INPUT" | head -1 | tr -d '\n')
     if [ -n "$NEW_BITRATE" ] && ! is_uint "$NEW_BITRATE"
     then
-        echo "Bitrate must be an unsigned value"
+        echo "Bitrate must be an unsigned value, value is \"$NEW_BITRATE\""
         exit 1
     fi
     if ! check_stream_uri "$NEW_URI"
