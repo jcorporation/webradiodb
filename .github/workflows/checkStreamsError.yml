@@ -30,7 +30,7 @@ jobs:
         run: ./build.sh check_stream_error_json
 
       - name: Add, commit and push
-        uses: EndBug/add-and-commit@v11.0.0
+        uses: EndBug/add-and-commit@v11.1.1
         with:
           add: docs/db sources trash
           message: Update webradio status file
