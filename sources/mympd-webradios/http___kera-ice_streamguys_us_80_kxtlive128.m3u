@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,kxt
+#EXTGENRE:Rock, Classic Rock
+#PLAYLIST:kxt
+#EXTIMG:http___kera-ice_streamguys_us_80_kxtlive128.webp
+#HOMEPAGE:https://kxt.org
+#COUNTRY:USA
+#REGION:Texas
+#LANGUAGE:english
+#DESCRIPTION:
+#CODEC:mp3, AAC
+#BITRATE:128
+#ADDED:1788706082
+#LASTMODIFIED:1788706082
+http://kera-ice.streamguys.us:80/kxtlive128
