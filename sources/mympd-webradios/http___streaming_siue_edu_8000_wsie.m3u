@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,88.7 wsie the jazz station
+#EXTGENRE:Jazz
+#PLAYLIST:88.7 wsie the jazz station
+#EXTIMG:http___streaming_siue_edu_8000_wsie.webp
+#HOMEPAGE:WSIE The Jazz Statio
+#COUNTRY:USA
+#REGION:Illinois
+#LANGUAGE:english
+#DESCRIPTION:
+#CODEC:
+#BITRATE:
+#ADDED:1788708099
+#LASTMODIFIED:1788708099
+http://streaming.siue.edu:8000/wsie
