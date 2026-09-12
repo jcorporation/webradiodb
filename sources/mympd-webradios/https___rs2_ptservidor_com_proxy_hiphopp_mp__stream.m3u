@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Hip Hop Rádio
+#EXTGENRE:Hip-hop, Rap, Hip-hop tuga
+#PLAYLIST:Hip Hop Rádio
+#EXTIMG:https___rs2_ptservidor_com_proxy_hiphopp_mp__stream.webp
+#HOMEPAGE:https://hiphopradio.pt/
+#COUNTRY:Portugal
+#REGION:
+#LANGUAGE:Portuguese
+#DESCRIPTION:"Hip Hop Rádio" is an online radio station dedicated to the transmission of hip hop, primarily from Portugal.
+#CODEC:MP3
+#BITRATE:128
+#ADDED:1789228217
+#LASTMODIFIED:1789228217
+https://rs2.ptservidor.com/proxy/hiphopp?mp=/stream
