@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,France Musique : La Baroque
+#EXTGENRE:classical, baroque
+#PLAYLIST:France Musique : La Baroque
+#EXTIMG:http___icecast_radiofrance_fr_francemusiquebaroque-hifi_aac_id_radiofrance.webp
+#HOMEPAGE:https://www.radiofrance.fr/francemusique/radio-baroque
+#COUNTRY:France
+#REGION:
+#LANGUAGE:French
+#DESCRIPTION:Musical journey through the 17th and first half of the 18th centuries. An exclusive selection of music, in high definition.
+#CODEC:AAC
+#BITRATE:192
+#ADDED:1789836447
+#LASTMODIFIED:1789836447
+http://icecast.radiofrance.fr/francemusiquebaroque-hifi.aac?id=radiofrance
