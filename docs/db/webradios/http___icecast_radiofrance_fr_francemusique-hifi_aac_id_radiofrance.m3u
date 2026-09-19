@@ -7,9 +7,6 @@
 #COUNTRY:France
 #REGION:
 #LANGUAGE:French
-#DESCRIPTION:
-#CODEC:MP3
-#BITRATE:128
-#ADDED:1640904262
-#LASTMODIFIED:1789740906
-http://direct.francemusique.fr/live/francemusique-midfi.mp3
+#CODEC:AAC
+#BITRATE:192
+http://icecast.radiofrance.fr/francemusique-hifi.aac?id=radiofrance

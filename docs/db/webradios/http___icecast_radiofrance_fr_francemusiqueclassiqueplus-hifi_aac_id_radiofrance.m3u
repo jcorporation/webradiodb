@@ -7,9 +7,6 @@
 #COUNTRY:France
 #REGION:
 #LANGUAGE:French
-#DESCRIPTION:
-#CODEC:MP3
-#BITRATE:128
-#ADDED:1640904262
-#LASTMODIFIED:1789741084
-http://direct.francemusique.fr/live/francemusiqueclassiqueplus-hifi.mp3
+#CODEC:AAC
+#BITRATE:192
+http://icecast.radiofrance.fr/francemusiqueclassiqueplus-hifi.aac?id=radiofrance
