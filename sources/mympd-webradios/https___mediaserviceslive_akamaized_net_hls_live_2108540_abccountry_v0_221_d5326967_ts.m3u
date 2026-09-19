@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,ABC Country
+#EXTGENRE:Country
+#PLAYLIST:ABC Country
+#EXTIMG:https___mediaserviceslive_akamaized_net_hls_live_2108540_abccountry_v0_221_d5326967_ts.webp
+#HOMEPAGE:https://www.abc.net.au/
+#COUNTRY:Australia
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:96
+#ADDED:1640904262
+#LASTMODIFIED:1789837236
+https://mediaserviceslive.akamaized.net/hls/live/2108540/abccountry/v0_221_d5326967.ts
