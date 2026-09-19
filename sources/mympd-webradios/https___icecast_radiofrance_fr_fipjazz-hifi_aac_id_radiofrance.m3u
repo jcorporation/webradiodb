@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Fip : Jazz
+#EXTGENRE:jazz
+#PLAYLIST:Fip : Jazz
+#EXTIMG:https___icecast_radiofrance_fr_fipjazz-hifi_aac_id_radiofrance.webp
+#HOMEPAGE:https://www.radiofrance.fr/fip/radio-jazz
+#COUNTRY:France
+#REGION:
+#LANGUAGE:French
+#DESCRIPTION:A mix of previously unreleased tracks and timeless classics: from Avishai Cohen to Herbie Hancock, from Nina Simone to Christian Scott.
+#CODEC:AAC
+#BITRATE:192
+#ADDED:1789837033
+#LASTMODIFIED:1789837033
+https://icecast.radiofrance.fr/fipjazz-hifi.aac?id=radiofrance
