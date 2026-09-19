@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,France Musique : Concerts Radio France
+#EXTGENRE:classical, live
+#PLAYLIST:France Musique : Concerts Radio France
+#EXTIMG:https___icecast_radiofrance_fr_francemusiqueconcertsradiofrance-hifi_aac_id_radiofrance.webp
+#HOMEPAGE:https://www.radiofrance.fr/francemusique/radio-concerts
+#COUNTRY:France
+#REGION:
+#LANGUAGE:French
+#DESCRIPTION:Outstanding performances of classical and symphonic music .
+#CODEC:AAC
+#BITRATE:192
+#ADDED:1789836528
+#LASTMODIFIED:1789836528
+https://icecast.radiofrance.fr/francemusiqueconcertsradiofrance-hifi.aac?id=radiofrance
