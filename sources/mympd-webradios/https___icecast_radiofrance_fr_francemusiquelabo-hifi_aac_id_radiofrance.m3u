@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,France Musique : Musique de Films
+#EXTGENRE:classical, film score
+#PLAYLIST:France Musique : Musique de Films
+#EXTIMG:https___icecast_radiofrance_fr_francemusiquelabo-hifi_aac_id_radiofrance.webp
+#HOMEPAGE:https://www.radiofrance.fr/francemusique/radio-musiques-films
+#COUNTRY:France
+#REGION:
+#LANGUAGE:French
+#DESCRIPTION:A unique selection of well-known and lesser-known film scores.
+#CODEC:AAC
+#BITRATE:192
+#ADDED:1789836796
+#LASTMODIFIED:1789836796
+https://icecast.radiofrance.fr/francemusiquelabo-hifi.aac?id=radiofrance
