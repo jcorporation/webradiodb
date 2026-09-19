@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,ABC Jazz
+#EXTGENRE:Jazz
+#PLAYLIST:ABC Jazz
+#EXTIMG:https___mediaserviceslive_akamaized_net_hls_live_2108543_abcjazz_v0_221_d5302123_ts.webp
+#HOMEPAGE:https://www.abc.net.au/
+#COUNTRY:Australia
+#REGION:
+#LANGUAGE:English
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:96
+#ADDED:1640904262
+#LASTMODIFIED:1789837855
+https://mediaserviceslive.akamaized.net/hls/live/2108543/abcjazz/v0_221_d5302123.ts
