@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Fip : Cultes
+#EXTGENRE:all
+#PLAYLIST:Fip : Cultes
+#EXTIMG:https___icecast_radiofrance_fr_fipcultes-hifi_aac_id_radiofrance.webp
+#HOMEPAGE:https://www.radiofrance.fr/fip/radio-cultes
+#COUNTRY:France
+#REGION:
+#LANGUAGE:French
+#DESCRIPTION:Iconic tracks that have made history and continue to captivate audiences today. From Blur to Bowie, from Aretha Franklin to Amy Winehouse, from the theme from *Contempt* to *Purple Rain*...
+#CODEC:AAC
+#BITRATE:192
+#ADDED:1789837141
+#LASTMODIFIED:1789837141
+https://icecast.radiofrance.fr/fipcultes-hifi.aac?id=radiofrance
