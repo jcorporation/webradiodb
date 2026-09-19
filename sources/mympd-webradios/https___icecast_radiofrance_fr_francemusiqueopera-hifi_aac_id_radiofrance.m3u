@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,France Musique : Opéra
+#EXTGENRE:classical, opera
+#PLAYLIST:France Musique : Opéra
+#EXTIMG:https___icecast_radiofrance_fr_francemusiqueopera-hifi_aac_id_radiofrance.webp
+#HOMEPAGE:https://www.radiofrance.fr/francemusique/radio-opera
+#COUNTRY:France
+#REGION:
+#LANGUAGE:French
+#DESCRIPTION:A unique selection of the greatest operas, the most beautiful arias and the finest voices.
+#CODEC:AAC
+#BITRATE:192
+#ADDED:1789836606
+#LASTMODIFIED:1789836606
+https://icecast.radiofrance.fr/francemusiqueopera-hifi.aac?id=radiofrance
