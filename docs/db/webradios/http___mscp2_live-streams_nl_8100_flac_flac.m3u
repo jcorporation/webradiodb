@@ -1,15 +1,15 @@
 #EXTM3U
-#EXTINF:-1,Hi On Line - Pop
+#EXTINF:-1,Hi On Line - Pop (FLAC)
 #EXTGENRE:Pop
-#PLAYLIST:Hi On Line - Pop
+#PLAYLIST:Hi On Line - Pop (FLAC)
 #EXTIMG:http___mscp2_live-streams_nl_8100_flac_flac.webp
-#HOMEPAGE:http://www.hionline.eu
+#HOMEPAGE:
 #COUNTRY:Netherlands
 #REGION:
 #LANGUAGE:English
 #DESCRIPTION:
 #CODEC:FLAC
-#BITRATE:128
+#BITRATE:900
 #ADDED:1649003809
 #LASTMODIFIED:1720344242
 http://mscp2.live-streams.nl:8100/flac.flac
