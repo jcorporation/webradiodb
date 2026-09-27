@@ -7,9 +7,6 @@
 #COUNTRY:Sweden
 #REGION:Stockholm
 #LANGUAGE:English
-#DESCRIPTION:Demoscene, chiptune, netlabels, game music and remixes — live and on demand.
 #CODEC:MP3
-#BITRATE:128
-#ADDED:1790495269
-#LASTMODIFIED:1790495269
-https://streams.scenesat.com/main/standard.mp3
+#BITRATE:256
+https://streams.scenesat.com/main/hq.mp3
