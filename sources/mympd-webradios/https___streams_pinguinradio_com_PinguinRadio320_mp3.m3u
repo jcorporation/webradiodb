@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Pinguin Indie
+#EXTGENRE:Indie
+#PLAYLIST:Pinguin Indie
+#EXTIMG:https___streams_pinguinradio_com_PinguinRadio320_mp3.webp
+#HOMEPAGE:https://pinguinradio.com/
+#COUNTRY:NL
+#REGION:
+#LANGUAGE:dutch
+#DESCRIPTION:great music, no bullshit
+#CODEC:mp3
+#BITRATE:320
+#ADDED:1790668825
+#LASTMODIFIED:1790668825
+https://streams.pinguinradio.com/PinguinRadio320.mp3
