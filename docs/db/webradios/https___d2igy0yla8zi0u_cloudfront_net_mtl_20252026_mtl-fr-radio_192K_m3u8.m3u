@@ -1,9 +1,9 @@
 #EXTM3U
-#EXTINF:-1,Canadiens Radio NHL Direct
-#EXTGENRE:Sport
-#PLAYLIST:Canadiens Radio NHL Direct
+#EXTINF:-1,Attitude Franco
+#EXTGENRE:Rock
+#PLAYLIST:Attitude Franco
 #EXTIMG:https___d2igy0yla8zi0u_cloudfront_net_mtl_20252026_mtl-fr-radio_192K_m3u8.webp
-#HOMEPAGE:https://www.nhl.com/canadiens/
+#HOMEPAGE:https://www.siriusxm.ca/channels/attitude-franco/
 #COUNTRY:Canada
 #REGION:
 #LANGUAGE:Québécois
@@ -11,5 +11,5 @@
 #CODEC:HLS
 #BITRATE:64
 #ADDED:1786869320
-#LASTMODIFIED:1787075407
+#LASTMODIFIED:1791956258
 https://d2igy0yla8zi0u.cloudfront.net/mtl/20252026/mtl-fr-radio_192K.m3u8
