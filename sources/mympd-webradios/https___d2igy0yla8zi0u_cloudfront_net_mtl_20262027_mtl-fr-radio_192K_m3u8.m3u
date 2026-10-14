@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Canadiens Radio NHL Direct
+#EXTGENRE:Sport
+#PLAYLIST:Canadiens Radio NHL Direct
+#EXTIMG:https___d2igy0yla8zi0u_cloudfront_net_mtl_20262027_mtl-fr-radio_192K_m3u8.webp
+#HOMEPAGE:https://www.nhl.com/canadiens/
+#COUNTRY:Canada
+#REGION:
+#LANGUAGE:Québécois
+#DESCRIPTION:
+#CODEC:HLS
+#BITRATE:64
+#ADDED:1791956321
+#LASTMODIFIED:1791956321
+https://d2igy0yla8zi0u.cloudfront.net/mtl/20262027/mtl-fr-radio_192K.m3u8
