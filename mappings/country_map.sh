@@ -1,5 +1,8 @@
 declare -A country_map
 country_map["United States"]="USA"
 country_map["United States Of America"]="USA"
-country_map["The Netherlands"]="Netherlands"
 country_map["United Kingdom"]="UK"
+country_map["Brasil"]="Brazil"
+country_map["The Netherlands"]="Netherlands"
+country_map["NL"]="Netherlands"
+country_map["Netherlends"]="Netherlands"
