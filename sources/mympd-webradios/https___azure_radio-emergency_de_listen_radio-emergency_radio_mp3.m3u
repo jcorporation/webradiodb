@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,Radio Emergency
+#EXTGENRE:Rock
+#PLAYLIST:Radio Emergency
+#EXTIMG:https___azure_radio-emergency_de_listen_radio-emergency_radio_mp3.webp
+#HOMEPAGE:https://radio-emergency.de/
+#COUNTRY:Germany
+#REGION:
+#LANGUAGE:german
+#DESCRIPTION:Keine engen Schubladen, keine musikalischen Grenzen - sondern ein abwechslungsreiches Programm, handverlesen von Menschen, die Musik lieben und etwas zu sagen haben.
+#CODEC:mp3
+#BITRATE:192
+#ADDED:1794492774
+#LASTMODIFIED:1794492774
+https://azure.radio-emergency.de/listen/radio-emergency/radio.mp3
