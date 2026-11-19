@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,98.5 FM Montreal
+#EXTGENRE:Talk
+#PLAYLIST:98.5 FM Montreal
+#EXTIMG:https___14133_live_streamtheworld_com_CHMPFMAAC_HLS_playlist_m3u8.webp
+#HOMEPAGE:https://www.985fm.ca/
+#COUNTRY:Canada
+#REGION:Montreal
+#LANGUAGE:French
+#DESCRIPTION:FM 98.5 Montréal, la radio parlée
+#CODEC:AAC
+#BITRATE:
+#ADDED:1795105110
+#LASTMODIFIED:1795105110
+https://14133.live.streamtheworld.com/CHMPFMAAC/HLS/playlist.m3u8
