@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1,ORF Hitradio Ö3
+#EXTGENRE:Pop
+#PLAYLIST:ORF Hitradio Ö3
+#EXTIMG:https___orf-live_ors-shoutcast_at_oe3-q2a.webp
+#HOMEPAGE:https://oe3.orf.at/
+#COUNTRY:Austria
+#REGION:
+#LANGUAGE:German
+#DESCRIPTION:
+#CODEC:MP3
+#BITRATE:192
+#ADDED:1795371851
+#LASTMODIFIED:1795371851
+https://orf-live.ors-shoutcast.at/oe3-q2a
